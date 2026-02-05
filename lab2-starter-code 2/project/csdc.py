@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import numpy as np
 from utils.brick import EV3ColorSensor, wait_ready_sensors, TouchSensor
 import time
