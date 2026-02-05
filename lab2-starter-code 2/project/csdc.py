@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import numpy as np
 from utils.brick import EV3ColorSensor, wait_ready_sensors, TouchSensor
 import time
@@ -26,7 +27,7 @@ def collect_color_sensor_data():
         np.save(COLOR_SENSOR_DATA_FILE + 'red_red.npy', red_red)
         np.save(COLOR_SENSOR_DATA_FILE + 'red_blue.npy', red_blue)
         np.save(COLOR_SENSOR_DATA_FILE + 'red_green.npy', red_green)
-        print(f"Data was successfully saved to {COLOR_SENSOR_DATA_FILE}!")
+        print("Data was successfully saved to %s!" % COLOR_SENSOR_DATA_FILE)
 
 if __name__ == "__main__":
     collect_color_sensor_data()
