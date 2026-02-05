@@ -46,7 +46,7 @@ def collect_continuous_us_data():
             if us_data is not None: # If None is given, then data collection failed that time
                 print(us_data, total)
                 output_file.write(f"{us_data}\n")
-                time_file.write(f"{total:.3f}\n")
+                time_file.write(f"{total}\n")
                 sample_count += 1
 
             sleep(DELAY_SEC)
