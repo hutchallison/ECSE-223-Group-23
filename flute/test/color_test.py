@@ -36,7 +36,7 @@ DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 os.makedirs(DATA_DIR, exist_ok=True)
 COLOR_COLLECTION_FILE = os.path.join(DATA_DIR, f"detection_colors_collection_{timestamp}.csv")
 
-NUM_DATA_POINTS = 500
+NUM_DATA_POINTS = 100
 
 
 #imports color calibration file
@@ -143,6 +143,7 @@ while True:
 
 		if (i + 1) % 100 == 0:
 			print(f"  {i + 1}/{NUM_DATA_POINTS} done...")
+			print(f"  Color detected: {detected_color}")
 
 		if EmergencyButton.is_pressed():
 			print("Emergency stop triggered!")
