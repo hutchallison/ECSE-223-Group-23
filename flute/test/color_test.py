@@ -2,7 +2,15 @@
 
 import time
 import csv
+import os
+import sys
 import numpy as np
+
+# ensure parent directory (project/flute) is on sys.path so sibling modules can be imported
+parent_dir = os.path.dirname(os.path.dirname(__file__))
+if parent_dir not in sys.path:
+	sys.path.insert(0, parent_dir)
+
 from create_gauss import create_gaussian
 from bhatta_dist import bhatta_distance
 from utils.brick import EV3ColorSensor, TouchSensor, wait_ready_sensors
@@ -13,13 +21,18 @@ import pickle
 color_sensor = EV3ColorSensor(2)
 EmergencyButton = TouchSensor(4)
 
+timestamp = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
 
 #initializes window size for color sensor data
 WINDOW_SIZE = 500
 
 #name of color calibration file to use
 COLOR_FILE = "detection_colors.pkl"
-COLOR_COLLECTION_FILE = "detection_colors_collection.csv"
+
+# store test output in a dedicated data folder and ensure it exists
+DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
+os.makedirs(DATA_DIR, exist_ok=True)
+COLOR_COLLECTION_FILE = os.path.join(DATA_DIR, f"detection_colors_collection_{timestamp}.csv")
 
 NUM_DATA_POINTS = 500
 
@@ -58,6 +71,9 @@ def detect_color():
 
 	#accesses the sliding window of data
 	global unknown_color_data
+
+	#resets the sliding window to avoid stale data
+	unknown_color_data = np.zeros((3, WINDOW_SIZE))
 
 	#Collects data points and adds the to the sliding window of data
 	for i in range(WINDOW_SIZE//4):
