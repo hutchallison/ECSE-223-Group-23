@@ -6,10 +6,12 @@ import os
 import sys
 import numpy as np
 
-# ensure parent directory (project/flute) is on sys.path so sibling modules can be imported
+# ensure parent directory (flute/) is on sys.path and set as cwd
+# so imports and file paths resolve as if running from flute/
 parent_dir = os.path.dirname(os.path.dirname(__file__))
 if parent_dir not in sys.path:
 	sys.path.insert(0, parent_dir)
+os.chdir(parent_dir)
 
 from create_gauss import create_gaussian
 from bhatta_dist import bhatta_distance
