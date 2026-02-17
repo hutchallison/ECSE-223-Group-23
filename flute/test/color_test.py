@@ -6,16 +6,10 @@ import os
 import sys
 import numpy as np
 
-# ensure parent directory (flute/) is on sys.path and set as cwd
-# so imports and file paths resolve as if running from flute/
-parent_dir = os.path.dirname(os.path.dirname(__file__))
-if parent_dir not in sys.path:
-	sys.path.insert(0, parent_dir)
-os.chdir(parent_dir)
-
-from create_gauss import create_gaussian
-from bhatta_dist import bhatta_distance
-from utils.brick import EV3ColorSensor, TouchSensor, wait_ready_sensors
+# package-style imports — run as module (python -m flute.test.color_test)
+from flute.create_gauss import create_gaussian
+from flute.bhatta_dist import bhatta_distance
+from flute.utils.brick import EV3ColorSensor, TouchSensor, wait_ready_sensors
 import pickle
 
 
@@ -28,8 +22,9 @@ timestamp = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
 #initializes window size for color sensor data
 WINDOW_SIZE = 500
 
-#name of color calibration file to use
-COLOR_FILE = "detection_colors.pkl"
+#name of color calibration file to use (path relative to package root)
+PACKAGE_ROOT = os.path.dirname(os.path.dirname(__file__))
+COLOR_FILE = os.path.join(PACKAGE_ROOT, 'detection_colors.pkl')
 
 # store test output in a dedicated data folder and ensure it exists
 DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')

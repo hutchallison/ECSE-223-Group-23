@@ -7,10 +7,19 @@ import pickle
 import time
 
 #add name of calibration file you would like to save your values to
-COLOR_FILE = "ADD_FILE_NAME"
+COLOR_FILE = "detection_colors.pkl"
 
 #dictionary that will hold saved gaussian distribution
-detection_colors = {}
+#If a calibration file already exists, load it so we append/merge
+try:
+	with open(COLOR_FILE, 'rb') as _cf:
+		detection_colors = pickle.load(_cf)
+		print(f"Loaded {len(detection_colors)} color profiles from {COLOR_FILE}")
+except FileNotFoundError:
+	detection_colors = {}
+except Exception as e:
+	print(f"Warning: couldn't load {COLOR_FILE}: {e}")
+	detection_colors = {}
 
 #initializes color sensor to port 2
 color_sensor = EV3ColorSensor(2)
@@ -104,11 +113,8 @@ def create_color_profiles():
 		#asks user if they would like to add another color to their calibration file
 		add_new = input("Would you like to add a color? y/n ")
 
-		if add_new == ('y' or 'Y'):
-
-			#asks user for the color name they would like to associate with this color
-			color = input("What color would you like to sample? ")
-
+		if add_new.strip().lower() == 'y':
+			color = input("Enter the name of the color: ").strip()
 			print("Press touch sensor to begin sampling. Press again to stop sampling")
 			
 			#gets 3 row numpy array with the data collected from the color sampled
@@ -126,9 +132,8 @@ def create_color_profiles():
 			#adds the mean and covariance dictionary as a value with key 
 			#equal to color name in the calibration dictionary
 			detection_colors[color] = color_dict
-		
-		else:
-			add_new_color = False
+			
+		break
 
 def save_detection_colors():
 	'''
