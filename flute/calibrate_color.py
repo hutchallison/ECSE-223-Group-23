@@ -25,7 +25,7 @@ except Exception as e:
 color_sensor = EV3ColorSensor(2)
 
 #initializes touch sensor to port 1
-touch_sensor = TouchSensor(1)
+touch_sensor = TouchSensor(3)
 
 wait_ready_sensors(True) 
 
@@ -65,6 +65,9 @@ def collect_color_sensor_data():
 			while counter < 1000:
 				time.sleep(0.001)
 				rgb_values = color_sensor.get_rgb()
+				
+				if counter % 100 == 0:
+					print(f"{counter}/1000 done...")
 
 				#ensures a reading was collected from the sensor
 				if rgb_values:
@@ -179,7 +182,8 @@ def create_color_profiles():
 
 		# continue loop (user can add multiple colors)
 		# loop will continue until user answers 'n'
-
+		else:
+			break
 
 def save_detection_colors():
 	'''
