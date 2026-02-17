@@ -15,12 +15,9 @@ import signal
 import time
 import sys
 
-
 def busy_sleep(seconds: float):
-    """A different form of time.sleep, which uses a while loop that 
-    constantly checks the time, to see if the duration has elapsed."""
-    start = time.time()
-    while (time.time() - start) < seconds:
+   start = time.time()
+   while (time.time() - start) < seconds:
         time.sleep(0.005)
 
 

@@ -25,10 +25,7 @@ def bhatta_distance(mean1, cov1, mean2, cov2):
 	Returns:
 		The Bhattacharyya distance between the two distributions float
 	"""
-	#print("mean1 = " + str(mean1))
-	#print("mean2 = " + str(mean2))
-	#print("cov1 " + str(cov1))
-	#print("cov2 " + str(cov2))
+
 	try:
 		mean_difference = np.subtract(mean1, mean2)
 			
@@ -38,6 +35,7 @@ def bhatta_distance(mean1, cov1, mean2, cov2):
 		
 		inverse_cov_sum = np.linalg.inv(cov_sum)
 		
+		#calculates first term of Bhattacharyya distance formula
 		term_1 = 0.125 * mean_difference @ inverse_cov_sum @ mean_difference_transpose
 		
 		det_cov_sum = np.linalg.det(cov_sum)
@@ -46,6 +44,7 @@ def bhatta_distance(mean1, cov1, mean2, cov2):
 		
 		det_cov2 = np.linalg.det(cov2)
 
+		#calculates second term of Bhattacharyya distance formula
 		term_2 = 0.5*math.log(det_cov_sum / math.sqrt(det_cov1*det_cov2))
 
 		bhatta_dist = term_1 + term_2
