@@ -91,6 +91,34 @@ def collect_color_sensor_data():
 
 	return color_data
 
+
+def _merge_gaussians(mu1, cov1, n1, mu2, cov2, n2):
+	"""Merge two sample Gaussians (means + sample covariances).
+
+	Returns (mu, cov, total_n).
+	"""
+	mu1 = np.asarray(mu1)
+	mu2 = np.asarray(mu2)
+	cov1 = np.asarray(cov1)
+	cov2 = np.asarray(cov2)
+
+	total_n = int(n1 + n2)
+	if total_n <= 1:
+		return mu2, cov2, int(n2)
+
+	mu = (n1 * mu1 + n2 * mu2) / total_n
+
+	S1 = (n1 - 1) * cov1
+	S2 = (n2 - 1) * cov2
+
+	d1 = (mu1 - mu).reshape(-1, 1)
+	d2 = (mu2 - mu).reshape(-1, 1)
+
+	S = S1 + S2 + n1 * (d1 @ d1.T) + n2 * (d2 @ d2.T)
+	cov = S / (total_n - 1)
+
+	return mu, cov, total_n
+
 def create_color_profiles():
 	'''
 	Creates a dictionary with keys equal to the name of the color that
@@ -116,24 +144,42 @@ def create_color_profiles():
 		if add_new.strip().lower() == 'y':
 			color = input("Enter the name of the color: ").strip()
 			print("Press touch sensor to begin sampling. Press again to stop sampling")
-			
+
 			#gets 3 row numpy array with the data collected from the color sampled
 			color_data = collect_color_sensor_data()
+			n_new = int(color_data.shape[1])
 
 			#calculates the means and covariance to create a gaussian distribution of the data points
-			mean, cov = create_gaussian(color_data)
+			mean_new, cov_new = create_gaussian(color_data)
 
-			#creates a dictionary with the mean and covarience values
-			color_dict = {
-				"mean": mean,
-				"cov": cov
-			}
+			#entry with sample count
+			color_entry = {"mean": mean_new, "cov": cov_new, "n": n_new}
 
-			#adds the mean and covariance dictionary as a value with key 
-			#equal to color name in the calibration dictionary
-			detection_colors[color] = color_dict
-			
-		break
+			if color in detection_colors:
+				existing = detection_colors[color]
+				mu_old = existing.get("mean")
+				cov_old = existing.get("cov")
+				n_old = existing.get("n")
+
+				if mu_old is None or cov_old is None:
+					# unexpected format — overwrite
+					detection_colors[color] = color_entry
+					print(f"Overwrote '{color}' (existing profile had unexpected format)")
+				else:
+					if n_old is None:
+						# best-effort fallback for legacy entries
+						n_old = 1000
+						print(f"Merging '{color}': existing profile lacked sample count — assuming n_old=1000")
+
+					mu_merged, cov_merged, n_total = _merge_gaussians(mu_old, cov_old, int(n_old), mean_new, cov_new, int(n_new))
+					detection_colors[color] = {"mean": mu_merged, "cov": cov_merged, "n": n_total}
+					print(f"Merged '{color}' (n_old={n_old}, n_new={n_new} => n_total={n_total})")
+			else:
+				detection_colors[color] = color_entry
+
+		# continue loop (user can add multiple colors)
+		# loop will continue until user answers 'n'
+
 
 def save_detection_colors():
 	'''
@@ -142,7 +188,7 @@ def save_detection_colors():
 	Arguments:
 		None
 
-	Returns: 
+	Returns:
 		None
 
 	'''
