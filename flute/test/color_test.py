@@ -6,6 +6,11 @@ import os
 import sys
 import numpy as np
 
+# Add project root (ECSE-223-Group-23/) to sys.path so 'flute' package is found
+project_root = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+if project_root not in sys.path:
+	sys.path.insert(0, project_root)
+
 # package-style imports — run as module (python -m flute.test.color_test)
 from flute.create_gauss import create_gaussian
 from flute.bhatta_dist import bhatta_distance
