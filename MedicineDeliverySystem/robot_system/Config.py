@@ -31,6 +31,7 @@ class Config:
         # Sensor feedback
         POLL_INTERVAL_S = 0.5       # Polling rate for gyro/US sensors
         HEADING_CORRECTION_KP = 2.0 # Proportional gain: heading error (deg) -> DPS offset
+        TURN_TOLERANCE_DEG = 1.0    # Stop turning when within this many degrees of target
 
     class Payload:
         # Clamp Positions (Degrees)
@@ -49,3 +50,8 @@ class Config:
         FILE_DELIVERY = "delivery_confirmed.wav"
         FILE_START = "mission_start.wav"
         FILE_COMPLETE = "victory.wav"
+    
+    class Logging:
+        LOG_FILE = "robot_log.txt"
+        LOG_LEVEL = "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+        LOG_FREQUENCY = 2.0  # Seconds between periodic in-motion debug logs
