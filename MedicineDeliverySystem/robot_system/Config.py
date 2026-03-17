@@ -3,10 +3,10 @@ class Config:
 
     class Ports:
         # Sensors (S1-S4)
-        COLOR = 1
-        ULTRASONIC = 2
-        GYRO = 3
-        TOUCH = 4
+        COLOR = 3
+        ULTRASONIC = 1
+        GYRO = 4
+        TOUCH = 2
         
         # Motors (A-D)
         LEFT_MOTOR = "A"
@@ -16,8 +16,8 @@ class Config:
 
     class Navigation:
         # Physical Measurements
-        WHEEL_RADIUS_CM = 2.8
-        TRACK_WIDTH_CM = 15.5
+        WHEEL_RADIUS_CM = 4.2
+        TRACK_WIDTH_CM = 15.6
         # Circumference formula (logic allowed in Python config!)
         WHEEL_CIRCUMFERENCE = 2 * 3.14159 * WHEEL_RADIUS_CM
         
@@ -37,13 +37,14 @@ class Config:
         # Clamp Positions (Degrees)
         CLAMP_OPEN = 0
         CLAMP_CLOSED = 90
-        CLAMP_GRAB_STRENGTH = 100 # Power limit
+        CLAMP_GRAB_STRENGTH = 75 # Power limit
 
     class Colors:
         # Mappings from your flute training
         PHARMACY = "BLUE"
         PATIENT_NEED = "GREEN"
         PATIENT_HEALTHY = "RED"
+        PATIENT_ROOM = "YELLOW"
         DOOR_MARKER = "ORANGE"
 
     class Audio:
