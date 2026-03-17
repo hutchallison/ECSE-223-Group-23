@@ -28,6 +28,7 @@ class Config:
         # Speeds (Degrees Per Second)
         SPEED_NORMAL = 300
         SPEED_ROTATE = 150
+        SPEED_ROTATE_ADJUST = 80        # Constant speed for post-turn gyro fine-tune
         
         # Tolerances
         STOP_DISTANCE_CM = 5.0  # Wall avoidance threshold
@@ -36,6 +37,7 @@ class Config:
         POLL_INTERVAL_S = 0.5       # Polling rate for gyro/US sensors
         HEADING_CORRECTION_KP = 2.0 # Proportional gain: heading error (deg) -> DPS offset
         TURN_TOLERANCE_DEG = 1.0    # Stop turning when within this many degrees of target
+        GYRO_SCALE = 90.0 / 53.0    # Compensate for sensor mounting tilt (90 actual = 53 measured)
 
     class Payload:
         # Clamp Positions (Degrees)

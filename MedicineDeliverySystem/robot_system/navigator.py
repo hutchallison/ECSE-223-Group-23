@@ -32,14 +32,14 @@ class Navigator:
     # ── Sensors ──────────────────────────────────────────────────────
 
     def _read_gyro(self):
-        """Read current heading from gyro (offset-adjusted). Returns None if unavailable."""
+        """Read current heading from gyro (offset-adjusted, scaled). Returns None if unavailable."""
         if self.gyro is None:
             return None
         reading = self.gyro.get_abs_measure()
         if reading is None:
             log.warning("Gyro read returned None")
             return None
-        return reading - self._gyro_offset
+        return (reading - self._gyro_offset) * Config.Navigation.GYRO_SCALE
 
     def get_wall_distance(self):
         """Read ultrasonic distance (cm) on demand. Returns None if unavailable."""
@@ -117,21 +117,20 @@ class Navigator:
     def turn(self, angle_deg):
         """
         Rotate in place by angle_deg. Positive = CCW (left), Negative = CW (right).
-        With gyro: closed-loop proportional control.
-        Without gyro: open-loop wheel-encoder based.
+        Phase 1 (blind): full-speed encoder-based turn for the whole angle.
+        Phase 2 (trim): if gyro available, one constant-speed correction pass.
         """
-        log.info("turn %.1f deg | mode=%s pos=(%.1f, %.1f) heading=%.1f",
-                 angle_deg, "gyro" if self.gyro else "open-loop",
-                 self.x, self.y, self.heading)
+        log.info("turn %.1f deg | pos=(%.1f, %.1f) heading=%.1f",
+                 angle_deg, self.x, self.y, self.heading)
 
-        if self.gyro is not None:
-            self._turn_corrected(angle_deg)
-        else:
-            self._turn_open_loop(angle_deg)
+        target_heading = self.heading + angle_deg
+        self._turn_blind(angle_deg)
+        self._turn_gyro_trim(target_heading)
 
         log.info("turn done | heading=%.1f", self.heading)
 
-    def _turn_open_loop(self, angle_deg):
+    def _turn_blind(self, angle_deg):
+        """Encoder-based turn at constant SPEED_ROTATE. No feedback."""
         rw = Config.Navigation.WHEEL_RADIUS_CM
         rb = Config.Navigation.TRACK_WIDTH_CM / 2
         wheel_degrees = angle_deg * (rb / rw)
@@ -150,39 +149,40 @@ class Navigator:
 
         self.heading += angle_deg
 
-    def _turn_corrected(self, angle_deg):
-        target_heading = self.heading + angle_deg
-        tolerance = Config.Navigation.TURN_TOLERANCE_DEG
-        base_dps = Config.Navigation.SPEED_ROTATE
-        kp = Config.Navigation.HEADING_CORRECTION_KP
+    def _turn_gyro_trim(self, target_heading):
+        """After a blind turn, nudge at constant SPEED_ROTATE_ADJUST until within tolerance."""
+        if self.gyro is None:
+            return
 
-        last_log_time = time.time()
+        current = self._read_gyro()
+        if current is None:
+            return
+        self.heading = current
+
+        error = target_heading - current
+        tolerance = Config.Navigation.TURN_TOLERANCE_DEG
+        if abs(error) <= tolerance:
+            return
+
+        adjust_dps = Config.Navigation.SPEED_ROTATE_ADJUST
+        lp = Config.Navigation.LEFT_MOTOR_POLARITY
+        rp = Config.Navigation.RIGHT_MOTOR_POLARITY
+        direction = 1 if error > 0 else -1
+        self.left_motor.set_dps(lp * (-direction * adjust_dps))
+        self.right_motor.set_dps(rp * (direction * adjust_dps))
 
         while True:
-            current_heading = self._read_gyro()
-            if current_heading is not None:
-                self.heading = current_heading
-
-            error = target_heading - self.heading
-            if abs(error) <= tolerance:
+            current = self._read_gyro()
+            if current is None:
                 break
-
-            turn_dps = max(min(kp * error, base_dps), -base_dps)
-            lp = Config.Navigation.LEFT_MOTOR_POLARITY
-            rp = Config.Navigation.RIGHT_MOTOR_POLARITY
-            self.left_motor.set_dps(lp * (-turn_dps))
-            self.right_motor.set_dps(rp * turn_dps)
-
-            now = time.time()
-            if now - last_log_time >= Config.Logging.LOG_FREQUENCY:
-                log.debug("turning | target=%.1f current=%.1f error=%.1f dps=%.1f",
-                          target_heading, self.heading, error, turn_dps)
-                last_log_time = now
-
-            time.sleep(0.05)
+            self.heading = current
+            if abs(target_heading - current) <= tolerance:
+                break
+            time.sleep(0.02)
 
         self.left_motor.set_dps(0)
         self.right_motor.set_dps(0)
+        log.debug("gyro trim done | target=%.1f actual=%.1f", target_heading, self.heading)
 
     # ── Accessors ────────────────────────────────────────────────────
 

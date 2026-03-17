@@ -2,14 +2,17 @@
 Manual navigation tests for the Navigator class.
 
 Run on the robot with:
-    python3 test_navigator.py [test_name]
+    python3 test_navigator.py [test_name] [--gyro]
 
 Available tests:
-    forward   - move forward 30 cm and stop
+    forward    - move forward 30 cm and stop
     turn_right - turn 90 degrees clockwise
     turn_left  - turn 90 degrees counterclockwise
     box        - drive a 30 cm square (should return to start)
     box_back   - drive a square in reverse direction (CCW)
+
+Flags:
+    --gyro     - enable gyro sensor for turn trimming (default: blind turns only)
 
 With no argument, runs the box test by default.
 """
@@ -141,20 +144,25 @@ TESTS = {
 }
 
 if __name__ == "__main__":
-    test_name = sys.argv[1] if len(sys.argv) > 1 else "box"
+    args = sys.argv[1:]
+    use_gyro = "--gyro" in args
+    test_name = next((a for a in args if not a.startswith("--")), "box")
+
     time.sleep(45)
     if test_name not in TESTS:
         log.error("Unknown test '%s'. Available: %s", test_name, ", ".join(TESTS))
         sys.exit(1)
 
-    # Instantiate without sensors for basic testing.
-    # To test with sensors, replace with:
-    from utils.brick import EV3GyroSensor, EV3UltrasonicSensor, wait_ready_sensors
-    gyro = EV3GyroSensor(Config.Ports.GYRO)
-    # us   = EV3UltrasonicSensor(Config.Ports.ULTRASONIC)
-    wait_ready_sensors()
+    gyro = None
+    if use_gyro:
+        from utils.brick import EV3GyroSensor, wait_ready_sensors
+        gyro = EV3GyroSensor(Config.Ports.GYRO)
+        wait_ready_sensors()
+        log.info("Gyro enabled on port %s", Config.Ports.GYRO)
+    else:
+        log.info("Running without gyro (blind turns)")
+
     nav = Navigator(gyro=gyro)
-    # nav = Navigator()
 
     log.info("Starting test: %s", test_name)
     TESTS[test_name](nav)
