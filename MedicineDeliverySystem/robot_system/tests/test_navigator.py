@@ -148,7 +148,7 @@ if __name__ == "__main__":
     use_gyro = "--gyro" in args
     test_name = next((a for a in args if not a.startswith("--")), "box")
 
-    time.sleep(45)
+    input("Press Enter to start the test...")
     if test_name not in TESTS:
         log.error("Unknown test '%s'. Available: %s", test_name, ", ".join(TESTS))
         sys.exit(1)
