@@ -142,19 +142,19 @@ TESTS = {
 
 if __name__ == "__main__":
     test_name = sys.argv[1] if len(sys.argv) > 1 else "box"
-    time.sleep(90)
+    time.sleep(45)
     if test_name not in TESTS:
         log.error("Unknown test '%s'. Available: %s", test_name, ", ".join(TESTS))
         sys.exit(1)
 
     # Instantiate without sensors for basic testing.
     # To test with sensors, replace with:
-    #   from utils.brick import EV3GyroSensor, EV3UltrasonicSensor, wait_ready_sensors
-    #   gyro = EV3GyroSensor(Config.Ports.GYRO)
-    #   us   = EV3UltrasonicSensor(Config.Ports.ULTRASONIC)
-    #   wait_ready_sensors()
-    #   nav = Navigator(gyro=gyro, us=us)
-    nav = Navigator()
+    from utils.brick import EV3GyroSensor, EV3UltrasonicSensor, wait_ready_sensors
+    gyro = EV3GyroSensor(Config.Ports.GYRO)
+    # us   = EV3UltrasonicSensor(Config.Ports.ULTRASONIC)
+    wait_ready_sensors()
+    nav = Navigator(gyro=gyro)
+    # nav = Navigator()
 
     log.info("Starting test: %s", test_name)
     TESTS[test_name](nav)
