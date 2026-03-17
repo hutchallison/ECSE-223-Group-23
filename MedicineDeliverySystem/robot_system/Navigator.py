@@ -2,7 +2,7 @@ import math
 import time
 import logging
 from utils.brick import Motor, EV3GyroSensor, EV3UltrasonicSensor
-import Config
+from config import Config
 
 log = logging.getLogger(__name__)
 

@@ -28,8 +28,8 @@ parent_dir = os.path.dirname(current_dir)
 sys.path.append(parent_dir)
 
 # NOW you can import your classes safely
-from Navigator import Navigator
-import Config
+from navigator import Navigator
+from config import Config
 
 # ── Logging setup ────────────────────────────────────────────────────────────
 logging.basicConfig(
