@@ -142,7 +142,7 @@ TESTS = {
 
 if __name__ == "__main__":
     test_name = sys.argv[1] if len(sys.argv) > 1 else "box"
-
+    time.sleep(90)
     if test_name not in TESTS:
         log.error("Unknown test '%s'. Available: %s", test_name, ", ".join(TESTS))
         sys.exit(1)
