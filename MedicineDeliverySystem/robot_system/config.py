@@ -16,8 +16,12 @@ class Config:
 
     class Navigation:
         # Physical Measurements
-        WHEEL_RADIUS_CM = 4.2
-        TRACK_WIDTH_CM = 15.6
+        WHEEL_RADIUS_CM = 4.2/2          # Wheel radius (half of 4.2 cm diameter)
+        TRACK_WIDTH_CM = 15.6            # Full wheel-to-wheel distance (Navigator divides by 2)
+
+        # Motor polarity: set to -1 if that motor spins physically backwards
+        LEFT_MOTOR_POLARITY  = -1
+        RIGHT_MOTOR_POLARITY = -1
         # Circumference formula (logic allowed in Python config!)
         WHEEL_CIRCUMFERENCE = 2 * 3.14159 * WHEEL_RADIUS_CM
         

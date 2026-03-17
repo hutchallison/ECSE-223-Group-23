@@ -84,8 +84,10 @@ class Navigator:
                 self.heading = current_heading
                 correction = kp * (target_heading - current_heading)
 
-            self.left_motor.set_dps(base_dps - correction)
-            self.right_motor.set_dps(base_dps + correction)
+            lp = Config.Navigation.LEFT_MOTOR_POLARITY
+            rp = Config.Navigation.RIGHT_MOTOR_POLARITY
+            self.left_motor.set_dps(lp * (base_dps - correction))
+            self.right_motor.set_dps(rp * (base_dps + correction))
 
             # Log position every 2 seconds
             now = time.time()
@@ -137,8 +139,10 @@ class Navigator:
         self.left_motor.set_limits(dps=Config.Navigation.SPEED_ROTATE)
         self.right_motor.set_limits(dps=Config.Navigation.SPEED_ROTATE)
 
-        self.left_motor.set_position_relative(-wheel_degrees)
-        self.right_motor.set_position_relative(wheel_degrees)
+        lp = Config.Navigation.LEFT_MOTOR_POLARITY
+        rp = Config.Navigation.RIGHT_MOTOR_POLARITY
+        self.left_motor.set_position_relative(lp * (-wheel_degrees))
+        self.right_motor.set_position_relative(rp * wheel_degrees)
 
         self.left_motor.wait_is_moving()
         self.left_motor.wait_is_stopped()
@@ -164,8 +168,10 @@ class Navigator:
                 break
 
             turn_dps = max(min(kp * error, base_dps), -base_dps)
-            self.left_motor.set_dps(-turn_dps)
-            self.right_motor.set_dps(turn_dps)
+            lp = Config.Navigation.LEFT_MOTOR_POLARITY
+            rp = Config.Navigation.RIGHT_MOTOR_POLARITY
+            self.left_motor.set_dps(lp * (-turn_dps))
+            self.right_motor.set_dps(rp * turn_dps)
 
             now = time.time()
             if now - last_log_time >= Config.Logging.LOG_FREQUENCY:
