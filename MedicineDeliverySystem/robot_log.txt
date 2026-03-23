@@ -1,0 +1,814 @@
+2026-03-17 18:54:57,685 INFO     navigator | Navigator init | gyro=False us=False gyro_offset=0.0
+2026-03-17 18:54:57,686 INFO     test_navigator | Starting test: box
+2026-03-17 18:54:57,687 INFO     test_navigator | === TEST: box (CW, right turns) ===
+2026-03-17 18:54:57,687 INFO     navigator | move_forward 30.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-17 18:54:59,129 INFO     navigator | move_forward done | traveled=31.0 cm pos=(31.0, 0.0) heading=0.0
+2026-03-17 18:54:59,131 INFO     test_navigator | side 1 done          → pos=(31.0, 0.0) heading=0.0°
+2026-03-17 18:54:59,632 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(31.0, 0.0) heading=0.0
+2026-03-17 18:55:00,964 INFO     navigator | turn done | heading=-90.0
+2026-03-17 18:55:00,971 INFO     test_navigator | turn 1 done          → pos=(31.0, 0.0) heading=-90.0°
+2026-03-17 18:55:01,473 INFO     navigator | move_forward 30.0 cm | pos=(31.0, 0.0) heading=-90.0
+2026-03-17 18:55:02,919 INFO     navigator | move_forward done | traveled=31.0 cm pos=(31.0, -31.0) heading=-90.0
+2026-03-17 18:55:02,920 INFO     test_navigator | side 2 done          → pos=(31.0, -31.0) heading=-90.0°
+2026-03-17 18:55:03,422 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(31.0, -31.0) heading=-90.0
+2026-03-17 18:55:04,776 INFO     navigator | turn done | heading=-180.0
+2026-03-17 18:55:04,777 INFO     test_navigator | turn 2 done          → pos=(31.0, -31.0) heading=-180.0°
+2026-03-17 18:55:05,279 INFO     navigator | move_forward 30.0 cm | pos=(31.0, -31.0) heading=-180.0
+2026-03-17 18:55:06,719 INFO     navigator | move_forward done | traveled=30.7 cm pos=(0.3, -31.0) heading=-180.0
+2026-03-17 18:55:06,720 INFO     test_navigator | side 3 done          → pos=(0.3, -31.0) heading=-180.0°
+2026-03-17 18:55:07,221 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(0.3, -31.0) heading=-180.0
+2026-03-17 18:55:08,580 INFO     navigator | turn done | heading=-270.0
+2026-03-17 18:55:08,582 INFO     test_navigator | turn 3 done          → pos=(0.3, -31.0) heading=-270.0°
+2026-03-17 18:55:09,084 INFO     navigator | move_forward 30.0 cm | pos=(0.3, -31.0) heading=-270.0
+2026-03-17 18:55:10,527 INFO     navigator | move_forward done | traveled=30.8 cm pos=(0.3, -0.3) heading=-270.0
+2026-03-17 18:55:10,528 INFO     test_navigator | side 4 done          → pos=(0.3, -0.3) heading=-270.0°
+2026-03-17 18:55:11,030 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(0.3, -0.3) heading=-270.0
+2026-03-17 18:55:12,350 INFO     navigator | turn done | heading=-360.0
+2026-03-17 18:55:12,352 INFO     test_navigator | turn 4 done          → pos=(0.3, -0.3) heading=-360.0°
+2026-03-17 18:55:12,859 INFO     test_navigator | === BOX RESULT ===
+2026-03-17 18:55:12,860 INFO     test_navigator | Final pos=(0.3, -0.3) heading=-360.0°
+2026-03-17 18:55:12,861 INFO     test_navigator | Position error from origin: 0.4 cm
+2026-03-17 18:55:12,862 INFO     test_navigator | Heading error from 0°: 0.0°
+2026-03-17 18:55:12,862 INFO     test_navigator | Test complete.
+2026-03-17 18:55:53,379 INFO     navigator | Navigator init | gyro=False us=False gyro_offset=0.0
+2026-03-17 18:55:53,380 INFO     test_navigator | Starting test: box
+2026-03-17 18:55:53,380 INFO     test_navigator | === TEST: box (CW, right turns) ===
+2026-03-17 18:55:53,380 INFO     navigator | move_forward 30.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-17 18:55:54,821 INFO     navigator | move_forward done | traveled=31.1 cm pos=(31.1, 0.0) heading=0.0
+2026-03-17 18:55:54,823 INFO     test_navigator | side 1 done          → pos=(31.1, 0.0) heading=0.0°
+2026-03-17 18:55:55,324 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(31.1, 0.0) heading=0.0
+2026-03-17 18:55:56,493 INFO     navigator | turn done | heading=-90.0
+2026-03-17 18:55:56,494 INFO     test_navigator | turn 1 done          → pos=(31.1, 0.0) heading=-90.0°
+2026-03-17 18:55:56,996 INFO     navigator | move_forward 30.0 cm | pos=(31.1, 0.0) heading=-90.0
+2026-03-17 18:55:58,386 INFO     navigator | move_forward done | traveled=30.1 cm pos=(31.1, -30.1) heading=-90.0
+2026-03-17 18:55:58,387 INFO     test_navigator | side 2 done          → pos=(31.1, -30.1) heading=-90.0°
+2026-03-17 18:55:58,889 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(31.1, -30.1) heading=-90.0
+2026-03-17 18:56:00,058 INFO     navigator | turn done | heading=-180.0
+2026-03-17 18:56:00,059 INFO     test_navigator | turn 2 done          → pos=(31.1, -30.1) heading=-180.0°
+2026-03-17 18:56:00,561 INFO     navigator | move_forward 30.0 cm | pos=(31.1, -30.1) heading=-180.0
+2026-03-17 18:56:02,006 INFO     navigator | move_forward done | traveled=31.1 cm pos=(0.0, -30.1) heading=-180.0
+2026-03-17 18:56:02,007 INFO     test_navigator | side 3 done          → pos=(0.0, -30.1) heading=-180.0°
+2026-03-17 18:56:02,509 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(0.0, -30.1) heading=-180.0
+2026-03-17 18:56:03,837 INFO     navigator | turn done | heading=-270.0
+2026-03-17 18:56:03,838 INFO     test_navigator | turn 3 done          → pos=(0.0, -30.1) heading=-270.0°
+2026-03-17 18:56:04,342 INFO     navigator | move_forward 30.0 cm | pos=(0.0, -30.1) heading=-270.0
+2026-03-17 18:56:05,785 INFO     navigator | move_forward done | traveled=31.0 cm pos=(-0.0, 0.8) heading=-270.0
+2026-03-17 18:56:05,786 INFO     test_navigator | side 4 done          → pos=(-0.0, 0.8) heading=-270.0°
+2026-03-17 18:56:06,288 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(-0.0, 0.8) heading=-270.0
+2026-03-17 18:56:07,445 INFO     navigator | turn done | heading=-360.0
+2026-03-17 18:56:07,446 INFO     test_navigator | turn 4 done          → pos=(-0.0, 0.8) heading=-360.0°
+2026-03-17 18:56:07,947 INFO     test_navigator | === BOX RESULT ===
+2026-03-17 18:56:07,948 INFO     test_navigator | Final pos=(-0.0, 0.8) heading=-360.0°
+2026-03-17 18:56:07,949 INFO     test_navigator | Position error from origin: 0.8 cm
+2026-03-17 18:56:07,949 INFO     test_navigator | Heading error from 0°: 0.0°
+2026-03-17 18:56:07,949 INFO     test_navigator | Test complete.
+2026-03-17 18:57:21,249 INFO     navigator | Navigator init | gyro=False us=False gyro_offset=0.0
+2026-03-17 18:57:21,250 INFO     test_navigator | Starting test: box
+2026-03-17 18:57:21,251 INFO     test_navigator | === TEST: box (CW, right turns) ===
+2026-03-17 18:57:21,251 INFO     navigator | move_forward 30.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-17 18:57:22,689 INFO     navigator | move_forward done | traveled=31.0 cm pos=(31.0, 0.0) heading=0.0
+2026-03-17 18:57:22,690 INFO     test_navigator | side 1 done          → pos=(31.0, 0.0) heading=0.0°
+2026-03-17 18:57:23,197 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(31.0, 0.0) heading=0.0
+2026-03-17 18:57:24,350 INFO     navigator | turn done | heading=-90.0
+2026-03-17 18:57:24,351 INFO     test_navigator | turn 1 done          → pos=(31.0, 0.0) heading=-90.0°
+2026-03-17 18:57:24,853 INFO     navigator | move_forward 30.0 cm | pos=(31.0, 0.0) heading=-90.0
+2026-03-17 18:57:26,295 INFO     navigator | move_forward done | traveled=31.1 cm pos=(31.0, -31.1) heading=-90.0
+2026-03-17 18:57:26,296 INFO     test_navigator | side 2 done          → pos=(31.0, -31.1) heading=-90.0°
+2026-03-17 18:57:26,798 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(31.0, -31.1) heading=-90.0
+2026-03-17 18:57:27,962 INFO     navigator | turn done | heading=-180.0
+2026-03-17 18:57:27,964 INFO     test_navigator | turn 2 done          → pos=(31.0, -31.1) heading=-180.0°
+2026-03-17 18:57:28,468 INFO     navigator | move_forward 30.0 cm | pos=(31.0, -31.1) heading=-180.0
+2026-03-17 18:57:29,907 INFO     navigator | move_forward done | traveled=30.9 cm pos=(0.1, -31.1) heading=-180.0
+2026-03-17 18:57:29,907 INFO     test_navigator | side 3 done          → pos=(0.1, -31.1) heading=-180.0°
+2026-03-17 18:57:30,408 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(0.1, -31.1) heading=-180.0
+2026-03-17 18:57:31,683 INFO     navigator | turn done | heading=-270.0
+2026-03-17 18:57:31,684 INFO     test_navigator | turn 3 done          → pos=(0.1, -31.1) heading=-270.0°
+2026-03-17 18:57:32,185 INFO     navigator | move_forward 30.0 cm | pos=(0.1, -31.1) heading=-270.0
+2026-03-17 18:57:33,628 INFO     navigator | move_forward done | traveled=31.1 cm pos=(0.1, -0.0) heading=-270.0
+2026-03-17 18:57:33,629 INFO     test_navigator | side 4 done          → pos=(0.1, -0.0) heading=-270.0°
+2026-03-17 18:57:34,130 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(0.1, -0.0) heading=-270.0
+2026-03-17 18:57:35,285 INFO     navigator | turn done | heading=-360.0
+2026-03-17 18:57:35,286 INFO     test_navigator | turn 4 done          → pos=(0.1, -0.0) heading=-360.0°
+2026-03-17 18:57:35,788 INFO     test_navigator | === BOX RESULT ===
+2026-03-17 18:57:35,789 INFO     test_navigator | Final pos=(0.1, -0.0) heading=-360.0°
+2026-03-17 18:57:35,790 INFO     test_navigator | Position error from origin: 0.1 cm
+2026-03-17 18:57:35,790 INFO     test_navigator | Heading error from 0°: 0.0°
+2026-03-17 18:57:35,791 INFO     test_navigator | Test complete.
+2026-03-17 18:57:44,870 INFO     navigator | Navigator init | gyro=False us=False gyro_offset=0.0
+2026-03-17 18:57:44,870 INFO     test_navigator | Starting test: forward
+2026-03-17 18:57:44,871 INFO     test_navigator | === TEST: forward ===
+2026-03-17 18:57:44,871 INFO     navigator | move_forward 30.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-17 18:57:46,261 INFO     navigator | move_forward done | traveled=30.1 cm pos=(30.1, 0.0) heading=0.0
+2026-03-17 18:57:46,262 INFO     test_navigator | after forward        → pos=(30.1, 0.0) heading=0.0°
+2026-03-17 18:57:46,263 INFO     test_navigator | Expected pos ~(30, 0). Error: Δx=0.1 Δy=0.0
+2026-03-17 18:57:46,264 INFO     test_navigator | Test complete.
+2026-03-17 18:58:59,284 INFO     navigator | Navigator init | gyro=False us=False gyro_offset=0.0
+2026-03-17 18:58:59,285 INFO     test_navigator | Starting test: forward
+2026-03-17 18:58:59,285 INFO     test_navigator | === TEST: forward ===
+2026-03-17 18:58:59,286 INFO     navigator | move_forward 30.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-17 18:59:00,726 INFO     navigator | move_forward done | traveled=31.0 cm pos=(31.0, 0.0) heading=0.0
+2026-03-17 18:59:00,727 INFO     test_navigator | after forward        → pos=(31.0, 0.0) heading=0.0°
+2026-03-17 18:59:00,728 INFO     test_navigator | Expected pos ~(30, 0). Error: Δx=1.0 Δy=0.0
+2026-03-17 18:59:00,728 INFO     test_navigator | Test complete.
+2026-03-17 19:51:20,182 INFO     navigator | Navigator init | gyro=False us=False gyro_offset=0.0
+2026-03-17 19:51:20,187 INFO     test_navigator | Starting test: forward
+2026-03-17 19:51:20,188 INFO     test_navigator | === TEST: forward ===
+2026-03-17 19:51:20,189 INFO     navigator | move_forward 30.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-17 19:51:22,194 DEBUG    navigator | moving | progress=73% heading=0.0 correction=0.0 encoders=(593, 595)
+2026-03-17 19:51:22,967 INFO     navigator | move_forward done | traveled=30.4 cm pos=(30.4, 0.0) heading=0.0
+2026-03-17 19:51:22,968 INFO     test_navigator | after forward        → pos=(30.4, 0.0) heading=0.0°
+2026-03-17 19:51:22,968 INFO     test_navigator | Expected pos ~(30, 0). Error: Δx=0.4 Δy=0.0
+2026-03-17 19:51:22,969 INFO     test_navigator | Test complete.
+2026-03-17 19:55:01,161 INFO     navigator | Navigator init | gyro=False us=False gyro_offset=0.0
+2026-03-17 19:55:01,162 INFO     test_navigator | Starting test: box
+2026-03-17 19:55:01,163 INFO     test_navigator | === TEST: box (CW, right turns) ===
+2026-03-17 19:55:01,163 INFO     navigator | move_forward 30.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-17 19:55:03,165 DEBUG    navigator | moving | progress=73% heading=0.0 correction=0.0 encoders=(597, 596)
+2026-03-17 19:55:03,938 INFO     navigator | move_forward done | traveled=30.5 cm pos=(30.5, 0.0) heading=0.0
+2026-03-17 19:55:03,939 INFO     test_navigator | side 1 done          → pos=(30.5, 0.0) heading=0.0°
+2026-03-17 19:55:04,440 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(30.5, 0.0) heading=0.0
+2026-03-17 19:55:06,867 INFO     navigator | turn done | heading=-90.0
+2026-03-17 19:55:06,869 INFO     test_navigator | turn 1 done          → pos=(30.5, 0.0) heading=-90.0°
+2026-03-17 19:55:07,370 INFO     navigator | move_forward 30.0 cm | pos=(30.5, 0.0) heading=-90.0
+2026-03-17 19:55:09,378 DEBUG    navigator | moving | progress=73% heading=-90.0 correction=0.0 encoders=(599, 599)
+2026-03-17 19:55:10,151 INFO     navigator | move_forward done | traveled=30.6 cm pos=(30.5, -30.6) heading=-90.0
+2026-03-17 19:55:10,152 INFO     test_navigator | side 2 done          → pos=(30.5, -30.6) heading=-90.0°
+2026-03-17 19:55:10,653 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(30.5, -30.6) heading=-90.0
+2026-03-17 19:55:13,030 INFO     navigator | turn done | heading=-180.0
+2026-03-17 19:55:13,032 INFO     test_navigator | turn 2 done          → pos=(30.5, -30.6) heading=-180.0°
+2026-03-17 19:55:13,533 INFO     navigator | move_forward 30.0 cm | pos=(30.5, -30.6) heading=-180.0
+2026-03-17 19:55:15,541 DEBUG    navigator | moving | progress=73% heading=-180.0 correction=0.0 encoders=(599, 599)
+2026-03-17 19:55:16,313 INFO     navigator | move_forward done | traveled=30.6 cm pos=(-0.1, -30.6) heading=-180.0
+2026-03-17 19:55:16,314 INFO     test_navigator | side 3 done          → pos=(-0.1, -30.6) heading=-180.0°
+2026-03-17 19:55:16,816 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(-0.1, -30.6) heading=-180.0
+2026-03-17 19:55:19,181 INFO     navigator | turn done | heading=-270.0
+2026-03-17 19:55:19,182 INFO     test_navigator | turn 3 done          → pos=(-0.1, -30.6) heading=-270.0°
+2026-03-17 19:55:19,684 INFO     navigator | move_forward 30.0 cm | pos=(-0.1, -30.6) heading=-270.0
+2026-03-17 19:55:21,697 DEBUG    navigator | moving | progress=73% heading=-270.0 correction=0.0 encoders=(600, 600)
+2026-03-17 19:55:22,420 INFO     navigator | move_forward done | traveled=30.1 cm pos=(-0.1, -0.5) heading=-270.0
+2026-03-17 19:55:22,423 INFO     test_navigator | side 4 done          → pos=(-0.1, -0.5) heading=-270.0°
+2026-03-17 19:55:22,924 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(-0.1, -0.5) heading=-270.0
+2026-03-17 19:55:25,167 INFO     navigator | turn done | heading=-360.0
+2026-03-17 19:55:25,168 INFO     test_navigator | turn 4 done          → pos=(-0.1, -0.5) heading=-360.0°
+2026-03-17 19:55:25,669 INFO     test_navigator | === BOX RESULT ===
+2026-03-17 19:55:25,670 INFO     test_navigator | Final pos=(-0.1, -0.5) heading=-360.0°
+2026-03-17 19:55:25,671 INFO     test_navigator | Position error from origin: 0.5 cm
+2026-03-17 19:55:25,672 INFO     test_navigator | Heading error from 0°: 0.0°
+2026-03-17 19:55:25,673 INFO     test_navigator | Test complete.
+2026-03-17 19:58:18,942 INFO     navigator | Navigator init | gyro=False us=False gyro_offset=0.0
+2026-03-17 19:58:18,943 INFO     test_navigator | Starting test: box
+2026-03-17 19:58:18,949 INFO     test_navigator | === TEST: box (CW, right turns) ===
+2026-03-17 19:58:18,950 INFO     navigator | move_forward 30.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-17 19:58:20,963 DEBUG    navigator | moving | progress=73% heading=0.0 correction=0.0 encoders=(600, 599)
+2026-03-17 19:58:21,733 INFO     navigator | move_forward done | traveled=30.6 cm pos=(30.6, 0.0) heading=0.0
+2026-03-17 19:58:21,734 INFO     test_navigator | side 1 done          → pos=(30.6, 0.0) heading=0.0°
+2026-03-17 19:58:22,235 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(30.6, 0.0) heading=0.0
+2026-03-17 19:58:24,481 INFO     navigator | turn done | heading=-90.0
+2026-03-17 19:58:24,487 INFO     test_navigator | turn 1 done          → pos=(30.6, 0.0) heading=-90.0°
+2026-03-17 19:58:24,989 INFO     navigator | move_forward 30.0 cm | pos=(30.6, 0.0) heading=-90.0
+2026-03-17 19:58:27,000 DEBUG    navigator | moving | progress=73% heading=-90.0 correction=0.0 encoders=(601, 602)
+2026-03-17 19:58:27,723 INFO     navigator | move_forward done | traveled=30.1 cm pos=(30.6, -30.1) heading=-90.0
+2026-03-17 19:58:27,725 INFO     test_navigator | side 2 done          → pos=(30.6, -30.1) heading=-90.0°
+2026-03-17 19:58:28,226 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(30.6, -30.1) heading=-90.0
+2026-03-17 19:58:30,607 INFO     navigator | turn done | heading=-180.0
+2026-03-17 19:58:30,608 INFO     test_navigator | turn 2 done          → pos=(30.6, -30.1) heading=-180.0°
+2026-03-17 19:58:31,109 INFO     navigator | move_forward 30.0 cm | pos=(30.6, -30.1) heading=-180.0
+2026-03-17 19:58:33,122 DEBUG    navigator | moving | progress=73% heading=-180.0 correction=0.0 encoders=(600, 600)
+2026-03-17 19:58:33,844 INFO     navigator | move_forward done | traveled=30.1 cm pos=(0.5, -30.1) heading=-180.0
+2026-03-17 19:58:33,845 INFO     test_navigator | side 3 done          → pos=(0.5, -30.1) heading=-180.0°
+2026-03-17 19:58:34,346 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(0.5, -30.1) heading=-180.0
+2026-03-17 19:58:36,576 INFO     navigator | turn done | heading=-270.0
+2026-03-17 19:58:36,577 INFO     test_navigator | turn 3 done          → pos=(0.5, -30.1) heading=-270.0°
+2026-03-17 19:58:37,078 INFO     navigator | move_forward 30.0 cm | pos=(0.5, -30.1) heading=-270.0
+2026-03-17 19:58:39,091 DEBUG    navigator | moving | progress=73% heading=-270.0 correction=0.0 encoders=(600, 600)
+2026-03-17 19:58:39,814 INFO     navigator | move_forward done | traveled=30.1 cm pos=(0.5, -0.0) heading=-270.0
+2026-03-17 19:58:39,815 INFO     test_navigator | side 4 done          → pos=(0.5, -0.0) heading=-270.0°
+2026-03-17 19:58:40,316 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(0.5, -0.0) heading=-270.0
+2026-03-17 19:58:42,569 INFO     navigator | turn done | heading=-360.0
+2026-03-17 19:58:42,571 INFO     test_navigator | turn 4 done          → pos=(0.5, -0.0) heading=-360.0°
+2026-03-17 19:58:43,072 INFO     test_navigator | === BOX RESULT ===
+2026-03-17 19:58:43,073 INFO     test_navigator | Final pos=(0.5, -0.0) heading=-360.0°
+2026-03-17 19:58:43,074 INFO     test_navigator | Position error from origin: 0.5 cm
+2026-03-17 19:58:43,075 INFO     test_navigator | Heading error from 0°: 0.0°
+2026-03-17 19:58:43,075 INFO     test_navigator | Test complete.
+2026-03-17 20:54:37,491 INFO     navigator | Navigator init | gyro=False us=False gyro_offset=0.0
+2026-03-17 20:54:37,495 INFO     test_navigator | Starting test: box
+2026-03-17 20:54:37,496 INFO     test_navigator | === TEST: box (CW, right turns) ===
+2026-03-17 20:54:37,497 INFO     navigator | move_forward 30.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-17 20:54:39,504 DEBUG    navigator | moving | progress=72% heading=0.0 correction=0.0 encoders=(586, 585)
+2026-03-17 20:54:40,329 INFO     navigator | move_forward done | traveled=30.5 cm pos=(30.5, 0.0) heading=0.0
+2026-03-17 20:54:40,330 INFO     test_navigator | side 1 done          → pos=(30.5, 0.0) heading=0.0°
+2026-03-17 20:54:40,831 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(30.5, 0.0) heading=0.0
+2026-03-17 20:54:43,256 INFO     navigator | turn done | heading=-90.0
+2026-03-17 20:54:43,257 INFO     test_navigator | turn 1 done          → pos=(30.5, 0.0) heading=-90.0°
+2026-03-17 20:54:43,763 INFO     navigator | move_forward 30.0 cm | pos=(30.5, 0.0) heading=-90.0
+2026-03-17 20:54:45,770 DEBUG    navigator | moving | progress=72% heading=-90.0 correction=0.0 encoders=(587, 587)
+2026-03-17 20:54:46,545 INFO     navigator | move_forward done | traveled=30.0 cm pos=(30.5, -30.0) heading=-90.0
+2026-03-17 20:54:46,546 INFO     test_navigator | side 2 done          → pos=(30.5, -30.0) heading=-90.0°
+2026-03-17 20:54:47,047 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(30.5, -30.0) heading=-90.0
+2026-03-17 20:54:49,453 INFO     navigator | turn done | heading=-180.0
+2026-03-17 20:54:49,455 INFO     test_navigator | turn 2 done          → pos=(30.5, -30.0) heading=-180.0°
+2026-03-17 20:54:49,956 INFO     navigator | move_forward 30.0 cm | pos=(30.5, -30.0) heading=-180.0
+2026-03-17 20:54:51,963 DEBUG    navigator | moving | progress=72% heading=-180.0 correction=0.0 encoders=(590, 589)
+2026-03-17 20:54:52,731 INFO     navigator | move_forward done | traveled=30.1 cm pos=(0.5, -30.0) heading=-180.0
+2026-03-17 20:54:52,732 INFO     test_navigator | side 3 done          → pos=(0.5, -30.0) heading=-180.0°
+2026-03-17 20:54:53,234 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(0.5, -30.0) heading=-180.0
+2026-03-17 20:54:55,667 INFO     navigator | turn done | heading=-270.0
+2026-03-17 20:54:55,669 INFO     test_navigator | turn 3 done          → pos=(0.5, -30.0) heading=-270.0°
+2026-03-17 20:54:56,175 INFO     navigator | move_forward 30.0 cm | pos=(0.5, -30.0) heading=-270.0
+2026-03-17 20:54:58,183 DEBUG    navigator | moving | progress=72% heading=-270.0 correction=0.0 encoders=(588, 589)
+2026-03-17 20:54:58,956 INFO     navigator | move_forward done | traveled=30.1 cm pos=(0.5, 0.1) heading=-270.0
+2026-03-17 20:54:58,957 INFO     test_navigator | side 4 done          → pos=(0.5, 0.1) heading=-270.0°
+2026-03-17 20:54:59,459 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(0.5, 0.1) heading=-270.0
+2026-03-17 20:55:01,902 INFO     navigator | turn done | heading=-360.0
+2026-03-17 20:55:01,903 INFO     test_navigator | turn 4 done          → pos=(0.5, 0.1) heading=-360.0°
+2026-03-17 20:55:02,405 INFO     test_navigator | === BOX RESULT ===
+2026-03-17 20:55:02,405 INFO     test_navigator | Final pos=(0.5, 0.1) heading=-360.0°
+2026-03-17 20:55:02,406 INFO     test_navigator | Position error from origin: 0.5 cm
+2026-03-17 20:55:02,406 INFO     test_navigator | Heading error from 0°: 0.0°
+2026-03-17 20:55:02,406 INFO     test_navigator | Test complete.
+2026-03-17 20:56:37,979 INFO     navigator | Navigator init | gyro=False us=False gyro_offset=0.0
+2026-03-17 20:56:37,979 INFO     test_navigator | Starting test: box
+2026-03-17 20:56:37,980 INFO     test_navigator | === TEST: box (CW, right turns) ===
+2026-03-17 20:56:37,980 INFO     navigator | move_forward 30.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-17 20:56:39,987 DEBUG    navigator | moving | progress=72% heading=0.0 correction=0.0 encoders=(590, 591)
+2026-03-17 20:56:40,759 INFO     navigator | move_forward done | traveled=30.2 cm pos=(30.2, 0.0) heading=0.0
+2026-03-17 20:56:40,760 INFO     test_navigator | side 1 done          → pos=(30.2, 0.0) heading=0.0°
+2026-03-17 20:56:41,262 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(30.2, 0.0) heading=0.0
+2026-03-17 20:56:43,674 INFO     navigator | turn done | heading=-90.0
+2026-03-17 20:56:43,675 INFO     test_navigator | turn 1 done          → pos=(30.2, 0.0) heading=-90.0°
+2026-03-17 20:56:44,176 INFO     navigator | move_forward 30.0 cm | pos=(30.2, 0.0) heading=-90.0
+2026-03-17 20:56:46,188 DEBUG    navigator | moving | progress=72% heading=-90.0 correction=0.0 encoders=(591, 591)
+2026-03-17 20:56:46,961 INFO     navigator | move_forward done | traveled=30.2 cm pos=(30.2, -30.2) heading=-90.0
+2026-03-17 20:56:46,962 INFO     test_navigator | side 2 done          → pos=(30.2, -30.2) heading=-90.0°
+2026-03-17 20:56:47,464 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(30.2, -30.2) heading=-90.0
+2026-03-17 20:56:49,933 INFO     navigator | turn done | heading=-180.0
+2026-03-17 20:56:49,934 INFO     test_navigator | turn 2 done          → pos=(30.2, -30.2) heading=-180.0°
+2026-03-17 20:56:50,435 INFO     navigator | move_forward 30.0 cm | pos=(30.2, -30.2) heading=-180.0
+2026-03-17 20:56:52,441 DEBUG    navigator | moving | progress=72% heading=-180.0 correction=0.0 encoders=(593, 592)
+2026-03-17 20:56:53,213 INFO     navigator | move_forward done | traveled=30.2 cm pos=(-0.1, -30.2) heading=-180.0
+2026-03-17 20:56:53,215 INFO     test_navigator | side 3 done          → pos=(-0.1, -30.2) heading=-180.0°
+2026-03-17 20:56:53,716 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(-0.1, -30.2) heading=-180.0
+2026-03-17 20:56:56,118 INFO     navigator | turn done | heading=-270.0
+2026-03-17 20:56:56,119 INFO     test_navigator | turn 3 done          → pos=(-0.1, -30.2) heading=-270.0°
+2026-03-17 20:56:56,620 INFO     navigator | move_forward 30.0 cm | pos=(-0.1, -30.2) heading=-270.0
+2026-03-17 20:56:58,627 DEBUG    navigator | moving | progress=72% heading=-270.0 correction=0.0 encoders=(590, 591)
+2026-03-17 20:56:59,400 INFO     navigator | move_forward done | traveled=30.2 cm pos=(-0.1, -0.0) heading=-270.0
+2026-03-17 20:56:59,401 INFO     test_navigator | side 4 done          → pos=(-0.1, -0.0) heading=-270.0°
+2026-03-17 20:56:59,903 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(-0.1, -0.0) heading=-270.0
+2026-03-17 20:57:02,298 INFO     navigator | turn done | heading=-360.0
+2026-03-17 20:57:02,300 INFO     test_navigator | turn 4 done          → pos=(-0.1, -0.0) heading=-360.0°
+2026-03-17 20:57:02,801 INFO     test_navigator | === BOX RESULT ===
+2026-03-17 20:57:02,802 INFO     test_navigator | Final pos=(-0.1, -0.0) heading=-360.0°
+2026-03-17 20:57:02,803 INFO     test_navigator | Position error from origin: 0.1 cm
+2026-03-17 20:57:02,804 INFO     test_navigator | Heading error from 0°: 0.0°
+2026-03-17 20:57:02,804 INFO     test_navigator | Test complete.
+2026-03-17 21:01:11,759 INFO     navigator | Navigator init | gyro=False us=False gyro_offset=0.0
+2026-03-17 21:01:11,760 INFO     test_navigator | Starting test: box
+2026-03-17 21:01:11,761 INFO     test_navigator | === TEST: box (CW, right turns) ===
+2026-03-17 21:01:11,762 INFO     navigator | move_forward 30.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-17 21:01:13,774 DEBUG    navigator | moving | progress=73% heading=0.0 correction=0.0 encoders=(598, 597)
+2026-03-17 21:01:14,550 INFO     navigator | move_forward done | traveled=30.5 cm pos=(30.5, 0.0) heading=0.0
+2026-03-17 21:01:14,552 INFO     test_navigator | side 1 done          → pos=(30.5, 0.0) heading=0.0°
+2026-03-17 21:01:15,053 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(30.5, 0.0) heading=0.0
+2026-03-17 21:01:17,320 INFO     navigator | turn done | heading=-90.0
+2026-03-17 21:01:17,321 INFO     test_navigator | turn 1 done          → pos=(30.5, 0.0) heading=-90.0°
+2026-03-17 21:01:17,823 INFO     navigator | move_forward 30.0 cm | pos=(30.5, 0.0) heading=-90.0
+2026-03-17 21:01:19,827 DEBUG    navigator | moving | progress=72% heading=-90.0 correction=0.0 encoders=(592, 593)
+2026-03-17 21:01:20,600 INFO     navigator | move_forward done | traveled=30.3 cm pos=(30.5, -30.3) heading=-90.0
+2026-03-17 21:01:20,601 INFO     test_navigator | side 2 done          → pos=(30.5, -30.3) heading=-90.0°
+2026-03-17 21:01:21,102 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(30.5, -30.3) heading=-90.0
+2026-03-17 21:01:23,360 INFO     navigator | turn done | heading=-180.0
+2026-03-17 21:01:23,382 INFO     test_navigator | turn 2 done          → pos=(30.5, -30.3) heading=-180.0°
+2026-03-17 21:01:23,884 INFO     navigator | move_forward 30.0 cm | pos=(30.5, -30.3) heading=-180.0
+2026-03-17 21:01:25,889 DEBUG    navigator | moving | progress=72% heading=-180.0 correction=0.0 encoders=(593, 593)
+2026-03-17 21:01:26,662 INFO     navigator | move_forward done | traveled=30.3 cm pos=(0.2, -30.3) heading=-180.0
+2026-03-17 21:01:26,663 INFO     test_navigator | side 3 done          → pos=(0.2, -30.3) heading=-180.0°
+2026-03-17 21:01:27,164 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(0.2, -30.3) heading=-180.0
+2026-03-17 21:01:29,438 INFO     navigator | turn done | heading=-270.0
+2026-03-17 21:01:29,440 INFO     test_navigator | turn 3 done          → pos=(0.2, -30.3) heading=-270.0°
+2026-03-17 21:01:29,941 INFO     navigator | move_forward 30.0 cm | pos=(0.2, -30.3) heading=-270.0
+2026-03-17 21:01:31,946 DEBUG    navigator | moving | progress=72% heading=-270.0 correction=0.0 encoders=(591, 591)
+2026-03-17 21:01:32,720 INFO     navigator | move_forward done | traveled=30.2 cm pos=(0.2, -0.0) heading=-270.0
+2026-03-17 21:01:32,721 INFO     test_navigator | side 4 done          → pos=(0.2, -0.0) heading=-270.0°
+2026-03-17 21:01:33,222 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(0.2, -0.0) heading=-270.0
+2026-03-17 21:01:35,484 INFO     navigator | turn done | heading=-360.0
+2026-03-17 21:01:35,490 INFO     test_navigator | turn 4 done          → pos=(0.2, -0.0) heading=-360.0°
+2026-03-17 21:01:35,992 INFO     test_navigator | === BOX RESULT ===
+2026-03-17 21:01:35,993 INFO     test_navigator | Final pos=(0.2, -0.0) heading=-360.0°
+2026-03-17 21:01:35,994 INFO     test_navigator | Position error from origin: 0.2 cm
+2026-03-17 21:01:35,994 INFO     test_navigator | Heading error from 0°: 0.0°
+2026-03-17 21:01:35,995 INFO     test_navigator | Test complete.
+2026-03-17 21:06:08,636 INFO     navigator | Navigator init | gyro=False us=False gyro_offset=0.0
+2026-03-17 21:06:08,637 INFO     test_navigator | Starting test: box
+2026-03-17 21:06:08,637 INFO     test_navigator | === TEST: box (CW, right turns) ===
+2026-03-17 21:06:08,637 INFO     navigator | move_forward 30.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-17 21:06:10,648 DEBUG    navigator | moving | progress=73% heading=0.0 correction=0.0 encoders=(597, 596)
+2026-03-17 21:06:11,422 INFO     navigator | move_forward done | traveled=30.5 cm pos=(30.5, 0.0) heading=0.0
+2026-03-17 21:06:11,424 INFO     test_navigator | side 1 done          → pos=(30.5, 0.0) heading=0.0°
+2026-03-17 21:06:11,925 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(30.5, 0.0) heading=0.0
+2026-03-17 21:06:14,476 INFO     navigator | turn done | heading=-90.0
+2026-03-17 21:06:14,477 INFO     test_navigator | turn 1 done          → pos=(30.5, 0.0) heading=-90.0°
+2026-03-17 21:06:14,979 INFO     navigator | move_forward 30.0 cm | pos=(30.5, 0.0) heading=-90.0
+2026-03-17 21:06:16,986 DEBUG    navigator | moving | progress=73% heading=-90.0 correction=0.0 encoders=(596, 594)
+2026-03-17 21:06:17,761 INFO     navigator | move_forward done | traveled=30.4 cm pos=(30.5, -30.4) heading=-90.0
+2026-03-17 21:06:17,762 INFO     test_navigator | side 2 done          → pos=(30.5, -30.4) heading=-90.0°
+2026-03-17 21:06:18,264 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(30.5, -30.4) heading=-90.0
+2026-03-17 21:06:20,705 INFO     navigator | turn done | heading=-180.0
+2026-03-17 21:06:20,706 INFO     test_navigator | turn 2 done          → pos=(30.5, -30.4) heading=-180.0°
+2026-03-17 21:06:21,207 INFO     navigator | move_forward 30.0 cm | pos=(30.5, -30.4) heading=-180.0
+2026-03-17 21:06:23,221 DEBUG    navigator | moving | progress=73% heading=-180.0 correction=0.0 encoders=(597, 597)
+2026-03-17 21:06:23,994 INFO     navigator | move_forward done | traveled=30.5 cm pos=(0.0, -30.4) heading=-180.0
+2026-03-17 21:06:23,994 INFO     test_navigator | side 3 done          → pos=(0.0, -30.4) heading=-180.0°
+2026-03-17 21:06:24,496 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(0.0, -30.4) heading=-180.0
+2026-03-17 21:06:27,014 INFO     navigator | turn done | heading=-270.0
+2026-03-17 21:06:27,015 INFO     test_navigator | turn 3 done          → pos=(0.0, -30.4) heading=-270.0°
+2026-03-17 21:06:27,517 INFO     navigator | move_forward 30.0 cm | pos=(0.0, -30.4) heading=-270.0
+2026-03-17 21:06:29,521 DEBUG    navigator | moving | progress=73% heading=-270.0 correction=0.0 encoders=(595, 594)
+2026-03-17 21:06:30,294 INFO     navigator | move_forward done | traveled=30.3 cm pos=(-0.0, -0.1) heading=-270.0
+2026-03-17 21:06:30,295 INFO     test_navigator | side 4 done          → pos=(-0.0, -0.1) heading=-270.0°
+2026-03-17 21:06:30,797 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(-0.0, -0.1) heading=-270.0
+2026-03-17 21:06:33,190 INFO     navigator | turn done | heading=-360.0
+2026-03-17 21:06:33,192 INFO     test_navigator | turn 4 done          → pos=(-0.0, -0.1) heading=-360.0°
+2026-03-17 21:06:33,693 INFO     test_navigator | === BOX RESULT ===
+2026-03-17 21:06:33,694 INFO     test_navigator | Final pos=(-0.0, -0.1) heading=-360.0°
+2026-03-17 21:06:33,695 INFO     test_navigator | Position error from origin: 0.1 cm
+2026-03-17 21:06:33,696 INFO     test_navigator | Heading error from 0°: 0.0°
+2026-03-17 21:06:33,697 INFO     test_navigator | Test complete.
+2026-03-17 21:11:18,538 INFO     navigator | Navigator init | gyro=False us=False gyro_offset=0.0
+2026-03-17 21:11:18,539 INFO     test_navigator | Starting test: box
+2026-03-17 21:11:18,540 INFO     test_navigator | === TEST: box (CW, right turns) ===
+2026-03-17 21:11:18,540 INFO     navigator | move_forward 30.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-17 21:11:20,544 DEBUG    navigator | moving | progress=73% heading=0.0 correction=0.0 encoders=(595, 595)
+2026-03-17 21:11:21,317 INFO     navigator | move_forward done | traveled=30.4 cm pos=(30.4, 0.0) heading=0.0
+2026-03-17 21:11:21,318 INFO     test_navigator | side 1 done          → pos=(30.4, 0.0) heading=0.0°
+2026-03-17 21:11:21,820 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(30.4, 0.0) heading=0.0
+2026-03-17 21:11:24,196 INFO     navigator | turn done | heading=-90.0
+2026-03-17 21:11:24,197 INFO     test_navigator | turn 1 done          → pos=(30.4, 0.0) heading=-90.0°
+2026-03-17 21:11:24,698 INFO     navigator | move_forward 30.0 cm | pos=(30.4, 0.0) heading=-90.0
+2026-03-17 21:11:26,702 DEBUG    navigator | moving | progress=73% heading=-90.0 correction=0.0 encoders=(595, 595)
+2026-03-17 21:11:27,473 INFO     navigator | move_forward done | traveled=30.4 cm pos=(30.4, -30.4) heading=-90.0
+2026-03-17 21:11:27,474 INFO     test_navigator | side 2 done          → pos=(30.4, -30.4) heading=-90.0°
+2026-03-17 21:11:27,976 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(30.4, -30.4) heading=-90.0
+2026-03-17 21:11:30,360 INFO     navigator | turn done | heading=-180.0
+2026-03-17 21:11:30,361 INFO     test_navigator | turn 2 done          → pos=(30.4, -30.4) heading=-180.0°
+2026-03-17 21:11:30,862 INFO     navigator | move_forward 30.0 cm | pos=(30.4, -30.4) heading=-180.0
+2026-03-17 21:11:32,873 DEBUG    navigator | moving | progress=73% heading=-180.0 correction=0.0 encoders=(597, 597)
+2026-03-17 21:11:33,641 INFO     navigator | move_forward done | traveled=30.4 cm pos=(-0.0, -30.4) heading=-180.0
+2026-03-17 21:11:33,641 INFO     test_navigator | side 3 done          → pos=(-0.0, -30.4) heading=-180.0°
+2026-03-17 21:11:34,142 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(-0.0, -30.4) heading=-180.0
+2026-03-17 21:11:36,509 INFO     navigator | turn done | heading=-270.0
+2026-03-17 21:11:36,510 INFO     test_navigator | turn 3 done          → pos=(-0.0, -30.4) heading=-270.0°
+2026-03-17 21:11:37,011 INFO     navigator | move_forward 30.0 cm | pos=(-0.0, -30.4) heading=-270.0
+2026-03-17 21:11:39,017 DEBUG    navigator | moving | progress=73% heading=-270.0 correction=0.0 encoders=(595, 595)
+2026-03-17 21:11:39,790 INFO     navigator | move_forward done | traveled=30.4 cm pos=(-0.0, -0.0) heading=-270.0
+2026-03-17 21:11:39,791 INFO     test_navigator | side 4 done          → pos=(-0.0, -0.0) heading=-270.0°
+2026-03-17 21:11:40,292 INFO     navigator | turn -90.0 deg | mode=open-loop pos=(-0.0, -0.0) heading=-270.0
+2026-03-17 21:11:42,665 INFO     navigator | turn done | heading=-360.0
+2026-03-17 21:11:42,666 INFO     test_navigator | turn 4 done          → pos=(-0.0, -0.0) heading=-360.0°
+2026-03-17 21:11:43,168 INFO     test_navigator | === BOX RESULT ===
+2026-03-17 21:11:43,169 INFO     test_navigator | Final pos=(-0.0, -0.0) heading=-360.0°
+2026-03-17 21:11:43,170 INFO     test_navigator | Position error from origin: 0.0 cm
+2026-03-17 21:11:43,170 INFO     test_navigator | Heading error from 0°: 0.0°
+2026-03-17 21:11:43,171 INFO     test_navigator | Test complete.
+2026-03-17 21:41:32,936 INFO     navigator | Navigator init | gyro=True us=False gyro_offset=0.0
+2026-03-17 21:41:32,941 INFO     test_navigator | Starting test: forward
+2026-03-17 21:41:32,942 INFO     test_navigator | === TEST: forward ===
+2026-03-17 21:41:32,943 INFO     navigator | move_forward 30.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-17 21:41:34,969 DEBUG    navigator | moving | progress=73% heading=0.0 correction=0.0 encoders=(602, 601)
+2026-03-17 21:41:35,696 INFO     navigator | move_forward done | traveled=30.1 cm pos=(30.1, 0.0) heading=0.0
+2026-03-17 21:41:35,697 INFO     test_navigator | after forward        → pos=(30.1, 0.0) heading=0.0°
+2026-03-17 21:41:35,698 INFO     test_navigator | Expected pos ~(30, 0). Error: Δx=0.1 Δy=0.0
+2026-03-17 21:41:35,699 INFO     test_navigator | Test complete.
+2026-03-17 22:27:07,468 INFO     navigator | Navigator init | gyro=True us=False gyro_offset=0.0
+2026-03-17 22:27:07,473 INFO     test_navigator | Starting test: box
+2026-03-17 22:27:07,474 INFO     test_navigator | === TEST: box (CW, right turns) ===
+2026-03-17 22:27:07,475 INFO     navigator | move_forward 30.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-17 22:27:09,493 DEBUG    navigator | moving | progress=73% heading=-21.0 correction=42.0 encoders=(558, 635)
+2026-03-17 22:27:10,272 INFO     navigator | move_forward done | traveled=30.5 cm pos=(27.6, -12.9) heading=-25.0
+2026-03-17 22:27:10,273 INFO     test_navigator | side 1 done          → pos=(27.6, -12.9) heading=-25.0°
+2026-03-17 22:27:10,775 INFO     navigator | turn -90.0 deg | mode=gyro pos=(27.6, -12.9) heading=-25.0
+2026-03-17 22:27:12,777 DEBUG    navigator | turning | target=-115.0 current=-41.0 error=-74.0 dps=-148.0
+2026-03-17 22:27:14,783 DEBUG    navigator | turning | target=-115.0 current=-74.0 error=-41.0 dps=-82.0
+2026-03-17 22:27:16,787 DEBUG    navigator | turning | target=-115.0 current=-93.0 error=-22.0 dps=-44.0
+2026-03-17 22:27:18,788 DEBUG    navigator | turning | target=-115.0 current=-103.0 error=-12.0 dps=-24.0
+2026-03-17 22:27:20,793 DEBUG    navigator | turning | target=-115.0 current=-108.0 error=-7.0 dps=-14.0
+2026-03-17 22:27:22,798 DEBUG    navigator | turning | target=-115.0 current=-110.0 error=-5.0 dps=-10.0
+2026-03-17 22:27:24,803 DEBUG    navigator | turning | target=-115.0 current=-112.0 error=-3.0 dps=-6.0
+2026-03-17 22:27:26,810 DEBUG    navigator | turning | target=-115.0 current=-112.0 error=-3.0 dps=-6.0
+2026-03-17 22:27:28,815 DEBUG    navigator | turning | target=-115.0 current=-113.0 error=-2.0 dps=-4.0
+2026-03-17 22:27:30,816 DEBUG    navigator | turning | target=-115.0 current=-113.0 error=-2.0 dps=-4.0
+2026-03-17 22:27:31,075 INFO     navigator | turn done | heading=-114.0
+2026-03-17 22:27:31,076 INFO     test_navigator | turn 1 done          → pos=(27.6, -12.9) heading=-114.0°
+2026-03-17 22:27:31,577 INFO     navigator | move_forward 30.0 cm | pos=(27.6, -12.9) heading=-114.0
+2026-03-17 22:27:33,605 DEBUG    navigator | moving | progress=73% heading=-135.0 correction=42.0 encoders=(560, 643)
+2026-03-17 22:27:34,331 INFO     navigator | move_forward done | traveled=30.1 cm pos=(3.9, -31.4) heading=-142.0
+2026-03-17 22:27:34,332 INFO     test_navigator | side 2 done          → pos=(3.9, -31.4) heading=-142.0°
+2026-03-17 22:27:34,834 INFO     navigator | turn -90.0 deg | mode=gyro pos=(3.9, -31.4) heading=-142.0
+2026-03-17 22:27:36,836 DEBUG    navigator | turning | target=-232.0 current=-178.0 error=-54.0 dps=-108.0
+2026-03-17 22:27:38,837 DEBUG    navigator | turning | target=-232.0 current=-202.0 error=-30.0 dps=-60.0
+2026-03-17 22:27:40,840 DEBUG    navigator | turning | target=-232.0 current=-215.0 error=-17.0 dps=-34.0
+2026-03-17 22:27:42,846 DEBUG    navigator | turning | target=-232.0 current=-222.0 error=-10.0 dps=-20.0
+2026-03-17 22:27:44,896 DEBUG    navigator | turning | target=-232.0 current=-226.0 error=-6.0 dps=-12.0
+2026-03-17 22:27:46,900 DEBUG    navigator | turning | target=-232.0 current=-227.0 error=-5.0 dps=-10.0
+2026-03-17 22:27:48,907 DEBUG    navigator | turning | target=-232.0 current=-228.0 error=-4.0 dps=-8.0
+2026-03-17 22:27:50,914 DEBUG    navigator | turning | target=-232.0 current=-229.0 error=-3.0 dps=-6.0
+2026-03-17 22:27:52,919 DEBUG    navigator | turning | target=-232.0 current=-229.0 error=-3.0 dps=-6.0
+2026-03-17 22:27:54,924 DEBUG    navigator | turning | target=-232.0 current=-230.0 error=-2.0 dps=-4.0
+2026-03-17 22:27:55,695 INFO     navigator | turn done | heading=-231.0
+2026-03-17 22:27:55,696 INFO     test_navigator | turn 2 done          → pos=(3.9, -31.4) heading=-231.0°
+2026-03-17 22:27:56,198 INFO     navigator | move_forward 30.0 cm | pos=(3.9, -31.4) heading=-231.0
+2026-03-17 22:27:58,219 DEBUG    navigator | moving | progress=73% heading=-251.0 correction=40.0 encoders=(557, 637)
+2026-03-17 22:27:58,960 INFO     navigator | move_forward done | traveled=30.1 cm pos=(-3.4, -2.2) heading=-256.0
+2026-03-17 22:27:58,962 INFO     test_navigator | side 3 done          → pos=(-3.4, -2.2) heading=-256.0°
+2026-03-17 22:27:59,463 INFO     navigator | turn -90.0 deg | mode=gyro pos=(-3.4, -2.2) heading=-256.0
+2026-03-17 22:28:01,479 DEBUG    navigator | turning | target=-346.0 current=-295.0 error=-51.0 dps=-102.0
+2026-03-17 22:28:03,482 DEBUG    navigator | turning | target=-346.0 current=-318.0 error=-28.0 dps=-56.0
+2026-03-17 22:28:05,486 DEBUG    navigator | turning | target=-346.0 current=-330.0 error=-16.0 dps=-32.0
+2026-03-17 22:28:07,490 DEBUG    navigator | turning | target=-346.0 current=-336.0 error=-10.0 dps=-20.0
+2026-03-17 22:28:09,539 DEBUG    navigator | turning | target=-346.0 current=-339.0 error=-7.0 dps=-14.0
+2026-03-17 22:28:11,587 DEBUG    navigator | turning | target=-346.0 current=-341.0 error=-5.0 dps=-10.0
+2026-03-17 22:28:13,588 DEBUG    navigator | turning | target=-346.0 current=-342.0 error=-4.0 dps=-8.0
+2026-03-17 22:28:15,588 DEBUG    navigator | turning | target=-346.0 current=-342.0 error=-4.0 dps=-8.0
+2026-03-17 22:28:17,592 DEBUG    navigator | turning | target=-346.0 current=-343.0 error=-3.0 dps=-6.0
+2026-03-17 22:28:19,603 DEBUG    navigator | turning | target=-346.0 current=-343.0 error=-3.0 dps=-6.0
+2026-03-17 22:28:21,654 DEBUG    navigator | turning | target=-346.0 current=-344.0 error=-2.0 dps=-4.0
+2026-03-17 22:28:23,657 DEBUG    navigator | turning | target=-346.0 current=-344.0 error=-2.0 dps=-4.0
+2026-03-17 22:28:25,662 DEBUG    navigator | turning | target=-346.0 current=-344.0 error=-2.0 dps=-4.0
+2026-03-17 22:28:27,663 DEBUG    navigator | turning | target=-346.0 current=-344.0 error=-2.0 dps=-4.0
+2026-03-17 22:28:29,670 DEBUG    navigator | turning | target=-346.0 current=-344.0 error=-2.0 dps=-4.0
+2026-03-17 22:28:31,718 DEBUG    navigator | turning | target=-346.0 current=-344.0 error=-2.0 dps=-4.0
+2026-03-17 22:28:33,718 DEBUG    navigator | turning | target=-346.0 current=-344.0 error=-2.0 dps=-4.0
+2026-03-17 22:28:35,767 DEBUG    navigator | turning | target=-346.0 current=-344.0 error=-2.0 dps=-4.0
+2026-03-17 22:28:37,769 DEBUG    navigator | turning | target=-346.0 current=-344.0 error=-2.0 dps=-4.0
+2026-03-17 22:28:38,082 INFO     navigator | turn done | heading=-345.0
+2026-03-17 22:28:38,083 INFO     test_navigator | turn 3 done          → pos=(-3.4, -2.2) heading=-345.0°
+2026-03-17 22:28:38,585 INFO     navigator | move_forward 30.0 cm | pos=(-3.4, -2.2) heading=-345.0
+2026-03-17 22:28:40,603 DEBUG    navigator | moving | progress=73% heading=-366.0 correction=42.0 encoders=(558, 642)
+2026-03-17 22:28:41,328 INFO     navigator | move_forward done | traveled=30.0 cm pos=(25.9, -9.0) heading=-373.0
+2026-03-17 22:28:41,329 INFO     test_navigator | side 4 done          → pos=(25.9, -9.0) heading=-373.0°
+2026-03-17 22:28:41,831 INFO     navigator | turn -90.0 deg | mode=gyro pos=(25.9, -9.0) heading=-373.0
+2026-03-17 22:28:43,834 DEBUG    navigator | turning | target=-463.0 current=-412.0 error=-51.0 dps=-102.0
+2026-03-17 22:28:45,885 DEBUG    navigator | turning | target=-463.0 current=-434.0 error=-29.0 dps=-58.0
+2026-03-17 22:28:47,885 DEBUG    navigator | turning | target=-463.0 current=-447.0 error=-16.0 dps=-32.0
+2026-03-17 22:28:49,936 DEBUG    navigator | turning | target=-463.0 current=-454.0 error=-9.0 dps=-18.0
+2026-03-17 22:28:51,951 DEBUG    navigator | turning | target=-463.0 current=-457.0 error=-6.0 dps=-12.0
+2026-03-17 22:28:53,954 DEBUG    navigator | turning | target=-463.0 current=-459.0 error=-4.0 dps=-8.0
+2026-03-17 22:28:55,958 DEBUG    navigator | turning | target=-463.0 current=-460.0 error=-3.0 dps=-6.0
+2026-03-17 22:28:57,963 DEBUG    navigator | turning | target=-463.0 current=-460.0 error=-3.0 dps=-6.0
+2026-03-17 22:28:59,968 DEBUG    navigator | turning | target=-463.0 current=-460.0 error=-3.0 dps=-6.0
+2026-03-17 22:29:01,917 INFO     navigator | turn done | heading=-462.0
+2026-03-17 22:29:01,919 INFO     test_navigator | turn 4 done          → pos=(25.9, -9.0) heading=-462.0°
+2026-03-17 22:29:02,421 INFO     test_navigator | === BOX RESULT ===
+2026-03-17 22:29:02,422 INFO     test_navigator | Final pos=(25.9, -9.0) heading=-462.0°
+2026-03-17 22:29:02,423 INFO     test_navigator | Position error from origin: 27.4 cm
+2026-03-17 22:29:02,424 INFO     test_navigator | Heading error from 0°: 258.0°
+2026-03-17 22:29:02,424 INFO     test_navigator | Test complete.
+2026-03-17 22:39:26,096 INFO     test_navigator | Running without gyro (blind turns)
+2026-03-17 22:39:26,097 INFO     navigator | Navigator init | gyro=False us=False gyro_offset=0.0
+2026-03-17 22:39:26,098 INFO     test_navigator | Starting test: box
+2026-03-17 22:39:26,098 INFO     test_navigator | === TEST: box (CW, right turns) ===
+2026-03-17 22:39:26,099 INFO     navigator | move_forward 30.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-17 22:39:28,109 DEBUG    navigator | moving | progress=73% heading=0.0 correction=0.0 encoders=(599, 597)
+2026-03-17 22:39:28,883 INFO     navigator | move_forward done | traveled=30.6 cm pos=(30.6, 0.0) heading=0.0
+2026-03-17 22:39:28,884 INFO     test_navigator | side 1 done          → pos=(30.6, 0.0) heading=0.0°
+2026-03-17 22:39:29,390 INFO     navigator | turn -90.0 deg | pos=(30.6, 0.0) heading=0.0
+2026-03-17 22:39:31,635 INFO     navigator | turn done | heading=-90.0
+2026-03-17 22:39:31,637 INFO     test_navigator | turn 1 done          → pos=(30.6, 0.0) heading=-90.0°
+2026-03-17 22:39:32,138 INFO     navigator | move_forward 30.0 cm | pos=(30.6, 0.0) heading=-90.0
+2026-03-17 22:39:34,151 DEBUG    navigator | moving | progress=73% heading=-90.0 correction=0.0 encoders=(596, 596)
+2026-03-17 22:39:34,925 INFO     navigator | move_forward done | traveled=30.5 cm pos=(30.6, -30.5) heading=-90.0
+2026-03-17 22:39:34,927 INFO     test_navigator | side 2 done          → pos=(30.6, -30.5) heading=-90.0°
+2026-03-17 22:39:35,428 INFO     navigator | turn -90.0 deg | pos=(30.6, -30.5) heading=-90.0
+2026-03-17 22:39:37,796 INFO     navigator | turn done | heading=-180.0
+2026-03-17 22:39:37,797 INFO     test_navigator | turn 2 done          → pos=(30.6, -30.5) heading=-180.0°
+2026-03-17 22:39:38,299 INFO     navigator | move_forward 30.0 cm | pos=(30.6, -30.5) heading=-180.0
+2026-03-17 22:39:40,304 DEBUG    navigator | moving | progress=73% heading=-180.0 correction=0.0 encoders=(594, 595)
+2026-03-17 22:39:41,079 INFO     navigator | move_forward done | traveled=30.4 cm pos=(0.2, -30.5) heading=-180.0
+2026-03-17 22:39:41,080 INFO     test_navigator | side 3 done          → pos=(0.2, -30.5) heading=-180.0°
+2026-03-17 22:39:41,581 INFO     navigator | turn -90.0 deg | pos=(0.2, -30.5) heading=-180.0
+2026-03-17 22:39:43,969 INFO     navigator | turn done | heading=-270.0
+2026-03-17 22:39:43,970 INFO     test_navigator | turn 3 done          → pos=(0.2, -30.5) heading=-270.0°
+2026-03-17 22:39:44,471 INFO     navigator | move_forward 30.0 cm | pos=(0.2, -30.5) heading=-270.0
+2026-03-17 22:39:46,483 DEBUG    navigator | moving | progress=73% heading=-270.0 correction=0.0 encoders=(597, 597)
+2026-03-17 22:39:47,252 INFO     navigator | move_forward done | traveled=30.5 cm pos=(0.2, -0.0) heading=-270.0
+2026-03-17 22:39:47,253 INFO     test_navigator | side 4 done          → pos=(0.2, -0.0) heading=-270.0°
+2026-03-17 22:39:47,755 INFO     navigator | turn -90.0 deg | pos=(0.2, -0.0) heading=-270.0
+2026-03-17 22:39:50,157 INFO     navigator | turn done | heading=-360.0
+2026-03-17 22:39:50,158 INFO     test_navigator | turn 4 done          → pos=(0.2, -0.0) heading=-360.0°
+2026-03-17 22:39:50,660 INFO     test_navigator | === BOX RESULT ===
+2026-03-17 22:39:50,661 INFO     test_navigator | Final pos=(0.2, -0.0) heading=-360.0°
+2026-03-17 22:39:50,662 INFO     test_navigator | Position error from origin: 0.2 cm
+2026-03-17 22:39:50,662 INFO     test_navigator | Heading error from 0°: 0.0°
+2026-03-17 22:39:50,663 INFO     test_navigator | Test complete.
+2026-03-17 22:42:49,424 INFO     test_navigator | Gyro enabled on port 4
+2026-03-17 22:42:49,438 INFO     navigator | Navigator init | gyro=True us=False gyro_offset=0.0
+2026-03-17 22:42:49,439 INFO     test_navigator | Starting test: box
+2026-03-17 22:42:49,441 INFO     test_navigator | === TEST: box (CW, right turns) ===
+2026-03-17 22:42:49,441 INFO     navigator | move_forward 30.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-17 22:42:51,466 DEBUG    navigator | moving | progress=73% heading=0.0 correction=0.0 encoders=(601, 600)
+2026-03-17 22:42:52,193 INFO     navigator | move_forward done | traveled=30.1 cm pos=(30.1, 0.0) heading=0.0
+2026-03-17 22:42:52,194 INFO     test_navigator | side 1 done          → pos=(30.1, 0.0) heading=0.0°
+2026-03-17 22:42:52,695 INFO     navigator | turn -90.0 deg | pos=(30.1, 0.0) heading=0.0
+2026-03-17 22:42:55,194 DEBUG    navigator | gyro trim done | target=-90.0 actual=-90.0
+2026-03-17 22:42:55,195 INFO     navigator | turn done | heading=-90.0
+2026-03-17 22:42:55,196 INFO     test_navigator | turn 1 done          → pos=(30.1, 0.0) heading=-90.0°
+2026-03-17 22:42:55,698 INFO     navigator | move_forward 30.0 cm | pos=(30.1, 0.0) heading=-90.0
+2026-03-17 22:42:57,725 DEBUG    navigator | moving | progress=73% heading=-90.0 correction=0.0 encoders=(598, 603)
+2026-03-17 22:42:58,453 INFO     navigator | move_forward done | traveled=30.1 cm pos=(30.1, -30.1) heading=-90.0
+2026-03-17 22:42:58,454 INFO     test_navigator | side 2 done          → pos=(30.1, -30.1) heading=-90.0°
+2026-03-17 22:42:58,955 INFO     navigator | turn -90.0 deg | pos=(30.1, -30.1) heading=-90.0
+2026-03-17 22:43:03,439 DEBUG    navigator | gyro trim done | target=-180.0 actual=-180.0
+2026-03-17 22:43:03,441 INFO     navigator | turn done | heading=-180.0
+2026-03-17 22:43:03,445 INFO     test_navigator | turn 2 done          → pos=(30.1, -30.1) heading=-180.0°
+2026-03-17 22:43:03,947 INFO     navigator | move_forward 30.0 cm | pos=(30.1, -30.1) heading=-180.0
+2026-03-17 22:43:05,972 DEBUG    navigator | moving | progress=74% heading=-180.0 correction=0.0 encoders=(597, 608)
+2026-03-17 22:43:06,695 INFO     navigator | move_forward done | traveled=30.1 cm pos=(0.0, -29.3) heading=-181.7
+2026-03-17 22:43:06,697 INFO     test_navigator | side 3 done          → pos=(0.0, -29.3) heading=-181.7°
+2026-03-17 22:43:07,198 INFO     navigator | turn -90.0 deg | pos=(0.0, -29.3) heading=-181.7
+2026-03-17 22:43:09,794 DEBUG    navigator | gyro trim done | target=-271.7 actual=-271.7
+2026-03-17 22:43:09,795 INFO     navigator | turn done | heading=-271.7
+2026-03-17 22:43:09,796 INFO     test_navigator | turn 3 done          → pos=(0.0, -29.3) heading=-271.7°
+2026-03-17 22:43:10,298 INFO     navigator | move_forward 30.0 cm | pos=(0.0, -29.3) heading=-271.7
+2026-03-17 22:43:12,323 DEBUG    navigator | moving | progress=73% heading=-273.4 correction=3.4 encoders=(593, 605)
+2026-03-17 22:43:13,050 INFO     navigator | move_forward done | traveled=30.1 cm pos=(0.9, 0.8) heading=-271.7
+2026-03-17 22:43:13,051 INFO     test_navigator | side 4 done          → pos=(0.9, 0.8) heading=-271.7°
+2026-03-17 22:43:13,553 INFO     navigator | turn -90.0 deg | pos=(0.9, 0.8) heading=-271.7
+2026-03-17 22:43:15,951 DEBUG    navigator | gyro trim done | target=-361.7 actual=-361.7
+2026-03-17 22:43:15,952 INFO     navigator | turn done | heading=-361.7
+2026-03-17 22:43:15,953 INFO     test_navigator | turn 4 done          → pos=(0.9, 0.8) heading=-361.7°
+2026-03-17 22:43:16,455 INFO     test_navigator | === BOX RESULT ===
+2026-03-17 22:43:16,456 INFO     test_navigator | Final pos=(0.9, 0.8) heading=-361.7°
+2026-03-17 22:43:16,457 INFO     test_navigator | Position error from origin: 1.2 cm
+2026-03-17 22:43:16,457 INFO     test_navigator | Heading error from 0°: 358.3°
+2026-03-17 22:43:16,458 INFO     test_navigator | Test complete.
+2026-03-17 22:57:58,034 INFO     test_navigator | Running without gyro (blind turns)
+2026-03-17 22:57:58,035 INFO     navigator | Navigator init | gyro=False us=False gyro_offset=0.0
+2026-03-17 22:57:58,036 INFO     test_navigator | Starting test: box
+2026-03-17 22:57:58,037 INFO     test_navigator | === TEST: box (CW, right turns) ===
+2026-03-17 22:57:58,038 INFO     navigator | move_forward 30.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-17 22:58:00,048 DEBUG    navigator | moving | progress=73% heading=0.0 correction=0.0 encoders=(598, 598)
+2026-03-17 22:58:00,821 INFO     navigator | move_forward done | traveled=30.5 cm pos=(30.5, 0.0) heading=0.0
+2026-03-17 22:58:00,823 INFO     test_navigator | side 1 done          → pos=(30.5, 0.0) heading=0.0°
+2026-03-17 22:58:01,324 INFO     navigator | turn -90.0 deg | pos=(30.5, 0.0) heading=0.0
+2026-03-17 22:58:03,574 INFO     navigator | turn done | heading=-90.0
+2026-03-17 22:58:03,575 INFO     test_navigator | turn 1 done          → pos=(30.5, 0.0) heading=-90.0°
+2026-03-17 22:58:04,081 INFO     navigator | move_forward 30.0 cm | pos=(30.5, 0.0) heading=-90.0
+2026-03-17 22:58:06,090 DEBUG    navigator | moving | progress=73% heading=-90.0 correction=0.0 encoders=(598, 597)
+2026-03-17 22:58:06,863 INFO     navigator | move_forward done | traveled=30.5 cm pos=(30.5, -30.5) heading=-90.0
+2026-03-17 22:58:06,864 INFO     test_navigator | side 2 done          → pos=(30.5, -30.5) heading=-90.0°
+2026-03-17 22:58:07,365 INFO     navigator | turn -90.0 deg | pos=(30.5, -30.5) heading=-90.0
+2026-03-17 22:58:09,780 INFO     navigator | turn done | heading=-180.0
+2026-03-17 22:58:09,781 INFO     test_navigator | turn 2 done          → pos=(30.5, -30.5) heading=-180.0°
+2026-03-17 22:58:10,286 INFO     navigator | move_forward 30.0 cm | pos=(30.5, -30.5) heading=-180.0
+2026-03-17 22:58:12,301 DEBUG    navigator | moving | progress=73% heading=-180.0 correction=0.0 encoders=(599, 599)
+2026-03-17 22:58:13,073 INFO     navigator | move_forward done | traveled=30.5 cm pos=(0.0, -30.5) heading=-180.0
+2026-03-17 22:58:13,074 INFO     test_navigator | side 3 done          → pos=(0.0, -30.5) heading=-180.0°
+2026-03-17 22:58:13,576 INFO     navigator | turn -90.0 deg | pos=(0.0, -30.5) heading=-180.0
+2026-03-17 22:58:15,967 INFO     navigator | turn done | heading=-270.0
+2026-03-17 22:58:15,969 INFO     test_navigator | turn 3 done          → pos=(0.0, -30.5) heading=-270.0°
+2026-03-17 22:58:16,470 INFO     navigator | move_forward 30.0 cm | pos=(0.0, -30.5) heading=-270.0
+2026-03-17 22:58:18,479 DEBUG    navigator | moving | progress=73% heading=-270.0 correction=0.0 encoders=(599, 599)
+2026-03-17 22:58:19,202 INFO     navigator | move_forward done | traveled=30.0 cm pos=(-0.0, -0.5) heading=-270.0
+2026-03-17 22:58:19,203 INFO     test_navigator | side 4 done          → pos=(-0.0, -0.5) heading=-270.0°
+2026-03-17 22:58:19,705 INFO     navigator | turn -90.0 deg | pos=(-0.0, -0.5) heading=-270.0
+2026-03-17 22:58:21,954 INFO     navigator | turn done | heading=-360.0
+2026-03-17 22:58:21,955 INFO     test_navigator | turn 4 done          → pos=(-0.0, -0.5) heading=-360.0°
+2026-03-17 22:58:22,458 INFO     test_navigator | === BOX RESULT ===
+2026-03-17 22:58:22,459 INFO     test_navigator | Final pos=(-0.0, -0.5) heading=-360.0°
+2026-03-17 22:58:22,459 INFO     test_navigator | Position error from origin: 0.5 cm
+2026-03-17 22:58:22,460 INFO     test_navigator | Heading error from 0°: 0.0°
+2026-03-17 22:58:22,461 INFO     test_navigator | Test complete.
+2026-03-17 23:10:59,671 INFO     test_navigator | Gyro enabled on port 4
+2026-03-17 23:10:59,684 INFO     navigator | Navigator init | gyro=True us=False gyro_offset=0.0
+2026-03-17 23:10:59,686 INFO     test_navigator | Starting test: box
+2026-03-17 23:10:59,686 INFO     test_navigator | === TEST: box (CW, right turns) ===
+2026-03-17 23:10:59,687 INFO     navigator | move_forward 30.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-17 23:11:01,706 DEBUG    navigator | moving | progress=74% heading=0.0 correction=0.0 encoders=(603, 602)
+2026-03-17 23:11:02,432 INFO     navigator | move_forward done | traveled=30.2 cm pos=(30.2, 0.0) heading=0.0
+2026-03-17 23:11:02,433 INFO     test_navigator | side 1 done          → pos=(30.2, 0.0) heading=0.0°
+2026-03-17 23:11:02,934 INFO     navigator | turn -90.0 deg | pos=(30.2, 0.0) heading=0.0
+2026-03-17 23:11:05,322 DEBUG    navigator | gyro trim done | target=-90.0 actual=-89.2
+2026-03-17 23:11:05,323 INFO     navigator | turn done | heading=-89.2
+2026-03-17 23:11:05,324 INFO     test_navigator | turn 1 done          → pos=(30.2, 0.0) heading=-89.2°
+2026-03-17 23:11:05,825 INFO     navigator | move_forward 30.0 cm | pos=(30.2, 0.0) heading=-89.2
+2026-03-17 23:11:07,847 DEBUG    navigator | moving | progress=73% heading=-89.2 correction=0.0 encoders=(598, 605)
+2026-03-17 23:11:08,573 INFO     navigator | move_forward done | traveled=30.1 cm pos=(30.6, -30.1) heading=-89.2
+2026-03-17 23:11:08,575 INFO     test_navigator | side 2 done          → pos=(30.6, -30.1) heading=-89.2°
+2026-03-17 23:11:09,077 INFO     navigator | turn -90.0 deg | pos=(30.6, -30.1) heading=-89.2
+2026-03-17 23:11:11,611 DEBUG    navigator | gyro trim done | target=-179.2 actual=-178.4
+2026-03-17 23:11:11,612 INFO     navigator | turn done | heading=-178.4
+2026-03-17 23:11:11,613 INFO     test_navigator | turn 2 done          → pos=(30.6, -30.1) heading=-178.4°
+2026-03-17 23:11:12,114 INFO     navigator | move_forward 30.0 cm | pos=(30.6, -30.1) heading=-178.4
+2026-03-17 23:11:14,138 DEBUG    navigator | moving | progress=74% heading=-180.2 correction=3.6 encoders=(596, 609)
+2026-03-17 23:11:14,865 INFO     navigator | move_forward done | traveled=30.2 cm pos=(0.4, -31.0) heading=-178.4
+2026-03-17 23:11:14,867 INFO     test_navigator | side 3 done          → pos=(0.4, -31.0) heading=-178.4°
+2026-03-17 23:11:15,368 INFO     navigator | turn -90.0 deg | pos=(0.4, -31.0) heading=-178.4
+2026-03-17 23:11:17,891 DEBUG    navigator | gyro trim done | target=-268.4 actual=-267.6
+2026-03-17 23:11:17,892 INFO     navigator | turn done | heading=-267.6
+2026-03-17 23:11:17,892 INFO     test_navigator | turn 3 done          → pos=(0.4, -31.0) heading=-267.6°
+2026-03-17 23:11:18,394 INFO     navigator | move_forward 30.0 cm | pos=(0.4, -31.0) heading=-267.6
+2026-03-17 23:11:20,420 DEBUG    navigator | moving | progress=74% heading=-267.6 correction=0.0 encoders=(598, 611)
+2026-03-17 23:11:21,148 INFO     navigator | move_forward done | traveled=30.3 cm pos=(0.1, -0.6) heading=-269.4
+2026-03-17 23:11:21,149 INFO     test_navigator | side 4 done          → pos=(0.1, -0.6) heading=-269.4°
+2026-03-17 23:11:21,650 INFO     navigator | turn -90.0 deg | pos=(0.1, -0.6) heading=-269.4
+2026-03-17 23:11:24,270 DEBUG    navigator | gyro trim done | target=-359.4 actual=-358.6
+2026-03-17 23:11:24,271 INFO     navigator | turn done | heading=-358.6
+2026-03-17 23:11:24,271 INFO     test_navigator | turn 4 done          → pos=(0.1, -0.6) heading=-358.6°
+2026-03-17 23:11:24,773 INFO     test_navigator | === BOX RESULT ===
+2026-03-17 23:11:24,774 INFO     test_navigator | Final pos=(0.1, -0.6) heading=-358.6°
+2026-03-17 23:11:24,775 INFO     test_navigator | Position error from origin: 0.6 cm
+2026-03-17 23:11:24,776 INFO     test_navigator | Heading error from 0°: 1.4°
+2026-03-17 23:11:24,776 INFO     test_navigator | Test complete.
+2026-03-17 23:12:16,969 INFO     test_navigator | Gyro enabled on port 4
+2026-03-17 23:12:16,982 INFO     navigator | Navigator init | gyro=True us=False gyro_offset=0.0
+2026-03-17 23:12:16,983 INFO     test_navigator | Starting test: box
+2026-03-17 23:12:16,984 INFO     test_navigator | === TEST: box (CW, right turns) ===
+2026-03-17 23:12:16,984 INFO     navigator | move_forward 30.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-17 23:12:19,002 DEBUG    navigator | moving | progress=73% heading=0.0 correction=0.0 encoders=(602, 601)
+2026-03-17 23:12:19,735 INFO     navigator | move_forward done | traveled=30.3 cm pos=(30.3, 0.0) heading=0.0
+2026-03-17 23:12:19,736 INFO     test_navigator | side 1 done          → pos=(30.3, 0.0) heading=0.0°
+2026-03-17 23:12:20,238 INFO     navigator | turn -90.0 deg | pos=(30.3, 0.0) heading=0.0
+2026-03-17 23:12:22,466 INFO     navigator | turn done | heading=-89.2
+2026-03-17 23:12:22,467 INFO     test_navigator | turn 1 done          → pos=(30.3, 0.0) heading=-89.2°
+2026-03-17 23:12:22,969 INFO     navigator | move_forward 30.0 cm | pos=(30.3, 0.0) heading=-89.2
+2026-03-17 23:12:24,988 DEBUG    navigator | moving | progress=73% heading=-91.0 correction=3.6 encoders=(595, 608)
+2026-03-17 23:12:25,715 INFO     navigator | move_forward done | traveled=30.2 cm pos=(30.7, -30.2) heading=-89.2
+2026-03-17 23:12:25,717 INFO     test_navigator | side 2 done          → pos=(30.7, -30.2) heading=-89.2°
+2026-03-17 23:12:26,218 INFO     navigator | turn -90.0 deg | pos=(30.7, -30.2) heading=-89.2
+2026-03-17 23:12:28,564 INFO     navigator | turn done | heading=-180.2
+2026-03-17 23:12:28,565 INFO     test_navigator | turn 2 done          → pos=(30.7, -30.2) heading=-180.2°
+2026-03-17 23:12:29,070 INFO     navigator | move_forward 30.0 cm | pos=(30.7, -30.2) heading=-180.2
+2026-03-17 23:12:31,093 DEBUG    navigator | moving | progress=74% heading=-180.2 correction=0.0 encoders=(601, 607)
+2026-03-17 23:12:31,820 INFO     navigator | move_forward done | traveled=30.2 cm pos=(0.5, -29.2) heading=-182.0
+2026-03-17 23:12:31,821 INFO     test_navigator | side 3 done          → pos=(0.5, -29.2) heading=-182.0°
+2026-03-17 23:12:32,322 INFO     navigator | turn -90.0 deg | pos=(0.5, -29.2) heading=-182.0
+2026-03-17 23:12:34,559 INFO     navigator | turn done | heading=-271.2
+2026-03-17 23:12:34,560 INFO     test_navigator | turn 3 done          → pos=(0.5, -29.2) heading=-271.2°
+2026-03-17 23:12:35,061 INFO     navigator | move_forward 30.0 cm | pos=(0.5, -29.2) heading=-271.2
+2026-03-17 23:12:37,083 DEBUG    navigator | moving | progress=74% heading=-272.9 correction=3.6 encoders=(598, 608)
+2026-03-17 23:12:37,810 INFO     navigator | move_forward done | traveled=30.3 cm pos=(1.1, 1.1) heading=-271.2
+2026-03-17 23:12:37,811 INFO     test_navigator | side 4 done          → pos=(1.1, 1.1) heading=-271.2°
+2026-03-17 23:12:38,313 INFO     navigator | turn -90.0 deg | pos=(1.1, 1.1) heading=-271.2
+2026-03-17 23:12:41,873 DEBUG    navigator | gyro trim done | target=-361.2 actual=-360.3
+2026-03-17 23:12:41,874 INFO     navigator | turn done | heading=-360.3
+2026-03-17 23:12:41,875 INFO     test_navigator | turn 4 done          → pos=(1.1, 1.1) heading=-360.3°
+2026-03-17 23:12:42,377 INFO     test_navigator | === BOX RESULT ===
+2026-03-17 23:12:42,378 INFO     test_navigator | Final pos=(1.1, 1.1) heading=-360.3°
+2026-03-17 23:12:42,379 INFO     test_navigator | Position error from origin: 1.5 cm
+2026-03-17 23:12:42,380 INFO     test_navigator | Heading error from 0°: 359.7°
+2026-03-17 23:12:42,381 INFO     test_navigator | Test complete.
+2026-03-17 23:15:59,931 INFO     test_navigator | Gyro enabled on port 4
+2026-03-17 23:15:59,944 INFO     navigator | Navigator init | gyro=True us=False gyro_offset=0.0
+2026-03-17 23:15:59,945 INFO     test_navigator | Starting test: box
+2026-03-17 23:15:59,947 INFO     test_navigator | === TEST: box (CW, right turns) ===
+2026-03-17 23:15:59,947 INFO     navigator | move_forward 30.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-17 23:16:01,973 DEBUG    navigator | moving | progress=74% heading=0.0 correction=0.0 encoders=(605, 604)
+2026-03-17 23:16:02,700 INFO     navigator | move_forward done | traveled=30.3 cm pos=(30.3, 0.0) heading=0.0
+2026-03-17 23:16:02,701 INFO     test_navigator | side 1 done          → pos=(30.3, 0.0) heading=0.0°
+2026-03-17 23:16:03,202 INFO     navigator | turn -90.0 deg | pos=(30.3, 0.0) heading=0.0
+2026-03-17 23:16:05,441 INFO     navigator | turn done | heading=-91.0
+2026-03-17 23:16:05,443 INFO     test_navigator | turn 1 done          → pos=(30.3, 0.0) heading=-91.0°
+2026-03-17 23:16:05,944 INFO     navigator | move_forward 30.0 cm | pos=(30.3, 0.0) heading=-91.0
+2026-03-17 23:16:07,971 DEBUG    navigator | moving | progress=74% heading=-91.0 correction=0.0 encoders=(598, 610)
+2026-03-17 23:16:08,697 INFO     navigator | move_forward done | traveled=30.2 cm pos=(28.9, -30.2) heading=-92.8
+2026-03-17 23:16:08,698 INFO     test_navigator | side 2 done          → pos=(28.9, -30.2) heading=-92.8°
+2026-03-17 23:16:09,200 INFO     navigator | turn -90.0 deg | pos=(28.9, -30.2) heading=-92.8
+2026-03-17 23:16:11,419 INFO     navigator | turn done | heading=-182.0
+2026-03-17 23:16:11,420 INFO     test_navigator | turn 2 done          → pos=(28.9, -30.2) heading=-182.0°
+2026-03-17 23:16:11,921 INFO     navigator | move_forward 30.0 cm | pos=(28.9, -30.2) heading=-182.0
+2026-03-17 23:16:13,947 DEBUG    navigator | moving | progress=73% heading=-183.7 correction=3.6 encoders=(595, 606)
+2026-03-17 23:16:14,679 INFO     navigator | move_forward done | traveled=30.2 cm pos=(-1.3, -29.2) heading=-182.0
+2026-03-17 23:16:14,680 INFO     test_navigator | side 3 done          → pos=(-1.3, -29.2) heading=-182.0°
+2026-03-17 23:16:15,182 INFO     navigator | turn -90.0 deg | pos=(-1.3, -29.2) heading=-182.0
+2026-03-17 23:16:17,402 INFO     navigator | turn done | heading=-272.9
+2026-03-17 23:16:17,403 INFO     test_navigator | turn 3 done          → pos=(-1.3, -29.2) heading=-272.9°
+2026-03-17 23:16:17,905 INFO     navigator | move_forward 30.0 cm | pos=(-1.3, -29.2) heading=-272.9
+2026-03-17 23:16:19,925 DEBUG    navigator | moving | progress=73% heading=-274.7 correction=3.6 encoders=(594, 607)
+2026-03-17 23:16:20,653 INFO     navigator | move_forward done | traveled=30.1 cm pos=(1.2, 0.9) heading=-274.7
+2026-03-17 23:16:20,654 INFO     test_navigator | side 4 done          → pos=(1.2, 0.9) heading=-274.7°
+2026-03-17 23:16:21,155 INFO     navigator | turn -90.0 deg | pos=(1.2, 0.9) heading=-274.7
+2026-03-17 23:16:23,416 DEBUG    navigator | gyro trim done | target=-364.7 actual=-363.9
+2026-03-17 23:16:23,417 INFO     navigator | turn done | heading=-363.9
+2026-03-17 23:16:23,418 INFO     test_navigator | turn 4 done          → pos=(1.2, 0.9) heading=-363.9°
+2026-03-17 23:16:23,919 INFO     test_navigator | === BOX RESULT ===
+2026-03-17 23:16:23,920 INFO     test_navigator | Final pos=(1.2, 0.9) heading=-363.9°
+2026-03-17 23:16:23,921 INFO     test_navigator | Position error from origin: 1.4 cm
+2026-03-17 23:16:23,922 INFO     test_navigator | Heading error from 0°: 356.1°
+2026-03-17 23:16:23,922 INFO     test_navigator | Test complete.
+2026-03-17 23:18:42,364 INFO     test_navigator | Gyro enabled on port 4
+2026-03-17 23:18:42,377 INFO     navigator | Navigator init | gyro=True us=False gyro_offset=0.0
+2026-03-17 23:18:42,379 INFO     test_navigator | Starting test: box
+2026-03-17 23:18:42,380 INFO     test_navigator | === TEST: box (CW, right turns) ===
+2026-03-17 23:18:42,380 INFO     navigator | move_forward 30.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-17 23:18:44,403 DEBUG    navigator | moving | progress=74% heading=0.0 correction=0.0 encoders=(605, 604)
+2026-03-17 23:18:45,131 INFO     navigator | move_forward done | traveled=30.3 cm pos=(30.3, 0.0) heading=0.0
+2026-03-17 23:18:45,132 INFO     test_navigator | side 1 done          → pos=(30.3, 0.0) heading=0.0°
+2026-03-17 23:18:45,634 INFO     navigator | turn -90.0 deg | pos=(30.3, 0.0) heading=0.0
+2026-03-17 23:18:47,993 INFO     navigator | turn done | heading=-91.0
+2026-03-17 23:18:47,994 INFO     test_navigator | turn 1 done          → pos=(30.3, 0.0) heading=-91.0°
+2026-03-17 23:18:48,496 INFO     navigator | move_forward 30.0 cm | pos=(30.3, 0.0) heading=-91.0
+2026-03-17 23:18:50,520 DEBUG    navigator | moving | progress=74% heading=-91.0 correction=0.0 encoders=(604, 604)
+2026-03-17 23:18:51,243 INFO     navigator | move_forward done | traveled=30.2 cm pos=(29.8, -30.2) heading=-91.0
+2026-03-17 23:18:51,245 INFO     test_navigator | side 2 done          → pos=(29.8, -30.2) heading=-91.0°
+2026-03-17 23:18:51,746 INFO     navigator | turn -90.0 deg | pos=(29.8, -30.2) heading=-91.0
+2026-03-17 23:18:54,109 INFO     navigator | turn done | heading=-180.2
+2026-03-17 23:18:54,110 INFO     test_navigator | turn 2 done          → pos=(29.8, -30.2) heading=-180.2°
+2026-03-17 23:18:54,611 INFO     navigator | move_forward 30.0 cm | pos=(29.8, -30.2) heading=-180.2
+2026-03-17 23:18:56,638 DEBUG    navigator | moving | progress=74% heading=-182.0 correction=3.6 encoders=(598, 610)
+2026-03-17 23:18:57,365 INFO     navigator | move_forward done | traveled=30.3 cm pos=(-0.5, -30.1) heading=-180.2
+2026-03-17 23:18:57,366 INFO     test_navigator | side 3 done          → pos=(-0.5, -30.1) heading=-180.2°
+2026-03-17 23:18:57,868 INFO     navigator | turn -90.0 deg | pos=(-0.5, -30.1) heading=-180.2
+2026-03-17 23:19:00,095 INFO     navigator | turn done | heading=-271.2
+2026-03-17 23:19:00,096 INFO     test_navigator | turn 3 done          → pos=(-0.5, -30.1) heading=-271.2°
+2026-03-17 23:19:00,598 INFO     navigator | move_forward 30.0 cm | pos=(-0.5, -30.1) heading=-271.2
+2026-03-17 23:19:02,622 DEBUG    navigator | moving | progress=74% heading=-271.2 correction=0.0 encoders=(598, 607)
+2026-03-17 23:19:03,348 INFO     navigator | move_forward done | traveled=30.2 cm pos=(0.1, 0.1) heading=-271.2
+2026-03-17 23:19:03,349 INFO     test_navigator | side 4 done          → pos=(0.1, 0.1) heading=-271.2°
+2026-03-17 23:19:03,851 INFO     navigator | turn -90.0 deg | pos=(0.1, 0.1) heading=-271.2
+2026-03-17 23:19:06,232 INFO     navigator | turn done | heading=-360.3
+2026-03-17 23:19:06,233 INFO     test_navigator | turn 4 done          → pos=(0.1, 0.1) heading=-360.3°
+2026-03-17 23:19:06,735 INFO     test_navigator | === BOX RESULT ===
+2026-03-17 23:19:06,736 INFO     test_navigator | Final pos=(0.1, 0.1) heading=-360.3°
+2026-03-17 23:19:06,737 INFO     test_navigator | Position error from origin: 0.1 cm
+2026-03-17 23:19:06,738 INFO     test_navigator | Heading error from 0°: 359.7°
+2026-03-17 23:19:06,738 INFO     test_navigator | Test complete.
+2026-03-17 23:19:23,787 INFO     test_navigator | Gyro enabled on port 4
+2026-03-17 23:19:23,800 INFO     navigator | Navigator init | gyro=True us=False gyro_offset=0.0
+2026-03-17 23:19:23,801 INFO     test_navigator | Starting test: box
+2026-03-17 23:19:23,802 INFO     test_navigator | === TEST: box (CW, right turns) ===
+2026-03-17 23:19:23,803 INFO     navigator | move_forward 30.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-17 23:19:25,820 DEBUG    navigator | moving | progress=74% heading=-1.8 correction=3.6 encoders=(600, 604)
+2026-03-17 23:19:26,545 INFO     navigator | move_forward done | traveled=30.2 cm pos=(30.1, -0.9) heading=-1.8
+2026-03-17 23:19:26,546 INFO     test_navigator | side 1 done          → pos=(30.1, -0.9) heading=-1.8°
+2026-03-17 23:19:27,052 INFO     navigator | turn -90.0 deg | pos=(30.1, -0.9) heading=-1.8
+2026-03-17 23:19:31,927 DEBUG    navigator | gyro trim done | target=-91.8 actual=-91.0
+2026-03-17 23:19:31,928 INFO     navigator | turn done | heading=-91.0
+2026-03-17 23:19:31,929 INFO     test_navigator | turn 1 done          → pos=(30.1, -0.9) heading=-91.0°
+2026-03-17 23:19:32,430 INFO     navigator | move_forward 30.0 cm | pos=(30.1, -0.9) heading=-91.0
+2026-03-17 23:19:34,462 DEBUG    navigator | moving | progress=74% heading=-91.0 correction=0.0 encoders=(599, 611)
+2026-03-17 23:19:35,185 INFO     navigator | move_forward done | traveled=30.2 cm pos=(28.7, -31.1) heading=-92.8
+2026-03-17 23:19:35,186 INFO     test_navigator | side 2 done          → pos=(28.7, -31.1) heading=-92.8°
+2026-03-17 23:19:35,687 INFO     navigator | turn -90.0 deg | pos=(28.7, -31.1) heading=-92.8
+2026-03-17 23:19:37,915 INFO     navigator | turn done | heading=-182.0
+2026-03-17 23:19:37,916 INFO     test_navigator | turn 2 done          → pos=(28.7, -31.1) heading=-182.0°
+2026-03-17 23:19:38,421 INFO     navigator | move_forward 30.0 cm | pos=(28.7, -31.1) heading=-182.0
+2026-03-17 23:19:40,440 DEBUG    navigator | moving | progress=74% heading=-182.0 correction=0.0 encoders=(599, 606)
+2026-03-17 23:19:41,165 INFO     navigator | move_forward done | traveled=30.2 cm pos=(-1.4, -29.2) heading=-183.7
+2026-03-17 23:19:41,166 INFO     test_navigator | side 3 done          → pos=(-1.4, -29.2) heading=-183.7°
+2026-03-17 23:19:41,668 INFO     navigator | turn -90.0 deg | pos=(-1.4, -29.2) heading=-183.7
+2026-03-17 23:19:46,815 DEBUG    navigator | gyro trim done | target=-273.7 actual=-272.9
+2026-03-17 23:19:46,816 INFO     navigator | turn done | heading=-272.9
+2026-03-17 23:19:46,817 INFO     test_navigator | turn 3 done          → pos=(-1.4, -29.2) heading=-272.9°
+2026-03-17 23:19:47,318 INFO     navigator | move_forward 30.0 cm | pos=(-1.4, -29.2) heading=-272.9
+2026-03-17 23:19:49,340 DEBUG    navigator | moving | progress=74% heading=-274.7 correction=3.6 encoders=(596, 610)
+2026-03-17 23:19:50,067 INFO     navigator | move_forward done | traveled=30.2 cm pos=(1.0, 0.9) heading=-274.7
+2026-03-17 23:19:50,068 INFO     test_navigator | side 4 done          → pos=(1.0, 0.9) heading=-274.7°
+2026-03-17 23:19:50,569 INFO     navigator | turn -90.0 deg | pos=(1.0, 0.9) heading=-274.7
+2026-03-17 23:19:54,283 DEBUG    navigator | gyro trim done | target=-364.7 actual=-363.9
+2026-03-17 23:19:54,285 INFO     navigator | turn done | heading=-363.9
+2026-03-17 23:19:54,286 INFO     test_navigator | turn 4 done          → pos=(1.0, 0.9) heading=-363.9°
+2026-03-17 23:19:54,787 INFO     test_navigator | === BOX RESULT ===
+2026-03-17 23:19:54,788 INFO     test_navigator | Final pos=(1.0, 0.9) heading=-363.9°
+2026-03-17 23:19:54,788 INFO     test_navigator | Position error from origin: 1.4 cm
+2026-03-17 23:19:54,788 INFO     test_navigator | Heading error from 0°: 356.1°
+2026-03-17 23:19:54,788 INFO     test_navigator | Test complete.
+2026-03-17 23:23:37,866 INFO     test_navigator | Gyro enabled on port 4
+2026-03-17 23:23:37,880 INFO     navigator | Navigator init | gyro=True us=False gyro_offset=0.0
+2026-03-17 23:23:37,881 INFO     test_navigator | Starting test: box
+2026-03-17 23:23:37,882 INFO     test_navigator | === TEST: box (CW, right turns) ===
+2026-03-17 23:23:37,883 INFO     navigator | move_forward 30.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-17 23:23:39,901 DEBUG    navigator | moving | progress=73% heading=0.0 correction=0.0 encoders=(602, 601)
+2026-03-17 23:23:40,625 INFO     navigator | move_forward done | traveled=30.1 cm pos=(30.1, 0.0) heading=0.0
+2026-03-17 23:23:40,626 INFO     test_navigator | side 1 done          → pos=(30.1, 0.0) heading=0.0°
+2026-03-17 23:23:41,127 INFO     navigator | turn -90.0 deg | pos=(30.1, 0.0) heading=0.0
+2026-03-17 23:23:46,616 DEBUG    navigator | gyro trim done | target=-90.0 actual=-89.2
+2026-03-17 23:23:46,618 INFO     navigator | turn done | heading=-89.2
+2026-03-17 23:23:46,619 INFO     test_navigator | turn 1 done          → pos=(30.1, 0.0) heading=-89.2°
+2026-03-17 23:23:47,120 INFO     navigator | move_forward 30.0 cm | pos=(30.1, 0.0) heading=-89.2
+2026-03-17 23:23:49,134 DEBUG    navigator | moving | progress=73% heading=-89.2 correction=0.0 encoders=(599, 603)
+2026-03-17 23:23:49,860 INFO     navigator | move_forward done | traveled=30.2 cm pos=(30.6, -30.2) heading=-89.2
+2026-03-17 23:23:49,861 INFO     test_navigator | side 2 done          → pos=(30.6, -30.2) heading=-89.2°
+2026-03-17 23:23:50,363 INFO     navigator | turn -90.0 deg | pos=(30.6, -30.2) heading=-89.2
+2026-03-17 23:23:52,591 INFO     navigator | turn done | heading=-178.4
+2026-03-17 23:23:52,592 INFO     test_navigator | turn 2 done          → pos=(30.6, -30.2) heading=-178.4°
+2026-03-17 23:23:53,093 INFO     navigator | move_forward 30.0 cm | pos=(30.6, -30.2) heading=-178.4
+2026-03-17 23:23:55,120 DEBUG    navigator | moving | progress=74% heading=-178.4 correction=0.0 encoders=(599, 607)
+2026-03-17 23:23:55,848 INFO     navigator | move_forward done | traveled=30.3 cm pos=(0.3, -31.0) heading=-178.4
+2026-03-17 23:23:55,849 INFO     test_navigator | side 3 done          → pos=(0.3, -31.0) heading=-178.4°
+2026-03-17 23:23:56,351 INFO     navigator | turn -90.0 deg | pos=(0.3, -31.0) heading=-178.4
+2026-03-17 23:24:00,062 DEBUG    navigator | gyro trim done | target=-268.4 actual=-267.6
+2026-03-17 23:24:00,063 INFO     navigator | turn done | heading=-267.6
+2026-03-17 23:24:00,064 INFO     test_navigator | turn 3 done          → pos=(0.3, -31.0) heading=-267.6°
+2026-03-17 23:24:00,566 INFO     navigator | move_forward 30.0 cm | pos=(0.3, -31.0) heading=-267.6
+2026-03-17 23:24:02,587 DEBUG    navigator | moving | progress=73% heading=-267.6 correction=0.0 encoders=(596, 607)
+2026-03-17 23:24:03,315 INFO     navigator | move_forward done | traveled=30.2 cm pos=(-1.0, -0.9) heading=-267.6
+2026-03-17 23:24:03,317 INFO     test_navigator | side 4 done          → pos=(-1.0, -0.9) heading=-267.6°
+2026-03-17 23:24:03,819 INFO     navigator | turn -90.0 deg | pos=(-1.0, -0.9) heading=-267.6
+2026-03-17 23:24:06,165 INFO     navigator | turn done | heading=-358.6
+2026-03-17 23:24:06,167 INFO     test_navigator | turn 4 done          → pos=(-1.0, -0.9) heading=-358.6°
+2026-03-17 23:24:06,668 INFO     test_navigator | === BOX RESULT ===
+2026-03-17 23:24:06,669 INFO     test_navigator | Final pos=(-1.0, -0.9) heading=-358.6°
+2026-03-17 23:24:06,670 INFO     test_navigator | Position error from origin: 1.3 cm
+2026-03-17 23:24:06,671 INFO     test_navigator | Heading error from 0°: 1.4°
+2026-03-17 23:24:06,672 INFO     test_navigator | Test complete.
