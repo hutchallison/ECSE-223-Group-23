@@ -60,7 +60,7 @@ class PatientAssessor:
 
     # ── Core detection ───────────────────────────────────────────────────────
 
-    def detect(self) -> str | None:
+    def detect(self):
         """Sample the sensor, update the sliding window, return closest color name."""
         if not self._known_colors:
             return None
