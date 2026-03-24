@@ -28,7 +28,7 @@ class Controller:
         # Code to sweep room 1 for obstacles
         self.nav.move_forward(Config.Controller.ROOM_SWEEP_LENGTH)
         self.nav.move_backward(Config.Controller.ROOM_SWEEP_LENGTH)
-        self.nav.diff_turn(90, "left")
+        self.nav.diff_turn(-90, "left")
         self.nav.move_forward(Config.Controller.SWEEP_DIFF)
         self.nav.turn(90)
         self.nav.move_forward(Config.Controller.ROOM_SWEEP_LENGTH)
