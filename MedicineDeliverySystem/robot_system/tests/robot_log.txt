@@ -1,0 +1,974 @@
+2026-03-23 23:58:33,259 INFO     test_navigator | Running without gyro (blind turns)
+2026-03-23 23:58:33,261 INFO     navigator | Navigator init | gyro=False us=False gyro_offset=0.0
+2026-03-23 23:58:33,263 INFO     test_navigator | Starting test: box
+2026-03-23 23:58:33,264 INFO     test_navigator | === TEST: box (CW, right turns) ===
+2026-03-23 23:58:33,265 INFO     navigator | move_forward 30.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-23 23:58:35,280 DEBUG    navigator | moving | progress=73% heading=0.0 correction=0.0 encoders=(600, 597)
+2026-03-23 23:59:20,010 ERROR    test_navigator | Unknown test 'use_gyro'. Available: forward, turn_right, turn_left, box, box_back, go_to_room
+2026-03-24 00:12:57,795 INFO     test_navigator | Gyro enabled on port 4
+2026-03-24 00:12:57,808 INFO     navigator | Navigator init | gyro=True us=False gyro_offset=0.0
+2026-03-24 00:12:57,809 INFO     test_navigator | Starting test: go_to_room
+2026-03-24 00:13:32,423 INFO     test_navigator | Gyro enabled on port 4
+2026-03-24 00:13:32,437 INFO     navigator | Navigator init | gyro=True us=False gyro_offset=0.0
+2026-03-24 00:13:32,438 INFO     test_navigator | Starting test: go_to_room
+2026-03-24 00:13:32,439 INFO     navigator | move_forward 10.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-24 00:13:33,376 INFO     navigator | move_forward done | traveled=10.1 cm pos=(10.1, 0.0) heading=0.0
+2026-03-24 00:13:33,377 INFO     navigator | turn 90.0 deg | pos=(10.1, 0.0) heading=0.0
+2026-03-24 00:13:35,707 INFO     navigator | turn done | heading=91.0
+2026-03-24 00:13:35,708 INFO     navigator | move_forward 48.0 cm | pos=(10.1, 0.0) heading=91.0
+2026-03-24 00:13:37,735 DEBUG    navigator | moving | progress=46% heading=92.8 correction=-3.6 encoders=(601, 602)
+2026-03-24 00:13:39,763 DEBUG    navigator | moving | progress=93% heading=94.5 correction=-7.1 encoders=(1238, 1210)
+2026-03-24 00:14:46,435 INFO     test_navigator | Gyro enabled on port 4
+2026-03-24 00:14:46,447 INFO     navigator | Navigator init | gyro=True us=False gyro_offset=0.0
+2026-03-24 00:14:46,448 INFO     test_navigator | Starting test: go_to_room
+2026-03-24 00:14:46,448 INFO     navigator | move_forward 10.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-24 00:14:47,432 INFO     navigator | move_forward done | traveled=10.5 cm pos=(10.5, 0.0) heading=0.0
+2026-03-24 00:14:47,433 INFO     navigator | turn 90.0 deg | pos=(10.5, 0.0) heading=0.0
+2026-03-24 00:14:49,760 INFO     navigator | turn done | heading=89.2
+2026-03-24 00:14:49,761 INFO     navigator | move_forward 30.0 cm | pos=(10.5, 0.0) heading=89.2
+2026-03-24 00:14:51,784 DEBUG    navigator | moving | progress=73% heading=89.2 correction=0.0 encoders=(602, 601)
+2026-03-24 00:14:52,509 INFO     navigator | move_forward done | traveled=30.2 cm pos=(10.0, 30.2) heading=91.0
+2026-03-24 00:14:52,511 INFO     navigator | turn -90.0 deg | pos=(10.0, 30.2) heading=91.0
+2026-03-24 00:15:49,112 INFO     test_navigator | Gyro enabled on port 4
+2026-03-24 00:15:49,125 INFO     navigator | Navigator init | gyro=True us=False gyro_offset=0.0
+2026-03-24 00:15:49,126 INFO     test_navigator | Starting test: go_to_room
+2026-03-24 00:15:49,127 INFO     navigator | move_forward 10.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-24 00:15:50,117 INFO     navigator | move_forward done | traveled=10.6 cm pos=(10.6, 0.0) heading=0.0
+2026-03-24 00:15:50,118 INFO     navigator | turn 90.0 deg | pos=(10.6, 0.0) heading=0.0
+2026-03-24 00:15:52,447 INFO     navigator | turn done | heading=91.0
+2026-03-24 00:15:52,448 INFO     navigator | move_forward 20.0 cm | pos=(10.6, 0.0) heading=91.0
+2026-03-24 00:15:54,320 INFO     navigator | move_forward done | traveled=20.4 cm pos=(10.2, 20.4) heading=91.0
+2026-03-24 00:15:54,321 INFO     navigator | turn -90.0 deg | pos=(10.2, 20.4) heading=91.0
+2026-03-24 00:15:56,563 INFO     navigator | turn done | heading=0.0
+2026-03-24 00:15:56,564 INFO     navigator | move_forward 56.0 cm | pos=(10.2, 20.4) heading=0.0
+2026-03-24 00:15:58,596 DEBUG    navigator | moving | progress=40% heading=1.8 correction=-3.6 encoders=(606, 606)
+2026-03-24 00:16:00,620 DEBUG    navigator | moving | progress=80% heading=0.0 correction=0.0 encoders=(1228, 1218)
+2026-03-24 00:16:01,661 INFO     navigator | move_forward done | traveled=56.5 cm pos=(66.7, 22.1) heading=1.8
+2026-03-24 00:16:01,662 INFO     navigator | move_forward -30.0 cm | pos=(66.7, 22.1) heading=1.8
+2026-03-24 00:16:01,667 INFO     navigator | move_forward done | traveled=0.0 cm pos=(66.7, 22.1) heading=1.8
+2026-03-24 00:16:01,668 INFO     navigator | turn -90.0 deg | pos=(66.7, 22.1) heading=1.8
+2026-03-24 00:16:03,917 INFO     navigator | turn done | heading=-87.4
+2026-03-24 00:16:03,919 INFO     navigator | move_forward 4.0 cm | pos=(66.7, 22.1) heading=-87.4
+2026-03-24 00:16:04,338 INFO     navigator | move_forward done | traveled=4.2 cm pos=(66.7, 17.9) heading=-89.2
+2026-03-24 00:16:04,339 INFO     navigator | turn 90.0 deg | pos=(66.7, 17.9) heading=-89.2
+2026-03-24 00:16:06,675 INFO     navigator | turn done | heading=0.0
+2026-03-24 00:16:06,676 INFO     navigator | move_forward 30.0 cm | pos=(66.7, 17.9) heading=0.0
+2026-03-24 00:16:08,698 DEBUG    navigator | moving | progress=73% heading=5.4 correction=-10.7 encoders=(611, 592)
+2026-03-24 00:16:09,424 INFO     navigator | move_forward done | traveled=30.1 cm pos=(96.7, 20.7) heading=5.4
+2026-03-24 00:16:09,425 INFO     navigator | move_forward -30.0 cm | pos=(96.7, 20.7) heading=5.4
+2026-03-24 00:16:09,429 INFO     navigator | move_forward done | traveled=0.0 cm pos=(96.8, 20.8) heading=5.4
+2026-03-24 00:16:09,430 INFO     navigator | turn -90.0 deg | pos=(96.8, 20.8) heading=5.4
+2026-03-24 00:16:15,135 DEBUG    navigator | gyro trim done | target=-84.6 actual=-83.8
+2026-03-24 00:16:15,136 INFO     navigator | turn done | heading=-83.8
+2026-03-24 00:16:15,137 INFO     navigator | move_forward 4.0 cm | pos=(96.8, 20.8) heading=-83.8
+2026-03-24 00:16:15,554 INFO     navigator | move_forward done | traveled=4.3 cm pos=(97.1, 16.5) heading=-85.6
+2026-03-24 00:16:15,555 INFO     navigator | turn 90.0 deg | pos=(97.1, 16.5) heading=-85.6
+2026-03-24 00:19:20,730 INFO     test_navigator | Gyro enabled on port 4
+2026-03-24 00:19:20,744 INFO     navigator | Navigator init | gyro=True us=False gyro_offset=0.0
+2026-03-24 00:19:20,745 INFO     test_navigator | Starting test: go_to_room
+2026-03-24 00:19:20,746 INFO     navigator | move_forward 10.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-24 00:19:21,737 INFO     navigator | move_forward done | traveled=10.6 cm pos=(10.6, 0.0) heading=0.0
+2026-03-24 00:19:21,738 INFO     navigator | turn 90.0 deg | pos=(10.6, 0.0) heading=0.0
+2026-03-24 00:19:24,095 INFO     navigator | turn done | heading=89.2
+2026-03-24 00:19:24,096 INFO     navigator | move_forward 20.0 cm | pos=(10.6, 0.0) heading=89.2
+2026-03-24 00:19:25,968 INFO     navigator | move_forward done | traveled=20.4 cm pos=(10.9, 20.4) heading=89.2
+2026-03-24 00:19:25,969 INFO     navigator | turn -90.0 deg | pos=(10.9, 20.4) heading=89.2
+2026-03-24 00:19:28,215 INFO     navigator | turn done | heading=-1.8
+2026-03-24 00:19:28,216 INFO     navigator | move_forward 56.0 cm | pos=(10.9, 20.4) heading=-1.8
+2026-03-24 00:19:30,244 DEBUG    navigator | moving | progress=39% heading=-1.8 correction=0.0 encoders=(604, 603)
+2026-03-24 00:19:32,269 DEBUG    navigator | moving | progress=80% heading=-1.8 correction=0.0 encoders=(1222, 1222)
+2026-03-24 00:19:33,304 INFO     navigator | move_forward done | traveled=56.4 cm pos=(67.2, 18.7) heading=-1.8
+2026-03-24 00:19:33,305 INFO     navigator | move_forward -30.0 cm | pos=(67.2, 18.7) heading=-1.8
+2026-03-24 00:19:33,308 INFO     navigator | move_forward done | traveled=0.0 cm pos=(67.2, 18.7) heading=-1.8
+2026-03-24 00:19:33,308 INFO     navigator | turn -90.0 deg | pos=(67.2, 18.7) heading=-1.8
+2026-03-24 00:19:35,567 INFO     navigator | turn done | heading=-91.0
+2026-03-24 00:19:35,568 INFO     navigator | move_forward 4.0 cm | pos=(67.2, 18.7) heading=-91.0
+2026-03-24 00:19:35,986 INFO     navigator | move_forward done | traveled=4.2 cm pos=(67.2, 14.5) heading=-91.0
+2026-03-24 00:19:35,987 INFO     navigator | turn 90.0 deg | pos=(67.2, 14.5) heading=-91.0
+2026-03-24 00:19:38,327 INFO     navigator | turn done | heading=-1.8
+2026-03-24 00:19:38,329 INFO     navigator | move_forward 30.0 cm | pos=(67.2, 14.5) heading=-1.8
+2026-03-24 00:19:47,609 INFO     test_navigator | Gyro enabled on port 4
+2026-03-24 00:19:47,622 INFO     navigator | Navigator init | gyro=True us=False gyro_offset=0.0
+2026-03-24 00:19:47,623 INFO     test_navigator | Starting test: go_to_room
+2026-03-24 00:19:47,624 INFO     navigator | move_forward 10.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-24 00:20:35,231 INFO     test_navigator | Gyro enabled on port 4
+2026-03-24 00:20:35,243 INFO     navigator | Navigator init | gyro=True us=False gyro_offset=0.0
+2026-03-24 00:20:35,244 INFO     test_navigator | Starting test: go_to_room
+2026-03-24 00:20:35,245 INFO     navigator | move_forward 10.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-24 00:20:36,230 INFO     navigator | move_forward done | traveled=10.6 cm pos=(10.6, 0.0) heading=0.0
+2026-03-24 00:20:36,231 INFO     navigator | turn 90.0 deg | pos=(10.6, 0.0) heading=0.0
+2026-03-24 00:20:38,568 INFO     navigator | turn done | heading=89.2
+2026-03-24 00:20:38,569 INFO     navigator | move_forward 20.0 cm | pos=(10.6, 0.0) heading=89.2
+2026-03-24 00:20:40,441 INFO     navigator | move_forward done | traveled=20.5 cm pos=(11.5, 20.4) heading=87.4
+2026-03-24 00:20:40,442 INFO     navigator | turn -90.0 deg | pos=(11.5, 20.4) heading=87.4
+2026-03-24 00:20:42,694 INFO     navigator | turn done | heading=-1.8
+2026-03-24 00:20:42,695 INFO     navigator | move_forward 56.0 cm | pos=(11.5, 20.4) heading=-1.8
+2026-03-24 00:20:44,728 DEBUG    navigator | moving | progress=40% heading=-1.8 correction=0.0 encoders=(607, 607)
+2026-03-24 00:20:46,747 DEBUG    navigator | moving | progress=80% heading=-3.6 correction=3.6 encoders=(1222, 1225)
+2026-03-24 00:20:47,786 INFO     navigator | move_forward done | traveled=56.5 cm pos=(67.8, 16.9) heading=-3.6
+2026-03-24 00:20:47,787 INFO     navigator | move_forward -30.0 cm | pos=(67.8, 16.9) heading=-3.6
+2026-03-24 00:20:47,791 INFO     navigator | move_forward done | traveled=0.0 cm pos=(67.9, 16.9) heading=-3.6
+2026-03-24 00:20:47,792 INFO     navigator | turn -90.0 deg | pos=(67.9, 16.9) heading=-3.6
+2026-03-24 00:20:50,035 INFO     navigator | turn done | heading=-92.8
+2026-03-24 00:20:50,036 INFO     navigator | move_forward 4.0 cm | pos=(67.9, 16.9) heading=-92.8
+2026-03-24 00:20:50,450 INFO     navigator | move_forward done | traveled=4.1 cm pos=(67.5, 12.8) heading=-94.5
+2026-03-24 00:20:50,452 INFO     navigator | turn 90.0 deg | pos=(67.5, 12.8) heading=-94.5
+2026-03-24 00:20:52,683 INFO     navigator | turn done | heading=-5.4
+2026-03-24 00:20:52,684 INFO     navigator | move_forward 30.0 cm | pos=(67.5, 12.8) heading=-5.4
+2026-03-24 00:20:54,710 DEBUG    navigator | moving | progress=73% heading=0.0 correction=-10.7 encoders=(614, 585)
+2026-03-24 00:20:55,439 INFO     navigator | move_forward done | traveled=30.3 cm pos=(97.5, 17.5) heading=8.9
+2026-03-24 00:20:55,440 INFO     navigator | move_forward -30.0 cm | pos=(97.5, 17.5) heading=8.9
+2026-03-24 00:20:55,443 INFO     navigator | move_forward done | traveled=0.0 cm pos=(97.5, 17.5) heading=8.9
+2026-03-24 00:20:55,443 INFO     navigator | turn -90.0 deg | pos=(97.5, 17.5) heading=8.9
+2026-03-24 00:21:00,977 DEBUG    navigator | gyro trim done | target=-81.1 actual=-80.3
+2026-03-24 00:21:00,978 INFO     navigator | turn done | heading=-80.3
+2026-03-24 00:21:00,979 INFO     navigator | move_forward 4.0 cm | pos=(97.5, 17.5) heading=-80.3
+2026-03-24 00:21:01,398 INFO     navigator | move_forward done | traveled=4.3 cm pos=(100.2, 14.1) heading=-51.7
+2026-03-24 00:21:01,399 INFO     navigator | turn 90.0 deg | pos=(100.2, 14.1) heading=-51.7
+2026-03-24 00:21:05,210 DEBUG    navigator | gyro trim done | target=38.3 actual=39.2
+2026-03-24 00:21:05,212 INFO     navigator | turn done | heading=39.2
+2026-03-24 00:21:05,213 INFO     navigator | move_forward 30.0 cm | pos=(100.2, 14.1) heading=39.2
+2026-03-24 00:21:07,234 DEBUG    navigator | moving | progress=73% heading=37.5 correction=3.6 encoders=(597, 604)
+2026-03-24 00:21:07,962 INFO     navigator | move_forward done | traveled=30.1 cm pos=(124.1, 32.4) heading=37.5
+2026-03-24 00:21:07,964 INFO     test_navigator | Test complete.
+2026-03-24 00:21:28,195 INFO     test_navigator | Gyro enabled on port 4
+2026-03-24 00:21:28,208 INFO     navigator | Navigator init | gyro=True us=False gyro_offset=0.0
+2026-03-24 00:21:28,209 INFO     test_navigator | Starting test: go_to_room
+2026-03-24 00:21:28,210 INFO     navigator | move_forward 10.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-24 00:21:29,199 INFO     navigator | move_forward done | traveled=10.6 cm pos=(10.6, 0.0) heading=0.0
+2026-03-24 00:21:29,200 INFO     navigator | turn 90.0 deg | pos=(10.6, 0.0) heading=0.0
+2026-03-24 00:21:31,674 DEBUG    navigator | gyro trim done | target=90.0 actual=89.2
+2026-03-24 00:21:31,675 INFO     navigator | turn done | heading=89.2
+2026-03-24 00:21:31,676 INFO     navigator | move_forward 20.0 cm | pos=(10.6, 0.0) heading=89.2
+2026-03-24 00:21:33,547 INFO     navigator | move_forward done | traveled=20.5 cm pos=(10.8, 20.5) heading=89.2
+2026-03-24 00:21:33,548 INFO     navigator | turn -90.0 deg | pos=(10.8, 20.5) heading=89.2
+2026-03-24 00:21:35,798 INFO     navigator | turn done | heading=0.0
+2026-03-24 00:21:35,799 INFO     navigator | move_forward 56.0 cm | pos=(10.8, 20.5) heading=0.0
+2026-03-24 00:21:37,818 DEBUG    navigator | moving | progress=39% heading=0.0 correction=0.0 encoders=(599, 607)
+2026-03-24 00:21:39,839 DEBUG    navigator | moving | progress=80% heading=0.0 correction=0.0 encoders=(1216, 1226)
+2026-03-24 00:21:40,879 INFO     navigator | move_forward done | traveled=56.4 cm pos=(67.2, 18.7) heading=-1.8
+2026-03-24 00:21:40,880 INFO     navigator | move_forward -30.0 cm | pos=(67.2, 18.7) heading=-1.8
+2026-03-24 00:21:40,887 INFO     navigator | move_forward done | traveled=0.0 cm pos=(67.2, 18.7) heading=-1.8
+2026-03-24 00:21:40,888 INFO     navigator | turn -90.0 deg | pos=(67.2, 18.7) heading=-1.8
+2026-03-24 00:21:43,236 INFO     navigator | turn done | heading=-91.0
+2026-03-24 00:21:43,238 INFO     navigator | move_forward 4.0 cm | pos=(67.2, 18.7) heading=-91.0
+2026-03-24 00:21:43,657 INFO     navigator | move_forward done | traveled=4.2 cm pos=(67.0, 14.6) heading=-92.8
+2026-03-24 00:21:43,658 INFO     navigator | turn 90.0 deg | pos=(67.0, 14.6) heading=-92.8
+2026-03-24 00:21:45,997 INFO     navigator | turn done | heading=-1.8
+2026-03-24 00:21:45,999 INFO     navigator | move_forward 30.0 cm | pos=(67.0, 14.6) heading=-1.8
+2026-03-24 00:21:48,020 DEBUG    navigator | moving | progress=74% heading=14.3 correction=-32.1 encoders=(618, 586)
+2026-03-24 00:21:48,747 INFO     navigator | move_forward done | traveled=30.2 cm pos=(94.0, 28.2) heading=26.8
+2026-03-24 00:21:48,748 INFO     navigator | move_forward -30.0 cm | pos=(94.0, 28.2) heading=26.8
+2026-03-24 00:21:48,751 INFO     navigator | move_forward done | traveled=0.0 cm pos=(94.0, 28.2) heading=26.8
+2026-03-24 00:21:48,752 INFO     navigator | turn -90.0 deg | pos=(94.0, 28.2) heading=26.8
+2026-03-24 00:23:53,616 INFO     test_navigator | Gyro enabled on port 4
+2026-03-24 00:23:53,630 INFO     navigator | Navigator init | gyro=True us=False gyro_offset=0.0
+2026-03-24 00:23:53,631 INFO     test_navigator | Starting test: go_to_room
+2026-03-24 00:23:53,632 INFO     navigator | move_forward 10.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-24 00:23:54,619 INFO     navigator | move_forward done | traveled=10.5 cm pos=(10.5, 0.0) heading=0.0
+2026-03-24 00:23:54,620 INFO     navigator | turn 90.0 deg | pos=(10.5, 0.0) heading=0.0
+2026-03-24 00:23:56,917 INFO     navigator | turn done | heading=89.2
+2026-03-24 00:23:56,918 INFO     navigator | move_forward 20.0 cm | pos=(10.5, 0.0) heading=89.2
+2026-03-24 00:23:58,788 INFO     navigator | move_forward done | traveled=20.4 cm pos=(10.8, 20.4) heading=89.2
+2026-03-24 00:23:58,789 INFO     navigator | turn -45.0 deg | pos=(10.8, 20.4) heading=89.2
+2026-03-24 00:23:59,927 INFO     navigator | turn done | heading=44.6
+2026-03-24 00:24:00,000 INFO     navigator | move_forward 5.0 cm | pos=(10.8, 20.4) heading=44.6
+2026-03-24 00:24:00,519 INFO     navigator | move_forward done | traveled=5.3 cm pos=(14.7, 24.0) heading=42.8
+2026-03-24 00:24:00,520 INFO     navigator | turn -45.0 deg | pos=(14.7, 24.0) heading=42.8
+2026-03-24 00:24:01,876 DEBUG    navigator | gyro trim done | target=-2.2 actual=-1.8
+2026-03-24 00:24:01,878 INFO     navigator | turn done | heading=-1.8
+2026-03-24 00:24:01,879 INFO     navigator | move_forward 56.0 cm | pos=(14.7, 24.0) heading=-1.8
+2026-03-24 00:24:03,905 DEBUG    navigator | moving | progress=40% heading=-1.8 correction=0.0 encoders=(605, 607)
+2026-03-24 00:24:05,925 DEBUG    navigator | moving | progress=80% heading=-3.6 correction=3.6 encoders=(1218, 1226)
+2026-03-24 00:24:06,938 INFO     navigator | move_forward done | traveled=56.1 cm pos=(70.7, 20.5) heading=-3.6
+2026-03-24 00:24:06,939 INFO     navigator | move_forward -30.0 cm | pos=(70.7, 20.5) heading=-3.6
+2026-03-24 00:24:06,943 INFO     navigator | move_forward done | traveled=0.0 cm pos=(70.7, 20.5) heading=-3.6
+2026-03-24 00:24:06,944 INFO     navigator | turn -90.0 deg | pos=(70.7, 20.5) heading=-3.6
+2026-03-24 00:24:09,356 DEBUG    navigator | gyro trim done | target=-93.6 actual=-92.8
+2026-03-24 00:24:09,357 INFO     navigator | turn done | heading=-92.8
+2026-03-24 00:24:09,358 INFO     navigator | move_forward 4.0 cm | pos=(70.7, 20.5) heading=-92.8
+2026-03-24 00:24:09,777 INFO     navigator | move_forward done | traveled=4.1 cm pos=(70.5, 16.3) heading=-92.8
+2026-03-24 00:24:09,778 INFO     navigator | turn 90.0 deg | pos=(70.5, 16.3) heading=-92.8
+2026-03-24 00:28:11,092 INFO     test_navigator | Gyro enabled on port 4
+2026-03-24 00:28:11,105 INFO     navigator | Navigator init | gyro=True us=False gyro_offset=0.0
+2026-03-24 00:28:11,106 INFO     test_navigator | Starting test: go_to_room
+2026-03-24 00:28:11,108 INFO     navigator | move_forward 10.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-24 00:28:12,098 INFO     navigator | move_forward done | traveled=10.6 cm pos=(10.6, 0.0) heading=0.0
+2026-03-24 00:28:12,099 INFO     navigator | turn 90.0 deg | pos=(10.6, 0.0) heading=0.0
+2026-03-24 00:28:14,540 DEBUG    navigator | gyro trim done | target=90.0 actual=89.2
+2026-03-24 00:28:14,541 INFO     navigator | turn done | heading=89.2
+2026-03-24 00:28:14,542 INFO     navigator | move_forward 20.0 cm | pos=(10.6, 0.0) heading=89.2
+2026-03-24 00:28:16,409 INFO     navigator | move_forward done | traveled=20.4 cm pos=(10.9, 20.4) heading=89.2
+2026-03-24 00:28:16,410 INFO     navigator | turn -2.0 deg | pos=(10.9, 20.4) heading=89.2
+2026-03-24 00:28:16,687 INFO     navigator | turn done | heading=87.4
+2026-03-24 00:28:16,688 INFO     navigator | move_forward 0.0 cm | pos=(10.9, 20.4) heading=87.4
+2026-03-24 00:28:16,744 INFO     navigator | move_forward done | traveled=0.2 cm pos=(10.9, 20.6) heading=87.4
+2026-03-24 00:28:16,745 INFO     navigator | turn -2.0 deg | pos=(10.9, 20.6) heading=87.4
+2026-03-24 00:28:16,980 INFO     navigator | turn done | heading=85.6
+2026-03-24 00:28:16,983 INFO     navigator | move_forward 0.0 cm | pos=(10.9, 20.6) heading=85.6
+2026-03-24 00:28:17,040 INFO     navigator | move_forward done | traveled=0.2 cm pos=(10.9, 20.8) heading=85.6
+2026-03-24 00:28:17,041 INFO     navigator | turn -2.0 deg | pos=(10.9, 20.8) heading=85.6
+2026-03-24 00:28:17,273 INFO     navigator | turn done | heading=83.8
+2026-03-24 00:28:17,275 INFO     navigator | move_forward 0.0 cm | pos=(10.9, 20.8) heading=83.8
+2026-03-24 00:28:17,332 INFO     navigator | move_forward done | traveled=0.2 cm pos=(10.9, 20.9) heading=83.8
+2026-03-24 00:28:17,334 INFO     navigator | turn -2.0 deg | pos=(10.9, 20.9) heading=83.8
+2026-03-24 00:28:17,425 INFO     navigator | turn done | heading=82.1
+2026-03-24 00:28:17,427 INFO     navigator | move_forward 0.0 cm | pos=(10.9, 20.9) heading=82.1
+2026-03-24 00:28:17,483 INFO     navigator | move_forward done | traveled=0.2 cm pos=(10.9, 21.1) heading=82.1
+2026-03-24 00:28:17,485 INFO     navigator | turn -2.0 deg | pos=(10.9, 21.1) heading=82.1
+2026-03-24 00:28:17,716 INFO     navigator | turn done | heading=80.3
+2026-03-24 00:28:17,717 INFO     navigator | move_forward 0.0 cm | pos=(10.9, 21.1) heading=80.3
+2026-03-24 00:28:17,771 INFO     navigator | move_forward done | traveled=0.1 cm pos=(11.0, 21.3) heading=80.3
+2026-03-24 00:28:17,773 INFO     navigator | turn -2.0 deg | pos=(11.0, 21.3) heading=80.3
+2026-03-24 00:28:17,979 INFO     navigator | turn done | heading=78.5
+2026-03-24 00:28:17,980 INFO     navigator | move_forward 0.0 cm | pos=(11.0, 21.3) heading=78.5
+2026-03-24 00:28:18,034 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.0, 21.4) heading=78.5
+2026-03-24 00:28:18,035 INFO     navigator | turn -2.0 deg | pos=(11.0, 21.4) heading=78.5
+2026-03-24 00:28:18,263 INFO     navigator | turn done | heading=76.7
+2026-03-24 00:28:18,264 INFO     navigator | move_forward 0.0 cm | pos=(11.0, 21.4) heading=76.7
+2026-03-24 00:28:18,318 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.1, 21.6) heading=76.7
+2026-03-24 00:28:18,319 INFO     navigator | turn -2.0 deg | pos=(11.1, 21.6) heading=76.7
+2026-03-24 00:28:18,563 INFO     navigator | turn done | heading=74.9
+2026-03-24 00:28:18,564 INFO     navigator | move_forward 0.0 cm | pos=(11.1, 21.6) heading=74.9
+2026-03-24 00:28:18,621 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.1, 21.8) heading=74.9
+2026-03-24 00:28:18,622 INFO     navigator | turn -2.0 deg | pos=(11.1, 21.8) heading=74.9
+2026-03-24 00:28:18,939 DEBUG    navigator | gyro trim done | target=72.9 actual=73.1
+2026-03-24 00:28:18,940 INFO     navigator | turn done | heading=73.1
+2026-03-24 00:28:18,940 INFO     navigator | move_forward 0.0 cm | pos=(11.1, 21.8) heading=73.1
+2026-03-24 00:28:18,996 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.2, 22.0) heading=73.1
+2026-03-24 00:28:18,997 INFO     navigator | turn -2.0 deg | pos=(11.2, 22.0) heading=73.1
+2026-03-24 00:28:19,173 DEBUG    navigator | gyro trim done | target=71.1 actual=71.4
+2026-03-24 00:28:19,174 INFO     navigator | turn done | heading=71.4
+2026-03-24 00:28:19,174 INFO     navigator | move_forward 0.0 cm | pos=(11.2, 22.0) heading=71.4
+2026-03-24 00:28:19,230 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.2, 22.2) heading=71.4
+2026-03-24 00:28:19,231 INFO     navigator | turn -2.0 deg | pos=(11.2, 22.2) heading=71.4
+2026-03-24 00:28:19,588 DEBUG    navigator | gyro trim done | target=69.4 actual=69.6
+2026-03-24 00:28:19,589 INFO     navigator | turn done | heading=69.6
+2026-03-24 00:28:19,589 INFO     navigator | move_forward 0.0 cm | pos=(11.2, 22.2) heading=69.6
+2026-03-24 00:28:19,645 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.3, 22.4) heading=69.6
+2026-03-24 00:28:19,646 INFO     navigator | turn -2.0 deg | pos=(11.3, 22.4) heading=69.6
+2026-03-24 00:28:19,877 INFO     navigator | turn done | heading=67.8
+2026-03-24 00:28:19,878 INFO     navigator | move_forward 0.0 cm | pos=(11.3, 22.4) heading=67.8
+2026-03-24 00:28:19,934 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.4, 22.6) heading=67.8
+2026-03-24 00:28:19,936 INFO     navigator | turn -2.0 deg | pos=(11.4, 22.6) heading=67.8
+2026-03-24 00:28:20,027 INFO     navigator | turn done | heading=66.0
+2026-03-24 00:28:20,029 INFO     navigator | move_forward 0.0 cm | pos=(11.4, 22.6) heading=66.0
+2026-03-24 00:28:20,085 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.4, 22.7) heading=66.0
+2026-03-24 00:28:20,087 INFO     navigator | turn -2.0 deg | pos=(11.4, 22.7) heading=66.0
+2026-03-24 00:28:20,329 INFO     navigator | turn done | heading=64.2
+2026-03-24 00:28:20,331 INFO     navigator | move_forward 0.0 cm | pos=(11.4, 22.7) heading=64.2
+2026-03-24 00:28:20,387 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.5, 22.9) heading=64.2
+2026-03-24 00:28:20,389 INFO     navigator | turn -2.0 deg | pos=(11.5, 22.9) heading=64.2
+2026-03-24 00:28:20,610 INFO     navigator | turn done | heading=62.4
+2026-03-24 00:28:20,611 INFO     navigator | move_forward 0.0 cm | pos=(11.5, 22.9) heading=62.4
+2026-03-24 00:28:20,668 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.6, 23.1) heading=62.4
+2026-03-24 00:28:20,669 INFO     navigator | turn -2.0 deg | pos=(11.6, 23.1) heading=62.4
+2026-03-24 00:28:20,901 INFO     navigator | turn done | heading=60.7
+2026-03-24 00:28:20,903 INFO     navigator | move_forward 0.0 cm | pos=(11.6, 23.1) heading=60.7
+2026-03-24 00:28:20,958 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.7, 23.2) heading=60.7
+2026-03-24 00:28:20,959 INFO     navigator | turn -2.0 deg | pos=(11.7, 23.2) heading=60.7
+2026-03-24 00:28:21,306 DEBUG    navigator | gyro trim done | target=58.7 actual=58.9
+2026-03-24 00:28:21,307 INFO     navigator | turn done | heading=58.9
+2026-03-24 00:28:21,308 INFO     navigator | move_forward 0.0 cm | pos=(11.7, 23.2) heading=58.9
+2026-03-24 00:28:21,364 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.8, 23.4) heading=58.9
+2026-03-24 00:28:21,365 INFO     navigator | turn -2.0 deg | pos=(11.8, 23.4) heading=58.9
+2026-03-24 00:28:21,577 INFO     navigator | turn done | heading=57.1
+2026-03-24 00:28:21,578 INFO     navigator | move_forward 0.0 cm | pos=(11.8, 23.4) heading=57.1
+2026-03-24 00:28:21,634 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.9, 23.5) heading=57.1
+2026-03-24 00:28:21,636 INFO     navigator | turn -2.0 deg | pos=(11.9, 23.5) heading=57.1
+2026-03-24 00:28:21,728 INFO     navigator | turn done | heading=55.3
+2026-03-24 00:28:21,729 INFO     navigator | move_forward 0.0 cm | pos=(11.9, 23.5) heading=55.3
+2026-03-24 00:28:21,785 INFO     navigator | move_forward done | traveled=0.2 cm pos=(12.0, 23.7) heading=55.3
+2026-03-24 00:28:21,787 INFO     navigator | turn -2.0 deg | pos=(12.0, 23.7) heading=55.3
+2026-03-24 00:28:22,103 DEBUG    navigator | gyro trim done | target=53.3 actual=53.5
+2026-03-24 00:28:22,105 INFO     navigator | turn done | heading=53.5
+2026-03-24 00:28:22,105 INFO     navigator | move_forward 0.0 cm | pos=(12.0, 23.7) heading=53.5
+2026-03-24 00:28:22,161 INFO     navigator | move_forward done | traveled=0.2 cm pos=(12.1, 23.9) heading=53.5
+2026-03-24 00:28:22,163 INFO     navigator | turn -2.0 deg | pos=(12.1, 23.9) heading=53.5
+2026-03-24 00:28:22,405 INFO     navigator | turn done | heading=51.7
+2026-03-24 00:28:22,407 INFO     navigator | move_forward 0.0 cm | pos=(12.1, 23.9) heading=51.7
+2026-03-24 00:28:22,463 INFO     navigator | move_forward done | traveled=0.2 cm pos=(12.2, 24.0) heading=51.7
+2026-03-24 00:28:22,464 INFO     navigator | turn -2.0 deg | pos=(12.2, 24.0) heading=51.7
+2026-03-24 00:28:22,758 DEBUG    navigator | gyro trim done | target=49.7 actual=49.9
+2026-03-24 00:28:22,759 INFO     navigator | turn done | heading=49.9
+2026-03-24 00:28:22,760 INFO     navigator | move_forward 0.0 cm | pos=(12.2, 24.0) heading=49.9
+2026-03-24 00:28:22,816 INFO     navigator | move_forward done | traveled=0.2 cm pos=(12.3, 24.1) heading=49.9
+2026-03-24 00:28:22,818 INFO     navigator | turn -2.0 deg | pos=(12.3, 24.1) heading=49.9
+2026-03-24 00:28:22,993 DEBUG    navigator | gyro trim done | target=47.9 actual=48.2
+2026-03-24 00:28:22,994 INFO     navigator | turn done | heading=48.2
+2026-03-24 00:28:22,995 INFO     navigator | move_forward 0.0 cm | pos=(12.3, 24.1) heading=48.2
+2026-03-24 00:28:23,051 INFO     navigator | move_forward done | traveled=0.2 cm pos=(12.5, 24.2) heading=48.2
+2026-03-24 00:28:23,052 INFO     navigator | turn -2.0 deg | pos=(12.5, 24.2) heading=48.2
+2026-03-24 00:28:23,389 DEBUG    navigator | gyro trim done | target=46.2 actual=46.4
+2026-03-24 00:28:23,390 INFO     navigator | turn done | heading=46.4
+2026-03-24 00:28:23,391 INFO     navigator | move_forward 0.0 cm | pos=(12.5, 24.2) heading=46.4
+2026-03-24 00:28:23,447 INFO     navigator | move_forward done | traveled=0.2 cm pos=(12.6, 24.4) heading=46.4
+2026-03-24 00:28:23,448 INFO     navigator | turn -2.0 deg | pos=(12.6, 24.4) heading=46.4
+2026-03-24 00:28:23,670 INFO     navigator | turn done | heading=44.6
+2026-03-24 00:28:23,671 INFO     navigator | move_forward 0.0 cm | pos=(12.6, 24.4) heading=44.6
+2026-03-24 00:28:23,728 INFO     navigator | move_forward done | traveled=0.2 cm pos=(12.7, 24.5) heading=44.6
+2026-03-24 00:28:23,729 INFO     navigator | turn -2.0 deg | pos=(12.7, 24.5) heading=44.6
+2026-03-24 00:28:24,076 DEBUG    navigator | gyro trim done | target=42.6 actual=42.8
+2026-03-24 00:28:24,077 INFO     navigator | turn done | heading=42.8
+2026-03-24 00:28:24,078 INFO     navigator | move_forward 0.0 cm | pos=(12.7, 24.5) heading=42.8
+2026-03-24 00:28:24,133 INFO     navigator | move_forward done | traveled=0.2 cm pos=(12.9, 24.7) heading=42.8
+2026-03-24 00:28:24,135 INFO     navigator | turn -2.0 deg | pos=(12.9, 24.7) heading=42.8
+2026-03-24 00:28:24,356 INFO     navigator | turn done | heading=41.0
+2026-03-24 00:28:24,357 INFO     navigator | move_forward 0.0 cm | pos=(12.9, 24.7) heading=41.0
+2026-03-24 00:28:24,413 INFO     navigator | move_forward done | traveled=0.1 cm pos=(13.0, 24.8) heading=41.0
+2026-03-24 00:28:24,414 INFO     navigator | turn -2.0 deg | pos=(13.0, 24.8) heading=41.0
+2026-03-24 00:28:24,637 INFO     navigator | turn done | heading=39.2
+2026-03-24 00:28:24,639 INFO     navigator | move_forward 0.0 cm | pos=(13.0, 24.8) heading=39.2
+2026-03-24 00:28:24,695 INFO     navigator | move_forward done | traveled=0.1 cm pos=(13.1, 24.9) heading=39.2
+2026-03-24 00:28:24,696 INFO     navigator | turn -2.0 deg | pos=(13.1, 24.9) heading=39.2
+2026-03-24 00:28:25,042 DEBUG    navigator | gyro trim done | target=37.2 actual=37.5
+2026-03-24 00:28:25,043 INFO     navigator | turn done | heading=37.5
+2026-03-24 00:28:25,044 INFO     navigator | move_forward 0.0 cm | pos=(13.1, 24.9) heading=37.5
+2026-03-24 00:28:25,099 INFO     navigator | move_forward done | traveled=0.2 cm pos=(13.3, 25.0) heading=37.5
+2026-03-24 00:28:25,101 INFO     navigator | turn -2.0 deg | pos=(13.3, 25.0) heading=37.5
+2026-03-24 00:28:25,333 INFO     navigator | turn done | heading=35.7
+2026-03-24 00:28:25,334 INFO     navigator | move_forward 0.0 cm | pos=(13.3, 25.0) heading=35.7
+2026-03-24 00:28:25,390 INFO     navigator | move_forward done | traveled=0.2 cm pos=(13.5, 25.1) heading=35.7
+2026-03-24 00:28:25,391 INFO     navigator | turn -2.0 deg | pos=(13.5, 25.1) heading=35.7
+2026-03-24 00:28:25,613 INFO     navigator | turn done | heading=33.9
+2026-03-24 00:28:25,615 INFO     navigator | move_forward 0.0 cm | pos=(13.5, 25.1) heading=33.9
+2026-03-24 00:28:25,671 INFO     navigator | move_forward done | traveled=0.2 cm pos=(13.6, 25.2) heading=33.9
+2026-03-24 00:28:25,673 INFO     navigator | turn -2.0 deg | pos=(13.6, 25.2) heading=33.9
+2026-03-24 00:28:25,895 INFO     navigator | turn done | heading=32.1
+2026-03-24 00:28:25,896 INFO     navigator | move_forward 0.0 cm | pos=(13.6, 25.2) heading=32.1
+2026-03-24 00:28:25,959 INFO     navigator | move_forward done | traveled=0.3 cm pos=(13.8, 25.4) heading=32.1
+2026-03-24 00:28:25,960 INFO     navigator | turn -2.0 deg | pos=(13.8, 25.4) heading=32.1
+2026-03-24 00:28:26,086 INFO     navigator | turn done | heading=30.3
+2026-03-24 00:28:26,087 INFO     navigator | move_forward 0.0 cm | pos=(13.8, 25.4) heading=30.3
+2026-03-24 00:28:26,141 INFO     navigator | move_forward done | traveled=0.2 cm pos=(14.0, 25.4) heading=30.3
+2026-03-24 00:28:26,142 INFO     navigator | turn -2.0 deg | pos=(14.0, 25.4) heading=30.3
+2026-03-24 00:28:26,347 INFO     navigator | turn done | heading=28.5
+2026-03-24 00:28:26,348 INFO     navigator | move_forward 0.0 cm | pos=(14.0, 25.4) heading=28.5
+2026-03-24 00:28:26,402 INFO     navigator | move_forward done | traveled=0.2 cm pos=(14.2, 25.6) heading=28.5
+2026-03-24 00:28:26,403 INFO     navigator | turn -2.0 deg | pos=(14.2, 25.6) heading=28.5
+2026-03-24 00:28:26,630 INFO     navigator | turn done | heading=26.8
+2026-03-24 00:28:26,631 INFO     navigator | move_forward 0.0 cm | pos=(14.2, 25.6) heading=26.8
+2026-03-24 00:28:26,693 INFO     navigator | move_forward done | traveled=0.2 cm pos=(14.4, 25.6) heading=26.8
+2026-03-24 00:28:26,694 INFO     navigator | turn -2.0 deg | pos=(14.4, 25.6) heading=26.8
+2026-03-24 00:28:26,830 DEBUG    navigator | gyro trim done | target=24.8 actual=25.0
+2026-03-24 00:28:26,830 INFO     navigator | turn done | heading=25.0
+2026-03-24 00:28:26,831 INFO     navigator | move_forward 0.0 cm | pos=(14.4, 25.6) heading=25.0
+2026-03-24 00:28:26,885 INFO     navigator | move_forward done | traveled=0.2 cm pos=(14.5, 25.7) heading=25.0
+2026-03-24 00:28:26,886 INFO     navigator | turn -2.0 deg | pos=(14.5, 25.7) heading=25.0
+2026-03-24 00:28:27,122 INFO     navigator | turn done | heading=23.2
+2026-03-24 00:28:27,123 INFO     navigator | move_forward 0.0 cm | pos=(14.5, 25.7) heading=23.2
+2026-03-24 00:28:27,177 INFO     navigator | move_forward done | traveled=0.2 cm pos=(14.7, 25.8) heading=23.2
+2026-03-24 00:28:27,178 INFO     navigator | turn -2.0 deg | pos=(14.7, 25.8) heading=23.2
+2026-03-24 00:28:27,404 INFO     navigator | turn done | heading=21.4
+2026-03-24 00:28:27,404 INFO     navigator | move_forward 0.0 cm | pos=(14.7, 25.8) heading=21.4
+2026-03-24 00:28:27,459 INFO     navigator | move_forward done | traveled=0.2 cm pos=(14.9, 25.9) heading=21.4
+2026-03-24 00:28:27,459 INFO     navigator | turn -2.0 deg | pos=(14.9, 25.9) heading=21.4
+2026-03-24 00:28:27,612 DEBUG    navigator | gyro trim done | target=19.4 actual=19.6
+2026-03-24 00:28:27,613 INFO     navigator | turn done | heading=19.6
+2026-03-24 00:28:27,614 INFO     navigator | move_forward 0.0 cm | pos=(14.9, 25.9) heading=19.6
+2026-03-24 00:28:27,670 INFO     navigator | move_forward done | traveled=0.2 cm pos=(15.1, 25.9) heading=19.6
+2026-03-24 00:28:27,671 INFO     navigator | turn -2.0 deg | pos=(15.1, 25.9) heading=19.6
+2026-03-24 00:28:27,846 DEBUG    navigator | gyro trim done | target=17.6 actual=17.8
+2026-03-24 00:28:27,847 INFO     navigator | turn done | heading=17.8
+2026-03-24 00:28:27,848 INFO     navigator | move_forward 0.0 cm | pos=(15.1, 25.9) heading=17.8
+2026-03-24 00:28:27,903 INFO     navigator | move_forward done | traveled=0.2 cm pos=(15.3, 26.0) heading=17.8
+2026-03-24 00:28:27,904 INFO     navigator | turn -2.0 deg | pos=(15.3, 26.0) heading=17.8
+2026-03-24 00:28:28,048 DEBUG    navigator | gyro trim done | target=15.8 actual=16.1
+2026-03-24 00:28:28,049 INFO     navigator | turn done | heading=16.1
+2026-03-24 00:28:28,050 INFO     navigator | move_forward 0.0 cm | pos=(15.3, 26.0) heading=16.1
+2026-03-24 00:28:28,105 INFO     navigator | move_forward done | traveled=0.2 cm pos=(15.5, 26.1) heading=16.1
+2026-03-24 00:28:28,106 INFO     navigator | turn -2.0 deg | pos=(15.5, 26.1) heading=16.1
+2026-03-24 00:28:28,261 DEBUG    navigator | gyro trim done | target=14.1 actual=14.3
+2026-03-24 00:28:28,262 INFO     navigator | turn done | heading=14.3
+2026-03-24 00:28:28,263 INFO     navigator | move_forward 0.0 cm | pos=(15.5, 26.1) heading=14.3
+2026-03-24 00:28:28,318 INFO     navigator | move_forward done | traveled=0.2 cm pos=(15.7, 26.1) heading=14.3
+2026-03-24 00:28:28,319 INFO     navigator | turn -2.0 deg | pos=(15.7, 26.1) heading=14.3
+2026-03-24 00:28:28,539 INFO     navigator | turn done | heading=12.5
+2026-03-24 00:28:28,540 INFO     navigator | move_forward 0.0 cm | pos=(15.7, 26.1) heading=12.5
+2026-03-24 00:28:28,596 INFO     navigator | move_forward done | traveled=0.2 cm pos=(15.9, 26.2) heading=12.5
+2026-03-24 00:28:28,597 INFO     navigator | turn -2.0 deg | pos=(15.9, 26.2) heading=12.5
+2026-03-24 00:28:28,741 DEBUG    navigator | gyro trim done | target=10.5 actual=10.7
+2026-03-24 00:28:28,742 INFO     navigator | turn done | heading=10.7
+2026-03-24 00:28:28,743 INFO     navigator | move_forward 0.0 cm | pos=(15.9, 26.2) heading=10.7
+2026-03-24 00:28:28,798 INFO     navigator | move_forward done | traveled=0.2 cm pos=(16.1, 26.2) heading=10.7
+2026-03-24 00:28:28,799 INFO     navigator | turn -2.0 deg | pos=(16.1, 26.2) heading=10.7
+2026-03-24 00:28:29,092 DEBUG    navigator | gyro trim done | target=8.7 actual=8.9
+2026-03-24 00:28:29,093 INFO     navigator | turn done | heading=8.9
+2026-03-24 00:28:29,094 INFO     navigator | move_forward 0.0 cm | pos=(16.1, 26.2) heading=8.9
+2026-03-24 00:28:29,150 INFO     navigator | move_forward done | traveled=0.2 cm pos=(16.3, 26.2) heading=8.9
+2026-03-24 00:28:29,151 INFO     navigator | move_forward 56.0 cm | pos=(16.3, 26.2) heading=8.9
+2026-03-24 00:28:31,168 DEBUG    navigator | moving | progress=39% heading=1.8 correction=14.3 encoders=(595, 607)
+2026-03-24 00:28:33,191 DEBUG    navigator | moving | progress=80% heading=0.0 correction=17.8 encoders=(1179, 1258)
+2026-03-24 00:28:34,229 INFO     navigator | move_forward done | traveled=56.3 cm pos=(72.5, 26.2) heading=0.0
+2026-03-24 00:28:34,231 INFO     navigator | move_forward -30.0 cm | pos=(72.5, 26.2) heading=0.0
+2026-03-24 00:28:34,234 INFO     navigator | move_forward done | traveled=0.0 cm pos=(72.5, 26.2) heading=0.0
+2026-03-24 00:28:34,235 INFO     navigator | turn -90.0 deg | pos=(72.5, 26.2) heading=0.0
+2026-03-24 00:28:36,480 INFO     navigator | turn done | heading=-89.2
+2026-03-24 00:28:36,481 INFO     navigator | move_forward 4.0 cm | pos=(72.5, 26.2) heading=-89.2
+2026-03-24 00:28:36,894 INFO     navigator | move_forward done | traveled=4.1 cm pos=(72.6, 22.1) heading=-89.2
+2026-03-24 00:28:36,895 INFO     navigator | turn 90.0 deg | pos=(72.6, 22.1) heading=-89.2
+2026-03-24 00:53:16,543 INFO     test_navigator | Running without gyro (blind turns)
+2026-03-24 00:53:16,544 INFO     navigator | Navigator init | gyro=False us=False gyro_offset=0.0
+2026-03-24 00:53:16,544 INFO     test_navigator | Starting test: box
+2026-03-24 00:53:16,545 INFO     test_navigator | === TEST: box (CW, right turns) ===
+2026-03-24 00:53:16,545 INFO     navigator | move_forward 30.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-24 00:53:18,557 DEBUG    navigator | moving | progress=74% heading=0.0 correction=0.0 encoders=(602, 602)
+2026-03-24 00:53:19,280 INFO     navigator | move_forward done | traveled=30.2 cm pos=(30.2, 0.0) heading=0.0
+2026-03-24 00:53:19,281 INFO     test_navigator | side 1 done          → pos=(30.2, 0.0) heading=0.0°
+2026-03-24 00:53:19,783 INFO     navigator | turn -90.0 deg | pos=(30.2, 0.0) heading=0.0
+2026-03-24 00:53:22,031 INFO     navigator | turn done | heading=-90.0
+2026-03-24 00:53:22,032 INFO     test_navigator | turn 1 done          → pos=(30.2, 0.0) heading=-90.0°
+2026-03-24 00:53:22,534 INFO     navigator | move_forward 30.0 cm | pos=(30.2, 0.0) heading=-90.0
+2026-03-24 00:53:24,540 DEBUG    navigator | moving | progress=73% heading=-90.0 correction=0.0 encoders=(601, 601)
+2026-03-24 00:53:25,268 INFO     navigator | move_forward done | traveled=30.2 cm pos=(30.2, -30.2) heading=-90.0
+2026-03-24 00:53:25,269 INFO     test_navigator | side 2 done          → pos=(30.2, -30.2) heading=-90.0°
+2026-03-24 00:53:25,770 INFO     navigator | turn -90.0 deg | pos=(30.2, -30.2) heading=-90.0
+2026-03-24 00:53:25,807 INFO     navigator | turn done | heading=-180.0
+2026-03-24 00:53:25,808 INFO     test_navigator | turn 2 done          → pos=(30.2, -30.2) heading=-180.0°
+2026-03-24 00:53:26,310 INFO     navigator | move_forward 30.0 cm | pos=(30.2, -30.2) heading=-180.0
+2026-03-24 00:53:48,943 INFO     test_navigator | Gyro enabled on port 4
+2026-03-24 00:53:48,956 INFO     navigator | Navigator init | gyro=True us=False gyro_offset=0.0
+2026-03-24 00:53:48,957 INFO     test_navigator | Starting test: go_to_room
+2026-03-24 00:53:48,959 INFO     navigator | move_forward 10.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-24 00:53:49,947 INFO     navigator | move_forward done | traveled=10.5 cm pos=(10.5, 0.0) heading=0.0
+2026-03-24 00:53:49,948 INFO     navigator | turn 90.0 deg | pos=(10.5, 0.0) heading=0.0
+2026-03-24 00:53:52,518 DEBUG    navigator | gyro trim done | target=90.0 actual=89.2
+2026-03-24 00:53:52,519 INFO     navigator | turn done | heading=89.2
+2026-03-24 00:53:52,520 INFO     navigator | move_forward 20.0 cm | pos=(10.5, 0.0) heading=89.2
+2026-03-24 00:53:54,385 INFO     navigator | move_forward done | traveled=20.3 cm pos=(11.4, 20.3) heading=87.4
+2026-03-24 00:53:54,386 INFO     navigator | turn -3.0 deg | pos=(11.4, 20.3) heading=87.4
+2026-03-24 00:53:54,676 DEBUG    navigator | gyro trim done | target=84.4 actual=83.8
+2026-03-24 00:53:54,677 INFO     navigator | turn done | heading=83.8
+2026-03-24 00:53:54,678 INFO     navigator | move_forward 0.0 cm | pos=(11.4, 20.3) heading=83.8
+2026-03-24 00:53:54,733 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.4, 20.5) heading=83.8
+2026-03-24 00:53:54,735 INFO     navigator | turn -3.0 deg | pos=(11.4, 20.5) heading=83.8
+2026-03-24 00:53:55,094 DEBUG    navigator | gyro trim done | target=80.8 actual=80.3
+2026-03-24 00:53:55,095 INFO     navigator | turn done | heading=80.3
+2026-03-24 00:53:55,096 INFO     navigator | move_forward 0.0 cm | pos=(11.4, 20.5) heading=80.3
+2026-03-24 00:53:55,152 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.5, 20.6) heading=80.3
+2026-03-24 00:53:55,153 INFO     navigator | turn -3.0 deg | pos=(11.5, 20.6) heading=80.3
+2026-03-24 00:53:55,422 DEBUG    navigator | gyro trim done | target=77.3 actual=76.7
+2026-03-24 00:53:55,423 INFO     navigator | turn done | heading=76.7
+2026-03-24 00:53:55,424 INFO     navigator | move_forward 0.0 cm | pos=(11.5, 20.6) heading=76.7
+2026-03-24 00:53:55,479 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.5, 20.8) heading=76.7
+2026-03-24 00:53:55,480 INFO     navigator | turn -3.0 deg | pos=(11.5, 20.8) heading=76.7
+2026-03-24 00:53:55,708 DEBUG    navigator | gyro trim done | target=73.7 actual=73.1
+2026-03-24 00:53:55,709 INFO     navigator | turn done | heading=73.1
+2026-03-24 00:53:55,709 INFO     navigator | move_forward 0.0 cm | pos=(11.5, 20.8) heading=73.1
+2026-03-24 00:53:55,765 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.6, 21.0) heading=73.1
+2026-03-24 00:53:55,766 INFO     navigator | turn -3.0 deg | pos=(11.6, 21.0) heading=73.1
+2026-03-24 00:53:55,952 DEBUG    navigator | gyro trim done | target=70.1 actual=69.6
+2026-03-24 00:53:55,953 INFO     navigator | turn done | heading=69.6
+2026-03-24 00:53:55,954 INFO     navigator | move_forward 0.0 cm | pos=(11.6, 21.0) heading=69.6
+2026-03-24 00:53:56,010 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.6, 21.2) heading=69.6
+2026-03-24 00:53:56,011 INFO     navigator | turn -3.0 deg | pos=(11.6, 21.2) heading=69.6
+2026-03-24 00:53:56,290 DEBUG    navigator | gyro trim done | target=66.6 actual=66.0
+2026-03-24 00:53:56,291 INFO     navigator | turn done | heading=66.0
+2026-03-24 00:53:56,292 INFO     navigator | move_forward 0.0 cm | pos=(11.6, 21.2) heading=66.0
+2026-03-24 00:53:56,348 INFO     navigator | move_forward done | traveled=0.3 cm pos=(11.7, 21.5) heading=66.0
+2026-03-24 00:53:56,349 INFO     navigator | turn -3.0 deg | pos=(11.7, 21.5) heading=66.0
+2026-03-24 00:53:56,606 DEBUG    navigator | gyro trim done | target=63.0 actual=62.4
+2026-03-24 00:53:56,607 INFO     navigator | turn done | heading=62.4
+2026-03-24 00:53:56,608 INFO     navigator | move_forward 0.0 cm | pos=(11.7, 21.5) heading=62.4
+2026-03-24 00:53:56,664 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.8, 21.6) heading=62.4
+2026-03-24 00:53:56,665 INFO     navigator | turn -3.0 deg | pos=(11.8, 21.6) heading=62.4
+2026-03-24 00:53:56,893 DEBUG    navigator | gyro trim done | target=59.4 actual=58.9
+2026-03-24 00:53:56,894 INFO     navigator | turn done | heading=58.9
+2026-03-24 00:53:56,895 INFO     navigator | move_forward 0.0 cm | pos=(11.8, 21.6) heading=58.9
+2026-03-24 00:53:56,951 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.9, 21.8) heading=58.9
+2026-03-24 00:53:56,952 INFO     navigator | turn -3.0 deg | pos=(11.9, 21.8) heading=58.9
+2026-03-24 00:53:57,339 DEBUG    navigator | gyro trim done | target=55.9 actual=55.3
+2026-03-24 00:53:57,340 INFO     navigator | turn done | heading=55.3
+2026-03-24 00:53:57,341 INFO     navigator | move_forward 0.0 cm | pos=(11.9, 21.8) heading=55.3
+2026-03-24 00:53:57,345 INFO     navigator | move_forward done | traveled=0.0 cm pos=(11.9, 21.8) heading=55.3
+2026-03-24 00:53:57,346 INFO     navigator | turn -3.0 deg | pos=(11.9, 21.8) heading=55.3
+2026-03-24 00:53:57,514 DEBUG    navigator | gyro trim done | target=52.3 actual=51.7
+2026-03-24 00:53:57,515 INFO     navigator | turn done | heading=51.7
+2026-03-24 00:53:57,516 INFO     navigator | move_forward 0.0 cm | pos=(11.9, 21.8) heading=51.7
+2026-03-24 00:53:57,571 INFO     navigator | move_forward done | traveled=0.2 cm pos=(12.1, 22.0) heading=51.7
+2026-03-24 00:53:57,573 INFO     navigator | turn -3.0 deg | pos=(12.1, 22.0) heading=51.7
+2026-03-24 00:53:57,842 DEBUG    navigator | gyro trim done | target=48.7 actual=48.2
+2026-03-24 00:53:57,843 INFO     navigator | turn done | heading=48.2
+2026-03-24 00:53:57,844 INFO     navigator | move_forward 0.0 cm | pos=(12.1, 22.0) heading=48.2
+2026-03-24 00:53:57,900 INFO     navigator | move_forward done | traveled=0.2 cm pos=(12.2, 22.1) heading=48.2
+2026-03-24 00:53:57,901 INFO     navigator | turn -3.0 deg | pos=(12.2, 22.1) heading=48.2
+2026-03-24 00:53:58,149 DEBUG    navigator | gyro trim done | target=45.2 actual=44.6
+2026-03-24 00:53:58,150 INFO     navigator | turn done | heading=44.6
+2026-03-24 00:53:58,151 INFO     navigator | move_forward 0.0 cm | pos=(12.2, 22.1) heading=44.6
+2026-03-24 00:53:58,207 INFO     navigator | move_forward done | traveled=0.2 cm pos=(12.3, 22.2) heading=44.6
+2026-03-24 00:53:58,208 INFO     navigator | turn -3.0 deg | pos=(12.3, 22.2) heading=44.6
+2026-03-24 00:53:58,467 DEBUG    navigator | gyro trim done | target=41.6 actual=41.0
+2026-03-24 00:53:58,468 INFO     navigator | turn done | heading=41.0
+2026-03-24 00:53:58,469 INFO     navigator | move_forward 0.0 cm | pos=(12.3, 22.2) heading=41.0
+2026-03-24 00:53:58,525 INFO     navigator | move_forward done | traveled=0.2 cm pos=(12.5, 22.4) heading=41.0
+2026-03-24 00:53:58,526 INFO     navigator | turn -3.0 deg | pos=(12.5, 22.4) heading=41.0
+2026-03-24 00:53:58,733 DEBUG    navigator | gyro trim done | target=38.0 actual=37.5
+2026-03-24 00:53:58,734 INFO     navigator | turn done | heading=37.5
+2026-03-24 00:53:58,735 INFO     navigator | move_forward 0.0 cm | pos=(12.5, 22.4) heading=37.5
+2026-03-24 00:53:58,791 INFO     navigator | move_forward done | traveled=0.2 cm pos=(12.7, 22.5) heading=37.5
+2026-03-24 00:53:58,792 INFO     navigator | turn -3.0 deg | pos=(12.7, 22.5) heading=37.5
+2026-03-24 00:53:59,159 DEBUG    navigator | gyro trim done | target=34.5 actual=33.9
+2026-03-24 00:53:59,160 INFO     navigator | turn done | heading=33.9
+2026-03-24 00:53:59,161 INFO     navigator | move_forward 0.0 cm | pos=(12.7, 22.5) heading=33.9
+2026-03-24 00:53:59,217 INFO     navigator | move_forward done | traveled=0.3 cm pos=(12.9, 22.7) heading=33.9
+2026-03-24 00:53:59,218 INFO     navigator | turn -3.0 deg | pos=(12.9, 22.7) heading=33.9
+2026-03-24 00:53:59,576 DEBUG    navigator | gyro trim done | target=30.9 actual=30.3
+2026-03-24 00:53:59,577 INFO     navigator | turn done | heading=30.3
+2026-03-24 00:53:59,581 INFO     navigator | move_forward 0.0 cm | pos=(12.9, 22.7) heading=30.3
+2026-03-24 00:53:59,637 INFO     navigator | move_forward done | traveled=0.2 cm pos=(13.1, 22.8) heading=30.3
+2026-03-24 00:53:59,638 INFO     navigator | turn -3.0 deg | pos=(13.1, 22.8) heading=30.3
+2026-03-24 00:53:59,846 DEBUG    navigator | gyro trim done | target=27.3 actual=26.8
+2026-03-24 00:53:59,848 INFO     navigator | turn done | heading=26.8
+2026-03-24 00:53:59,849 INFO     navigator | move_forward 0.0 cm | pos=(13.1, 22.8) heading=26.8
+2026-03-24 00:53:59,905 INFO     navigator | move_forward done | traveled=0.2 cm pos=(13.2, 22.8) heading=26.8
+2026-03-24 00:53:59,906 INFO     navigator | turn -3.0 deg | pos=(13.2, 22.8) heading=26.8
+2026-03-24 00:54:00,275 DEBUG    navigator | gyro trim done | target=23.8 actual=23.2
+2026-03-24 00:54:00,276 INFO     navigator | turn done | heading=23.2
+2026-03-24 00:54:00,276 INFO     navigator | move_forward 0.0 cm | pos=(13.2, 22.8) heading=23.2
+2026-03-24 00:54:00,332 INFO     navigator | move_forward done | traveled=0.2 cm pos=(13.4, 22.9) heading=23.2
+2026-03-24 00:54:00,333 INFO     navigator | turn -3.0 deg | pos=(13.4, 22.9) heading=23.2
+2026-03-24 00:54:00,622 DEBUG    navigator | gyro trim done | target=20.2 actual=19.6
+2026-03-24 00:54:00,623 INFO     navigator | turn done | heading=19.6
+2026-03-24 00:54:00,624 INFO     navigator | move_forward 0.0 cm | pos=(13.4, 22.9) heading=19.6
+2026-03-24 00:54:00,680 INFO     navigator | move_forward done | traveled=0.2 cm pos=(13.6, 23.0) heading=19.6
+2026-03-24 00:54:00,681 INFO     navigator | turn -3.0 deg | pos=(13.6, 23.0) heading=19.6
+2026-03-24 00:54:00,888 DEBUG    navigator | gyro trim done | target=16.6 actual=16.1
+2026-03-24 00:54:00,889 INFO     navigator | turn done | heading=16.1
+2026-03-24 00:54:00,890 INFO     navigator | move_forward 0.0 cm | pos=(13.6, 23.0) heading=16.1
+2026-03-24 00:54:00,946 INFO     navigator | move_forward done | traveled=0.2 cm pos=(13.8, 23.1) heading=16.1
+2026-03-24 00:54:00,947 INFO     navigator | turn -3.0 deg | pos=(13.8, 23.1) heading=16.1
+2026-03-24 00:54:01,357 DEBUG    navigator | gyro trim done | target=13.1 actual=12.5
+2026-03-24 00:54:01,359 INFO     navigator | turn done | heading=12.5
+2026-03-24 00:54:01,359 INFO     navigator | move_forward 0.0 cm | pos=(13.8, 23.1) heading=12.5
+2026-03-24 00:54:01,364 INFO     navigator | move_forward done | traveled=0.0 cm pos=(13.9, 23.1) heading=12.5
+2026-03-24 00:54:01,366 INFO     navigator | turn -3.0 deg | pos=(13.9, 23.1) heading=12.5
+2026-03-24 00:54:01,604 DEBUG    navigator | gyro trim done | target=9.5 actual=8.9
+2026-03-24 00:54:01,606 INFO     navigator | turn done | heading=8.9
+2026-03-24 00:54:01,608 INFO     navigator | move_forward 0.0 cm | pos=(13.9, 23.1) heading=8.9
+2026-03-24 00:54:01,664 INFO     navigator | move_forward done | traveled=0.2 cm pos=(14.1, 23.1) heading=8.9
+2026-03-24 00:54:01,666 INFO     navigator | turn -3.0 deg | pos=(14.1, 23.1) heading=8.9
+2026-03-24 00:54:01,935 DEBUG    navigator | gyro trim done | target=5.9 actual=5.4
+2026-03-24 00:54:01,936 INFO     navigator | turn done | heading=5.4
+2026-03-24 00:54:01,936 INFO     navigator | move_forward 0.0 cm | pos=(14.1, 23.1) heading=5.4
+2026-03-24 00:54:01,992 INFO     navigator | move_forward done | traveled=0.2 cm pos=(14.3, 23.1) heading=5.4
+2026-03-24 00:54:01,993 INFO     navigator | turn -3.0 deg | pos=(14.3, 23.1) heading=5.4
+2026-03-24 00:54:02,340 DEBUG    navigator | gyro trim done | target=2.4 actual=1.8
+2026-03-24 00:54:02,341 INFO     navigator | turn done | heading=1.8
+2026-03-24 00:54:02,342 INFO     navigator | move_forward 0.0 cm | pos=(14.3, 23.1) heading=1.8
+2026-03-24 00:54:02,398 INFO     navigator | move_forward done | traveled=0.2 cm pos=(14.5, 23.1) heading=1.8
+2026-03-24 00:54:02,399 INFO     navigator | turn -3.0 deg | pos=(14.5, 23.1) heading=1.8
+2026-03-24 00:54:02,740 DEBUG    navigator | gyro trim done | target=-1.2 actual=-1.8
+2026-03-24 00:54:02,741 INFO     navigator | turn done | heading=-1.8
+2026-03-24 00:54:02,741 INFO     navigator | move_forward 0.0 cm | pos=(14.5, 23.1) heading=-1.8
+2026-03-24 00:54:02,797 INFO     navigator | move_forward done | traveled=0.2 cm pos=(14.7, 23.1) heading=-1.8
+2026-03-24 00:54:02,798 INFO     navigator | turn -3.0 deg | pos=(14.7, 23.1) heading=-1.8
+2026-03-24 00:54:03,027 DEBUG    navigator | gyro trim done | target=-4.8 actual=-5.4
+2026-03-24 00:54:03,028 INFO     navigator | turn done | heading=-5.4
+2026-03-24 00:54:03,029 INFO     navigator | move_forward 0.0 cm | pos=(14.7, 23.1) heading=-5.4
+2026-03-24 00:54:03,084 INFO     navigator | move_forward done | traveled=0.2 cm pos=(14.9, 23.1) heading=-5.4
+2026-03-24 00:54:03,085 INFO     navigator | turn -3.0 deg | pos=(14.9, 23.1) heading=-5.4
+2026-03-24 00:54:03,354 DEBUG    navigator | gyro trim done | target=-8.4 actual=-8.9
+2026-03-24 00:54:03,354 INFO     navigator | turn done | heading=-8.9
+2026-03-24 00:54:03,355 INFO     navigator | move_forward 0.0 cm | pos=(14.9, 23.1) heading=-8.9
+2026-03-24 00:54:03,409 INFO     navigator | move_forward done | traveled=0.1 cm pos=(15.1, 23.1) heading=-8.9
+2026-03-24 00:54:03,409 INFO     navigator | turn -3.0 deg | pos=(15.1, 23.1) heading=-8.9
+2026-03-24 00:54:03,631 DEBUG    navigator | gyro trim done | target=-11.9 actual=-12.5
+2026-03-24 00:54:03,632 INFO     navigator | turn done | heading=-12.5
+2026-03-24 00:54:03,633 INFO     navigator | move_forward 0.0 cm | pos=(15.1, 23.1) heading=-12.5
+2026-03-24 00:54:03,686 INFO     navigator | move_forward done | traveled=0.2 cm pos=(15.3, 23.0) heading=-12.5
+2026-03-24 00:54:03,687 INFO     navigator | turn -3.0 deg | pos=(15.3, 23.0) heading=-12.5
+2026-03-24 00:54:03,940 DEBUG    navigator | gyro trim done | target=-15.5 actual=-16.1
+2026-03-24 00:54:03,940 INFO     navigator | turn done | heading=-16.1
+2026-03-24 00:54:03,941 INFO     navigator | move_forward 0.0 cm | pos=(15.3, 23.0) heading=-16.1
+2026-03-24 00:54:03,995 INFO     navigator | move_forward done | traveled=0.2 cm pos=(15.4, 23.0) heading=-16.1
+2026-03-24 00:54:03,996 INFO     navigator | turn -3.0 deg | pos=(15.4, 23.0) heading=-16.1
+2026-03-24 00:54:04,160 DEBUG    navigator | gyro trim done | target=-19.1 actual=-19.6
+2026-03-24 00:54:04,161 INFO     navigator | turn done | heading=-19.6
+2026-03-24 00:54:04,162 INFO     navigator | move_forward 0.0 cm | pos=(15.4, 23.0) heading=-19.6
+2026-03-24 00:54:04,218 INFO     navigator | move_forward done | traveled=0.2 cm pos=(15.6, 22.9) heading=-19.6
+2026-03-24 00:54:04,219 INFO     navigator | move_forward 56.0 cm | pos=(15.6, 22.9) heading=-19.6
+2026-03-24 00:54:06,245 DEBUG    navigator | moving | progress=40% heading=-19.6 correction=0.0 encoders=(605, 607)
+2026-03-24 00:54:08,261 DEBUG    navigator | moving | progress=80% heading=-21.4 correction=3.6 encoders=(1214, 1229)
+2026-03-24 00:54:09,300 INFO     navigator | move_forward done | traveled=56.4 cm pos=(67.5, 0.7) heading=-23.2
+2026-03-24 00:54:09,301 INFO     navigator | move_forward 30.0 cm | pos=(67.5, 0.7) heading=-23.2
+2026-03-24 00:54:11,326 DEBUG    navigator | moving | progress=74% heading=-26.8 correction=7.1 encoders=(599, 605)
+2026-03-24 00:54:12,054 INFO     navigator | move_forward done | traveled=30.3 cm pos=(94.0, -13.7) heading=-28.5
+2026-03-24 00:54:12,055 INFO     navigator | turn -90.0 deg | pos=(94.0, -13.7) heading=-28.5
+2026-03-24 00:54:14,369 INFO     navigator | turn done | heading=-119.5
+2026-03-24 00:54:14,370 INFO     navigator | move_forward 4.0 cm | pos=(94.0, -13.7) heading=-119.5
+2026-03-24 00:54:14,790 INFO     navigator | move_forward done | traveled=4.2 cm pos=(91.9, -17.3) heading=-121.3
+2026-03-24 00:54:14,791 INFO     navigator | turn 90.0 deg | pos=(91.9, -17.3) heading=-121.3
+2026-03-24 00:54:17,282 DEBUG    navigator | gyro trim done | target=-31.3 actual=-32.1
+2026-03-24 00:54:17,340 INFO     navigator | turn done | heading=-32.1
+2026-03-24 00:54:17,342 INFO     navigator | move_forward 30.0 cm | pos=(91.9, -17.3) heading=-32.1
+2026-03-24 00:54:19,371 DEBUG    navigator | moving | progress=74% heading=-32.1 correction=0.0 encoders=(606, 607)
+2026-03-24 00:54:20,094 INFO     navigator | move_forward done | traveled=30.3 cm pos=(117.0, -34.2) heading=-33.9
+2026-03-24 00:54:20,095 INFO     navigator | move_forward 30.0 cm | pos=(117.0, -34.2) heading=-33.9
+2026-03-24 00:54:22,120 DEBUG    navigator | moving | progress=74% heading=-33.9 correction=0.0 encoders=(609, 604)
+2026-03-24 00:54:22,848 INFO     navigator | move_forward done | traveled=30.4 cm pos=(141.7, -51.9) heading=-35.7
+2026-03-24 00:54:22,849 INFO     navigator | turn -90.0 deg | pos=(141.7, -51.9) heading=-35.7
+2026-03-24 00:54:25,380 DEBUG    navigator | gyro trim done | target=-125.7 actual=-126.7
+2026-03-24 00:54:25,381 INFO     navigator | turn done | heading=-126.7
+2026-03-24 00:54:25,382 INFO     navigator | move_forward 4.0 cm | pos=(141.7, -51.9) heading=-126.7
+2026-03-24 00:54:25,800 INFO     navigator | move_forward done | traveled=4.2 cm pos=(139.2, -55.3) heading=-126.7
+2026-03-24 00:54:25,801 INFO     navigator | turn 90.0 deg | pos=(139.2, -55.3) heading=-126.7
+2026-03-24 00:54:28,300 DEBUG    navigator | gyro trim done | target=-36.7 actual=-37.5
+2026-03-24 00:54:28,301 INFO     navigator | turn done | heading=-37.5
+2026-03-24 00:54:28,302 INFO     navigator | move_forward 30.0 cm | pos=(139.2, -55.3) heading=-37.5
+2026-03-24 00:54:30,334 DEBUG    navigator | moving | progress=74% heading=-37.5 correction=0.0 encoders=(607, 605)
+2026-03-24 00:54:31,062 INFO     navigator | move_forward done | traveled=30.4 cm pos=(163.3, -73.8) heading=-37.5
+2026-03-24 00:54:31,063 INFO     test_navigator | Test complete.
+2026-03-24 00:55:37,606 INFO     test_navigator | Gyro enabled on port 4
+2026-03-24 00:55:37,619 INFO     navigator | Navigator init | gyro=True us=False gyro_offset=0.0
+2026-03-24 00:55:37,620 INFO     test_navigator | Starting test: go_to_room
+2026-03-24 00:55:37,621 INFO     navigator | move_forward 10.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-24 00:55:38,604 INFO     navigator | move_forward done | traveled=10.5 cm pos=(10.5, 0.0) heading=0.0
+2026-03-24 00:55:38,605 INFO     navigator | turn 90.0 deg | pos=(10.5, 0.0) heading=0.0
+2026-03-24 00:55:41,105 DEBUG    navigator | gyro trim done | target=90.0 actual=89.2
+2026-03-24 00:55:41,106 INFO     navigator | turn done | heading=89.2
+2026-03-24 00:55:41,148 INFO     navigator | move_forward 20.0 cm | pos=(10.5, 0.0) heading=89.2
+2026-03-24 00:55:43,019 INFO     navigator | move_forward done | traveled=20.5 cm pos=(10.8, 20.4) heading=89.2
+2026-03-24 00:55:43,020 INFO     navigator | turn -3.0 deg | pos=(10.8, 20.4) heading=89.2
+2026-03-24 00:55:43,331 DEBUG    navigator | gyro trim done | target=86.2 actual=85.6
+2026-03-24 00:55:43,332 INFO     navigator | turn done | heading=85.6
+2026-03-24 00:55:43,333 INFO     navigator | move_forward 0.0 cm | pos=(10.8, 20.4) heading=85.6
+2026-03-24 00:55:43,388 INFO     navigator | move_forward done | traveled=0.2 cm pos=(10.8, 20.7) heading=85.6
+2026-03-24 00:55:43,390 INFO     navigator | turn -3.0 deg | pos=(10.8, 20.7) heading=85.6
+2026-03-24 00:55:43,745 DEBUG    navigator | gyro trim done | target=82.6 actual=82.1
+2026-03-24 00:55:43,746 INFO     navigator | turn done | heading=82.1
+2026-03-24 00:55:43,747 INFO     navigator | move_forward 0.0 cm | pos=(10.8, 20.7) heading=82.1
+2026-03-24 00:55:43,803 INFO     navigator | move_forward done | traveled=0.1 cm pos=(10.8, 20.8) heading=82.1
+2026-03-24 00:55:43,804 INFO     navigator | turn -3.0 deg | pos=(10.8, 20.8) heading=82.1
+2026-03-24 00:55:44,073 DEBUG    navigator | gyro trim done | target=79.1 actual=78.5
+2026-03-24 00:55:44,074 INFO     navigator | turn done | heading=78.5
+2026-03-24 00:55:44,075 INFO     navigator | move_forward 0.0 cm | pos=(10.8, 20.8) heading=78.5
+2026-03-24 00:55:44,130 INFO     navigator | move_forward done | traveled=0.2 cm pos=(10.9, 21.0) heading=78.5
+2026-03-24 00:55:44,131 INFO     navigator | turn -3.0 deg | pos=(10.9, 21.0) heading=78.5
+2026-03-24 00:55:44,347 DEBUG    navigator | gyro trim done | target=75.5 actual=74.9
+2026-03-24 00:55:44,348 INFO     navigator | turn done | heading=74.9
+2026-03-24 00:55:44,349 INFO     navigator | move_forward 0.0 cm | pos=(10.9, 21.0) heading=74.9
+2026-03-24 00:55:44,406 INFO     navigator | move_forward done | traveled=0.2 cm pos=(10.9, 21.2) heading=74.9
+2026-03-24 00:55:44,408 INFO     navigator | turn -3.0 deg | pos=(10.9, 21.2) heading=74.9
+2026-03-24 00:55:44,665 DEBUG    navigator | gyro trim done | target=71.9 actual=71.4
+2026-03-24 00:55:44,666 INFO     navigator | turn done | heading=71.4
+2026-03-24 00:55:44,667 INFO     navigator | move_forward 0.0 cm | pos=(10.9, 21.2) heading=71.4
+2026-03-24 00:55:44,722 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.0, 21.4) heading=71.4
+2026-03-24 00:55:44,723 INFO     navigator | turn -3.0 deg | pos=(11.0, 21.4) heading=71.4
+2026-03-24 00:55:44,991 DEBUG    navigator | gyro trim done | target=68.4 actual=67.8
+2026-03-24 00:55:44,992 INFO     navigator | turn done | heading=67.8
+2026-03-24 00:55:44,993 INFO     navigator | move_forward 0.0 cm | pos=(11.0, 21.4) heading=67.8
+2026-03-24 00:55:45,048 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.1, 21.6) heading=67.8
+2026-03-24 00:55:45,050 INFO     navigator | turn -3.0 deg | pos=(11.1, 21.6) heading=67.8
+2026-03-24 00:55:45,308 DEBUG    navigator | gyro trim done | target=64.8 actual=64.2
+2026-03-24 00:55:45,309 INFO     navigator | turn done | heading=64.2
+2026-03-24 00:55:45,310 INFO     navigator | move_forward 0.0 cm | pos=(11.1, 21.6) heading=64.2
+2026-03-24 00:55:45,366 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.2, 21.8) heading=64.2
+2026-03-24 00:55:45,367 INFO     navigator | turn -3.0 deg | pos=(11.2, 21.8) heading=64.2
+2026-03-24 00:55:45,770 DEBUG    navigator | gyro trim done | target=61.2 actual=60.7
+2026-03-24 00:55:45,771 INFO     navigator | turn done | heading=60.7
+2026-03-24 00:55:45,772 INFO     navigator | move_forward 0.0 cm | pos=(11.2, 21.8) heading=60.7
+2026-03-24 00:55:45,834 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.3, 22.0) heading=60.7
+2026-03-24 00:55:45,835 INFO     navigator | turn -3.0 deg | pos=(11.3, 22.0) heading=60.7
+2026-03-24 00:55:46,068 DEBUG    navigator | gyro trim done | target=57.7 actual=57.1
+2026-03-24 00:55:46,069 INFO     navigator | turn done | heading=57.1
+2026-03-24 00:55:46,069 INFO     navigator | move_forward 0.0 cm | pos=(11.3, 22.0) heading=57.1
+2026-03-24 00:55:46,123 INFO     navigator | move_forward done | traveled=0.1 cm pos=(11.4, 22.1) heading=57.1
+2026-03-24 00:55:46,124 INFO     navigator | turn -3.0 deg | pos=(11.4, 22.1) heading=57.1
+2026-03-24 00:55:46,380 DEBUG    navigator | gyro trim done | target=54.1 actual=53.5
+2026-03-24 00:55:46,381 INFO     navigator | turn done | heading=53.5
+2026-03-24 00:55:46,381 INFO     navigator | move_forward 0.0 cm | pos=(11.4, 22.1) heading=53.5
+2026-03-24 00:55:46,435 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.5, 22.2) heading=53.5
+2026-03-24 00:55:46,436 INFO     navigator | turn -3.0 deg | pos=(11.5, 22.2) heading=53.5
+2026-03-24 00:55:46,713 DEBUG    navigator | gyro trim done | target=50.5 actual=49.9
+2026-03-24 00:55:46,714 INFO     navigator | turn done | heading=49.9
+2026-03-24 00:55:46,715 INFO     navigator | move_forward 0.0 cm | pos=(11.5, 22.2) heading=49.9
+2026-03-24 00:55:46,770 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.6, 22.4) heading=49.9
+2026-03-24 00:55:46,771 INFO     navigator | turn -3.0 deg | pos=(11.6, 22.4) heading=49.9
+2026-03-24 00:55:47,159 DEBUG    navigator | gyro trim done | target=46.9 actual=46.4
+2026-03-24 00:55:47,160 INFO     navigator | turn done | heading=46.4
+2026-03-24 00:55:47,161 INFO     navigator | move_forward 0.0 cm | pos=(11.6, 22.4) heading=46.4
+2026-03-24 00:55:47,216 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.8, 22.6) heading=46.4
+2026-03-24 00:55:47,217 INFO     navigator | turn -3.0 deg | pos=(11.8, 22.6) heading=46.4
+2026-03-24 00:55:47,595 DEBUG    navigator | gyro trim done | target=43.4 actual=42.8
+2026-03-24 00:55:47,596 INFO     navigator | turn done | heading=42.8
+2026-03-24 00:55:47,597 INFO     navigator | move_forward 0.0 cm | pos=(11.8, 22.6) heading=42.8
+2026-03-24 00:55:47,653 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.9, 22.7) heading=42.8
+2026-03-24 00:55:47,654 INFO     navigator | turn -3.0 deg | pos=(11.9, 22.7) heading=42.8
+2026-03-24 00:55:47,923 DEBUG    navigator | gyro trim done | target=39.8 actual=39.2
+2026-03-24 00:55:47,924 INFO     navigator | turn done | heading=39.2
+2026-03-24 00:55:47,925 INFO     navigator | move_forward 0.0 cm | pos=(11.9, 22.7) heading=39.2
+2026-03-24 00:55:47,981 INFO     navigator | move_forward done | traveled=0.2 cm pos=(12.1, 22.9) heading=39.2
+2026-03-24 00:55:47,982 INFO     navigator | turn -3.0 deg | pos=(12.1, 22.9) heading=39.2
+2026-03-24 00:55:48,373 DEBUG    navigator | gyro trim done | target=36.2 actual=35.7
+2026-03-24 00:55:48,374 INFO     navigator | turn done | heading=35.7
+2026-03-24 00:55:48,374 INFO     navigator | move_forward 0.0 cm | pos=(12.1, 22.9) heading=35.7
+2026-03-24 00:55:48,430 INFO     navigator | move_forward done | traveled=0.1 cm pos=(12.2, 22.9) heading=35.7
+2026-03-24 00:55:48,431 INFO     navigator | turn -3.0 deg | pos=(12.2, 22.9) heading=35.7
+2026-03-24 00:55:48,689 DEBUG    navigator | gyro trim done | target=32.7 actual=32.1
+2026-03-24 00:55:48,690 INFO     navigator | turn done | heading=32.1
+2026-03-24 00:55:48,691 INFO     navigator | move_forward 0.0 cm | pos=(12.2, 22.9) heading=32.1
+2026-03-24 00:55:48,746 INFO     navigator | move_forward done | traveled=0.2 cm pos=(12.4, 23.0) heading=32.1
+2026-03-24 00:55:48,747 INFO     navigator | turn -3.0 deg | pos=(12.4, 23.0) heading=32.1
+2026-03-24 00:55:49,125 DEBUG    navigator | gyro trim done | target=29.1 actual=28.5
+2026-03-24 00:55:49,126 INFO     navigator | turn done | heading=28.5
+2026-03-24 00:55:49,126 INFO     navigator | move_forward 0.0 cm | pos=(12.4, 23.0) heading=28.5
+2026-03-24 00:55:49,182 INFO     navigator | move_forward done | traveled=0.2 cm pos=(12.5, 23.1) heading=28.5
+2026-03-24 00:55:49,183 INFO     navigator | turn -3.0 deg | pos=(12.5, 23.1) heading=28.5
+2026-03-24 00:55:49,430 DEBUG    navigator | gyro trim done | target=25.5 actual=25.0
+2026-03-24 00:55:49,431 INFO     navigator | turn done | heading=25.0
+2026-03-24 00:55:49,432 INFO     navigator | move_forward 0.0 cm | pos=(12.5, 23.1) heading=25.0
+2026-03-24 00:55:49,488 INFO     navigator | move_forward done | traveled=0.2 cm pos=(12.7, 23.2) heading=25.0
+2026-03-24 00:55:49,489 INFO     navigator | turn -3.0 deg | pos=(12.7, 23.2) heading=25.0
+2026-03-24 00:55:49,737 DEBUG    navigator | gyro trim done | target=22.0 actual=21.4
+2026-03-24 00:55:49,738 INFO     navigator | turn done | heading=21.4
+2026-03-24 00:55:49,739 INFO     navigator | move_forward 0.0 cm | pos=(12.7, 23.2) heading=21.4
+2026-03-24 00:55:49,795 INFO     navigator | move_forward done | traveled=0.2 cm pos=(12.9, 23.3) heading=21.4
+2026-03-24 00:55:49,796 INFO     navigator | turn -3.0 deg | pos=(12.9, 23.3) heading=21.4
+2026-03-24 00:55:50,032 DEBUG    navigator | gyro trim done | target=18.4 actual=17.8
+2026-03-24 00:55:50,033 INFO     navigator | turn done | heading=17.8
+2026-03-24 00:55:50,033 INFO     navigator | move_forward 0.0 cm | pos=(12.9, 23.3) heading=17.8
+2026-03-24 00:55:50,087 INFO     navigator | move_forward done | traveled=0.2 cm pos=(13.0, 23.3) heading=17.8
+2026-03-24 00:55:50,088 INFO     navigator | turn -3.0 deg | pos=(13.0, 23.3) heading=17.8
+2026-03-24 00:55:50,470 DEBUG    navigator | gyro trim done | target=14.8 actual=14.3
+2026-03-24 00:55:50,471 INFO     navigator | turn done | heading=14.3
+2026-03-24 00:55:50,471 INFO     navigator | move_forward 0.0 cm | pos=(13.0, 23.3) heading=14.3
+2026-03-24 00:55:50,525 INFO     navigator | move_forward done | traveled=0.2 cm pos=(13.2, 23.4) heading=14.3
+2026-03-24 00:55:50,526 INFO     navigator | turn -3.0 deg | pos=(13.2, 23.4) heading=14.3
+2026-03-24 00:55:50,770 DEBUG    navigator | gyro trim done | target=11.3 actual=10.7
+2026-03-24 00:55:50,771 INFO     navigator | turn done | heading=10.7
+2026-03-24 00:55:50,772 INFO     navigator | move_forward 0.0 cm | pos=(13.2, 23.4) heading=10.7
+2026-03-24 00:55:50,828 INFO     navigator | move_forward done | traveled=0.2 cm pos=(13.4, 23.4) heading=10.7
+2026-03-24 00:55:50,829 INFO     navigator | turn -3.0 deg | pos=(13.4, 23.4) heading=10.7
+2026-03-24 00:55:51,252 DEBUG    navigator | gyro trim done | target=7.7 actual=7.1
+2026-03-24 00:55:51,253 INFO     navigator | turn done | heading=7.1
+2026-03-24 00:55:51,258 INFO     navigator | move_forward 0.0 cm | pos=(13.4, 23.4) heading=7.1
+2026-03-24 00:55:51,314 INFO     navigator | move_forward done | traveled=0.3 cm pos=(13.6, 23.4) heading=7.1
+2026-03-24 00:55:51,316 INFO     navigator | turn -3.0 deg | pos=(13.6, 23.4) heading=7.1
+2026-03-24 00:55:51,675 DEBUG    navigator | gyro trim done | target=4.1 actual=3.6
+2026-03-24 00:55:51,677 INFO     navigator | turn done | heading=3.6
+2026-03-24 00:55:51,679 INFO     navigator | move_forward 0.0 cm | pos=(13.6, 23.4) heading=3.6
+2026-03-24 00:55:51,735 INFO     navigator | move_forward done | traveled=0.2 cm pos=(13.8, 23.4) heading=3.6
+2026-03-24 00:55:51,737 INFO     navigator | turn -3.0 deg | pos=(13.8, 23.4) heading=3.6
+2026-03-24 00:55:52,158 DEBUG    navigator | gyro trim done | target=0.6 actual=0.0
+2026-03-24 00:55:52,160 INFO     navigator | turn done | heading=0.0
+2026-03-24 00:55:52,162 INFO     navigator | move_forward 0.0 cm | pos=(13.8, 23.4) heading=0.0
+2026-03-24 00:55:52,218 INFO     navigator | move_forward done | traveled=0.2 cm pos=(14.1, 23.4) heading=0.0
+2026-03-24 00:55:52,220 INFO     navigator | turn -3.0 deg | pos=(14.1, 23.4) heading=0.0
+2026-03-24 00:55:52,539 DEBUG    navigator | gyro trim done | target=-3.0 actual=-3.6
+2026-03-24 00:55:52,541 INFO     navigator | turn done | heading=-3.6
+2026-03-24 00:55:52,542 INFO     navigator | move_forward 0.0 cm | pos=(14.1, 23.4) heading=-3.6
+2026-03-24 00:55:52,599 INFO     navigator | move_forward done | traveled=0.2 cm pos=(14.3, 23.4) heading=-3.6
+2026-03-24 00:55:52,600 INFO     navigator | turn -3.0 deg | pos=(14.3, 23.4) heading=-3.6
+2026-03-24 00:55:52,817 DEBUG    navigator | gyro trim done | target=-6.6 actual=-7.1
+2026-03-24 00:55:52,819 INFO     navigator | turn done | heading=-7.1
+2026-03-24 00:55:52,820 INFO     navigator | move_forward 0.0 cm | pos=(14.3, 23.4) heading=-7.1
+2026-03-24 00:55:52,876 INFO     navigator | move_forward done | traveled=0.2 cm pos=(14.5, 23.4) heading=-7.1
+2026-03-24 00:55:52,879 INFO     navigator | turn -3.0 deg | pos=(14.5, 23.4) heading=-7.1
+2026-03-24 00:55:53,128 DEBUG    navigator | gyro trim done | target=-10.1 actual=-10.7
+2026-03-24 00:55:53,130 INFO     navigator | turn done | heading=-10.7
+2026-03-24 00:55:53,131 INFO     navigator | move_forward 0.0 cm | pos=(14.5, 23.4) heading=-10.7
+2026-03-24 00:55:53,188 INFO     navigator | move_forward done | traveled=0.2 cm pos=(14.6, 23.4) heading=-10.7
+2026-03-24 00:55:53,190 INFO     navigator | turn -3.0 deg | pos=(14.6, 23.4) heading=-10.7
+2026-03-24 00:55:53,418 DEBUG    navigator | gyro trim done | target=-13.7 actual=-14.3
+2026-03-24 00:55:53,420 INFO     navigator | turn done | heading=-14.3
+2026-03-24 00:55:53,421 INFO     navigator | move_forward 0.0 cm | pos=(14.6, 23.4) heading=-14.3
+2026-03-24 00:55:53,478 INFO     navigator | move_forward done | traveled=0.2 cm pos=(14.9, 23.3) heading=-14.3
+2026-03-24 00:55:53,480 INFO     navigator | turn -3.0 deg | pos=(14.9, 23.3) heading=-14.3
+2026-03-24 00:55:53,729 DEBUG    navigator | gyro trim done | target=-17.3 actual=-17.8
+2026-03-24 00:55:53,730 INFO     navigator | turn done | heading=-17.8
+2026-03-24 00:55:53,730 INFO     navigator | move_forward 0.0 cm | pos=(14.9, 23.3) heading=-17.8
+2026-03-24 00:55:53,786 INFO     navigator | move_forward done | traveled=0.2 cm pos=(15.0, 23.3) heading=-17.8
+2026-03-24 00:55:53,787 INFO     navigator | move_forward 56.0 cm | pos=(15.0, 23.3) heading=-17.8
+2026-03-24 00:55:55,811 DEBUG    navigator | moving | progress=40% heading=-17.8 correction=0.0 encoders=(606, 606)
+2026-03-24 00:55:57,836 DEBUG    navigator | moving | progress=80% heading=-17.8 correction=0.0 encoders=(1225, 1225)
+2026-03-24 00:55:58,875 INFO     navigator | move_forward done | traveled=56.6 cm pos=(69.4, 7.6) heading=-16.1
+2026-03-24 00:55:58,876 INFO     navigator | move_forward 30.0 cm | pos=(69.4, 7.6) heading=-16.1
+2026-03-24 00:56:00,902 DEBUG    navigator | moving | progress=74% heading=-17.8 correction=3.6 encoders=(601, 607)
+2026-03-24 00:56:01,629 INFO     navigator | move_forward done | traveled=30.3 cm pos=(98.3, -1.7) heading=-17.8
+2026-03-24 00:56:01,630 INFO     navigator | turn -90.0 deg | pos=(98.3, -1.7) heading=-17.8
+2026-03-24 00:56:03,990 INFO     navigator | turn done | heading=-108.8
+2026-03-24 00:56:03,991 INFO     navigator | move_forward 4.0 cm | pos=(98.3, -1.7) heading=-108.8
+2026-03-24 00:56:04,409 INFO     navigator | move_forward done | traveled=4.1 cm pos=(96.9, -5.6) heading=-108.8
+2026-03-24 00:56:04,410 INFO     navigator | turn 90.0 deg | pos=(96.9, -5.6) heading=-108.8
+2026-03-24 00:56:06,758 INFO     navigator | turn done | heading=-17.8
+2026-03-24 00:56:06,759 INFO     navigator | move_forward 30.0 cm | pos=(96.9, -5.6) heading=-17.8
+2026-03-24 00:56:08,781 DEBUG    navigator | moving | progress=74% heading=-17.8 correction=0.0 encoders=(604, 604)
+2026-03-24 00:56:09,509 INFO     navigator | move_forward done | traveled=30.3 cm pos=(125.7, -14.9) heading=-17.8
+2026-03-24 00:56:09,510 INFO     navigator | move_forward 30.0 cm | pos=(125.7, -14.9) heading=-17.8
+2026-03-24 00:56:11,542 DEBUG    navigator | moving | progress=74% heading=-17.8 correction=0.0 encoders=(607, 604)
+2026-03-24 00:56:12,270 INFO     navigator | move_forward done | traveled=30.3 cm pos=(154.6, -24.2) heading=-17.8
+2026-03-24 00:56:12,271 INFO     navigator | turn -90.0 deg | pos=(154.6, -24.2) heading=-17.8
+2026-03-24 00:56:14,607 INFO     navigator | turn done | heading=-108.8
+2026-03-24 00:56:14,608 INFO     navigator | move_forward 4.0 cm | pos=(154.6, -24.2) heading=-108.8
+2026-03-24 00:56:15,031 INFO     navigator | move_forward done | traveled=4.2 cm pos=(153.3, -28.1) heading=-108.8
+2026-03-24 00:56:15,032 INFO     navigator | turn 90.0 deg | pos=(153.3, -28.1) heading=-108.8
+2026-03-24 00:56:17,361 INFO     navigator | turn done | heading=-19.6
+2026-03-24 00:56:17,362 INFO     navigator | move_forward 30.0 cm | pos=(153.3, -28.1) heading=-19.6
+2026-03-24 00:56:19,389 DEBUG    navigator | moving | progress=74% heading=-17.8 correction=-3.6 encoders=(611, 600)
+2026-03-24 00:56:20,118 INFO     navigator | move_forward done | traveled=30.4 cm pos=(182.2, -37.4) heading=-17.8
+2026-03-24 00:56:20,119 INFO     test_navigator | Test complete.
+2026-03-24 00:57:55,938 INFO     test_navigator | Running without gyro (blind turns)
+2026-03-24 00:57:55,939 INFO     navigator | Navigator init | gyro=False us=False gyro_offset=0.0
+2026-03-24 00:57:55,940 INFO     test_navigator | Starting test: go_to_room
+2026-03-24 00:57:55,941 INFO     navigator | move_forward 10.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-24 00:57:56,925 INFO     navigator | move_forward done | traveled=10.5 cm pos=(10.5, 0.0) heading=0.0
+2026-03-24 00:57:56,926 INFO     navigator | turn 90.0 deg | pos=(10.5, 0.0) heading=0.0
+2026-03-24 00:57:59,248 INFO     navigator | turn done | heading=90.0
+2026-03-24 00:57:59,249 INFO     navigator | move_forward 20.0 cm | pos=(10.5, 0.0) heading=90.0
+2026-03-24 00:58:01,101 INFO     navigator | move_forward done | traveled=20.3 cm pos=(10.5, 20.3) heading=90.0
+2026-03-24 00:58:01,102 INFO     navigator | turn -9.0 deg | pos=(10.5, 20.3) heading=90.0
+2026-03-24 00:58:01,397 INFO     navigator | turn done | heading=81.0
+2026-03-24 00:58:01,398 INFO     navigator | move_forward 0.0 cm | pos=(10.5, 20.3) heading=81.0
+2026-03-24 00:58:01,453 INFO     navigator | move_forward done | traveled=0.2 cm pos=(10.6, 20.5) heading=81.0
+2026-03-24 00:58:01,454 INFO     navigator | turn -9.0 deg | pos=(10.6, 20.5) heading=81.0
+2026-03-24 00:58:01,858 INFO     navigator | turn done | heading=72.0
+2026-03-24 00:58:01,859 INFO     navigator | move_forward 0.0 cm | pos=(10.6, 20.5) heading=72.0
+2026-03-24 00:58:01,915 INFO     navigator | move_forward done | traveled=0.2 cm pos=(10.6, 20.6) heading=72.0
+2026-03-24 00:58:01,920 INFO     navigator | turn -9.0 deg | pos=(10.6, 20.6) heading=72.0
+2026-03-24 00:58:02,194 INFO     navigator | turn done | heading=63.0
+2026-03-24 00:58:02,195 INFO     navigator | move_forward 0.0 cm | pos=(10.6, 20.6) heading=63.0
+2026-03-24 00:58:02,251 INFO     navigator | move_forward done | traveled=0.1 cm pos=(10.7, 20.8) heading=63.0
+2026-03-24 00:58:02,252 INFO     navigator | turn -9.0 deg | pos=(10.7, 20.8) heading=63.0
+2026-03-24 00:58:02,624 INFO     navigator | turn done | heading=54.0
+2026-03-24 00:58:02,625 INFO     navigator | move_forward 0.0 cm | pos=(10.7, 20.8) heading=54.0
+2026-03-24 00:58:02,680 INFO     navigator | move_forward done | traveled=0.2 cm pos=(10.8, 20.9) heading=54.0
+2026-03-24 00:58:02,681 INFO     navigator | turn -9.0 deg | pos=(10.8, 20.9) heading=54.0
+2026-03-24 00:58:03,065 INFO     navigator | turn done | heading=45.0
+2026-03-24 00:58:03,066 INFO     navigator | move_forward 0.0 cm | pos=(10.8, 20.9) heading=45.0
+2026-03-24 00:58:03,122 INFO     navigator | move_forward done | traveled=0.2 cm pos=(10.9, 21.0) heading=45.0
+2026-03-24 00:58:03,123 INFO     navigator | turn -9.0 deg | pos=(10.9, 21.0) heading=45.0
+2026-03-24 00:58:03,527 INFO     navigator | turn done | heading=36.0
+2026-03-24 00:58:03,528 INFO     navigator | move_forward 0.5 cm | pos=(10.9, 21.0) heading=36.0
+2026-03-24 00:58:03,635 INFO     navigator | move_forward done | traveled=0.6 cm pos=(11.4, 21.4) heading=36.0
+2026-03-24 00:58:03,636 INFO     navigator | turn -9.0 deg | pos=(11.4, 21.4) heading=36.0
+2026-03-24 00:58:03,899 INFO     navigator | turn done | heading=27.0
+2026-03-24 00:58:03,900 INFO     navigator | move_forward 0.5 cm | pos=(11.4, 21.4) heading=27.0
+2026-03-24 00:58:04,008 INFO     navigator | move_forward done | traveled=0.7 cm pos=(12.0, 21.7) heading=27.0
+2026-03-24 00:58:04,009 INFO     navigator | turn -9.0 deg | pos=(12.0, 21.7) heading=27.0
+2026-03-24 00:58:04,402 INFO     navigator | turn done | heading=18.0
+2026-03-24 00:58:04,403 INFO     navigator | move_forward 0.5 cm | pos=(12.0, 21.7) heading=18.0
+2026-03-24 00:58:04,511 INFO     navigator | move_forward done | traveled=0.6 cm pos=(12.6, 21.9) heading=18.0
+2026-03-24 00:58:04,512 INFO     navigator | turn -9.0 deg | pos=(12.6, 21.9) heading=18.0
+2026-03-24 00:58:04,777 INFO     navigator | turn done | heading=9.0
+2026-03-24 00:58:04,778 INFO     navigator | move_forward 0.5 cm | pos=(12.6, 21.9) heading=9.0
+2026-03-24 00:58:04,885 INFO     navigator | move_forward done | traveled=0.7 cm pos=(13.3, 22.0) heading=9.0
+2026-03-24 00:58:04,886 INFO     navigator | turn -9.0 deg | pos=(13.3, 22.0) heading=9.0
+2026-03-24 00:58:05,171 INFO     navigator | turn done | heading=0.0
+2026-03-24 00:58:05,172 INFO     navigator | move_forward 0.5 cm | pos=(13.3, 22.0) heading=0.0
+2026-03-24 00:58:05,279 INFO     navigator | move_forward done | traveled=0.6 cm pos=(13.9, 22.0) heading=0.0
+2026-03-24 00:58:05,280 INFO     navigator | move_forward 56.0 cm | pos=(13.9, 22.0) heading=0.0
+2026-03-24 00:58:07,294 DEBUG    navigator | moving | progress=39% heading=0.0 correction=0.0 encoders=(601, 603)
+2026-03-24 00:58:09,302 DEBUG    navigator | moving | progress=80% heading=0.0 correction=0.0 encoders=(1215, 1215)
+2026-03-24 00:58:10,333 INFO     navigator | move_forward done | traveled=56.0 cm pos=(70.0, 22.0) heading=0.0
+2026-03-24 00:58:10,335 INFO     navigator | move_forward 30.0 cm | pos=(70.0, 22.0) heading=0.0
+2026-03-24 00:58:12,346 DEBUG    navigator | moving | progress=73% heading=0.0 correction=0.0 encoders=(599, 599)
+2026-03-24 00:58:13,069 INFO     navigator | move_forward done | traveled=30.0 cm pos=(100.0, 22.0) heading=0.0
+2026-03-24 00:58:13,070 INFO     navigator | turn -90.0 deg | pos=(100.0, 22.0) heading=0.0
+2026-03-24 00:58:15,437 INFO     navigator | turn done | heading=-90.0
+2026-03-24 00:58:15,439 INFO     navigator | move_forward 4.0 cm | pos=(100.0, 22.0) heading=-90.0
+2026-03-24 00:58:15,855 INFO     navigator | move_forward done | traveled=4.2 cm pos=(100.0, 17.8) heading=-90.0
+2026-03-24 00:58:15,856 INFO     navigator | turn 90.0 deg | pos=(100.0, 17.8) heading=-90.0
+2026-03-24 00:58:18,067 INFO     navigator | turn done | heading=0.0
+2026-03-24 00:58:18,068 INFO     navigator | move_forward 30.0 cm | pos=(100.0, 17.8) heading=0.0
+2026-03-24 00:58:20,076 DEBUG    navigator | moving | progress=73% heading=0.0 correction=0.0 encoders=(600, 600)
+2026-03-24 00:58:20,798 INFO     navigator | move_forward done | traveled=30.1 cm pos=(130.1, 17.8) heading=0.0
+2026-03-24 00:58:20,799 INFO     navigator | move_forward 30.0 cm | pos=(130.1, 17.8) heading=0.0
+2026-03-24 00:58:22,812 DEBUG    navigator | moving | progress=74% heading=0.0 correction=0.0 encoders=(603, 604)
+2026-03-24 00:58:23,535 INFO     navigator | move_forward done | traveled=30.2 cm pos=(160.3, 17.8) heading=0.0
+2026-03-24 00:58:23,536 INFO     navigator | turn -90.0 deg | pos=(160.3, 17.8) heading=0.0
+2026-03-24 00:58:25,867 INFO     navigator | turn done | heading=-90.0
+2026-03-24 00:58:25,868 INFO     navigator | move_forward 4.0 cm | pos=(160.3, 17.8) heading=-90.0
+2026-03-24 00:58:26,283 INFO     navigator | move_forward done | traveled=4.2 cm pos=(160.3, 13.6) heading=-90.0
+2026-03-24 00:58:26,284 INFO     navigator | turn 90.0 deg | pos=(160.3, 13.6) heading=-90.0
+2026-03-24 00:58:28,635 INFO     navigator | turn done | heading=0.0
+2026-03-24 00:58:28,636 INFO     navigator | move_forward 30.0 cm | pos=(160.3, 13.6) heading=0.0
+2026-03-24 00:58:30,645 DEBUG    navigator | moving | progress=73% heading=0.0 correction=0.0 encoders=(599, 599)
+2026-03-24 00:58:31,368 INFO     navigator | move_forward done | traveled=30.1 cm pos=(190.4, 13.6) heading=0.0
+2026-03-24 00:58:31,370 INFO     test_navigator | Test complete.
+2026-03-24 00:59:49,043 INFO     test_navigator | Running without gyro (blind turns)
+2026-03-24 00:59:49,044 INFO     navigator | Navigator init | gyro=False us=False gyro_offset=0.0
+2026-03-24 00:59:49,045 INFO     test_navigator | Starting test: go_to_room
+2026-03-24 00:59:49,046 INFO     navigator | move_forward 10.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-24 00:59:50,028 INFO     navigator | move_forward done | traveled=10.5 cm pos=(10.5, 0.0) heading=0.0
+2026-03-24 00:59:50,030 INFO     navigator | turn 90.0 deg | pos=(10.5, 0.0) heading=0.0
+2026-03-24 00:59:52,262 INFO     navigator | turn done | heading=90.0
+2026-03-24 00:59:52,263 INFO     navigator | move_forward 20.0 cm | pos=(10.5, 0.0) heading=90.0
+2026-03-24 00:59:54,115 INFO     navigator | move_forward done | traveled=20.3 cm pos=(10.5, 20.3) heading=90.0
+2026-03-24 00:59:54,116 INFO     navigator | turn -9.0 deg | pos=(10.5, 20.3) heading=90.0
+2026-03-24 00:59:54,411 INFO     navigator | turn done | heading=81.0
+2026-03-24 00:59:54,413 INFO     navigator | move_forward 0.0 cm | pos=(10.5, 20.3) heading=81.0
+2026-03-24 00:59:54,468 INFO     navigator | move_forward done | traveled=0.2 cm pos=(10.6, 20.5) heading=81.0
+2026-03-24 00:59:54,469 INFO     navigator | turn -9.0 deg | pos=(10.6, 20.5) heading=81.0
+2026-03-24 00:59:54,742 INFO     navigator | turn done | heading=72.0
+2026-03-24 00:59:54,743 INFO     navigator | move_forward 0.0 cm | pos=(10.6, 20.5) heading=72.0
+2026-03-24 00:59:54,799 INFO     navigator | move_forward done | traveled=0.2 cm pos=(10.6, 20.7) heading=72.0
+2026-03-24 00:59:54,800 INFO     navigator | turn -9.0 deg | pos=(10.6, 20.7) heading=72.0
+2026-03-24 00:59:55,095 INFO     navigator | turn done | heading=63.0
+2026-03-24 00:59:55,096 INFO     navigator | move_forward 0.0 cm | pos=(10.6, 20.7) heading=63.0
+2026-03-24 00:59:55,167 INFO     navigator | move_forward done | traveled=0.2 cm pos=(10.7, 20.9) heading=63.0
+2026-03-24 00:59:55,168 INFO     navigator | turn -9.0 deg | pos=(10.7, 20.9) heading=63.0
+2026-03-24 00:59:55,561 INFO     navigator | turn done | heading=54.0
+2026-03-24 00:59:55,562 INFO     navigator | move_forward 0.0 cm | pos=(10.7, 20.9) heading=54.0
+2026-03-24 00:59:55,617 INFO     navigator | move_forward done | traveled=0.2 cm pos=(10.8, 21.0) heading=54.0
+2026-03-24 00:59:55,618 INFO     navigator | turn -9.0 deg | pos=(10.8, 21.0) heading=54.0
+2026-03-24 00:59:55,891 INFO     navigator | turn done | heading=45.0
+2026-03-24 00:59:55,893 INFO     navigator | move_forward 0.0 cm | pos=(10.8, 21.0) heading=45.0
+2026-03-24 00:59:55,948 INFO     navigator | move_forward done | traveled=0.2 cm pos=(11.0, 21.1) heading=45.0
+2026-03-24 00:59:55,949 INFO     navigator | turn -9.0 deg | pos=(11.0, 21.1) heading=45.0
+2026-03-24 00:59:56,243 INFO     navigator | turn done | heading=36.0
+2026-03-24 00:59:56,244 INFO     navigator | move_forward 0.9 cm | pos=(11.0, 21.1) heading=36.0
+2026-03-24 00:59:56,402 INFO     navigator | move_forward done | traveled=1.2 cm pos=(11.9, 21.8) heading=36.0
+2026-03-24 00:59:56,403 INFO     navigator | turn -9.0 deg | pos=(11.9, 21.8) heading=36.0
+2026-03-24 00:59:56,677 INFO     navigator | turn done | heading=27.0
+2026-03-24 00:59:56,678 INFO     navigator | move_forward 0.9 cm | pos=(11.9, 21.8) heading=27.0
+2026-03-24 00:59:56,836 INFO     navigator | move_forward done | traveled=1.2 cm pos=(13.0, 22.4) heading=27.0
+2026-03-24 00:59:56,837 INFO     navigator | turn -9.0 deg | pos=(13.0, 22.4) heading=27.0
+2026-03-24 00:59:57,144 INFO     navigator | turn done | heading=18.0
+2026-03-24 00:59:57,145 INFO     navigator | move_forward 0.9 cm | pos=(13.0, 22.4) heading=18.0
+2026-03-24 00:59:57,304 INFO     navigator | move_forward done | traveled=1.2 cm pos=(14.1, 22.7) heading=18.0
+2026-03-24 00:59:57,305 INFO     navigator | turn -9.0 deg | pos=(14.1, 22.7) heading=18.0
+2026-03-24 00:59:57,611 INFO     navigator | turn done | heading=9.0
+2026-03-24 00:59:57,613 INFO     navigator | move_forward 0.9 cm | pos=(14.1, 22.7) heading=9.0
+2026-03-24 00:59:57,771 INFO     navigator | move_forward done | traveled=1.2 cm pos=(15.3, 22.9) heading=9.0
+2026-03-24 00:59:57,772 INFO     navigator | turn -9.0 deg | pos=(15.3, 22.9) heading=9.0
+2026-03-24 00:59:58,025 INFO     navigator | turn done | heading=0.0
+2026-03-24 00:59:58,026 INFO     navigator | move_forward 0.9 cm | pos=(15.3, 22.9) heading=0.0
+2026-03-24 00:59:58,185 INFO     navigator | move_forward done | traveled=1.3 cm pos=(16.6, 22.9) heading=0.0
+2026-03-24 00:59:58,186 INFO     navigator | move_forward 56.0 cm | pos=(16.6, 22.9) heading=0.0
+2026-03-24 01:00:00,199 DEBUG    navigator | moving | progress=39% heading=0.0 correction=0.0 encoders=(604, 603)
+2026-03-24 01:00:02,212 DEBUG    navigator | moving | progress=80% heading=0.0 correction=0.0 encoders=(1219, 1218)
+2026-03-24 01:00:03,241 INFO     navigator | move_forward done | traveled=56.2 cm pos=(72.8, 22.9) heading=0.0
+2026-03-24 01:00:03,242 INFO     navigator | move_forward 30.0 cm | pos=(72.8, 22.9) heading=0.0
+2026-03-24 01:00:05,255 DEBUG    navigator | moving | progress=73% heading=0.0 correction=0.0 encoders=(598, 598)
+2026-03-24 01:00:05,979 INFO     navigator | move_forward done | traveled=30.0 cm pos=(102.8, 22.9) heading=0.0
+2026-03-24 01:00:05,980 INFO     navigator | turn -90.0 deg | pos=(102.8, 22.9) heading=0.0
+2026-03-24 01:00:08,316 INFO     navigator | turn done | heading=-90.0
+2026-03-24 01:00:08,317 INFO     navigator | move_forward 3.0 cm | pos=(102.8, 22.9) heading=-90.0
+2026-03-24 01:00:08,682 INFO     navigator | move_forward done | traveled=3.6 cm pos=(102.8, 19.4) heading=-90.0
+2026-03-24 01:00:08,683 INFO     navigator | turn 90.0 deg | pos=(102.8, 19.4) heading=-90.0
+2026-03-24 01:00:11,016 INFO     navigator | turn done | heading=0.0
+2026-03-24 01:00:11,017 INFO     navigator | move_forward 30.0 cm | pos=(102.8, 19.4) heading=0.0
+2026-03-24 01:00:13,032 DEBUG    navigator | moving | progress=74% heading=0.0 correction=0.0 encoders=(602, 602)
+2026-03-24 01:00:13,756 INFO     navigator | move_forward done | traveled=30.2 cm pos=(132.9, 19.4) heading=0.0
+2026-03-24 01:00:13,757 INFO     navigator | move_forward 30.0 cm | pos=(132.9, 19.4) heading=0.0
+2026-03-24 01:00:15,769 DEBUG    navigator | moving | progress=73% heading=0.0 correction=0.0 encoders=(601, 602)
+2026-03-24 01:00:16,494 INFO     navigator | move_forward done | traveled=30.2 cm pos=(163.1, 19.4) heading=0.0
+2026-03-24 01:00:16,495 INFO     navigator | turn -90.0 deg | pos=(163.1, 19.4) heading=0.0
+2026-03-24 01:00:18,836 INFO     navigator | turn done | heading=-90.0
+2026-03-24 01:00:18,837 INFO     navigator | move_forward 3.0 cm | pos=(163.1, 19.4) heading=-90.0
+2026-03-24 01:00:19,197 INFO     navigator | move_forward done | traveled=3.6 cm pos=(163.1, 15.8) heading=-90.0
+2026-03-24 01:00:19,198 INFO     navigator | turn 90.0 deg | pos=(163.1, 15.8) heading=-90.0
+2026-03-24 01:00:21,520 INFO     navigator | turn done | heading=0.0
+2026-03-24 01:00:21,521 INFO     navigator | move_forward 30.0 cm | pos=(163.1, 15.8) heading=0.0
+2026-03-24 01:00:23,537 DEBUG    navigator | moving | progress=74% heading=0.0 correction=0.0 encoders=(603, 603)
+2026-03-24 01:00:24,260 INFO     navigator | move_forward done | traveled=30.2 cm pos=(193.3, 15.8) heading=0.0
+2026-03-24 01:00:24,261 INFO     test_navigator | Test complete.
+2026-03-24 01:19:56,158 INFO     test_navigator | Gyro enabled on port 4
+2026-03-24 01:19:56,171 INFO     navigator | Navigator init | gyro=True us=False gyro_offset=0.0
+2026-03-24 01:19:56,172 INFO     test_navigator | Starting test: go_to_room
+2026-03-24 01:19:56,173 INFO     navigator | move_forward 10.0 cm | pos=(0.0, 0.0) heading=0.0
+2026-03-24 01:19:57,166 INFO     navigator | move_forward done | traveled=10.5 cm pos=(10.5, 0.0) heading=0.0
+2026-03-24 01:19:57,167 INFO     navigator | turn 90.0 deg | pos=(10.5, 0.0) heading=0.0
+2026-03-24 01:19:59,561 DEBUG    navigator | gyro trim done | target=90.0 actual=89.2
+2026-03-24 01:19:59,562 INFO     navigator | turn done | heading=89.2
+2026-03-24 01:19:59,563 INFO     navigator | move_forward 20.0 cm | pos=(10.5, 0.0) heading=89.2

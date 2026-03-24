@@ -23,7 +23,8 @@ print("Gyro ready. Printing [abs_deg, dps]. Press Ctrl+C to stop.\n")
 try:
     while True:
         value = gyro.get_both_measure()  # returns [abs_degrees, degrees_per_second]
-        print(f"abs={value[0]:>7.1f} deg   dps={value[1]:>7.1f} deg/s")
+        degrees = value[0] * Config.Navigation.GYRO_SCALE
+        print(f"abs={degrees:>7.1f} deg   dps={value[1]:>7.1f} deg/s")
         time.sleep(0.1)
 except KeyboardInterrupt:
     print("\nStopped.")

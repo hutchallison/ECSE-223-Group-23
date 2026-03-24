@@ -10,7 +10,7 @@ from utils.sound import Sound
 import simpleaudio as sa
 
 #emegency button initializer
-EmergencyButton = TouchSensor(4)
+	EmergencyButton = TouchSensor(4)
 
 #drums initializer
 motor = Motor("C")

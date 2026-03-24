@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 Manual navigation tests for the Navigator class.
 
@@ -10,7 +11,6 @@ Available tests:
     turn_left  - turn 90 degrees counterclockwise
     box        - drive a 30 cm square (should return to start)
     box_back   - drive a square in reverse direction (CCW)
-    diff_tune  - test one inner ratio at a time for diff_turn accuracy
 
 Flags:
     --gyro     - enable gyro sensor for turn trimming (default: blind turns only)
@@ -59,14 +59,6 @@ def pause():
 def report(nav, label=""):
     x, y, h = nav.get_position()
     log.info("%-20s → pos=(%.1f, %.1f) heading=%.1f°", label, x, y, h)
-
-
-def parse_ratio(raw):
-    """Parse one ratio in [0.0, 1.0]."""
-    value = float(raw)
-    if not (0.0 <= value <= 1.0):
-        raise ValueError(f"ratio {value} is out of range [0.0, 1.0]")
-    return value
 
 
 # ── Tests ─────────────────────────────────────────────────────────────────────
@@ -141,67 +133,24 @@ def test_box_back(nav):
     log.info("Final pos=(%.1f, %.1f) heading=%.1f°", x, y, h)
     log.info("Position error from origin: %.1f cm", pos_error)
 
-
-def test_diff_turn_tune(nav):
-    """
-    Tune one inner_speed_ratio at a time for Navigator.diff_turn().
-    For each ratio, run 90° left/right turns, then choose to redo or try another ratio.
-    """
-    if nav.gyro is None:
-        log.error("diff_tune requires gyro. Re-run with --gyro")
-        return
-
-    def wrap_to_180(angle):
-        return (angle + 180.0) % 360.0 - 180.0
-
-    log.info("=== TEST: diff_tune ===")
-    log.info("Robot should have clear space to make repeated 90° arc turns.")
-
-    while True:
-        ratio = None
-        while ratio is None:
-            raw = input("Enter one inner ratio [0.0-1.0] (e.g. 0.35): ").strip()
-            try:
-                ratio = parse_ratio(raw)
-            except Exception as exc:
-                log.warning("Invalid ratio input (%s). Try again.", exc)
-
-        while True:
-            log.info("--- testing ratio=%.2f ---", ratio)
-            input("Place/reposition robot, then press Enter to run this ratio...")
-
-            per_direction_errors = []
-            for direction, label in ((1, "left"), (-1, "right")):
-                before_h = nav.get_position()[2]
-                nav.diff_turn(direction=direction, inner_speed_ratio=ratio, forward=True)
-                pause()
-                after_h = nav.get_position()[2]
-
-                turned = wrap_to_180(after_h - before_h)
-                target = 90.0 * direction
-                error = abs(target - turned)
-                per_direction_errors.append(error)
-
-                log.info(
-                    "ratio=%.2f %-5s | turned=%.1f° target=%.1f° error=%.1f°",
-                    ratio, label, turned, target, error
-                )
-                input("Reposition robot if needed, then press Enter for next turn...")
-
-            avg_error = sum(per_direction_errors) / len(per_direction_errors)
-            worst_error = max(per_direction_errors)
-            log.info(
-                "ratio=%.2f result | avg_error=%.2f° worst_error=%.2f°",
-                ratio, avg_error, worst_error
-            )
-
-            redo = input("Redo same ratio? [y/N]: ").strip().lower()
-            if redo != "y":
-                break
-
-        another = input("Try another ratio? [y/N]: ").strip().lower()
-        if another != "y":
-            break
+def go_to_room(nav):
+	nav.move_forward(10)
+	nav.turn(90)
+	nav.move_forward(20)
+	for i in range(5):
+		nav.turn(-9)
+		nav.move_forward(0.01)
+	for i in range(5):
+		nav.turn(-9)
+		nav.move_forward(0.9)
+	nav.move_forward(56)
+	for i in range(2):
+		print("backwords")
+		nav.move_backward(30)
+		nav.turn(-90)
+		nav.move_forward(3)
+		nav.turn(90)
+		nav.move_forward(30)
 
 
 # ── Entry point ───────────────────────────────────────────────────────────────
@@ -212,13 +161,12 @@ TESTS = {
     "turn_left":  test_turn_left,
     "box":        test_box,
     "box_back":   test_box_back,
-    "diff_tune":  test_diff_turn_tune,
+	"go_to_room": go_to_room,
 }
 
 if __name__ == "__main__":
     args = sys.argv[1:]
     use_gyro = "--gyro" in args
-
     test_name = next((a for a in args if not a.startswith("--")), "box")
 
     input("Press Enter to start the test...")
@@ -240,4 +188,3 @@ if __name__ == "__main__":
     log.info("Starting test: %s", test_name)
     TESTS[test_name](nav)
     log.info("Test complete.")
-

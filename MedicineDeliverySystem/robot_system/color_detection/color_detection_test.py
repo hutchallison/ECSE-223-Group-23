@@ -8,6 +8,9 @@ from utils.brick import EV3ColorSensor, wait_ready_sensors, TouchSensor, Motor
 import pickle
 from utils.sound import Sound
 import simpleaudio as sa
+from navigator import Navigator
+
+nav = Navigator()
 
 #color sensor initializer
 color_sensor = EV3ColorSensor(3)
@@ -17,7 +20,7 @@ color_sensor = EV3ColorSensor(3)
 WINDOW_SIZE = 500
 
 #name of color calibration file to use
-COLOR_FILE = "detection_colors.pkl"
+COLOR_FILE = "final_project.cal"
 
 
 #creates 2 tone variables for the flute to play
@@ -26,7 +29,7 @@ tone2 = Sound(duration=1.0, volume=100, pitch="G4")
 
 #dictionary with colors and matching tones
 COLOR_TO_SOUND = {
-	"red": tone1,
+#	"red": tone1,
 	"green": tone2,
 }
 
@@ -106,16 +109,20 @@ def detect_color():
 #initializes main loop variables
 previous_color = None
 
-#main loop which stops when emergency button is pressed
-print("entring loop")
-while True:	
-	#gets color data
+nav.move_forward(60)
+while True:
+	time.sleep(0.1)
 	color = detect_color()
-
-	#Plays sound if color is associated with a note 
-	if color not in COLOR_TO_SOUND:
-		previous_color = None
-	elif color != previous_color:
-		COLOR_TO_SOUND[color].play()
-		previous_color = color
-
+	print(color)
+	if color == "green":
+		print("green")
+		tone1.play()
+		tone1.wait_done()
+		break
+	elif color == "red":
+		print("red")
+		nav.move_backward(30)
+		break
+	else:
+		pass
+		nav.move_forward(3)
