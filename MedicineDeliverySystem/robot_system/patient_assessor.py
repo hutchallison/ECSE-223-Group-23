@@ -67,7 +67,7 @@ class PatientAssessor:
 
         for _ in range(self.WINDOW_SIZE // 4):
             rgb = self._sensor.get_rgb()
-            if rgb:
+            if rgb and None not in rgb:
                 self._window = np.roll(self._window, -1, axis=1)
                 self._window[:, -1] = [int(rgb[0]), int(rgb[1]), int(rgb[2])]
 
