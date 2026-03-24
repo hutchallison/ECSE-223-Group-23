@@ -137,7 +137,7 @@ def test_box_back(nav):
 def test_diff_turn_tune(nav):
     """
     Simple manual test for Navigator.diff_turn().
-    Repeatedly runs left/right 90° pivot turns and reports heading error.
+    Repeatedly runs arbitrary-angle pivot turns and reports heading error.
     """
     if nav.gyro is None:
         log.error("diff_tune requires gyro. Re-run with --gyro")
@@ -147,30 +147,40 @@ def test_diff_turn_tune(nav):
         return (angle + 180.0) % 360.0 - 180.0
 
     log.info("=== TEST: diff_tune (diff_turn only) ===")
-    log.info("Robot should have clear space to make repeated 90° pivot turns.")
+    log.info("Robot should have clear space to make repeated pivot turns.")
 
     while True:
-        direction_raw = input("Direction [l/r]: ").strip().lower()
-        if direction_raw not in ("l", "r"):
-            log.warning("Invalid direction. Use 'l' or 'r'.")
+        angle_raw = input("Turn angle in degrees (+left, -right): ").strip()
+        try:
+            angle_deg = float(angle_raw)
+        except Exception:
+            log.warning("Invalid angle. Enter a number like 45 or -90.")
             continue
 
-        direction = 1 if direction_raw == "l" else -1
-        label = "left" if direction == 1 else "right"
+        if angle_deg == 0:
+            log.warning("Angle cannot be 0.")
+            continue
+
+        pivot_wheel = input("Pivot wheel [left/right]: ").strip().lower()
+        if pivot_wheel not in ("left", "right"):
+            log.warning("Invalid pivot wheel. Use 'left' or 'right'.")
+            continue
+
+        label = "left" if angle_deg > 0 else "right"
 
         input("Place/reposition robot, then press Enter to run diff_turn...")
         before_h = nav.get_position()[2]
-        nav.diff_turn(direction=direction, forward=True)
+        nav.diff_turn(angle_deg=angle_deg, pivot_wheel=pivot_wheel)
         pause()
         after_h = nav.get_position()[2]
 
         turned = wrap_to_180(after_h - before_h)
-        target = 90.0 * direction
+        target = angle_deg
         error = abs(target - turned)
 
         log.info(
-            "diff_turn %-5s | turned=%.1f° target=%.1f° error=%.1f°",
-            label, turned, target, error
+            "diff_turn turn=%-5s pivot=%s | turned=%.1f° target=%.1f° error=%.1f°",
+            label, pivot_wheel, turned, target, error
         )
 
         another = input("Run another diff_turn? [y/N]: ").strip().lower()

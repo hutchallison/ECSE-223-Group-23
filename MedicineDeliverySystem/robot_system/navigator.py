@@ -116,21 +116,28 @@ class Navigator:
 
         log.info("turn done | heading=%.1f", self.heading)
     
-    def diff_turn(self, direction, forward=True):
+    def diff_turn(self, angle_deg, pivot_wheel):
         """
-        Pivot turn by 90° around one wheel in two phases:
-        1) Blind encoder-based coarse turn (~85°)
+        Pivot turn by any angle around one wheel in two phases:
+        1) Blind encoder-based coarse turn (all but a small trim window)
         2) Slow gyro trim for final few degrees
 
-        - direction: +1 for left (CCW), -1 for right (CW)
+        - angle_deg: signed angle in degrees (+left/CCW, -right/CW)
+        - pivot_wheel: 'left' or 'right' (wheel that stays at 0 DPS)
         - active wheel runs; pivot wheel stays at 0 DPS
-        - forward=False reverses active wheel direction
         """
         if self.gyro is None:
             raise RuntimeError("diff_turn requires a gyro sensor")
 
-        if direction not in (-1, 1):
-            raise ValueError("direction must be +1 (left) or -1 (right)")
+        angle_deg = float(angle_deg)
+        if angle_deg == 0:
+            return
+
+        pivot_wheel = str(pivot_wheel).strip().lower()
+        if pivot_wheel not in ("left", "right"):
+            raise ValueError("pivot_wheel must be 'left' or 'right'")
+
+        direction = 1 if angle_deg > 0 else -1
 
         start_heading = self._read_gyro()
         if start_heading is None:
@@ -140,10 +147,9 @@ class Navigator:
         trim_dps = Config.Navigation.SPEED_ROTATE_ADJUST
         tolerance = Config.Navigation.TURN_TOLERANCE_DEG
         loop_dt = 0.02
-        target_abs_deg = 90.0
+        target_abs_deg = abs(angle_deg)
         trim_window_deg = 5.0
         coarse_target_deg = max(0.0, target_abs_deg - trim_window_deg)
-        travel_sign = 1 if forward else -1
 
         def wrap_to_180(angle):
             return (angle + 180.0) % 360.0 - 180.0
@@ -155,17 +161,22 @@ class Navigator:
             turned_delta = wrap_to_180(current_heading - start_heading)
             return direction * turned_delta
 
+        # Sign for active wheel movement based on pivot side and turn direction.
+        # Around left pivot:  +angle => right wheel forward, -angle => right wheel backward
+        # Around right pivot: +angle => left wheel backward, -angle => left wheel forward
+        active_sign = direction if pivot_wheel == "left" else -direction
+
         wheel_deg_per_robot_deg = Config.Navigation.TRACK_WIDTH_CM / Config.Navigation.WHEEL_RADIUS_CM
         coarse_wheel_deg = coarse_target_deg * wheel_deg_per_robot_deg
-        active_step_deg = travel_sign * coarse_wheel_deg
+        active_step_deg = active_sign * coarse_wheel_deg
 
         self.left_motor.set_limits(dps=base_dps)
         self.right_motor.set_limits(dps=base_dps)
 
-        log.info("diff_turn coarse start | direction=%s target=%.1f°",
-                 "left" if direction > 0 else "right", coarse_target_deg)
+        log.info("diff_turn coarse start | turn=%s pivot=%s target=%.1f°",
+                 "left" if direction > 0 else "right", pivot_wheel, coarse_target_deg)
 
-        if direction > 0:
+        if pivot_wheel == "left":
             self.left_motor.set_dps(0)
             self.right_motor.set_position_relative(rp * active_step_deg)
             self.right_motor.wait_is_moving()
@@ -178,8 +189,8 @@ class Navigator:
 
         log.info("diff_turn trim start | target=%.1f° tolerance=%.1f°", target_abs_deg, tolerance)
 
-        active_trim_dps = trim_dps * travel_sign
-        if direction > 0:
+        active_trim_dps = active_sign * trim_dps
+        if pivot_wheel == "left":
             self.left_motor.set_dps(0)
             self.right_motor.set_dps(rp * active_trim_dps)
         else:
@@ -204,6 +215,8 @@ class Navigator:
         final_heading = self._read_gyro()
         if final_heading is not None:
             self.heading = final_heading
+        else:
+            self.heading += angle_deg
 
         log.info("diff_turn done | heading=%.1f", self.heading)
 
