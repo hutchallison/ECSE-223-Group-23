@@ -9,11 +9,12 @@ import pickle
 import simpleaudio as sa
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
-if current_dir not in sys.path:
-    sys.path.append(current_dir)
+project_dir = os.path.dirname(current_dir)  # .../robot_system
+if project_dir not in sys.path:
+	sys.path.append(project_dir)
 
-from create_gauss import create_gaussian
-from bhatta_dist import bhatta_distance
+from color_detection.create_gauss import create_gaussian
+from color_detection.bhatta_dist import bhatta_distance
 from utils.brick import EV3ColorSensor, wait_ready_sensors, TouchSensor, Motor
 from utils.sound import Sound
 from navigator import Navigator
@@ -21,7 +22,7 @@ from navigator import Navigator
 nav = Navigator()
 color_sensor = EV3ColorSensor(3)
 WINDOW_SIZE = 500
-COLOR_FILE = "final_project.cal"
+COLOR_FILE = os.path.join(project_dir, "color_detection", "final_project.cal")
 
 tone1 = Sound(duration=1.0, volume=100, pitch="C4")
 tone2 = Sound(duration=1.0, volume=100, pitch="G4")
