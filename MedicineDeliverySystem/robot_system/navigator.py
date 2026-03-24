@@ -42,12 +42,13 @@ class Navigator:
 
     # ── Movement ─────────────────────────────────────────────────────
 
-    def move(self, distance_cm, direction):
+    def move(self, distance_cm, direction, assessor=None):
         """
-        Move forward by distance_cm. Uses gyro for heading correction if available,
-        otherwise drives straight open-loop via set_dps.
+        Move by distance_cm in direction (1=forward, -1=backward).
+        If assessor is provided, samples the color sensor each loop tick and
+        returns the last detected room string. Otherwise returns None.
         """
-        log.info("move_forward %.1f cm | heading=%.1f", distance_cm, self.heading)
+        log.info("move %.1f cm direction=%d | heading=%.1f", distance_cm, direction, self.heading)
 
         rw = Config.Navigation.WHEEL_RADIUS_CM
         target_encoder_deg = (180 * distance_cm) / (math.pi * rw)
@@ -59,6 +60,7 @@ class Navigator:
         self.right_motor.reset_encoder()
 
         last_log_time = time.time()
+        current_room = "unknown"
 
         while True:
             left_deg = abs(self.left_motor.get_encoder())
@@ -87,6 +89,13 @@ class Navigator:
                           progress, self.heading, correction, left_deg, right_deg)
                 last_log_time = now
 
+            # Color scanning — runs inline, no threading needed
+            if assessor is not None:
+                detected = assessor.current_room()
+                if detected != "unknown":
+                    current_room = detected
+                    log.debug("move scanning | room=%s", current_room)
+
             time.sleep(0.05)
 
         self.left_motor.set_dps(0)
@@ -94,13 +103,15 @@ class Navigator:
 
         avg_deg = (abs(self.left_motor.get_encoder()) + abs(self.right_motor.get_encoder())) / 2
         actual_distance = (math.pi * rw * avg_deg) / 180
-        log.info("move_forward done | traveled=%.1f cm heading=%.1f", actual_distance, self.heading)
-	
-    def move_forward(self, distance_cm):
-        self.move(distance_cm, 1)
-	
-    def move_backward(self, distance_cm):
-        self.move(distance_cm, -1)
+        log.info("move done | traveled=%.1f cm heading=%.1f room=%s",
+                 actual_distance, self.heading, current_room if assessor else "-")
+        return current_room if assessor is not None else None
+
+    def move_forward(self, distance_cm, assessor=None):
+        return self.move(distance_cm, 1, assessor)
+
+    def move_backward(self, distance_cm, assessor=None):
+        return self.move(distance_cm, -1, assessor)
 	
     def turn(self, angle_deg):
         """
