@@ -159,7 +159,8 @@ class Navigator:
         tolerance = Config.Navigation.TURN_TOLERANCE_DEG
         loop_dt = 0.02
         target_abs_deg = abs(angle_deg)
-        trim_window_deg = 5.0
+        trim_window_deg = 10.0   # start slow phase 10° before target
+        coast_deg       = 5.0    # degrees robot coasts after set_dps(0) at trim speed
         coarse_target_deg = max(0.0, target_abs_deg - trim_window_deg)
 
         def wrap_to_180(angle):
@@ -215,7 +216,7 @@ class Navigator:
                 break
 
             progress_deg = get_progress_deg(current_heading)
-            if progress_deg >= (target_abs_deg - tolerance):
+            if progress_deg >= (target_abs_deg - tolerance - coast_deg):
                 break
 
             time.sleep(loop_dt)
