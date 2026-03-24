@@ -86,14 +86,14 @@ class PatientAssessor:
 
     # ── Public API ───────────────────────────────────────────────────────────
 
-    def current_room(self) -> str:
+    def current_room(self):
         """Return the room type the robot is currently over."""
         color = self.detect()
         if color is None:
-            return "unknown"
+            return "unknown" 
         return _COLOR_TO_ROOM.get(color.lower(), "unknown")
 
-    def needs_medicine(self) -> bool | None:
+    def needs_medicine(self):
         """Return True (needs medicine), False (healthy), or None (undetermined)."""
         color = self.detect()
         if color is None:
