@@ -10,7 +10,7 @@ Available tests:
     turn_left  - turn 90 degrees counterclockwise
     box        - drive a 30 cm square (should return to start)
     box_back   - drive a square in reverse direction (CCW)
-    diff_tune  - test one inner ratio at a time for diff_turn accuracy
+    diff_tune  - manual test that repeatedly calls diff_turn
 
 Flags:
     --gyro     - enable gyro sensor for turn trimming (default: blind turns only)
@@ -59,14 +59,6 @@ def pause():
 def report(nav, label=""):
     x, y, h = nav.get_position()
     log.info("%-20s → pos=(%.1f, %.1f) heading=%.1f°", label, x, y, h)
-
-
-def parse_ratio(raw):
-    """Parse one ratio in [0.0, 1.0]."""
-    value = float(raw)
-    if not (0.0 <= value <= 1.0):
-        raise ValueError(f"ratio {value} is out of range [0.0, 1.0]")
-    return value
 
 
 # ── Tests ─────────────────────────────────────────────────────────────────────
@@ -144,8 +136,8 @@ def test_box_back(nav):
 
 def test_diff_turn_tune(nav):
     """
-    Tune one inner_speed_ratio at a time for Navigator.diff_turn().
-    For each ratio, run 90° left/right turns, then choose to redo or try another ratio.
+    Simple manual test for Navigator.diff_turn().
+    Repeatedly runs left/right 90° pivot turns and reports heading error.
     """
     if nav.gyro is None:
         log.error("diff_tune requires gyro. Re-run with --gyro")
@@ -154,52 +146,34 @@ def test_diff_turn_tune(nav):
     def wrap_to_180(angle):
         return (angle + 180.0) % 360.0 - 180.0
 
-    log.info("=== TEST: diff_tune ===")
-    log.info("Robot should have clear space to make repeated 90° arc turns.")
+    log.info("=== TEST: diff_tune (diff_turn only) ===")
+    log.info("Robot should have clear space to make repeated 90° pivot turns.")
 
     while True:
-        ratio = None
-        while ratio is None:
-            raw = input("Enter one inner ratio [0.0-1.0] (e.g. 0.35): ").strip()
-            try:
-                ratio = parse_ratio(raw)
-            except Exception as exc:
-                log.warning("Invalid ratio input (%s). Try again.", exc)
+        direction_raw = input("Direction [l/r]: ").strip().lower()
+        if direction_raw not in ("l", "r"):
+            log.warning("Invalid direction. Use 'l' or 'r'.")
+            continue
 
-        while True:
-            log.info("--- testing ratio=%.2f ---", ratio)
-            input("Place/reposition robot, then press Enter to run this ratio...")
+        direction = 1 if direction_raw == "l" else -1
+        label = "left" if direction == 1 else "right"
 
-            per_direction_errors = []
-            for direction, label in ((1, "left"), (-1, "right")):
-                before_h = nav.get_position()[2]
-                nav.diff_turn(direction=direction, inner_speed_ratio=ratio, forward=True)
-                pause()
-                after_h = nav.get_position()[2]
+        input("Place/reposition robot, then press Enter to run diff_turn...")
+        before_h = nav.get_position()[2]
+        nav.diff_turn(direction=direction, forward=True)
+        pause()
+        after_h = nav.get_position()[2]
 
-                turned = wrap_to_180(after_h - before_h)
-                target = 90.0 * direction
-                error = abs(target - turned)
-                per_direction_errors.append(error)
+        turned = wrap_to_180(after_h - before_h)
+        target = 90.0 * direction
+        error = abs(target - turned)
 
-                log.info(
-                    "ratio=%.2f %-5s | turned=%.1f° target=%.1f° error=%.1f°",
-                    ratio, label, turned, target, error
-                )
-                input("Reposition robot if needed, then press Enter for next turn...")
+        log.info(
+            "diff_turn %-5s | turned=%.1f° target=%.1f° error=%.1f°",
+            label, turned, target, error
+        )
 
-            avg_error = sum(per_direction_errors) / len(per_direction_errors)
-            worst_error = max(per_direction_errors)
-            log.info(
-                "ratio=%.2f result | avg_error=%.2f° worst_error=%.2f°",
-                ratio, avg_error, worst_error
-            )
-
-            redo = input("Redo same ratio? [y/N]: ").strip().lower()
-            if redo != "y":
-                break
-
-        another = input("Try another ratio? [y/N]: ").strip().lower()
+        another = input("Run another diff_turn? [y/N]: ").strip().lower()
         if another != "y":
             break
 

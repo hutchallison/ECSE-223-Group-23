@@ -1,7 +1,7 @@
 import math
 import time
 import logging
-from utils.brick import Motor, EV3GyroSensor, EV3UltrasonicSensor
+from utils.brick import Motor
 from config import Config
 
 log = logging.getLogger(__name__)
@@ -12,11 +12,6 @@ class Navigator:
         self.left_motor = Motor(Config.Ports.LEFT_MOTOR)
         self.right_motor = Motor(Config.Ports.RIGHT_MOTOR)
         self.gyro = gyro
-        self.us = us
-
-        # Dead-reckoned pose (x, y in cm, heading in degrees)
-        self.x = 0.0
-        self.y = 0.0
         self.heading = 0.0
 
         # Gyro baseline so heading starts at 0
@@ -26,8 +21,8 @@ class Navigator:
             if initial is not None:
                 self._gyro_offset = initial
 
-        log.info("Navigator init | gyro=%s us=%s gyro_offset=%.1f",
-                 gyro is not None, us is not None, self._gyro_offset)
+        log.info("Navigator init | gyro=%s gyro_offset=%.1f",
+             gyro is not None, self._gyro_offset)
 
     # ── Sensors ──────────────────────────────────────────────────────
 
@@ -42,12 +37,8 @@ class Navigator:
         return (reading - self._gyro_offset) * Config.Navigation.GYRO_SCALE
 
     def get_wall_distance(self):
-        """Read ultrasonic distance (cm) on demand. Returns None if unavailable."""
-        if self.us is None:
-            return None
-        dist = self.us.get_cm()
-        log.debug("US distance: %s cm", dist)
-        return dist
+        """Ultrasonic is not used in this navigator revision."""
+        return None
 
     # ── Movement ─────────────────────────────────────────────────────
 
@@ -56,8 +47,7 @@ class Navigator:
         Move forward by distance_cm. Uses gyro for heading correction if available,
         otherwise drives straight open-loop via set_dps.
         """
-        log.info("move_forward %.1f cm | pos=(%.1f, %.1f) heading=%.1f",
-                 distance_cm, self.x, self.y, self.heading)
+        log.info("move_forward %.1f cm | heading=%.1f", distance_cm, self.heading)
 
         rw = Config.Navigation.WHEEL_RADIUS_CM
         target_encoder_deg = (180 * distance_cm) / (math.pi * rw)
@@ -102,14 +92,9 @@ class Navigator:
         self.left_motor.set_dps(0)
         self.right_motor.set_dps(0)
 
-        # Update position from encoders
         avg_deg = (abs(self.left_motor.get_encoder()) + abs(self.right_motor.get_encoder())) / 2
         actual_distance = (math.pi * rw * avg_deg) / 180
-        heading_rad = math.radians(self.heading)
-        self.x += actual_distance * math.cos(heading_rad)
-        self.y += actual_distance * math.sin(heading_rad)
-
-        log.info("move_forward done | traveled=%.1f cm pos=(%.1f, %.1f) heading=%.1f", actual_distance, self.x, self.y, self.heading)
+        log.info("move_forward done | traveled=%.1f cm heading=%.1f", actual_distance, self.heading)
 	
     def move_forward(self, distance_cm):
         self.move(distance_cm, 1)
@@ -123,20 +108,20 @@ class Navigator:
         Phase 1 (blind): full-speed encoder-based turn for the whole angle.
         Phase 2 (trim): if gyro available, one constant-speed correction pass.
         """
-        log.info("turn %.1f deg | pos=(%.1f, %.1f) heading=%.1f",
-                 angle_deg, self.x, self.y, self.heading)
+        log.info("turn %.1f deg | heading=%.1f", angle_deg, self.heading)
 
         target_heading = self.heading + angle_deg
         self._turn_blind(angle_deg)
         self._turn_gyro_trim(target_heading)
 
         log.info("turn done | heading=%.1f", self.heading)
-    def diff_turn(self, direction, inner_speed_ratio=0.4, forward=True):
+    
+    def diff_turn(self, direction, forward=True):
         """
-        Differential 90° turn while moving.
+        Pivot turn by 90° around one wheel.
         - direction: +1 for left (CCW), -1 for right (CW)
-        - inner_speed_ratio: inner wheel speed as a fraction of outer wheel speed
-        - forward: if False, performs the same arc while reversing
+        - active wheel runs; pivot wheel stays at 0 DPS
+        - forward=False reverses active wheel direction
         """
         if self.gyro is None:
             raise RuntimeError("diff_turn requires a gyro sensor")
@@ -144,28 +129,24 @@ class Navigator:
         if direction not in (-1, 1):
             raise ValueError("direction must be +1 (left) or -1 (right)")
 
-        if not (0.0 <= inner_speed_ratio <= 1.0):
-            raise ValueError("inner_speed_ratio must be between 0.0 and 1.0")
-
         start_heading = self.gyro.get_abs_measure()
         if start_heading is None:
             raise RuntimeError("gyro returned None at diff_turn start")
 
-        base_outer = Config.Navigation.SPEED_ROTATE
+        base_dps = Config.Navigation.SPEED_ROTATE
         tolerance = Config.Navigation.TURN_TOLERANCE_DEG
-        kp_turn = 1.0
         loop_dt = 0.02
         target_delta = 90.0 * direction
         travel_sign = 1 if forward else -1
 
         def wrap_to_180(angle):
-	        return (angle + 180.0) % 360.0 - 180.0
+            return (angle + 180.0) % 360.0 - 180.0
 
         lp = Config.Navigation.LEFT_MOTOR_POLARITY
         rp = Config.Navigation.RIGHT_MOTOR_POLARITY
 
-        log.info("diff_turn start | direction=%s inner_ratio=%.2f forward=%s",
-                 "left" if direction > 0 else "right", inner_speed_ratio, forward)
+        # constant active wheel speed
+        active_dps = base_dps * travel_sign
 
         while True:
             current_heading = self.gyro.get_abs_measure()
@@ -174,38 +155,21 @@ class Navigator:
                 break
 
             turned_delta = wrap_to_180(current_heading - start_heading)
-            error = target_delta - turned_delta
 
-            if abs(error) <= tolerance:
-                break
+            # directional stop check (no proportional slowdown)
+            if direction > 0:  # left turn target +90
+                if turned_delta >= (target_delta - tolerance):
+                    break
+                left_dps, right_dps = 0.0, active_dps
+            else:              # right turn target -90
+                if turned_delta <= (target_delta + tolerance):
+                    break
+                left_dps, right_dps = active_dps, 0.0
 
-            correction = kp_turn * error
-            command_sign = 1 if correction >= 0 else -1
-            outer_mag = min(base_outer, max(30.0, abs(correction)))
-            outer_dps = command_sign * outer_mag
-            inner_dps = outer_dps * inner_speed_ratio
-
-            if direction > 0:
-                left_dps = inner_dps
-                right_dps = outer_dps
-            else:
-                left_dps = outer_dps
-                right_dps = inner_dps
-
-            self.left_motor.set_dps(lp * travel_sign * left_dps)
-            self.right_motor.set_dps(rp * travel_sign * right_dps)
+            self.left_motor.set_dps(lp * left_dps)
+            self.right_motor.set_dps(rp * right_dps)
             time.sleep(loop_dt)
-
-        self.left_motor.set_dps(0)
-        self.right_motor.set_dps(0)
-
-        final_heading = self._read_gyro()
-        if final_heading is not None:
-            self.heading = final_heading
-        else:
-            self.heading += target_delta
-
-        log.info("diff_turn done | heading=%.1f", self.heading)
+            
 
     def _turn_blind(self, angle_deg):
         """Encoder-based turn at constant SPEED_ROTATE. No feedback."""
@@ -265,5 +229,5 @@ class Navigator:
     # ── Accessors ────────────────────────────────────────────────────
 
     def get_position(self):
-        """Return current estimated pose as (x, y, heading_degrees)."""
-        return (self.x, self.y, self.heading)
+        """Position tracking disabled; returns heading as third value for compatibility."""
+        return (0.0, 0.0, self.heading)
