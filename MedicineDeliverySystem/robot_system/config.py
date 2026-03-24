@@ -62,3 +62,12 @@ class Config:
         LOG_FILE = "robot_log.txt"
         LOG_LEVEL = "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
         LOG_FREQUENCY = 2.0  # Seconds between periodic in-motion debug logs
+    
+    class Controller:
+        S1_SEGMENT1 = 25  # cm to move forward in segment 1 (to pharmacy)
+        S1_SEGMENT2 = 24.3  # cm to move forward in segment 2
+        S1_SEGMENT3 = 25  # cm to move forward in segment 3 (to patient room)
+        S2_SEGMENT1 = 18.1  # cm to move forward in segment 1 (to patient room)
+        S2_SEGMENT2 = 44.1  # cm to move forward in segment 2
+        ROOM_SWEEP_LENGTH = 40 # cm to sweep across room for obstacle detection
+        SWEEP_DIFF = 5 # cm to move forward/backward during sweep turns

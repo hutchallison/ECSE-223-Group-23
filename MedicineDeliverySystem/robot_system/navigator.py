@@ -8,7 +8,7 @@ log = logging.getLogger(__name__)
 
 
 class Navigator:
-    def __init__(self, gyro=None, us=None):
+    def __init__(self, gyro=None):
         self.left_motor = Motor(Config.Ports.LEFT_MOTOR)
         self.right_motor = Motor(Config.Ports.RIGHT_MOTOR)
         self.gyro = gyro
