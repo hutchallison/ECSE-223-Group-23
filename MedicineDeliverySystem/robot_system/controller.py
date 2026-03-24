@@ -3,7 +3,7 @@ from config import Config
 
 class Controller:
     def __init__(self):
-        self.nav = Navigator(UseGyro=True)
+        self.nav = Navigator(gyro=True)
     
     def collect_medicine(self):
         # Code to navigate to the medicine location and collect it
