@@ -118,7 +118,10 @@ class Navigator:
     
     def diff_turn(self, direction, forward=True):
         """
-        Pivot turn by 90° around one wheel.
+        Pivot turn by 90° around one wheel in two phases:
+        1) Blind encoder-based coarse turn (~85°)
+        2) Slow gyro trim for final few degrees
+
         - direction: +1 for left (CCW), -1 for right (CW)
         - active wheel runs; pivot wheel stays at 0 DPS
         - forward=False reverses active wheel direction
@@ -129,14 +132,17 @@ class Navigator:
         if direction not in (-1, 1):
             raise ValueError("direction must be +1 (left) or -1 (right)")
 
-        start_heading = self.gyro.get_abs_measure()
+        start_heading = self._read_gyro()
         if start_heading is None:
             raise RuntimeError("gyro returned None at diff_turn start")
 
         base_dps = Config.Navigation.SPEED_ROTATE
+        trim_dps = Config.Navigation.SPEED_ROTATE_ADJUST
         tolerance = Config.Navigation.TURN_TOLERANCE_DEG
         loop_dt = 0.02
-        target_delta = 90.0 * direction
+        target_abs_deg = 90.0
+        trim_window_deg = 5.0
+        coarse_target_deg = max(0.0, target_abs_deg - trim_window_deg)
         travel_sign = 1 if forward else -1
 
         def wrap_to_180(angle):
@@ -145,31 +151,61 @@ class Navigator:
         lp = Config.Navigation.LEFT_MOTOR_POLARITY
         rp = Config.Navigation.RIGHT_MOTOR_POLARITY
 
-        # constant active wheel speed
-        active_dps = base_dps * travel_sign
+        def get_progress_deg(current_heading):
+            turned_delta = wrap_to_180(current_heading - start_heading)
+            return direction * turned_delta
+
+        wheel_deg_per_robot_deg = Config.Navigation.TRACK_WIDTH_CM / Config.Navigation.WHEEL_RADIUS_CM
+        coarse_wheel_deg = coarse_target_deg * wheel_deg_per_robot_deg
+        active_step_deg = travel_sign * coarse_wheel_deg
+
+        self.left_motor.set_limits(dps=base_dps)
+        self.right_motor.set_limits(dps=base_dps)
+
+        log.info("diff_turn coarse start | direction=%s target=%.1f°",
+                 "left" if direction > 0 else "right", coarse_target_deg)
+
+        if direction > 0:
+            self.left_motor.set_dps(0)
+            self.right_motor.set_position_relative(rp * active_step_deg)
+            self.right_motor.wait_is_moving()
+            self.right_motor.wait_is_stopped()
+        else:
+            self.right_motor.set_dps(0)
+            self.left_motor.set_position_relative(lp * active_step_deg)
+            self.left_motor.wait_is_moving()
+            self.left_motor.wait_is_stopped()
+
+        log.info("diff_turn trim start | target=%.1f° tolerance=%.1f°", target_abs_deg, tolerance)
+
+        active_trim_dps = trim_dps * travel_sign
+        if direction > 0:
+            self.left_motor.set_dps(0)
+            self.right_motor.set_dps(rp * active_trim_dps)
+        else:
+            self.right_motor.set_dps(0)
+            self.left_motor.set_dps(lp * active_trim_dps)
 
         while True:
-            current_heading = self.gyro.get_abs_measure()
+            current_heading = self._read_gyro()
             if current_heading is None:
                 log.warning("Gyro read returned None during diff_turn; stopping")
                 break
 
-            turned_delta = wrap_to_180(current_heading - start_heading)
+            progress_deg = get_progress_deg(current_heading)
+            if progress_deg >= (target_abs_deg - tolerance):
+                break
 
-            # directional stop check (no proportional slowdown)
-            if direction > 0:  # left turn target +90
-                if turned_delta >= (target_delta - tolerance):
-                    break
-                left_dps, right_dps = 0.0, active_dps
-            else:              # right turn target -90
-                if turned_delta <= (target_delta + tolerance):
-                    break
-                left_dps, right_dps = active_dps, 0.0
-
-            self.left_motor.set_dps(lp * left_dps)
-            self.right_motor.set_dps(rp * right_dps)
             time.sleep(loop_dt)
-            
+
+        self.left_motor.set_dps(0)
+        self.right_motor.set_dps(0)
+
+        final_heading = self._read_gyro()
+        if final_heading is not None:
+            self.heading = final_heading
+
+        log.info("diff_turn done | heading=%.1f", self.heading)
 
     def _turn_blind(self, angle_deg):
         """Encoder-based turn at constant SPEED_ROTATE. No feedback."""
