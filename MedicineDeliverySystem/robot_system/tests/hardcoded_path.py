@@ -134,6 +134,7 @@ def test_box_back(nav):
     log.info("Position error from origin: %.1f cm", pos_error)
 
 def go_to_room(nav):
+	input("Position robot at start point and press Enter to begin...")
 	nav.move_forward(10)
 	nav.turn(90)
 	nav.move_forward(20)
@@ -186,5 +187,6 @@ if __name__ == "__main__":
     nav = Navigator(gyro=gyro)
 
     log.info("Starting test: %s", test_name)
+    input("Position robot at start point and press Enter to begin...")
     TESTS[test_name](nav)
     log.info("Test complete.")
