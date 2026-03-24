@@ -20,9 +20,9 @@ class Controller:
 
     def go_to_room1(self):
         self.nav.turn(90)
-        self.nav.move_backward(Config.Controller.S1_SEGMENT1)
+        self.nav.move_backward(Config.Controller.S2_SEGMENT1)
         self.nav.diff_turn(90, "right")
-        self.nav.move_forward(Config.Controller.S1_SEGMENT2)
+        self.nav.move_forward(Config.Controller.S2_SEGMENT2)
 
     def sweep_room1(self):
         # Code to sweep room 1 for obstacles
@@ -33,9 +33,9 @@ class Controller:
         self.nav.turn(90)
         self.nav.move_forward(Config.Controller.ROOM_SWEEP_LENGTH)
         self.nav.move_backward(Config.Controller.ROOM_SWEEP_LENGTH)
-        self.nav.turn(90)
-        self.nav.move_forward(Config.Controller.SWEEP_DIFF)
         self.nav.turn(-90)
+        self.nav.move_forward(Config.Controller.SWEEP_DIFF)
+        self.nav.turn(90)
         self.nav.move_forward(Config.Controller.ROOM_SWEEP_LENGTH)
         self.nav.move_backward(Config.Controller.ROOM_SWEEP_LENGTH)
 
