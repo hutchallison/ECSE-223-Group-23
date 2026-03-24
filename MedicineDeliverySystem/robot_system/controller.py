@@ -1,9 +1,13 @@
 from navigator import Navigator
 from config import Config
+from utils.brick import EV3GyroSensor, wait_ready_sensors
+
 
 class Controller:
     def __init__(self):
-        self.nav = Navigator(gyro=True)
+        gyro = EV3GyroSensor(Config.Ports.GYRO)
+        wait_ready_sensors()
+        self.nav = Navigator(gyro=gyro)
     
     def collect_medicine(self):
         # Code to navigate to the medicine location and collect it
