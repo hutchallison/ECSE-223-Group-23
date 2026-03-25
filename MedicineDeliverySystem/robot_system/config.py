@@ -78,5 +78,5 @@ class Config:
         SWEEP_ANGLE_LEFT = 15           # degrees CCW from entry heading
         SWEEP_ANGLE_RIGHT = 30          # degrees CW from entry heading
         HALF_BED_DIST = 6               # cm nudge forward when no bed detected
-        SWEEP_BACKUP_TO_DROP_DIST = 6
+        SWEEP_BACKUP_TO_DROP_DIST = 4
         TOTAL_SWEEPS = 5                # Number of times to repeat sweep if no bed found
