@@ -73,3 +73,10 @@ class Config:
 
         ROOM_SWEEP_LENGTH = 20 # cm to sweep across room for obstacle detection
         SWEEP_DIFF = 5 # cm to move forward/backward during sweep turns
+
+        # Angular sweep (room 1 redesign)
+        SWEEP_ANGLE_LEFT = 20           # degrees CCW from entry heading
+        SWEEP_ANGLE_RIGHT = 45          # degrees CW from entry heading
+        HALF_BED_DIST = 6               # cm nudge forward when no bed detected
+        SWEEP_BACKUP_TO_DROP_DIST = 6
+        TOTAL_SWEEPS = 6                # Number of times to repeat sweep if no bed found
