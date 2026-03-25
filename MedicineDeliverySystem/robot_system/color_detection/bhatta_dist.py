@@ -44,8 +44,12 @@ def bhatta_distance(mean1, cov1, mean2, cov2):
 		
 		det_cov2 = np.linalg.det(cov2)
 
+		denom = math.sqrt(max(det_cov1 * det_cov2, 0.0))
+		if denom <= 0.0 or det_cov_sum <= 0.0:
+			return None
+
 		#calculates second term of Bhattacharyya distance formula
-		term_2 = 0.5*math.log(det_cov_sum / math.sqrt(det_cov1*det_cov2))
+		term_2 = 0.5*math.log(det_cov_sum / denom)
 
 		bhatta_dist = term_1 + term_2
 		
