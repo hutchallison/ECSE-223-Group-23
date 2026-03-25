@@ -304,7 +304,7 @@ class Navigator:
             return False
 
         direction = 1 if angle_deg > 0 else -1
-        target_abs_deg = abs(angle_deg)
+        target_abs_deg = abs(angle_deg) - 5
         tolerance = Config.Navigation.TURN_TOLERANCE_DEG
         dps = Config.Navigation.SPEED_ROTATE_ADJUST
         loop_dt = 0.02
