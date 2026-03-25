@@ -22,9 +22,9 @@ log = logging.getLogger("controller")
 
 class Controller:
     def __init__(self):
-        gyro = EV3GyroSensor(Config.Ports.GYRO)
-        wait_ready_sensors()
-        self.nav = Navigator(gyro=gyro)
+        # gyro = EV3GyroSensor(Config.Ports.GYRO)
+        # wait_ready_sensors()
+        self.nav = Navigator()
         self.assessor = PatientAssessor()
         self.payload = PayloadController(self.nav)
         self._room1_trips = 0
