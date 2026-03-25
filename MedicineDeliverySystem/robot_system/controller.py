@@ -74,6 +74,7 @@ class Controller:
 
 if __name__ == "__main__":
     controller = Controller()
+    controller.payload.engage_clamp()
     controller.payload.lift_clamp()
     # controller.collect_medicine()
     # controller.go_to_room1()
