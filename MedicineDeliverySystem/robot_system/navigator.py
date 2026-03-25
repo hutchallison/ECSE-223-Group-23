@@ -335,7 +335,7 @@ class Navigator:
 
             progress_deg = direction * wrap_to_180(current_heading - start_heading)
 
-            if assessor is not None and assessor.sees_bed():
+            if assessor is not None and assessor.needs_medicine():
                 bed_found = True
                 log.info("scan_turn: bed detected at %.1f deg into sweep", progress_deg)
                 break
