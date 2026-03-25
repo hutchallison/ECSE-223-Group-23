@@ -13,6 +13,7 @@ Expected:
 
 import sys
 import os
+import time
 
 # Make sure robot_system modules are importable when run from the tests/ folder
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
@@ -39,5 +40,20 @@ def run():
 
     print(f"\n{passed}/{len(CHECKS)} checks passed.")
 
+
+def run_continuous():
+    """Continuously call detect() and print the result. Ctrl-C to stop."""
+    assessor = PatientAssessor()
+    print("Continuous detect() — move sensor over colours. Ctrl-C to stop.\n")
+    while True:
+        color = assessor.detect()
+        needs = assessor.needs_medicine()
+        print(f"  detect={color!r:12s}  needs_medicine={needs!r}")
+        time.sleep(0.1)
+
+
 if __name__ == "__main__":
-    run()
+    if len(sys.argv) > 1 and sys.argv[1] == "continuous":
+        run_continuous()
+    else:
+        run()

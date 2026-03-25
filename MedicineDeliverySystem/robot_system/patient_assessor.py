@@ -93,13 +93,6 @@ class PatientAssessor:
             return "unknown" 
         return _COLOR_TO_ROOM.get(color.lower(), "unknown")
 
-    def sees_bed(self):
-        """Return True if the sensor is currently over a patient bed (green or red marker)."""
-        color = self.detect()
-        if color is None:
-            return False
-        return color.lower() in (_NEEDS_MEDICINE_COLOR, _NO_MEDICINE_COLOR)
-
     def needs_medicine(self):
         """Return True (needs medicine), False (healthy), or None (undetermined)."""
         color = self.detect()
