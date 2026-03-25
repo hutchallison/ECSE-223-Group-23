@@ -287,18 +287,17 @@ class Navigator:
         self.right_motor.set_dps(0)
         log.debug("gyro trim done | target=%.1f actual=%.1f", target_heading, self.heading)
 
-    def scan_turn(self, angle_deg, assessor=None):
+    def scan_turn(self, angle_deg, assessor=None, use_gyro=True):
         """
         Rotate slowly at SPEED_ROTATE_ADJUST, sampling the color sensor inline.
         Positive angle_deg = CCW (left), negative = CW (right).
 
         Returns True if a bed color (green or red) is detected mid-sweep,
         False if the full angle is swept without finding a bed.
-        Requires gyro.
-        """
-        if self.gyro is None:
-            raise RuntimeError("scan_turn requires a gyro sensor")
 
+        use_gyro=True  — track progress via gyro (accurate); requires gyro sensor.
+        use_gyro=False — track progress via encoder odometry (no gyro needed).
+        """
         angle_deg = float(angle_deg)
         if angle_deg == 0:
             return False
@@ -312,46 +311,84 @@ class Navigator:
         lp = Config.Navigation.LEFT_MOTOR_POLARITY
         rp = Config.Navigation.RIGHT_MOTOR_POLARITY
 
-        start_heading = self._read_gyro()
-        if start_heading is None:
-            raise RuntimeError("gyro returned None at scan_turn start")
+        log.info("scan_turn %.1f deg | heading=%.1f use_gyro=%s", angle_deg, self.heading, use_gyro)
 
-        def wrap_to_180(a):
-            return (a + 180.0) % 360.0 - 180.0
+        # ── Gyro path ────────────────────────────────────────────────
+        if use_gyro:
+            if self.gyro is None:
+                raise RuntimeError("scan_turn requires a gyro sensor (or pass use_gyro=False)")
+            start_heading = self._read_gyro()
+            if start_heading is None:
+                raise RuntimeError("gyro returned None at scan_turn start")
 
-        log.info("scan_turn %.1f deg | heading=%.1f", angle_deg, self.heading)
+            def wrap_to_180(a):
+                return (a + 180.0) % 360.0 - 180.0
 
-        self.left_motor.set_limits(dps=dps)
-        self.right_motor.set_limits(dps=dps)
-        self.left_motor.set_dps(lp * (-direction * dps))
-        self.right_motor.set_dps(rp * (direction * dps))
+            self.left_motor.set_limits(dps=dps)
+            self.right_motor.set_limits(dps=dps)
+            self.left_motor.set_dps(lp * (-direction * dps))
+            self.right_motor.set_dps(rp * (direction * dps))
 
-        bed_found = False
-        while True:
-            current_heading = self._read_gyro()
-            if current_heading is None:
-                log.warning("Gyro read returned None during scan_turn; stopping")
-                break
+            bed_found = False
+            while True:
+                current_heading = self._read_gyro()
+                if current_heading is None:
+                    log.warning("Gyro read returned None during scan_turn; stopping")
+                    break
 
-            progress_deg = direction * wrap_to_180(current_heading - start_heading)
+                progress_deg = direction * wrap_to_180(current_heading - start_heading)
 
-            if assessor is not None and assessor.needs_medicine():
-                bed_found = True
-                log.info("scan_turn: bed detected at %.1f deg into sweep", progress_deg)
-                break
+                if assessor is not None and assessor.sees_bed():
+                    bed_found = True
+                    log.info("scan_turn: bed detected at %.1f deg into sweep", progress_deg)
+                    break
 
-            if progress_deg >= target_abs_deg - tolerance:
-                break
+                if progress_deg >= target_abs_deg - tolerance:
+                    break
 
-            time.sleep(loop_dt)
+                time.sleep(loop_dt)
 
-        self.left_motor.set_dps(0)
-        self.right_motor.set_dps(0)
+            self.left_motor.set_dps(0)
+            self.right_motor.set_dps(0)
 
-        final_heading = self._read_gyro()
-        if final_heading is not None:
-            self.heading = final_heading
+            final_heading = self._read_gyro()
+            if final_heading is not None:
+                self.heading = final_heading
+            else:
+                self.heading += angle_deg
+
+        # ── Encoder path (no gyro) ────────────────────────────────────
         else:
+            rw = Config.Navigation.WHEEL_RADIUS_CM
+            rb = Config.Navigation.TRACK_WIDTH_CM / 2
+            target_wheel_deg = target_abs_deg * (rb / rw)
+
+            self.left_motor.reset_encoder()
+            self.right_motor.reset_encoder()
+
+            self.left_motor.set_limits(dps=dps)
+            self.right_motor.set_limits(dps=dps)
+            self.left_motor.set_dps(lp * (-direction * dps))
+            self.right_motor.set_dps(rp * (direction * dps))
+
+            bed_found = False
+            while True:
+                traveled = (abs(self.left_motor.get_encoder()) +
+                            abs(self.right_motor.get_encoder())) / 2
+
+                if assessor is not None and assessor.sees_bed():
+                    bed_found = True
+                    robot_deg = traveled / (rb / rw)
+                    log.info("scan_turn: bed detected at ~%.1f deg into sweep", robot_deg)
+                    break
+
+                if traveled >= target_wheel_deg:
+                    break
+
+                time.sleep(loop_dt)
+
+            self.left_motor.set_dps(0)
+            self.right_motor.set_dps(0)
             self.heading += angle_deg
 
         log.info("scan_turn done | heading=%.1f bed_found=%s", self.heading, bed_found)
