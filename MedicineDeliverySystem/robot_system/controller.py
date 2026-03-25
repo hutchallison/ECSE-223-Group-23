@@ -21,10 +21,11 @@ logging.basicConfig(
 log = logging.getLogger("controller")
 
 class Controller:
-    def __init__(self):
+    def __init__(self, gyro=None):
         # gyro = EV3GyroSensor(Config.Ports.GYRO)
         # wait_ready_sensors()
-        self.nav = Navigator()
+        self.gyro = gyro
+        self.nav = Navigator(gyro=gyro)
         self.assessor = PatientAssessor()
         self.payload = PayloadController(self.nav)
         self._room1_trips = 0
@@ -48,7 +49,7 @@ class Controller:
         """Angular sweep of room 1. Scans left 20deg then right to -45deg.
         If a bed is found, backs up and drops medicine.
         If no bed, realigns to 0deg and nudges forward as a final check."""
-
+        use_gyro = bool(self.gyro)
         # Phase A: sweep left ~20 deg (CCW)
         for _ in range(Config.Controller.TOTAL_SWEEPS):
             bed_found = self.nav.scan_turn(
@@ -57,7 +58,7 @@ class Controller:
 
             if not bed_found:
                 total_right = Config.Controller.SWEEP_ANGLE_LEFT + Config.Controller.SWEEP_ANGLE_RIGHT
-                bed_found = self.nav.scan_turn(-total_right, self.assessor)
+                bed_found = self.nav.scan_turn(-total_right, self.assessor, use_gyro=use_gyro)
 
             if bed_found:
                 self.nav.move_backward(Config.Controller.SWEEP_BACKUP_TO_DROP_DIST)
