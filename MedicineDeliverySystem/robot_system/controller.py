@@ -21,9 +21,14 @@ logging.basicConfig(
 log = logging.getLogger("controller")
 
 class Controller:
-    def __init__(self, gyro=None):
-        # gyro = EV3GyroSensor(Config.Ports.GYRO)
-        # wait_ready_sensors()
+    def __init__(self, use_gyro=True):
+
+        if use_gyro:
+            gyro = EV3GyroSensor(Config.Ports.GYRO)
+            wait_ready_sensors()
+        else:
+            gyro = None
+
         self.gyro = gyro
         self.nav = Navigator(gyro=gyro)
         self.assessor = PatientAssessor()
@@ -74,7 +79,8 @@ class Controller:
             self.nav.move_forward(Config.Controller.HALF_BED_DIST, assessor=self.assessor)
 
 if __name__ == "__main__":
-    controller = Controller()
+    use_gyro = input("Use gyro? (y/n): ").strip().lower() == "y"
+    controller = Controller(use_gyro=use_gyro)
     controller.payload.engage_clamp()
     controller.payload.lift_clamp()
     # controller.collect_medicine()
