@@ -81,7 +81,7 @@ class Controller:
             # targeting rather than a relative turn. This means coast errors from
             # both scan_turns are corrected in one closed-loop pass.
             if use_gyro:
-                self.nav.turn_to_heading(sweep_origin - 2)
+                self.nav.turn_to_heading(sweep_origin - 1.88)
             else:
                 self.nav.turn(-self.nav.heading)
 
