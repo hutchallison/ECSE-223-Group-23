@@ -47,7 +47,7 @@ class Controller:
     def go_to_room1(self):
         self.nav.turn(90)
         self.nav.move_backward(Config.Controller.S1_SEGMENT2, assessor=self.assessor)
-        self.nav.turn(-90)
+        self.nav.turn(90)
         self.nav.move_forward(Config.Controller.S2_SEGMENT2, assessor=self.assessor)
 
     def sweep_room1(self):
@@ -92,9 +92,10 @@ if __name__ == "__main__":
     controller = Controller(use_gyro=use_gyro)
     controller.payload.engage_clamp()
     controller.payload.lift_clamp()
-    controller.nav.move_forward(30)  # Nudge forward to ensure clamp is clear of any obstacles before starting main routine
     controller.collect_medicine()
+    input("Press Enter to start room 1 navigation...")
     controller.go_to_room1()
+    input("Press Enter to start room 1 sweep...")
     controller.sweep_room1()
     controller.nav.move_backward(50)
 
