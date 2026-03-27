@@ -75,7 +75,7 @@ class Config:
         SWEEP_DIFF = 5 # cm to move forward/backward during sweep turns
 
         # Angular sweep (room 1 redesign)
-        SWEEP_ANGLE_LEFT = 15           # degrees CCW from entry heading
+        SWEEP_ANGLE_LEFT = 10           # degrees CCW from entry heading
         SWEEP_ANGLE_RIGHT = 30          # degrees CW from entry heading
         HALF_BED_DIST = 6               # cm nudge forward when no bed detected
         SWEEP_BACKUP_TO_DROP_DIST = 4
