@@ -224,11 +224,48 @@ class Navigator:
         self.left_motor.set_dps(0)
         self.right_motor.set_dps(0)
 
+        # Wait for the robot to physically stop coasting before reading final heading.
+        # Without this, the heading captured is mid-coast and accumulates error each turn.
+        time.sleep(0.15)
+
         final_heading = self._read_gyro()
         if final_heading is not None:
             self.heading = final_heading
         else:
             self.heading += angle_deg
+
+        # Micro-trim: if we overshot or undershot beyond tolerance after coast, correct it.
+        settled_error = (self.heading - start_heading) * direction - target_abs_deg
+        log.info("diff_turn post-coast | heading=%.1f settled_error=%.2f°", self.heading, settled_error)
+
+        if abs(settled_error) > tolerance:
+            # Apply a brief reverse nudge to correct the coast overshoot/undershoot.
+            micro_sign = -1 if settled_error > 0 else 1
+            micro_trim_dps = micro_sign * active_sign * trim_dps
+            if pivot_wheel == "left":
+                self.left_motor.set_dps(0)
+                self.right_motor.set_dps(rp * micro_trim_dps)
+            else:
+                self.right_motor.set_dps(0)
+                self.left_motor.set_dps(lp * micro_trim_dps)
+
+            target_progress = target_abs_deg  # re-aim for exact target
+            while True:
+                current_heading = self._read_gyro()
+                if current_heading is None:
+                    break
+                progress_deg = get_progress_deg(current_heading)
+                if abs(progress_deg - target_progress) <= tolerance:
+                    break
+                time.sleep(loop_dt)
+
+            self.left_motor.set_dps(0)
+            self.right_motor.set_dps(0)
+            time.sleep(0.1)
+
+            final_heading = self._read_gyro()
+            if final_heading is not None:
+                self.heading = final_heading
 
         log.info("diff_turn done | heading=%.1f", self.heading)
 
@@ -351,6 +388,10 @@ class Navigator:
             self.left_motor.set_dps(0)
             self.right_motor.set_dps(0)
 
+            # Settle before reading — motors coast after set_dps(0) and the
+            # gyro read mid-coast gives a wrong heading that accumulates each sweep.
+            time.sleep(0.15)
+
             final_heading = self._read_gyro()
             if final_heading is not None:
                 self.heading = final_heading
@@ -394,7 +435,75 @@ class Navigator:
         log.info("scan_turn done | heading=%.1f bed_found=%s", self.heading, bed_found)
         return bed_found
 
-    # ── Accessors ────────────────────────────────────────────────────
+    def turn_to_heading(self, target_heading):
+        """
+        Rotate at SPEED_ROTATE_ADJUST until the gyro hits target_heading exactly.
+        No blind encoder phase — purely gyro-driven closed loop.
+        Suitable for small corrections (<= ~45 deg, e.g. returning to sweep origin).
+
+        Because the stop condition is an absolute gyro reading, GYRO_SCALE error
+        and accumulated heading drift cancel out: we stop when the raw sensor
+        returns to the same value it had at target_heading, regardless of scale.
+        """
+        if self.gyro is None:
+            raise RuntimeError("turn_to_heading requires a gyro sensor")
+
+        current = self._read_gyro()
+        if current is None:
+            raise RuntimeError("gyro returned None at turn_to_heading start")
+
+        tolerance = Config.Navigation.TURN_TOLERANCE_DEG
+        error = target_heading - current
+        if abs(error) <= tolerance:
+            self.heading = current
+            return
+
+        dps = Config.Navigation.SPEED_ROTATE_ADJUST
+        lp = Config.Navigation.LEFT_MOTOR_POLARITY
+        rp = Config.Navigation.RIGHT_MOTOR_POLARITY
+        loop_dt = 0.02
+
+        log.info("turn_to_heading %.1f | current=%.1f error=%.2f",
+                 target_heading, current, error)
+
+        def _run_to_target():
+            """One pass: spin toward target, stop near tolerance, settle, re-read."""
+            c = self._read_gyro()
+            if c is None:
+                return
+            err = target_heading - c
+            if abs(err) <= tolerance:
+                return
+            direction = 1 if err > 0 else -1
+            self.left_motor.set_dps(lp * (-direction * dps))
+            self.right_motor.set_dps(rp * (direction * dps))
+            while True:
+                c = self._read_gyro()
+                if c is None:
+                    break
+                if abs(target_heading - c) <= tolerance:
+                    break
+                time.sleep(loop_dt)
+            self.left_motor.set_dps(0)
+            self.right_motor.set_dps(0)
+            time.sleep(0.15)  # wait for physical coast to finish
+            c = self._read_gyro()
+            if c is not None:
+                self.heading = c
+
+        # First pass
+        _run_to_target()
+
+        # Micro-trim: if coast pushed us past tolerance, correct once more
+        if abs(target_heading - self.heading) > tolerance:
+            log.debug("turn_to_heading micro-trim | heading=%.1f target=%.1f",
+                      self.heading, target_heading)
+            _run_to_target()
+
+        log.info("turn_to_heading done | target=%.1f actual=%.1f",
+                 target_heading, self.heading)
+
+    # ── Accessors ────────────────────────────────────────────────────────────
 
     def get_position(self):
         """Position tracking disabled; returns heading as third value for compatibility."""

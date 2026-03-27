@@ -1,17 +1,24 @@
 """
 Gyro scale calibration tool.
-Measures GYRO_SCALE by having you rotate the robot a known angle.
+Measures GYRO_SCALE by rotating the robot a known angle and comparing
+the raw sensor reading to the true angle.
 
 Usage:
     python3 calibrate_gyro.py
 
 Steps:
-  1. Place robot pointing at a fixed landmark.
-  2. Script zeros the gyro and waits for you to press Enter.
-  3. Rotate the robot EXACTLY 360° by hand (back to the same landmark).
-  4. Press Enter — script reads the gyro and computes the scale.
-  5. Repeat for more samples (averages them for accuracy).
-  6. Press 'q' when done. Prints the final GYRO_SCALE value.
+  1. Place the robot pointing at a fixed landmark.
+  2. Script zeros the gyro offset and waits for you to rotate.
+  3. Choose a known angle (e.g. 90, 180, 360) and rotate exactly that far.
+  4. Press Enter — script reads raw and compensated values, computes scale.
+  5. Repeat with different angles for better statistics.
+  6. Press 'q' when done. Prints the final recommended GYRO_SCALE.
+
+Column legend:
+  raw      — what the sensor actually reported (no scaling)
+  current  — raw * current GYRO_SCALE from config
+  true     — the known angle you rotated
+  new_scale — scale factor that would make raw == true for this sample
 """
 
 import sys
@@ -22,61 +29,95 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
 from utils.brick import EV3GyroSensor, wait_ready_sensors
 from robot_system.config import Config
 
-KNOWN_ANGLE = 360.0  # degrees per rotation
+CURRENT_SCALE = Config.Navigation.GYRO_SCALE
 
 print("Initializing gyro...")
 gyro = EV3GyroSensor(Config.Ports.GYRO, mode="abs")
 wait_ready_sensors(True)
-print("Gyro ready.\n")
+print(f"Gyro ready. Current GYRO_SCALE in config: {CURRENT_SCALE}\n")
+print(f"  {'sample':>6}  {'true°':>6}  {'raw':>8}  {'current':>9}  {'new_scale':>10}")
+print("-" * 52)
 
-samples = []
+samples = []  # list of (true_angle, raw_measured, new_scale)
 
 while True:
-    # Reset baseline
+    n = len(samples) + 1
+
+    # Take baseline snapshot
     baseline = gyro.get_abs_measure()
     if baseline is None:
         print("ERROR: could not read gyro. Check connection.")
         sys.exit(1)
 
-    print(f"Sample {len(samples) + 1}:")
-    print(f"  1) Align robot to a fixed reference point.")
-    print(f"  2) Press Enter, then rotate EXACTLY {KNOWN_ANGLE:.0f}° and return to the reference.")
-    input("  Press Enter to start... ")
+    print(f"\nSample {n}:")
+    print(f"  Align robot to a reference, then rotate a known angle.")
 
-    baseline = gyro.get_abs_measure()
-    print("  Rotate now...")
-    input("  Press Enter when back at the reference point... ")
+    angle_str = input("  Enter the angle you will rotate (degrees, e.g. 90 / 180 / 360): ").strip()
+    try:
+        known_angle = float(angle_str)
+    except ValueError:
+        print("  Invalid number, skipping.")
+        continue
+    if known_angle <= 0:
+        print("  Angle must be positive, skipping.")
+        continue
+
+    baseline = gyro.get_abs_measure()  # re-read right before move
+    print(f"  Rotate EXACTLY {known_angle:.0f}° now...")
+    input("  Press Enter when done rotating... ")
 
     reading = gyro.get_abs_measure()
     if reading is None:
         print("  ERROR: gyro returned None, skipping.")
         continue
 
-    measured = abs(reading - baseline)
-    if measured < 1:
-        print("  No rotation detected, skipping.")
+    raw_delta = abs(reading - baseline)
+    if raw_delta < 1:
+        print("  No rotation detected (raw delta < 1°), skipping.")
         continue
 
-    scale = KNOWN_ANGLE / measured
-    samples.append(scale)
-    print(f"  Gyro read: {measured:.1f}°  →  scale = {KNOWN_ANGLE:.0f} / {measured:.1f} = {scale:.4f}")
-    print()
+    new_scale = known_angle / raw_delta
+    current_compensated = raw_delta * CURRENT_SCALE
+    samples.append((known_angle, raw_delta, new_scale))
 
-    avg = sum(samples) / len(samples)
-    print(f"  Running average ({len(samples)} sample{'s' if len(samples) > 1 else ''}): GYRO_SCALE = {avg:.4f}")
+    print(f"  {n:>6}  {known_angle:>6.1f}  {raw_delta:>8.2f}  {current_compensated:>9.2f}  {new_scale:>10.4f}")
+
+    if len(samples) > 1:
+        avg_scale = sum(s for _, _, s in samples) / len(samples)
+        # Simple linear fit: scale = true / raw — check if raw→true is linear through 0
+        total_raw  = sum(r for _, r, _ in samples)
+        total_true = sum(t for t, _, _ in samples)
+        lsq_scale  = total_true / total_raw  # least-squares through origin
+        print(f"\n  Running stats ({len(samples)} samples):")
+        print(f"    Mean of per-sample scales : {avg_scale:.4f}")
+        print(f"    Least-squares scale (recommended): {lsq_scale:.4f}")
     print()
 
     resp = input("  Another sample? [Enter = yes, q = done] ").strip().lower()
     if resp == 'q':
         break
-    print()
 
-avg = sum(samples) / len(samples)
+if not samples:
+    print("No samples collected.")
+    sys.exit(0)
+
+avg_scale = sum(s for _, _, s in samples) / len(samples)
+total_raw  = sum(r for _, r, _ in samples)
+total_true = sum(t for t, _, _ in samples)
+lsq_scale  = total_true / total_raw
+
 print()
-print("=" * 50)
-print(f"  FINAL GYRO_SCALE = {avg:.4f}")
-print(f"  (from {len(samples)} sample{'s' if len(samples) > 1 else ''})")
+print("=" * 52)
+print(f"  Samples collected : {len(samples)}")
+print(f"  Mean per-sample GYRO_SCALE : {avg_scale:.4f}")
+print(f"  Least-squares GYRO_SCALE   : {lsq_scale:.4f}  ← recommended")
+print(f"  Current config GYRO_SCALE  : {CURRENT_SCALE:.4f}")
+print()
+print("  Per-sample breakdown:")
+print(f"  {'#':>3}  {'true°':>6}  {'raw':>8}  {'current':>9}  {'new_scale':>10}")
+for i, (t, r, s) in enumerate(samples, 1):
+    print(f"  {i:>3}  {t:>6.1f}  {r:>8.2f}  {r * CURRENT_SCALE:>9.2f}  {s:>10.4f}")
 print()
 print(f"  Update config.py:")
-print(f"    GYRO_SCALE = {avg:.4f}")
-print("=" * 50)
+print(f"    GYRO_SCALE = {lsq_scale:.4f}")
+print("=" * 52)

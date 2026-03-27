@@ -51,12 +51,15 @@ class Controller:
         self.nav.move_forward(Config.Controller.S2_SEGMENT2, assessor=self.assessor)
 
     def sweep_room1(self):
-        """Angular sweep of room 1. Scans left 20deg then right to -45deg.
+        """Angular sweep of room 1. Scans left 15deg then right 45deg.
         If a bed is found, backs up and drops medicine.
-        If no bed, realigns to 0deg and nudges forward as a final check."""
+        If no bed, returns to sweep origin heading (absolute gyro target, not
+        accumulated delta) then nudges forward as a final check."""
         use_gyro = bool(self.gyro)
-        # Phase A: sweep left ~20 deg (CCW)
+        sweep_origin = self.nav.heading
+
         for _ in range(Config.Controller.TOTAL_SWEEPS):
+            self.nav.move_forward(Config.Controller.HALF_BED_DIST, assessor=self.assessor)
             bed_found = self.nav.scan_turn(
                 Config.Controller.SWEEP_ANGLE_LEFT, self.assessor
             )
@@ -74,9 +77,13 @@ class Controller:
                 self._room1_trips += 1
                 return
 
-            # No bed found — realign to 0 deg and nudge for final confirmation
-            self.nav.turn(-self.nav.heading)
-            self.nav.move_forward(Config.Controller.HALF_BED_DIST, assessor=self.assessor)
+            # No bed found — return to the original heading using absolute gyro
+            # targeting rather than a relative turn. This means coast errors from
+            # both scan_turns are corrected in one closed-loop pass.
+            if use_gyro:
+                self.nav.turn_to_heading(sweep_origin)
+            else:
+                self.nav.turn(-self.nav.heading)
 
 if __name__ == "__main__":
     use_gyro = input("Use gyro? (y/n): ").strip().lower() == "y"
