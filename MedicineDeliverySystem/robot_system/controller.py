@@ -75,6 +75,7 @@ class Controller:
                 else:
                     self.payload.drop_second_med()
                 self._room1_trips += 1
+                self.nav.turn_to_heading(sweep_origin)  # Reorient to original heading before next sweep
                 return
 
             # No bed found — return to the original heading using absolute gyro
