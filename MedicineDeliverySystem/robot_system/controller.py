@@ -46,8 +46,8 @@ class Controller:
 
     def go_to_room1(self):
         self.nav.turn(90)
-        self.nav.move_backward(Config.Controller.S2_SEGMENT1, assessor=self.assessor)
-        self.nav.diff_turn(90, "right")
+        self.nav.move_backward(Config.Controller.S1_SEGMENT2, assessor=self.assessor)
+        self.nav.turn(-90)
         self.nav.move_forward(Config.Controller.S2_SEGMENT2, assessor=self.assessor)
 
     def sweep_room1(self):
@@ -56,6 +56,7 @@ class Controller:
         If no bed, returns to sweep origin heading (absolute gyro target, not
         accumulated delta) then nudges forward as a final check."""
         use_gyro = bool(self.gyro)
+        self.nav.move_forward(10, assessor=self.assessor)
         sweep_origin = self.nav.heading
 
         for _ in range(Config.Controller.TOTAL_SWEEPS):
@@ -92,8 +93,8 @@ if __name__ == "__main__":
     controller.payload.engage_clamp()
     controller.payload.lift_clamp()
     controller.nav.move_forward(30)  # Nudge forward to ensure clamp is clear of any obstacles before starting main routine
-    # controller.collect_medicine()
-    # controller.go_to_room1()
+    controller.collect_medicine()
+    controller.go_to_room1()
     controller.sweep_room1()
     controller.nav.move_backward(50)
 
