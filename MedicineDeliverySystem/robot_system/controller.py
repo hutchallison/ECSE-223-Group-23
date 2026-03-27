@@ -81,7 +81,7 @@ class Controller:
             # targeting rather than a relative turn. This means coast errors from
             # both scan_turns are corrected in one closed-loop pass.
             if use_gyro:
-                self.nav.turn_to_heading(sweep_origin)
+                self.nav.turn_to_heading(sweep_origin - 2)
             else:
                 self.nav.turn(-self.nav.heading)
 
@@ -93,6 +93,6 @@ if __name__ == "__main__":
     # controller.collect_medicine()
     # controller.go_to_room1()
     controller.sweep_room1()
-    controller.nav.move_backward(18)
+    controller.nav.move_backward(20)
 
     
