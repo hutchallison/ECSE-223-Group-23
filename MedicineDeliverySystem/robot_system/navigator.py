@@ -437,9 +437,11 @@ class Navigator:
 
     def turn_to_heading(self, target_heading):
         """
-        Rotate at SPEED_ROTATE_ADJUST until the gyro hits target_heading exactly.
-        No blind encoder phase — purely gyro-driven closed loop.
-        Suitable for small corrections (<= ~45 deg, e.g. returning to sweep origin).
+        Rotate to target_heading using a proportional speed controller.
+
+        Speed = kp * |error|, clamped to [min_dps, SPEED_ROTATE_ADJUST].
+        The robot is already near-stopped when it reaches the target,
+        so coast overshoot is ~0.3 deg instead of ~1.6 deg at constant 80 dps.
 
         Because the stop condition is an absolute gyro reading, GYRO_SCALE error
         and accumulated heading drift cancel out: we stop when the raw sensor
@@ -453,58 +455,38 @@ class Navigator:
             raise RuntimeError("gyro returned None at turn_to_heading start")
 
         tolerance = Config.Navigation.TURN_TOLERANCE_DEG
-        error = target_heading - current
-        if abs(error) <= tolerance:
+        if abs(target_heading - current) <= tolerance:
             self.heading = current
             return
 
-        dps = Config.Navigation.SPEED_ROTATE_ADJUST
+        kp      = 3.0   # dps per degree of error
+        min_dps = 35    # below this motors stall; also limits coast to ~0.35 deg
+        max_dps = Config.Navigation.SPEED_ROTATE_ADJUST  # 80 dps ceiling
+        loop_dt = 0.02
         lp = Config.Navigation.LEFT_MOTOR_POLARITY
         rp = Config.Navigation.RIGHT_MOTOR_POLARITY
-        loop_dt = 0.02
 
-        log.info("turn_to_heading %.1f | current=%.1f error=%.2f",
-                 target_heading, current, error)
+        log.info("turn_to_heading %.1f | current=%.1f", target_heading, current)
 
-        def _run_to_target():
-            """One pass: spin toward target, stop near tolerance, settle, re-read."""
-            c = self._read_gyro()
-            if c is None:
-                return
-            err = target_heading - c
-            if abs(err) <= tolerance:
-                return
-            direction = 1 if err > 0 else -1
-            self.left_motor.set_dps(lp * (-direction * dps))
-            self.right_motor.set_dps(rp * (direction * dps))
-            while True:
-                c = self._read_gyro()
-                if c is None:
-                    break
-                if abs(target_heading - c) <= tolerance:
-                    break
-                time.sleep(loop_dt)
-            self.left_motor.set_dps(0)
-            self.right_motor.set_dps(0)
-            time.sleep(0.15)  # wait for physical coast to finish
-            c = self._read_gyro()
-            if c is not None:
-                self.heading = c
+        while True:
+            current = self._read_gyro()
+            if current is None:
+                break
+            error = target_heading - current
+            if abs(error) <= tolerance:
+                break
+            direction = 1 if error > 0 else -1
+            speed = max(min_dps, min(max_dps, abs(error) * kp))
+            self.left_motor.set_dps(lp * (-direction * speed))
+            self.right_motor.set_dps(rp * (direction * speed))
+            time.sleep(loop_dt)
 
-        # First pass
-        _run_to_target()
-
-        # Micro-trim: if coast pushed us past tolerance, correct once more
-        if abs(target_heading - self.heading) > tolerance:
-            log.debug("turn_to_heading micro-trim | heading=%.1f target=%.1f",
-                      self.heading, target_heading)
-            _run_to_target()
+        self.left_motor.set_dps(0)
+        self.right_motor.set_dps(0)
+        time.sleep(0.1)   # at min_dps=35, coast in 0.1s is ~0.35 deg
+        final = self._read_gyro()
+        if final is not None:
+            self.heading = final
 
         log.info("turn_to_heading done | target=%.1f actual=%.1f",
-                 target_heading, self.heading)
-
-    # ── Accessors ────────────────────────────────────────────────────────────
-
-    def get_position(self):
-        """Position tracking disabled; returns heading as third value for compatibility."""
-        return (0.0, 0.0, self.heading)
+                target_heading, self.heading)
