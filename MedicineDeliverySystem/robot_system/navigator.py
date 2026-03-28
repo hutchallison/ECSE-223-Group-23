@@ -113,141 +113,123 @@ class Navigator:
     def move_backward(self, distance_cm, assessor=None):
         return self.move(distance_cm, -1, assessor)
 	
-    def turn(self, angle_deg):
+    def _pid_rotate(self, angle_deg, pivot_wheel=None):
         """
-        Rotate in place by angle_deg. Positive = CCW (left), Negative = CW (right).
-        Encoder-only: gyro is NOT used to correct mid-turn because motor vibration
-        during the blind phase corrupts the gyro's integrator, causing trim to
-        actively push the robot away from the correct heading.
-        After the motors stop, we settle and read the gyro purely for heading
-        state tracking (no motor correction).
+        PID-controlled rotation using the gyro.
+
+        pivot_wheel=None  : standard in-place turn (both wheels, opposite directions)
+        pivot_wheel='left': pivot around left wheel  (only right wheel moves)
+        pivot_wheel='right': pivot around right wheel (only left wheel moves)
+
+        The gyro offset is zeroed immediately before the PID loop while the
+        robot is stationary, so prior motor vibration does not pollute the
+        baseline. The D term naturally decelerates the motor as it approaches
+        the target, eliminating coast overshoot without needing a separate
+        micro-trim pass. After the turn the offset is re-anchored so that
+        subsequent _read_gyro() calls and turn_to_heading() remain consistent.
+
+        Falls back to _turn_blind if no gyro is available.
         """
-        log.info("turn %.1f deg | heading=%.1f", angle_deg, self.heading)
-
-        self._turn_blind(angle_deg)
-
-        # Allow vibration to fully dissipate before sampling the gyro.
-        # 300ms is the minimum for the EV3 gyro integrator to stabilise.
-        if self.gyro is not None:
-            time.sleep(0.3)
-            h = self._read_gyro()
-            if h is not None:
-                log.info("turn done | heading=%.1f (gyro) encoder_estimate=%.1f",
-                         h, self.heading)
-                self.heading = h
-            else:
-                log.info("turn done | heading=%.1f (encoder only)", self.heading)
-        else:
-            log.info("turn done | heading=%.1f (encoder only)", self.heading)
-    
-    def diff_turn(self, angle_deg, pivot_wheel):
-        """
-        Pivot turn by any angle around one wheel in two phases:
-        1) Blind encoder-based coarse turn (all but a small trim window)
-        2) Slow gyro trim for final few degrees
-
-        - angle_deg: signed angle in degrees (+left/CCW, -right/CW)
-        - pivot_wheel: 'left' or 'right' (wheel that stays at 0 DPS)
-        - active wheel runs; pivot wheel stays at 0 DPS
-        """
-        if self.gyro is None:
-            raise RuntimeError("diff_turn requires a gyro sensor")
-
         angle_deg = float(angle_deg)
         if angle_deg == 0:
             return
 
-        pivot_wheel = str(pivot_wheel).strip().lower()
-        if pivot_wheel not in ("left", "right"):
-            raise ValueError("pivot_wheel must be 'left' or 'right'")
+        if self.gyro is None:
+            self._turn_blind(angle_deg)
+            return
 
-        direction = 1 if angle_deg > 0 else -1
+        # Zero gyro relative to current physical pose (motors stationary = clean read).
+        pre_turn_heading = self.heading
+        raw_before = self.gyro.get_abs_measure()
+        if raw_before is None:
+            log.warning("_pid_rotate: gyro None at start, falling back to blind turn")
+            self._turn_blind(angle_deg)
+            return
+        self._gyro_offset = raw_before  # _read_gyro() now returns 0.0 right now
 
-        start_heading = self._read_gyro()
-        if start_heading is None:
-            raise RuntimeError("gyro returned None at diff_turn start")
-
-        base_dps = Config.Navigation.SPEED_ROTATE
-        trim_dps = Config.Navigation.SPEED_ROTATE_ADJUST
+        target    = angle_deg           # _read_gyro() is in scaled degrees
+        kp        = Config.Navigation.TURN_KP
+        ki        = Config.Navigation.TURN_KI
+        kd        = Config.Navigation.TURN_KD
+        max_dps   = Config.Navigation.SPEED_ROTATE
+        min_dps   = Config.Navigation.TURN_MIN_DPS
         tolerance = Config.Navigation.TURN_TOLERANCE_DEG
-        loop_dt = 0.02
-        target_abs_deg = abs(angle_deg)
-        trim_window_deg = 10.0   # start slow phase 10° before target
-        coast_deg       = 5.0    # degrees robot coasts after set_dps(0) at trim speed
-        coarse_target_deg = max(0.0, target_abs_deg - trim_window_deg)
+        dt        = 0.02
+        lp        = Config.Navigation.LEFT_MOTOR_POLARITY
+        rp        = Config.Navigation.RIGHT_MOTOR_POLARITY
 
-        def wrap_to_180(angle):
-            return (angle + 180.0) % 360.0 - 180.0
+        integral   = 0.0
+        prev_error = target   # initial error = full angle
 
-        lp = Config.Navigation.LEFT_MOTOR_POLARITY
-        rp = Config.Navigation.RIGHT_MOTOR_POLARITY
-
-        def get_progress_deg(current_heading):
-            turned_delta = wrap_to_180(current_heading - start_heading)
-            return direction * turned_delta
-
-        # Sign for active wheel movement based on pivot side and turn direction.
-        # Around left pivot:  +angle => right wheel forward, -angle => right wheel backward
-        # Around right pivot: +angle => left wheel backward, -angle => left wheel forward
-        active_sign = direction if pivot_wheel == "left" else -direction
-
-        wheel_deg_per_robot_deg = Config.Navigation.TRACK_WIDTH_CM / Config.Navigation.WHEEL_RADIUS_CM
-        coarse_wheel_deg = coarse_target_deg * wheel_deg_per_robot_deg
-        active_step_deg = active_sign * coarse_wheel_deg
-
-        self.left_motor.set_limits(dps=base_dps)
-        self.right_motor.set_limits(dps=base_dps)
-
-        log.info("diff_turn coarse start | turn=%s pivot=%s target=%.1f°",
-                 "left" if direction > 0 else "right", pivot_wheel, coarse_target_deg)
-
-        if pivot_wheel == "left":
-            self.left_motor.set_dps(0)
-            self.right_motor.set_position_relative(rp * active_step_deg)
-            self.right_motor.wait_is_moving()
-            self.right_motor.wait_is_stopped()
-        else:
-            self.right_motor.set_dps(0)
-            self.left_motor.set_position_relative(lp * active_step_deg)
-            self.left_motor.wait_is_moving()
-            self.left_motor.wait_is_stopped()
-
-        log.info("diff_turn trim start | target=%.1f° tolerance=%.1f°", target_abs_deg, tolerance)
-
-        active_trim_dps = active_sign * trim_dps
-        if pivot_wheel == "left":
-            self.left_motor.set_dps(0)
-            self.right_motor.set_dps(rp * active_trim_dps)
-        else:
-            self.right_motor.set_dps(0)
-            self.left_motor.set_dps(lp * active_trim_dps)
+        log.info("_pid_rotate %.1f deg pivot=%s", angle_deg, pivot_wheel)
 
         while True:
-            current_heading = self._read_gyro()
-            if current_heading is None:
-                log.warning("Gyro read returned None during diff_turn; stopping")
+            current = self._read_gyro()
+            if current is None:
+                log.warning("_pid_rotate: gyro read None, stopping")
                 break
 
-            progress_deg = get_progress_deg(current_heading)
-            if progress_deg >= (target_abs_deg - tolerance - coast_deg):
+            error = target - current
+            if abs(error) <= tolerance:
                 break
 
-            time.sleep(loop_dt)
+            integral   += error * dt
+            integral    = max(-50.0, min(50.0, integral))   # anti-windup
+            derivative  = (error - prev_error) / dt
+            prev_error  = error
+
+            output = kp * error + ki * integral + kd * derivative
+            output = max(-max_dps, min(max_dps, output))    # speed ceiling
+            if 0 < abs(output) < min_dps:                   # stall floor
+                output = math.copysign(min_dps, output)
+
+            if pivot_wheel is None:
+                direction = 1 if output > 0 else -1
+                speed     = abs(output)
+                self.left_motor.set_dps(lp  * (-direction * speed))
+                self.right_motor.set_dps(rp *  (direction * speed))
+            elif pivot_wheel == "left":
+                # positive output = CCW = right wheel forward (rp * positive_output → forward)
+                self.left_motor.set_dps(0)
+                self.right_motor.set_dps(rp * output)
+            else:  # right
+                # positive output = CCW = left wheel backward (lp * -output → backward)
+                self.right_motor.set_dps(0)
+                self.left_motor.set_dps(lp * (-output))
+
+            time.sleep(dt)
 
         self.left_motor.set_dps(0)
         self.right_motor.set_dps(0)
 
-        # Settle 300ms — same reason as turn(): vibration during the coarse and trim
-        # phases corrupts the gyro integrator. Running motors to correct a drifted gyro
-        # reading makes physical accuracy worse. Settle, read, update heading state only.
-        time.sleep(0.3)
+        # Settle: D term already slowed the motor, so 200ms coast is < 0.5 deg.
+        time.sleep(0.25)
 
-        final_heading = self._read_gyro()
-        if final_heading is not None:
-            self.heading = final_heading
-        else:
-            self.heading += angle_deg
+        actual_rotation = self._read_gyro()   # relative to reset baseline
+        self.heading = pre_turn_heading + (actual_rotation if actual_rotation is not None else angle_deg)
 
+        # Re-anchor offset so _read_gyro() == self.heading for move() and turn_to_heading().
+        raw_after = self.gyro.get_abs_measure()
+        if raw_after is not None:
+            self._gyro_offset = raw_after - (self.heading / Config.Navigation.GYRO_SCALE)
+
+        log.info("_pid_rotate done | target=%.1f actual=%.1f heading=%.1f",
+                 angle_deg, actual_rotation or angle_deg, self.heading)
+
+    def turn(self, angle_deg):
+        """Rotate in place by angle_deg using PID gyro control. Positive=CCW, Negative=CW."""
+        log.info("turn %.1f deg | heading=%.1f", angle_deg, self.heading)
+        self._pid_rotate(angle_deg)
+        log.info("turn done | heading=%.1f", self.heading)
+    
+    def diff_turn(self, angle_deg, pivot_wheel):
+        """Pivot turn around one wheel using PID gyro control.
+        pivot_wheel: 'left' or 'right' (that wheel stays stationary)."""
+        pivot_wheel = str(pivot_wheel).strip().lower()
+        if pivot_wheel not in ("left", "right"):
+            raise ValueError("pivot_wheel must be 'left' or 'right'")
+        log.info("diff_turn %.1f deg pivot=%s | heading=%.1f", angle_deg, pivot_wheel, self.heading)
+        self._pid_rotate(float(angle_deg), pivot_wheel=pivot_wheel)
         log.info("diff_turn done | heading=%.1f", self.heading)
 
     def _turn_blind(self, angle_deg):

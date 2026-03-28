@@ -30,8 +30,10 @@ class Config:
         SPEED_ROTATE = 150
         SPEED_ROTATE_ADJUST = 50        # Slow scan/trim speed — lower = less vibration-induced gyro drift
 
-        # Proportional turn controller (used by _turn_gyro_trim and turn_to_heading)
+        # PID turn controller (used by _pid_rotate, turn_to_heading)
         TURN_KP = 3.0           # dps per degree of error
+        TURN_KI = 0.01          # integral: corrects steady-state stall near target
+        TURN_KD = 0.1           # derivative: brakes naturally as error shrinks → less coast
         TURN_MIN_DPS = 30       # floor: below this motors stall; also limits coast
 
         # Scan-turn coast compensation: stop this many degrees early so coast
