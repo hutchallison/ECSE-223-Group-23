@@ -72,7 +72,6 @@ class Controller:
             bed_found = self.nav.scan_turn(
                 sweep_left_angle, self.assessor, use_gyro=False
             )
-
             if not bed_found:
                 total_right = sweep_left_angle + sweep_right_angle
                 bed_found = self.nav.scan_turn(-total_right, self.assessor, use_gyro=False)
@@ -95,11 +94,6 @@ class Controller:
             else:
                 self.nav.turn(-self.nav.heading)
 
-        # Face entry heading exactly, then reverse the precise accumulated distance back to start.
-        if self.gyro is not None:
-            self.nav.turn_to_heading(sweep_origin)
-        else:
-            self.nav.turn(-self.nav.heading)
         self.nav.move_backward(forward_dist)
     
     def sweep_room1(self):
