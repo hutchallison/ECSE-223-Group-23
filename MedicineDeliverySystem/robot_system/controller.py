@@ -59,7 +59,9 @@ class Controller:
         # Capture absolute gyro position now while stationary — no vibration error yet.
         sweep_origin = self.nav.heading
 
+        total_sweeps = 0
         for _ in range(Config.Controller.TOTAL_SWEEPS):
+            total_sweeps += 1
             self.nav.move_forward(Config.Controller.HALF_BED_DIST, assessor=self.assessor)
             # use_gyro=False: encoder odometry for the sweep motion so gyro cannot
             # accumulate vibration drift. The absolute return via turn_to_heading corrects
@@ -81,15 +83,18 @@ class Controller:
                 self._room1_trips += 1
                 if self.gyro is not None:
                     self.nav.turn_to_heading(sweep_origin)
+
                 return
 
             # No bed found — return to sweep_origin using absolute gyro.
             # Because scan_turns used encoders, the gyro has not drifted from vibration,
             # so this accurately restores the physical heading.
             if self.gyro is not None:
-                self.nav.turn_to_heading(sweep_origin)
+                self.nav.turn_to_heading(sweep_origin - 1.95)
             else:
                 self.nav.turn(-self.nav.heading)
+        
+        self.nav.move_backward(total_sweeps * Config.Controller.HALF_BED_DIST + 10)
 
 if __name__ == "__main__":
     use_gyro = input("Use gyro? (y/n): ").strip().lower() == "y"
@@ -101,6 +106,5 @@ if __name__ == "__main__":
     controller.go_to_room1()
     input("Press Enter to start room 1 sweep...")
     controller.sweep_room1()
-    controller.nav.move_backward(50)
 
     
