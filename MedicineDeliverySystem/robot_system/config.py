@@ -90,3 +90,4 @@ class Config:
         SWEEP_BACKUP_TO_DROP_DIST = 4
         TOTAL_SWEEPS = 3                # Number of times to repeat sweep if no bed found
         MID_ROOM_DIST = 15              # cm to move forward into room before sweeping
+        BIAS = 2

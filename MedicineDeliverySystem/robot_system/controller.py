@@ -91,7 +91,7 @@ class Controller:
             # Because scan_turns used encoders, the gyro has not drifted from vibration,
             # so this accurately restores the physical heading.
             if self.gyro is not None:
-                self.nav.turn_to_heading(sweep_origin)
+                self.nav.turn_to_heading(sweep_origin - Config.Controller.BIAS)
             else:
                 self.nav.turn(-self.nav.heading)
         
@@ -126,10 +126,10 @@ if __name__ == "__main__":
     controller = Controller(use_gyro=use_gyro)
     controller.payload.engage_clamp()
     controller.payload.lift_clamp()
-    controller.collect_medicine()
-    input("Press Enter to start room 1 navigation...")
-    controller.go_to_room1()
-    input("Press Enter to start room 1 sweep...")
+    # controller.collect_medicine()
+    # input("Press Enter to start room 1 navigation...")
+    # controller.go_to_room1()
+    # input("Press Enter to start room 1 sweep...")
     controller.sweep_room1()
     time.sleep(1)
     input("Continue?")
