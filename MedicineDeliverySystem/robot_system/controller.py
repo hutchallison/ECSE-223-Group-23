@@ -105,7 +105,7 @@ class Controller:
         self.nav.turn(90)
     
     def sweep_room_standard(self):
-        self.sweep_room(-Config.Controller.SWEEP_ANGLE, Config.Controller.SWEEP_ANGLE)
+        self.sweep_room(Config.Controller.SWEEP_ANGLE, Config.Controller.SWEEP_ANGLE)
     
     def go_to_room3(self):
         self.nav.turn(-90)
