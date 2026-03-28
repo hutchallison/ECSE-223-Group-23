@@ -28,8 +28,16 @@ class Config:
         # Speeds (Degrees Per Second)
         SPEED_NORMAL = 300
         SPEED_ROTATE = 150
-        SPEED_ROTATE_ADJUST = 80        # Constant speed for post-turn gyro fine-tune
-        
+        SPEED_ROTATE_ADJUST = 50        # Slow scan/trim speed — lower = less vibration-induced gyro drift
+
+        # Proportional turn controller (used by _turn_gyro_trim and turn_to_heading)
+        TURN_KP = 3.0           # dps per degree of error
+        TURN_MIN_DPS = 30       # floor: below this motors stall; also limits coast
+
+        # Scan-turn coast compensation: stop this many degrees early so coast
+        # lands within tolerance. Measure from logs at current SPEED_ROTATE_ADJUST.
+        SCAN_TURN_COAST_DEG = 1.5
+
         # Tolerances
         STOP_DISTANCE_CM = 5.0  # Wall avoidance threshold
 

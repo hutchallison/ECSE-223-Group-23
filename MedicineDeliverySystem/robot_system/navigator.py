@@ -290,7 +290,8 @@ class Navigator:
         self.heading += angle_deg
 
     def _turn_gyro_trim(self, target_heading):
-        """After a blind turn, nudge at constant SPEED_ROTATE_ADJUST until within tolerance."""
+        """After a blind turn, proportionally slow to target_heading.
+        Speed scales down as error shrinks so coast overshoot is minimal."""
         if self.gyro is None:
             return
 
@@ -299,29 +300,35 @@ class Navigator:
             return
         self.heading = current
 
-        error = target_heading - current
         tolerance = Config.Navigation.TURN_TOLERANCE_DEG
-        if abs(error) <= tolerance:
+        if abs(target_heading - current) <= tolerance:
             return
 
-        adjust_dps = Config.Navigation.SPEED_ROTATE_ADJUST
+        kp      = Config.Navigation.TURN_KP
+        min_dps = Config.Navigation.TURN_MIN_DPS
+        max_dps = Config.Navigation.SPEED_ROTATE_ADJUST
         lp = Config.Navigation.LEFT_MOTOR_POLARITY
         rp = Config.Navigation.RIGHT_MOTOR_POLARITY
-        direction = 1 if error > 0 else -1
-        self.left_motor.set_dps(lp * (-direction * adjust_dps))
-        self.right_motor.set_dps(rp * (direction * adjust_dps))
 
         while True:
             current = self._read_gyro()
             if current is None:
                 break
-            self.heading = current
-            if abs(target_heading - current) <= tolerance:
+            error = target_heading - current
+            if abs(error) <= tolerance:
                 break
+            direction = 1 if error > 0 else -1
+            speed = max(min_dps, min(max_dps, abs(error) * kp))
+            self.left_motor.set_dps(lp * (-direction * speed))
+            self.right_motor.set_dps(rp * (direction * speed))
             time.sleep(0.02)
 
         self.left_motor.set_dps(0)
         self.right_motor.set_dps(0)
+        time.sleep(0.1)
+        current = self._read_gyro()
+        if current is not None:
+            self.heading = current
         log.debug("gyro trim done | target=%.1f actual=%.1f", target_heading, self.heading)
 
     def scan_turn(self, angle_deg, assessor=None, use_gyro=True):
@@ -380,7 +387,7 @@ class Navigator:
                     log.info("scan_turn: bed detected at %.1f deg into sweep", progress_deg)
                     break
 
-                if progress_deg >= target_abs_deg - tolerance:
+                if progress_deg >= target_abs_deg - tolerance - Config.Navigation.SCAN_TURN_COAST_DEG:
                     break
 
                 time.sleep(loop_dt)
@@ -434,6 +441,22 @@ class Navigator:
 
         log.info("scan_turn done | heading=%.1f bed_found=%s", self.heading, bed_found)
         return bed_found
+
+    def reset_heading(self, known_heading=0.0):
+        """
+        Re-anchor the gyro offset to the current physical pose.
+        Call this only when the robot is stationary at a physically verified
+        heading (e.g. pressed against a wall, or at a known landmark).
+        Eliminates all accumulated gyro drift up to this point.
+        """
+        if self.gyro is None:
+            return
+        raw = self.gyro.get_abs_measure()
+        if raw is not None:
+            self._gyro_offset = raw - (known_heading / Config.Navigation.GYRO_SCALE)
+        self.heading = known_heading
+        log.info("reset_heading | physical_heading=%.1f new_offset=%.1f",
+                 known_heading, self._gyro_offset)
 
     def turn_to_heading(self, target_heading):
         """
