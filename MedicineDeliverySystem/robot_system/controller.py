@@ -41,8 +41,8 @@ class Controller:
         self.nav.turn(-90)
         self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
         self.nav.turn(-90)
-        self.nav.move_forward(Config.Controller.EXIT_ROOM_DIST, assessor=self.assessor)
-        self.nav.move_backward(Config.Controller.EXIT_ROOM_DIST, assessor=self.assessor)
+        self.nav.move_forward(Config.Controller.HALF_BLACK_LINE_SEGMENT, assessor=self.assessor)
+        self.nav.move_backward(Config.Controller.HALF_BLACK_LINE_SEGMENT, assessor=self.assessor)
 
     def go_to_room1(self):
         self.nav.turn(90)
@@ -97,7 +97,7 @@ class Controller:
         self.nav.move_backward(total_sweeps * Config.Controller.HALF_BED_DIST + Config.Controller.MID_ROOM_DIST) # Should be back at black cross
     
     def sweep_room1(self):
-        self.sweep_room(Config.Controller.OBSTACLE_SWEEP_ANGLE, Config.Controller.SWEEP_ANGLE_RIGHT)
+        self.sweep_room(Config.Controller.OBSTACLE_SWEEP_ANGLE, Config.Controller.SWEEP_ANGLE)
 
     def go_to_room2(self):
         self.nav.turn(90)
@@ -105,7 +105,7 @@ class Controller:
         self.nav.turn(-90)
     
     def sweep_room_standard(self):
-        self.sweep_room(-Config.Controller.SWEEP_ANGLE_RIGHT, Config.Controller.SWEEP_ANGLE_RIGHT)
+        self.sweep_room(-Config.Controller.SWEEP_ANGLE, Config.Controller.SWEEP_ANGLE)
     
     def go_to_room3(self):
         self.nav.turn(90)
@@ -118,7 +118,7 @@ class Controller:
         self.nav.turn(-90)
     
     def sweep_room4(self):
-        self.sweep_room(Config.Controller.SWEEP_ANGLE_RIGHT, Config.Controller.OBSTACLE_SWEEP_ANGLE)
+        self.sweep_room(Config.Controller.SWEEP_ANGLE, Config.Controller.OBSTACLE_SWEEP_ANGLE)
 
 if __name__ == "__main__":
     use_gyro = input("Use gyro? (y/n): ").strip().lower() == "y"
