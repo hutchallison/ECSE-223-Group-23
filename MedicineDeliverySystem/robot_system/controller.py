@@ -114,7 +114,7 @@ class Controller:
         self.nav.turn(90)
 
     def go_to_room4(self):
-        self.nav.turn(90)
+        self.nav.turn(-90)
         self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
         self.nav.turn(-90)
     
