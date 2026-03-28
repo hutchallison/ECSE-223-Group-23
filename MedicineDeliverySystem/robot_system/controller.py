@@ -59,11 +59,13 @@ class Controller:
         self.nav.move_forward(Config.Controller.MID_ROOM_DIST, assessor=self.assessor)
         # Capture absolute gyro position now while stationary — no vibration error yet.
         sweep_origin = self.nav.heading
+        # Track exact net forward distance so we can reverse back to the start precisely.
+        forward_dist = Config.Controller.MID_ROOM_DIST
 
-        total_sweeps = 0
         for _ in range(Config.Controller.TOTAL_SWEEPS):
-            total_sweeps += 1
             self.nav.move_forward(Config.Controller.HALF_BED_DIST, assessor=self.assessor)
+            forward_dist += Config.Controller.HALF_BED_DIST
+
             # use_gyro=False: encoder odometry for the sweep motion so gyro cannot
             # accumulate vibration drift. The absolute return via turn_to_heading corrects
             # any encoder odometry error at the end of each loop iteration.
@@ -77,25 +79,28 @@ class Controller:
 
             if bed_found:
                 self.nav.move_backward(Config.Controller.SWEEP_BACKUP_TO_DROP_DIST)
+                forward_dist -= Config.Controller.SWEEP_BACKUP_TO_DROP_DIST
                 if self._room1_trips == 0:
                     self.payload.drop_first_med()
                 else:
                     self.payload.drop_second_med()
                 self._room1_trips += 1
-                if self.gyro is not None:
-                    self.nav.turn_to_heading(sweep_origin)
-
                 break
 
-            # No bed found — return to sweep_origin using absolute gyro.
+            # No bed found — restore heading for the next sweep iteration.
             # Because scan_turns used encoders, the gyro has not drifted from vibration,
             # so this accurately restores the physical heading.
             if self.gyro is not None:
                 self.nav.turn_to_heading(sweep_origin - Config.Controller.BIAS)
             else:
                 self.nav.turn(-self.nav.heading)
-        
-        self.nav.move_backward(total_sweeps * Config.Controller.HALF_BED_DIST + Config.Controller.MID_ROOM_DIST) # Should be back at black cross
+
+        # Face entry heading exactly, then reverse the precise accumulated distance back to start.
+        if self.gyro is not None:
+            self.nav.turn_to_heading(sweep_origin)
+        else:
+            self.nav.turn(-self.nav.heading)
+        self.nav.move_backward(forward_dist)
     
     def sweep_room1(self):
         self.sweep_room(Config.Controller.OBSTACLE_SWEEP_ANGLE, Config.Controller.SWEEP_ANGLE)
@@ -114,9 +119,9 @@ class Controller:
         self.nav.turn(-90)
 
     def go_to_room4(self):
-        self.nav.turn(-90)
+        self.nav.turn(90)
         self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
-        self.nav.turn(-90)
+        self.nav.turn(90)
     
     def sweep_room4(self):
         self.sweep_room(Config.Controller.SWEEP_ANGLE, Config.Controller.OBSTACLE_SWEEP_ANGLE)
