@@ -1,5 +1,5 @@
 import sys
-from time import time
+import time
 
 from navigator import Navigator
 from config import Config
@@ -85,7 +85,7 @@ class Controller:
                 if self.gyro is not None:
                     self.nav.turn_to_heading(sweep_origin)
 
-                return
+                break
 
             # No bed found — return to sweep_origin using absolute gyro.
             # Because scan_turns used encoders, the gyro has not drifted from vibration,
