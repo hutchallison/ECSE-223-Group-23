@@ -35,7 +35,7 @@ class PayloadController:
         #log.info("Claw lifted")
 
     def drop_clamp(self) -> None:
-        self.lift_motor.set_position(40)
+        self.lift_motor.set_position(20)
         time.sleep(0.5)
         #log.info("Claw dropped")
         

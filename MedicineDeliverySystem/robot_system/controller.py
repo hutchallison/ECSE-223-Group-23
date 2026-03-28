@@ -51,23 +51,26 @@ class Controller:
         self.nav.move_forward(Config.Controller.S2_SEGMENT2, assessor=self.assessor)
 
     def sweep_room1(self):
-        """Angular sweep of room 1. Scans left 15deg then right 45deg.
-        If a bed is found, backs up and drops medicine.
-        If no bed, returns to sweep origin heading (absolute gyro target, not
-        accumulated delta) then nudges forward as a final check."""
-        use_gyro = bool(self.gyro)
+        """Angular sweep of room 1. Scans left then right using encoders (no gyro).
+        Encoder-based scan_turn avoids motor-vibration-induced gyro drift during the sweep.
+        Gyro is used only for the absolute return to sweep_origin, which is accurate
+        because the robot is stationary when turn_to_heading reads the sensor."""
         self.nav.move_forward(10, assessor=self.assessor)
+        # Capture absolute gyro position now while stationary — no vibration error yet.
         sweep_origin = self.nav.heading
 
         for _ in range(Config.Controller.TOTAL_SWEEPS):
             self.nav.move_forward(Config.Controller.HALF_BED_DIST, assessor=self.assessor)
+            # use_gyro=False: encoder odometry for the sweep motion so gyro cannot
+            # accumulate vibration drift. The absolute return via turn_to_heading corrects
+            # any encoder odometry error at the end of each loop iteration.
             bed_found = self.nav.scan_turn(
-                Config.Controller.SWEEP_ANGLE_LEFT, self.assessor
+                Config.Controller.SWEEP_ANGLE_LEFT, self.assessor, use_gyro=False
             )
 
             if not bed_found:
                 total_right = Config.Controller.SWEEP_ANGLE_LEFT + Config.Controller.SWEEP_ANGLE_RIGHT
-                bed_found = self.nav.scan_turn(-total_right, self.assessor, use_gyro=use_gyro)
+                bed_found = self.nav.scan_turn(-total_right, self.assessor, use_gyro=False)
 
             if bed_found:
                 self.nav.move_backward(Config.Controller.SWEEP_BACKUP_TO_DROP_DIST)
@@ -76,13 +79,14 @@ class Controller:
                 else:
                     self.payload.drop_second_med()
                 self._room1_trips += 1
-                self.nav.turn_to_heading(sweep_origin)  # Reorient to original heading before next sweep
+                if self.gyro is not None:
+                    self.nav.turn_to_heading(sweep_origin)
                 return
 
-            # No bed found — return to the original heading using absolute gyro
-            # targeting rather than a relative turn. This means coast errors from
-            # both scan_turns are corrected in one closed-loop pass.
-            if use_gyro:
+            # No bed found — return to sweep_origin using absolute gyro.
+            # Because scan_turns used encoders, the gyro has not drifted from vibration,
+            # so this accurately restores the physical heading.
+            if self.gyro is not None:
                 self.nav.turn_to_heading(sweep_origin)
             else:
                 self.nav.turn(-self.nav.heading)
