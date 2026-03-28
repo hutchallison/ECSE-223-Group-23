@@ -109,14 +109,14 @@ class Controller:
         self.sweep_room(-Config.Controller.SWEEP_ANGLE, Config.Controller.SWEEP_ANGLE)
     
     def go_to_room3(self):
-        self.nav.turn(90)
+        self.nav.turn(-90)
         self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
-        self.nav.turn(90)
+        self.nav.turn(-90)
 
     def go_to_room4(self):
-        self.nav.turn(-90)
+        self.nav.turn(90)
         self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
-        self.nav.turn(-90)
+        self.nav.turn(90)
     
     def sweep_room4(self):
         self.sweep_room(Config.Controller.SWEEP_ANGLE, Config.Controller.OBSTACLE_SWEEP_ANGLE)
