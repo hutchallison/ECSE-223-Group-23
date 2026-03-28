@@ -37,16 +37,16 @@ class Controller:
     
     def collect_medicine(self):
         # Code to navigate to the medicine location and collect it
-        self.nav.move_forward(Config.Controller.HALF_BLACK_LINE_SEGMENT, assessor=self.assessor)
+        self.nav.move_forward(Config.Controller.EXIT_ROOM_DIST, assessor=self.assessor)
         self.nav.turn(-90)
         self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
         self.nav.turn(-90)
-        self.nav.move_forward(Config.Controller.HALF_BLACK_LINE_SEGMENT, assessor=self.assessor)
-        self.nav.move_backward(Config.Controller.HALF_BLACK_LINE_SEGMENT, assessor=self.assessor)
+        self.nav.move_forward(Config.Controller.EXIT_ROOM_DIST, assessor=self.assessor)
+        self.nav.move_backward(Config.Controller.EXIT_ROOM_DIST, assessor=self.assessor)
 
     def go_to_room1(self):
         self.nav.turn(90)
-        self.nav.move_backward(Config.Controller.HALF_BLACK_LINE_SEGMENT, assessor=self.assessor)
+        self.nav.move_backward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
         self.nav.turn(90)
         self.nav.move_forward(Config.Controller.S2_SEGMENT2, assessor=self.assessor)
 
