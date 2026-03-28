@@ -72,8 +72,7 @@ class Config:
         LOG_FREQUENCY = 2.0  # Seconds between periodic in-motion debug logs
     
     class Controller:
-        S1_SEGMENT1 = 23.4  # cm to move forward in segment 1 (to pharmacy)
-        S1_SEGMENT2 = 24.3  # cm to move forward in segment 2
+        BLACK_LINE_SEGMENT = 24.4
         S1_SEGMENT3 = 16  # cm to move forward in segment 3 (to patient room)
 
         S2_SEGMENT1 = 18  # cm to move forward in segment 1 (to patient room)
@@ -83,8 +82,9 @@ class Config:
         SWEEP_DIFF = 5 # cm to move forward/backward during sweep turns
 
         # Angular sweep (room 1 redesign)
-        SWEEP_ANGLE_LEFT = 10           # degrees CCW from entry heading
-        SWEEP_ANGLE_RIGHT = 30          # degrees CW from entry heading
+        OBSTACLE_SWEEP_ANGLE = 13           # degrees CCW from entry heading
+        SWEEP_ANGLE = 30          # degrees CW from entry heading
         HALF_BED_DIST = 6               # cm nudge forward when no bed detected
         SWEEP_BACKUP_TO_DROP_DIST = 4
         TOTAL_SWEEPS = 3                # Number of times to repeat sweep if no bed found
+        MID_ROOM_DIST = 15              # cm to move forward into room before sweeping

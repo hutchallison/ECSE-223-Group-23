@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 
 # ── Logging setup ────────────────────────────────────────────────────────────
 logging.basicConfig(
-    level=logging.DEBUG,
+    level=logging.INFO,
     format="%(asctime)s %(levelname)-8s %(name)s | %(message)s",
     handlers=[
         logging.StreamHandler(sys.stdout),
@@ -50,12 +50,12 @@ class Controller:
         self.nav.turn(90)
         self.nav.move_forward(Config.Controller.S2_SEGMENT2, assessor=self.assessor)
 
-    def sweep_room1(self):
+    def sweep_room(self, sweep_left_angle: int, sweep_right_angle: int):
         """Angular sweep of room 1. Scans left then right using encoders (no gyro).
         Encoder-based scan_turn avoids motor-vibration-induced gyro drift during the sweep.
         Gyro is used only for the absolute return to sweep_origin, which is accurate
         because the robot is stationary when turn_to_heading reads the sensor."""
-        self.nav.move_forward(10, assessor=self.assessor)
+        self.nav.move_forward(Config.Controller.MID_ROOM_DIST, assessor=self.assessor)
         # Capture absolute gyro position now while stationary — no vibration error yet.
         sweep_origin = self.nav.heading
 
@@ -67,11 +67,11 @@ class Controller:
             # accumulate vibration drift. The absolute return via turn_to_heading corrects
             # any encoder odometry error at the end of each loop iteration.
             bed_found = self.nav.scan_turn(
-                Config.Controller.SWEEP_ANGLE_LEFT, self.assessor, use_gyro=False
+                sweep_left_angle, self.assessor, use_gyro=False
             )
 
             if not bed_found:
-                total_right = Config.Controller.SWEEP_ANGLE_LEFT + Config.Controller.SWEEP_ANGLE_RIGHT
+                total_right = sweep_left_angle + sweep_right_angle
                 bed_found = self.nav.scan_turn(-total_right, self.assessor, use_gyro=False)
 
             if bed_found:
@@ -90,11 +90,35 @@ class Controller:
             # Because scan_turns used encoders, the gyro has not drifted from vibration,
             # so this accurately restores the physical heading.
             if self.gyro is not None:
-                self.nav.turn_to_heading(sweep_origin - 1.95)
+                self.nav.turn_to_heading(sweep_origin)
             else:
                 self.nav.turn(-self.nav.heading)
         
-        self.nav.move_backward(total_sweeps * Config.Controller.HALF_BED_DIST + 10)
+        self.nav.move_backward(total_sweeps * Config.Controller.HALF_BED_DIST + Config.Controller.MID_ROOM_DIST) # Should be back at black cross
+    
+    def sweep_room1(self):
+        self.sweep_room(Config.Controller.OBSTACLE_SWEEP_ANGLE, Config.Controller.SWEEP_ANGLE_RIGHT)
+
+    def go_to_room2(self):
+        self.nav.turn(90)
+        self.nav.move_forward(2 * Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
+        self.nav.turn(-90)
+    
+    def sweep_room_standard(self):
+        self.sweep_room(-Config.Controller.SWEEP_ANGLE_RIGHT, Config.Controller.SWEEP_ANGLE_RIGHT)
+    
+    def go_to_room3(self):
+        self.nav.turn(90)
+        self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
+        self.nav.turn(90)
+
+    def go_to_room4(self):
+        self.nav.turn(90)
+        self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
+        self.nav.turn(-90)
+    
+    def sweep_room4(self):
+        self.sweep_room(Config.Controller.SWEEP_ANGLE_RIGHT, Config.Controller.OBSTACLE_SWEEP_ANGLE)
 
 if __name__ == "__main__":
     use_gyro = input("Use gyro? (y/n): ").strip().lower() == "y"
@@ -106,5 +130,11 @@ if __name__ == "__main__":
     controller.go_to_room1()
     input("Press Enter to start room 1 sweep...")
     controller.sweep_room1()
+    controller.go_to_room2()
+    controller.sweep_room_standard()
+    controller.go_to_room3()
+    controller.sweep_room_standard()
+    controller.go_to_room4()
+    controller.sweep_room4()
 
     
