@@ -1,4 +1,5 @@
 import sys
+from time import time
 
 from navigator import Navigator
 from config import Config
@@ -100,9 +101,9 @@ class Controller:
         self.sweep_room(Config.Controller.OBSTACLE_SWEEP_ANGLE, Config.Controller.SWEEP_ANGLE)
 
     def go_to_room2(self):
-        self.nav.turn(90)
-        self.nav.move_forward(2 * Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
         self.nav.turn(-90)
+        self.nav.move_forward(2 * Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
+        self.nav.turn(90)
     
     def sweep_room_standard(self):
         self.sweep_room(-Config.Controller.SWEEP_ANGLE, Config.Controller.SWEEP_ANGLE)
@@ -130,6 +131,8 @@ if __name__ == "__main__":
     controller.go_to_room1()
     input("Press Enter to start room 1 sweep...")
     controller.sweep_room1()
+    time.sleep(1)
+    input("Continue?")
     controller.go_to_room2()
     controller.sweep_room_standard()
     controller.go_to_room3()
