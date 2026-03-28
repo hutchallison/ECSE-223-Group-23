@@ -72,6 +72,7 @@ class Config:
         LOG_FREQUENCY = 2.0  # Seconds between periodic in-motion debug logs
     
     class Controller:
+        HALF_BLACK_LINE_SEGMENT = 11.3  # cm to move forward after detecting black line (half of BLACK_LINE_SEGMENT)
         BLACK_LINE_SEGMENT = 24.4
         S1_SEGMENT3 = 16  # cm to move forward in segment 3 (to patient room)
 
