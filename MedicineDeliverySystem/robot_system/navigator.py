@@ -116,16 +116,29 @@ class Navigator:
     def turn(self, angle_deg):
         """
         Rotate in place by angle_deg. Positive = CCW (left), Negative = CW (right).
-        Phase 1 (blind): full-speed encoder-based turn for the whole angle.
-        Phase 2 (trim): if gyro available, one constant-speed correction pass.
+        Encoder-only: gyro is NOT used to correct mid-turn because motor vibration
+        during the blind phase corrupts the gyro's integrator, causing trim to
+        actively push the robot away from the correct heading.
+        After the motors stop, we settle and read the gyro purely for heading
+        state tracking (no motor correction).
         """
         log.info("turn %.1f deg | heading=%.1f", angle_deg, self.heading)
 
-        target_heading = self.heading + angle_deg
         self._turn_blind(angle_deg)
-        self._turn_gyro_trim(target_heading)
 
-        log.info("turn done | heading=%.1f", self.heading)
+        # Allow vibration to fully dissipate before sampling the gyro.
+        # 300ms is the minimum for the EV3 gyro integrator to stabilise.
+        if self.gyro is not None:
+            time.sleep(0.3)
+            h = self._read_gyro()
+            if h is not None:
+                log.info("turn done | heading=%.1f (gyro) encoder_estimate=%.1f",
+                         h, self.heading)
+                self.heading = h
+            else:
+                log.info("turn done | heading=%.1f (encoder only)", self.heading)
+        else:
+            log.info("turn done | heading=%.1f (encoder only)", self.heading)
     
     def diff_turn(self, angle_deg, pivot_wheel):
         """
@@ -224,48 +237,16 @@ class Navigator:
         self.left_motor.set_dps(0)
         self.right_motor.set_dps(0)
 
-        # Wait for the robot to physically stop coasting before reading final heading.
-        # Without this, the heading captured is mid-coast and accumulates error each turn.
-        time.sleep(0.15)
+        # Settle 300ms — same reason as turn(): vibration during the coarse and trim
+        # phases corrupts the gyro integrator. Running motors to correct a drifted gyro
+        # reading makes physical accuracy worse. Settle, read, update heading state only.
+        time.sleep(0.3)
 
         final_heading = self._read_gyro()
         if final_heading is not None:
             self.heading = final_heading
         else:
             self.heading += angle_deg
-
-        # Micro-trim: if we overshot or undershot beyond tolerance after coast, correct it.
-        settled_error = (self.heading - start_heading) * direction - target_abs_deg
-        log.info("diff_turn post-coast | heading=%.1f settled_error=%.2f°", self.heading, settled_error)
-
-        if abs(settled_error) > tolerance:
-            # Apply a brief reverse nudge to correct the coast overshoot/undershoot.
-            micro_sign = -1 if settled_error > 0 else 1
-            micro_trim_dps = micro_sign * active_sign * trim_dps
-            if pivot_wheel == "left":
-                self.left_motor.set_dps(0)
-                self.right_motor.set_dps(rp * micro_trim_dps)
-            else:
-                self.right_motor.set_dps(0)
-                self.left_motor.set_dps(lp * micro_trim_dps)
-
-            target_progress = target_abs_deg  # re-aim for exact target
-            while True:
-                current_heading = self._read_gyro()
-                if current_heading is None:
-                    break
-                progress_deg = get_progress_deg(current_heading)
-                if abs(progress_deg - target_progress) <= tolerance:
-                    break
-                time.sleep(loop_dt)
-
-            self.left_motor.set_dps(0)
-            self.right_motor.set_dps(0)
-            time.sleep(0.1)
-
-            final_heading = self._read_gyro()
-            if final_heading is not None:
-                self.heading = final_heading
 
         log.info("diff_turn done | heading=%.1f", self.heading)
 
@@ -395,9 +376,8 @@ class Navigator:
             self.left_motor.set_dps(0)
             self.right_motor.set_dps(0)
 
-            # Settle before reading — motors coast after set_dps(0) and the
-            # gyro read mid-coast gives a wrong heading that accumulates each sweep.
-            time.sleep(0.15)
+            # Settle 300ms — gyro integrator needs time after motors stop.
+            time.sleep(0.3)
 
             final_heading = self._read_gyro()
             if final_heading is not None:
