@@ -131,13 +131,17 @@ if __name__ == "__main__":
     controller.go_to_room1()
     input("Press Enter to start room 1 sweep...")
     controller.sweep_room1()
-    time.sleep(1)
     input("Continue?")
     controller.go_to_room2()
+    input("Continue?")
     controller.sweep_room_standard()
+    input("Continue?")
     controller.go_to_room3()
+    input("Continue?")
     controller.sweep_room_standard()
+    input("Continue?")
     controller.go_to_room4()
+    input("Continue?")
     controller.sweep_room4()
 
     
