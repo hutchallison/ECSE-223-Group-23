@@ -19,7 +19,7 @@ class PayloadController:
     
     def engage_clamp(self) -> None:
         # closes the claw
-        self.clamp_motor.set_position_relative(100)
+        self.clamp_motor.set_position_relative(110)
         time.sleep(0.5)
         #log.info("Claw closed")
 
@@ -43,7 +43,7 @@ class PayloadController:
         #log.info("Picking up meds from pharmacy...")
         self.drop_clamp()
         self.disengage_clamp()
-        self.nav.move_forward(10)
+        self.nav.move_forward(20)
         self.engage_clamp()
         self.lift_clamp()
         #log.info("Meds picked up from pharmacy")
@@ -80,5 +80,7 @@ if __name__ =="__main__" :
 	wait_ready_sensors()
 	nav = Navigator(gyro=gyro)
 	pc = PayloadController(nav)
-	pc.drop_second_med()
+	pc.pharmacy_pickup()
+	time.sleep(1)
+	pc.drop_first_med()
 

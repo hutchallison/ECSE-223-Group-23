@@ -22,7 +22,7 @@ from navigator import Navigator
 nav = Navigator()
 color_sensor = EV3ColorSensor(3)
 WINDOW_SIZE = 500
-COLOR_FILE = os.path.join(project_dir, "color_detection", "final_project.cal")
+COLOR_FILE = "test.pkl" #os.path.join(project_dir, "color_detection", "final_project.cal")
 
 tone1 = Sound(duration=1.0, volume=100, pitch="C4")
 tone2 = Sound(duration=1.0, volume=100, pitch="G4")
@@ -111,7 +111,7 @@ try:
 			nav.move_backward(30)
 			break
 		else:
-			pass
+			nav.move_forward(1)	
 
 finally:
 	running = False
