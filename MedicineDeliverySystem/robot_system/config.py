@@ -50,10 +50,25 @@ class Config:
         GYRO_SCALE = 1.7839
 
     class Payload:
-        # Clamp Positions (Degrees)
-        CLAMP_OPEN = 0
-        CLAMP_CLOSED = 90
-        CLAMP_GRAB_STRENGTH = 75 # Power limit
+        # Clamp Positions (Degrees, relative)
+        CLAMP_CLOSE_DEG = 110        # degrees to close the clamp
+        CLAMP_OPEN_DEG  = -90        # degrees to open the clamp (reverse close)
+
+        # Lift Positions (Degrees, absolute)
+        LIFT_UP_POS  = -40           # absolute encoder position for raised lift
+        LIFT_DOWN_POS = 20           # absolute encoder position for lowered lift
+
+        # Sleep durations (seconds)
+        ENGAGE_SLEEP_S    = 0.5      # wait after closing clamp
+        DISENGAGE_SLEEP_S = 1.0      # wait after opening clamp
+        LIFT_SLEEP_S      = 1.0      # wait after raising lift
+        DROP_SLEEP_S      = 0.5      # wait after lowering lift
+
+        # Movement distances (cm)
+        PHARMACY_FORWARD_CM   = 20   # drive into pharmacy to grab meds
+        DROP_FIRST_BACKUP_CM  = 3    # backup before nudging second block
+        DROP_FIRST_NUDGE_DEG  = 15   # angle to nudge second block sideways
+        DROP_SECOND_BACKUP_CM = 5    # backup after releasing second med
 
     class Colors:
         # Mappings from your flute training
@@ -93,3 +108,5 @@ class Config:
         TOTAL_SWEEPS = 3                # Number of times to repeat sweep if no bed found
         MID_ROOM_DIST = 15              # cm to move forward into room before sweeping
         BIAS = 2
+        MAX_ROOM_EXIT_DIST = 60         # safety cap for move_until_color room exit (cm)
+        POST_DOOR_RETREAT_CM = 5        # cm to retreat into hallway after stopping on door

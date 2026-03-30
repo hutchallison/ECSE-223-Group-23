@@ -29,7 +29,7 @@ _COLOR_TO_ROOM = {
 _NEEDS_MEDICINE_COLOR = "green"
 _NO_MEDICINE_COLOR    = "red"
 
-_CAL_FILE = os.path.join(_here, "color_detection", "detection_colors.pkl")
+_CAL_FILE = os.path.join(_here, "color_detection", "final_project.cal")
 
 
 class PatientAssessor:
@@ -104,3 +104,30 @@ class PatientAssessor:
         if color == _NO_MEDICINE_COLOR:
             return False
         return None
+
+    def fast_color(self, n_samples: int = 5):
+        """Quick nearest-mean Euclidean classifier. No Gaussian — low latency for
+        real-time line detection while moving."""
+        if not self._known_colors:
+            return None
+        samples = []
+        for _ in range(n_samples):
+            rgb = self._sensor.get_rgb()
+            if rgb and None not in rgb:
+                samples.append([int(rgb[0]), int(rgb[1]), int(rgb[2])])
+        if not samples:
+            return None
+        reading = np.mean(samples, axis=0)
+        best_color, best_dist = None, None
+        for name, profile in self._known_colors.items():
+            diff = reading - profile["mean"]
+            dist = float(np.dot(diff, diff))
+            if best_dist is None or dist < best_dist:
+                best_dist, best_color = dist, name
+        log.debug("PatientAssessor.fast_color → %s", best_color)
+        return best_color
+
+    def is_color(self, target: str, n_samples: int = 5) -> bool:
+        """Returns True if fast_color() matches target (case-insensitive)."""
+        detected = self.fast_color(n_samples)
+        return detected is not None and detected.lower() == target.lower()

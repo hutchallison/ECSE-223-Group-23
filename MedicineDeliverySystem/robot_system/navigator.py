@@ -221,6 +221,79 @@ class Navigator:
         log.info("turn %.1f deg | heading=%.1f", angle_deg, self.heading)
         self._pid_rotate(angle_deg)
         log.info("turn done | heading=%.1f", self.heading)
+
+    def turn_right(self):
+        """Rotate 90 degrees clockwise in place."""
+        self.turn(-90)
+
+    def turn_left(self):
+        """Rotate 90 degrees counter-clockwise in place."""
+        self.turn(90)
+
+    def move_until_color(self, target_color: str, direction: int, assessor,
+                         max_dist_cm: float = 100.0):
+        """
+        Move in direction (1=forward, -1=backward) until assessor.fast_color()
+        returns target_color, or max_dist_cm is reached as a safety stop.
+        Returns actual distance traveled in cm.
+        """
+        log.info("move_until_color %s direction=%d | heading=%.1f",
+                 target_color, direction, self.heading)
+
+        rw = Config.Navigation.WHEEL_RADIUS_CM
+        max_encoder_deg = (180 * max_dist_cm) / (math.pi * rw)
+        base_dps = Config.Navigation.SPEED_NORMAL
+        kp = Config.Navigation.HEADING_CORRECTION_KP
+        target_heading = self.heading
+
+        self.left_motor.reset_encoder()
+        self.right_motor.reset_encoder()
+
+        while True:
+            left_deg = abs(self.left_motor.get_encoder())
+            right_deg = abs(self.right_motor.get_encoder())
+            avg_deg = (left_deg + right_deg) / 2
+
+            if avg_deg >= max_encoder_deg:
+                log.warning("move_until_color: safety stop at %.1f cm without seeing %s",
+                            max_dist_cm, target_color)
+                break
+
+            correction = 0
+            current_heading = self._read_gyro()
+            if current_heading is not None:
+                self.heading = current_heading
+                correction = kp * (target_heading - current_heading)
+
+            lp = direction * Config.Navigation.LEFT_MOTOR_POLARITY
+            rp = direction * Config.Navigation.RIGHT_MOTOR_POLARITY
+            self.left_motor.set_dps(lp * (base_dps - correction))
+            self.right_motor.set_dps(rp * (base_dps + correction))
+
+            if assessor.fast_color() == target_color:
+                break
+
+            time.sleep(0.05)
+
+        self.left_motor.set_dps(0)
+        self.right_motor.set_dps(0)
+
+        avg_deg = (abs(self.left_motor.get_encoder()) +
+                   abs(self.right_motor.get_encoder())) / 2
+        actual_cm = (math.pi * rw * avg_deg) / 180
+        log.info("move_until_color done | color=%s traveled=%.1f cm",
+                 target_color, actual_cm)
+        return actual_cm
+
+    def move_forward_until_color(self, target_color: str, assessor,
+                                 max_dist_cm: float = 100.0):
+        """Move forward until target_color is detected."""
+        return self.move_until_color(target_color, 1, assessor, max_dist_cm)
+
+    def move_backward_until_color(self, target_color: str, assessor,
+                                  max_dist_cm: float = 100.0):
+        """Move backward until target_color is detected."""
+        return self.move_until_color(target_color, -1, assessor, max_dist_cm)
     
     def diff_turn(self, angle_deg, pivot_wheel):
         """Pivot turn around one wheel using PID gyro control.
@@ -251,48 +324,6 @@ class Navigator:
         self.right_motor.wait_is_stopped()
 
         self.heading += angle_deg
-
-    def _turn_gyro_trim(self, target_heading):
-        """After a blind turn, proportionally slow to target_heading.
-        Speed scales down as error shrinks so coast overshoot is minimal."""
-        if self.gyro is None:
-            return
-
-        current = self._read_gyro()
-        if current is None:
-            return
-        self.heading = current
-
-        tolerance = Config.Navigation.TURN_TOLERANCE_DEG
-        if abs(target_heading - current) <= tolerance:
-            return
-
-        kp      = Config.Navigation.TURN_KP
-        min_dps = Config.Navigation.TURN_MIN_DPS
-        max_dps = Config.Navigation.SPEED_ROTATE_ADJUST
-        lp = Config.Navigation.LEFT_MOTOR_POLARITY
-        rp = Config.Navigation.RIGHT_MOTOR_POLARITY
-
-        while True:
-            current = self._read_gyro()
-            if current is None:
-                break
-            error = target_heading - current
-            if abs(error) <= tolerance:
-                break
-            direction = 1 if error > 0 else -1
-            speed = max(min_dps, min(max_dps, abs(error) * kp))
-            self.left_motor.set_dps(lp * (-direction * speed))
-            self.right_motor.set_dps(rp * (direction * speed))
-            time.sleep(0.02)
-
-        self.left_motor.set_dps(0)
-        self.right_motor.set_dps(0)
-        time.sleep(0.1)
-        current = self._read_gyro()
-        if current is not None:
-            self.heading = current
-        log.debug("gyro trim done | target=%.1f actual=%.1f", target_heading, self.heading)
 
     def scan_turn(self, angle_deg, assessor=None, use_gyro=True):
         """

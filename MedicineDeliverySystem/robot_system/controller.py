@@ -34,21 +34,20 @@ class Controller:
         self.nav = Navigator(gyro=gyro)
         self.assessor = PatientAssessor()
         self.payload = PayloadController(self.nav)
-        self._room1_trips = 0
+        self._medicine_dropped = 0
     
     def collect_medicine(self):
         # Code to navigate to the medicine location and collect it
         self.nav.move_forward(Config.Controller.EXIT_ROOM_DIST, assessor=self.assessor)
-        self.nav.turn(-90)
+        self.nav.turn_right()
         self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
-        self.nav.turn(-90)
-        self.nav.move_forward(Config.Controller.HALF_BLACK_LINE_SEGMENT, assessor=self.assessor)
-        self.nav.move_backward(Config.Controller.HALF_BLACK_LINE_SEGMENT, assessor=self.assessor)
+        self.nav.turn_right()
+        self.payload.pharmacy_pickup()
 
     def go_to_room1(self):
-        self.nav.turn(90)
+        self.nav.turn_left()
         self.nav.move_backward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
-        self.nav.turn(90)
+        self.nav.turn_left()
         self.nav.move_forward(Config.Controller.S2_SEGMENT2, assessor=self.assessor)
 
     def sweep_room(self, sweep_left_angle: int, sweep_right_angle: int):
@@ -61,29 +60,38 @@ class Controller:
         sweep_origin = self.nav.heading
         # Track exact net forward distance so we can reverse back to the start precisely.
         forward_dist = Config.Controller.MID_ROOM_DIST
+        bed_was_found = False
 
         for _ in range(Config.Controller.TOTAL_SWEEPS):
             self.nav.move_forward(Config.Controller.HALF_BED_DIST, assessor=self.assessor)
             forward_dist += Config.Controller.HALF_BED_DIST
 
-            # use_gyro=False: encoder odometry for the sweep motion so gyro cannot
-            # accumulate vibration drift. The absolute return via turn_to_heading corrects
-            # any encoder odometry error at the end of each loop iteration.
             bed_found = self.nav.scan_turn(
-                sweep_left_angle, self.assessor, use_gyro=False
+                sweep_left_angle, self.assessor, use_gyro=True
             )
             if not bed_found:
                 total_right = sweep_left_angle + sweep_right_angle
-                bed_found = self.nav.scan_turn(-total_right, self.assessor, use_gyro=False)
+                bed_found = self.nav.scan_turn(-total_right, self.assessor, use_gyro=True)
 
             if bed_found:
                 self.nav.move_backward(Config.Controller.SWEEP_BACKUP_TO_DROP_DIST)
-                forward_dist -= Config.Controller.SWEEP_BACKUP_TO_DROP_DIST
-                if self._room1_trips == 0:
+                if self._medicine_dropped == 0:
                     self.payload.drop_first_med()
                 else:
                     self.payload.drop_second_med()
-                self._room1_trips += 1
+                self._medicine_dropped += 1
+                # Restore entry heading while stationary (most reliable gyro read)
+                if self.gyro is not None:
+                    self.nav.turn_to_heading(sweep_origin)
+                else:
+                    self.nav.turn(-self.nav.heading)
+                # Anchor-based exit: reverse until door stripe, then fixed retreat
+                self.nav.move_backward_until_color(
+                    Config.Colors.DOOR_MARKER.lower(), self.assessor,
+                    max_dist_cm=Config.Controller.MAX_ROOM_EXIT_DIST
+                )
+                self.nav.move_backward(Config.Controller.POST_DOOR_RETREAT_CM)
+                bed_was_found = True
                 break
 
             # No bed found — restore heading for the next sweep iteration.
@@ -94,37 +102,66 @@ class Controller:
             else:
                 self.nav.turn(-self.nav.heading)
 
+        if bed_was_found:
+            return
         self.nav.move_backward(forward_dist)
     
     def sweep_room1(self):
         self.sweep_room(Config.Controller.OBSTACLE_SWEEP_ANGLE, Config.Controller.SWEEP_ANGLE)
 
     def go_to_room2(self):
-        self.nav.turn(-90)
+        self.nav.turn_right()
         self.nav.move_forward(2 * Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
-        self.nav.turn(90)
+        self.nav.turn_left()
     
     def sweep_room_standard(self):
         self.sweep_room(Config.Controller.SWEEP_ANGLE, Config.Controller.SWEEP_ANGLE)
     
     def go_to_room3(self):
-        self.nav.turn(-90)
+        self.nav.turn_right()
         self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
-        self.nav.turn(-90)
+        self.nav.turn_right()
 
     def go_to_room4(self):
-        self.nav.turn(-90)
+        self.nav.turn_right()
         self.nav.move_backward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
-        self.nav.turn(90)
+        self.nav.turn_left()
     
     def sweep_room4(self):
         self.sweep_room(Config.Controller.SWEEP_ANGLE, Config.Controller.OBSTACLE_SWEEP_ANGLE)
+    
+    def return_to_pharmacy(self, from_room: int):
+        # Code to return to the pharmacy after deliveries
+        match from_room:
+
+            case 1:
+                total_dist = Config.Controller.BLACK_LINE_SEGMENT + Config.Controller.HALF_BLACK_LINE_SEGMENT
+                self.nav.move_backward(total_dist, assessor=self.assessor)
+                self.nav.turn_right()
+            
+            case 2:
+                self.nav.move_backward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
+                self.nav.turn_left()
+                self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
+            
+            case 3:
+                self.nav.turn_right()
+                self.nav.move_forward(2 * Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
+                self.nav.turn_left()
+                self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
+            
+            case 4:
+                self.nav.turn_right()
+                self.nav.move_forward(3 * Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
+                self.nav.turn_left()
+                self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
 
 if __name__ == "__main__":
     use_gyro = input("Use gyro? (y/n): ").strip().lower() == "y"
     controller = Controller(use_gyro=use_gyro)
-    controller.payload.engage_clamp()
-    controller.payload.lift_clamp()
+    # controller.payload.engage_clamp()
+    # controller.payload.lift_clamp()
+
     controller.collect_medicine()
     input("Press Enter to start room 1 navigation...")
     controller.go_to_room1()
@@ -132,15 +169,27 @@ if __name__ == "__main__":
     controller.sweep_room1()
     input("Continue?")
     controller.go_to_room2()
-    input("Continue?")
-    controller.sweep_room_standard()
+
+    if controller._medicine_dropped == 0:
+        input("Continue to room2 sweep?")
+        controller.nav.turn_left()
+        controller.sweep_room_standard()
+        controller.nav.turn_right()
+
     input("Continue?")
     controller.go_to_room3()
     input("Continue?")
     controller.sweep_room_standard()
+
+    if controller._medicine_dropped == 2:
+        controller.return_to_pharmacy(from_room=3)
+    
     input("Continue?")
     controller.go_to_room4()
     input("Continue?")
     controller.sweep_room4()
+
+    if controller._medicine_dropped == 2:
+        controller.return_to_pharmacy(from_room=4)
 
     
