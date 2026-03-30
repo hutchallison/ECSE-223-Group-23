@@ -85,12 +85,11 @@ class Controller:
                     self.nav.turn_to_heading(sweep_origin)
                 else:
                     self.nav.turn(-self.nav.heading)
-                # Anchor-based exit: reverse until door stripe, then fixed retreat
-                self.nav.move_backward_until_color(
-                    Config.Colors.DOOR_MARKER.lower(), self.assessor,
+                # Anchor-based exit: reverse until ultrasonic detects door opening
+                self.nav.move_backward_until_distance(
+                    Config.Controller.DOOR_EXIT_DISTANCE_CM,
                     max_dist_cm=Config.Controller.MAX_ROOM_EXIT_DIST
                 )
-                self.nav.move_backward(Config.Controller.POST_DOOR_RETREAT_CM)
                 bed_was_found = True
                 break
 

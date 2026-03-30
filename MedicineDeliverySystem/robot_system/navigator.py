@@ -1,7 +1,7 @@
 import math
 import time
 import logging
-from utils.brick import Motor
+from utils.brick import Motor, EV3UltrasonicSensor
 from config import Config
 
 log = logging.getLogger(__name__)
@@ -12,6 +12,7 @@ class Navigator:
         self.left_motor = Motor(Config.Ports.LEFT_MOTOR)
         self.right_motor = Motor(Config.Ports.RIGHT_MOTOR)
         self.gyro = gyro
+        self.us = EV3UltrasonicSensor(Config.Ports.ULTRASONIC)
         self.heading = 0.0
 
         # Gyro baseline so heading starts at 0
@@ -37,8 +38,71 @@ class Navigator:
         return (reading - self._gyro_offset) * Config.Navigation.GYRO_SCALE
 
     def get_wall_distance(self):
-        """Ultrasonic is not used in this navigator revision."""
-        return None
+        """Read ultrasonic distance in cm. Returns None on sensor error."""
+        try:
+            return self.us.get_cm()
+        except Exception:
+            return None
+
+    def move_until_distance(self, threshold_cm: float, direction: int = 1,
+                            max_dist_cm: float = 150.0):
+        """
+        Move in direction (1=forward, -1=backward) until the ultrasonic sensor
+        reads <= threshold_cm, or max_dist_cm is reached as a safety stop.
+        Returns actual distance traveled in cm.
+        """
+        log.info("move_until_distance threshold=%.1f direction=%d | heading=%.1f",
+                 threshold_cm, direction, self.heading)
+
+        rw = Config.Navigation.WHEEL_RADIUS_CM
+        max_encoder_deg = (180 * max_dist_cm) / (math.pi * rw)
+        base_dps = Config.Navigation.SPEED_NORMAL
+        kp = Config.Navigation.HEADING_CORRECTION_KP
+        target_heading = self.heading
+
+        self.left_motor.reset_encoder()
+        self.right_motor.reset_encoder()
+
+        while True:
+            left_deg  = abs(self.left_motor.get_encoder())
+            right_deg = abs(self.right_motor.get_encoder())
+            avg_deg   = (left_deg + right_deg) / 2
+
+            if avg_deg >= max_encoder_deg:
+                log.warning("move_until_distance: safety stop at %.1f cm", max_dist_cm)
+                break
+
+            dist = self.get_wall_distance()
+            if dist is not None and dist <= threshold_cm:
+                log.info("move_until_distance: stopped at %.1f cm from wall", dist)
+                break
+
+            correction = 0
+            current_heading = self._read_gyro()
+            if current_heading is not None:
+                self.heading = current_heading
+                correction = kp * (target_heading - current_heading)
+
+            lp = direction * Config.Navigation.LEFT_MOTOR_POLARITY
+            rp = direction * Config.Navigation.RIGHT_MOTOR_POLARITY
+            self.left_motor.set_dps(lp * (base_dps - correction))
+            self.right_motor.set_dps(rp * (base_dps + correction))
+
+            time.sleep(0.05)
+
+        self.left_motor.set_dps(0)
+        self.right_motor.set_dps(0)
+
+        avg_deg = (abs(self.left_motor.get_encoder()) +
+                   abs(self.right_motor.get_encoder())) / 2
+        actual_cm = (math.pi * rw * avg_deg) / 180
+        log.info("move_until_distance done | traveled=%.1f cm", actual_cm)
+        return actual_cm
+
+    def move_backward_until_distance(self, threshold_cm: float,
+                                     max_dist_cm: float = 150.0):
+        """Move backward until ultrasonic reads <= threshold_cm."""
+        return self.move_until_distance(threshold_cm, -1, max_dist_cm)
 
     # ── Movement ─────────────────────────────────────────────────────
 
@@ -229,71 +293,6 @@ class Navigator:
     def turn_left(self):
         """Rotate 90 degrees counter-clockwise in place."""
         self.turn(90)
-
-    def move_until_color(self, target_color: str, direction: int, assessor,
-                         max_dist_cm: float = 100.0):
-        """
-        Move in direction (1=forward, -1=backward) until assessor.fast_color()
-        returns target_color, or max_dist_cm is reached as a safety stop.
-        Returns actual distance traveled in cm.
-        """
-        log.info("move_until_color %s direction=%d | heading=%.1f",
-                 target_color, direction, self.heading)
-
-        rw = Config.Navigation.WHEEL_RADIUS_CM
-        max_encoder_deg = (180 * max_dist_cm) / (math.pi * rw)
-        base_dps = Config.Navigation.SPEED_NORMAL
-        kp = Config.Navigation.HEADING_CORRECTION_KP
-        target_heading = self.heading
-
-        self.left_motor.reset_encoder()
-        self.right_motor.reset_encoder()
-
-        while True:
-            left_deg = abs(self.left_motor.get_encoder())
-            right_deg = abs(self.right_motor.get_encoder())
-            avg_deg = (left_deg + right_deg) / 2
-
-            if avg_deg >= max_encoder_deg:
-                log.warning("move_until_color: safety stop at %.1f cm without seeing %s",
-                            max_dist_cm, target_color)
-                break
-
-            correction = 0
-            current_heading = self._read_gyro()
-            if current_heading is not None:
-                self.heading = current_heading
-                correction = kp * (target_heading - current_heading)
-
-            lp = direction * Config.Navigation.LEFT_MOTOR_POLARITY
-            rp = direction * Config.Navigation.RIGHT_MOTOR_POLARITY
-            self.left_motor.set_dps(lp * (base_dps - correction))
-            self.right_motor.set_dps(rp * (base_dps + correction))
-
-            if assessor.fast_color() == target_color:
-                break
-
-            time.sleep(0.05)
-
-        self.left_motor.set_dps(0)
-        self.right_motor.set_dps(0)
-
-        avg_deg = (abs(self.left_motor.get_encoder()) +
-                   abs(self.right_motor.get_encoder())) / 2
-        actual_cm = (math.pi * rw * avg_deg) / 180
-        log.info("move_until_color done | color=%s traveled=%.1f cm",
-                 target_color, actual_cm)
-        return actual_cm
-
-    def move_forward_until_color(self, target_color: str, assessor,
-                                 max_dist_cm: float = 100.0):
-        """Move forward until target_color is detected."""
-        return self.move_until_color(target_color, 1, assessor, max_dist_cm)
-
-    def move_backward_until_color(self, target_color: str, assessor,
-                                  max_dist_cm: float = 100.0):
-        """Move backward until target_color is detected."""
-        return self.move_until_color(target_color, -1, assessor, max_dist_cm)
     
     def diff_turn(self, angle_deg, pivot_wheel):
         """Pivot turn around one wheel using PID gyro control.

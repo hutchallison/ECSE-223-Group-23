@@ -108,5 +108,5 @@ class Config:
         TOTAL_SWEEPS = 3                # Number of times to repeat sweep if no bed found
         MID_ROOM_DIST = 15              # cm to move forward into room before sweeping
         BIAS = 2
-        MAX_ROOM_EXIT_DIST = 60         # safety cap for move_until_color room exit (cm)
-        POST_DOOR_RETREAT_CM = 5        # cm to retreat into hallway after stopping on door
+        MAX_ROOM_EXIT_DIST = 60         # safety cap for move_until_distance room exit (cm)
+        DOOR_EXIT_DISTANCE_CM = 10      # US distance (cm) that indicates robot is at/past the door
