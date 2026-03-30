@@ -67,11 +67,11 @@ class Controller:
             forward_dist += Config.Controller.HALF_BED_DIST
 
             bed_found = self.nav.scan_turn(
-                sweep_left_angle, self.assessor, use_gyro=True
+                sweep_left_angle, self.assessor, use_gyro=False
             )
             if not bed_found:
                 total_right = sweep_left_angle + sweep_right_angle
-                bed_found = self.nav.scan_turn(-total_right, self.assessor, use_gyro=True)
+                bed_found = self.nav.scan_turn(-total_right, self.assessor, use_gyro=False)
 
             if bed_found:
                 self.nav.move_backward(Config.Controller.SWEEP_BACKUP_TO_DROP_DIST)
