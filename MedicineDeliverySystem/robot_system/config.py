@@ -55,7 +55,7 @@ class Config:
         CLAMP_OPEN_DEG  = -90        # degrees to open the clamp (reverse close)
 
         # Lift Positions (Degrees, absolute)
-        LIFT_UP_POS  = -40           # absolute encoder position for raised lift
+        LIFT_UP_POS  = -15           # absolute encoder position for raised lift
         LIFT_DOWN_POS = 20           # absolute encoder position for lowered lift
 
         # Sleep durations (seconds)
