@@ -98,6 +98,8 @@ class Controller:
             # so this accurately restores the physical heading.
             if self.gyro is not None:
                 self.nav.turn_to_heading(sweep_origin - Config.Controller.BIAS)
+                log.info("No bed detected, returning to heading %d° and moving forward for next sweep…", sweep_origin - Config.Controller.BIAS)
+                
             else:
                 self.nav.turn(-self.nav.heading)
 
