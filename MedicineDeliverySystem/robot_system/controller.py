@@ -132,29 +132,27 @@ class Controller:
     
     def return_to_pharmacy(self, from_room: int):
         # Code to return to the pharmacy after deliveries
-        match from_room:
+        if from_room == 1:
+            total_dist = Config.Controller.BLACK_LINE_SEGMENT + Config.Controller.HALF_BLACK_LINE_SEGMENT
+            self.nav.move_backward(total_dist, assessor=self.assessor)
+            self.nav.turn_right()
 
-            case 1:
-                total_dist = Config.Controller.BLACK_LINE_SEGMENT + Config.Controller.HALF_BLACK_LINE_SEGMENT
-                self.nav.move_backward(total_dist, assessor=self.assessor)
-                self.nav.turn_right()
-            
-            case 2:
-                self.nav.move_backward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
-                self.nav.turn_left()
-                self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
-            
-            case 3:
-                self.nav.turn_right()
-                self.nav.move_forward(2 * Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
-                self.nav.turn_left()
-                self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
-            
-            case 4:
-                self.nav.turn_right()
-                self.nav.move_forward(3 * Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
-                self.nav.turn_left()
-                self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
+        elif from_room == 2:
+            self.nav.move_backward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
+            self.nav.turn_left()
+            self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
+
+        elif from_room == 3:
+            self.nav.turn_right()
+            self.nav.move_forward(2 * Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
+            self.nav.turn_left()
+            self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
+
+        elif from_room == 4:
+            self.nav.turn_right()
+            self.nav.move_forward(3 * Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
+            self.nav.turn_left()
+            self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
 
 if __name__ == "__main__":
     use_gyro = input("Use gyro? (y/n): ").strip().lower() == "y"
