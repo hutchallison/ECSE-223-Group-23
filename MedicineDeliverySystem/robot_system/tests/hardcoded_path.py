@@ -48,7 +48,7 @@ log = logging.getLogger("test_navigator")
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
-SIDE_CM = 30      # Box side length
+SIDE_CM = 50      # Box side length
 PAUSE_S = 0.5     # Brief pause between moves so motors fully settle
 
 
