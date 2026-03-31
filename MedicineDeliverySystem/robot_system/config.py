@@ -49,8 +49,8 @@ class Config:
         HEADING_CORRECTION_KP = 2.0       # Proportional gain: heading error (deg) -> DPS offset
         HEADING_CORRECTION_KP_BOOST = 8.0  # Boosted gain when follow_line detects robot left black line
         TURN_TOLERANCE_DEG = 1.0    # Stop turning when within this many degrees of target
-        GYRO_SCALE_RIGHT = 1.8000
-        GYRO_SCALE_LEFT = 1.7647           # Gyro angle scale factor (adjust if gyro is inaccurate)
+        GYRO_SCALE_RIGHT = 1.8367
+        GYRO_SCALE_LEFT = 1.8367           # Gyro angle scale factor (adjust if gyro is inaccurate)
 
     class Payload:
         # Clamp Positions (Degrees, relative)
