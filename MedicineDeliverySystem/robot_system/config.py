@@ -57,7 +57,7 @@ class Config:
 
         # Lift Positions (Degrees, absolute)
         LIFT_UP_POS  = -15           # absolute encoder position for raised lift
-        LIFT_DOWN_POS = 30           # absolute encoder position for lowered lift
+        LIFT_DOWN_POS = 23           # absolute encoder position for lowered lift
 
         # Sleep durations (seconds)
         ENGAGE_SLEEP_S    = 0.5      # wait after closing clamp
@@ -108,6 +108,8 @@ class Config:
         SWEEP_BACKUP_TO_DROP_DIST = 4
         TOTAL_SWEEPS = 3                # Number of times to repeat sweep if no bed found
         MID_ROOM_DIST = 15              # cm to move forward into room before sweeping
-        BIAS = 2
+        BIAS = 0
         MAX_ROOM_EXIT_DIST = 60         # safety cap for move_until_distance room exit (cm)
         DOOR_EXIT_DISTANCE_CM = 50      # US distance (cm) that indicates robot is at/past the door
+
+        DISTANCE_ROOM4_WALL = 95

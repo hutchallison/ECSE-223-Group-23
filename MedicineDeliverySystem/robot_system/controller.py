@@ -123,7 +123,7 @@ class Controller:
 
     def go_to_room4(self):
         self.nav.turn_right()
-        self.nav.move_backward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
+        self.nav.move_backward_until_distance(Config.Controller.DISTANCE_ROOM4_WALL, assessor=self.assessor)
         self.nav.turn_left()
     
     def sweep_room4(self):
