@@ -86,6 +86,7 @@ class Controller:
                 else:
                     self.nav.turn(-self.nav.heading)
                 # Anchor-based exit: reverse until ultrasonic detects door opening
+                self.nav.move_backward(forward_dist - Config.Controller.HALF_BED_DIST)  # retreat into hallway to ensure clear US reading
                 self.nav.move_backward_until_distance(
                     Config.Controller.DOOR_EXIT_DISTANCE_CM,
                     max_dist_cm=Config.Controller.MAX_ROOM_EXIT_DIST
@@ -105,7 +106,8 @@ class Controller:
 
         if bed_was_found:
             return
-        self.nav.move_backward(forward_dist)
+        self.nav.move_backward(forward_dist - Config.Controller.HALF_BED_DIST, assessor=self.assessor)
+        self.nav.move_backward_until_distance(Config.Controller.DOOR_EXIT_DISTANCE_CM, max_dist_cm=Config.Controller.MAX_ROOM_EXIT_DIST)
     
     def sweep_room1(self):
         self.sweep_room(Config.Controller.OBSTACLE_SWEEP_ANGLE, Config.Controller.SWEEP_ANGLE)
@@ -123,7 +125,7 @@ class Controller:
 
     def go_to_room4(self):
         self.nav.turn_right()
-        self.nav.move_backward_until_distance(Config.Controller.DISTANCE_ROOM4_WALL, assessor=self.assessor)
+        self.nav.move_backward_until_distance(Config.Controller.DISTANCE_ROOM4_WALL)
         self.nav.turn_left()
     
     def sweep_room4(self):
