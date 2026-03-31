@@ -46,7 +46,7 @@ class PayloadController:
         self.nav.move_forward(Config.Payload.PHARMACY_FORWARD_CM)
         self.engage_clamp()
         self.lift_clamp()
-        self.nav.move_backward(Config.Payload.PHARMACY_FORWARD_CM)
+        self.nav.move_backward(Config.Payload.PHARMACY_FORWARD_CM - Config.Controller.HALF_BED_DIST, assessor=self.nav.assessor)
         #log.info("Meds picked up from pharmacy")
         
     def drop_first_med(self) -> None:
