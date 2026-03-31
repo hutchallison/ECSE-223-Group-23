@@ -142,16 +142,16 @@ class Navigator:
 
             correction = 0
             current_heading = self._read_gyro()
-            if current_heading is not None:
-                self.heading = current_heading
-                active_kp = kp
-                if follow_line and direction == 1 and assessor is not None:
-                    on_line = assessor.fast_color(n_samples=3)
-                    if on_line != "black":
-                        active_kp = Config.Navigation.HEADING_CORRECTION_KP_BOOST
-                        log.debug("follow_line: off black (%s), boosting KP heading=%.1f",
-                                  on_line, self.heading)
-                correction = active_kp * (target_heading - current_heading)
+            # if current_heading is not None:
+            #     self.heading = current_heading
+            #     active_kp = kp
+            #     if follow_line and direction == 1 and assessor is not None:
+            #         on_line = assessor.fast_color(n_samples=3)
+            #         if on_line != "black":
+            #             active_kp = Config.Navigation.HEADING_CORRECTION_KP_BOOST
+            #             log.debug("follow_line: off black (%s), boosting KP heading=%.1f",
+            #                       on_line, self.heading)
+            #     correction = active_kp * (target_heading - current_heading)
 
             lp = direction * Config.Navigation.LEFT_MOTOR_POLARITY
             rp = direction * Config.Navigation.RIGHT_MOTOR_POLARITY
