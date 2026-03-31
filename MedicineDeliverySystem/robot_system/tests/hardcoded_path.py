@@ -57,7 +57,7 @@ def pause():
 
 
 def report(nav, label=""):
-    log.info("%-20s → pos=(%.1f, %.1f) heading=%.1f°", label, x, y, h)
+    return None
 
 
 # ── Tests ─────────────────────────────────────────────────────────────────────
