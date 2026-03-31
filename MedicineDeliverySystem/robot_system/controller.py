@@ -166,7 +166,7 @@ if __name__ == "__main__":
     controller.go_to_room1()
     input("Press Enter to start room 1 sweep...")
     controller.sweep_room1()
-    input("Continue?")
+    input("Continue? Press Enter to go to room 2... (dropped packets: %d)" % controller._medicine_dropped)
     controller.go_to_room2()
 
     if controller._medicine_dropped == 0:
@@ -175,17 +175,17 @@ if __name__ == "__main__":
         controller.sweep_room_standard()
         controller.nav.turn_right()
 
-    input("Continue?")
+    input("Continue? Press Enter to go to room 3... (dropped packets: %d)" % controller._medicine_dropped)
     controller.go_to_room3()
-    input("Continue?")
+    input("Continue? Press Enter to start room 3 sweep... (dropped packets: %d)" % controller._medicine_dropped)
     controller.sweep_room_standard()
 
     if controller._medicine_dropped == 2:
         controller.return_to_pharmacy(from_room=3)
     
-    input("Continue?")
+    input("Continue? Press Enter to go to room 4... (dropped packets: %d)" % controller._medicine_dropped)
     controller.go_to_room4()
-    input("Continue?")
+    input("Continue? Press Enter to start room 4 sweep... (dropped packets: %d)" % controller._medicine_dropped)
     controller.sweep_room4()
 
     if controller._medicine_dropped == 2:
