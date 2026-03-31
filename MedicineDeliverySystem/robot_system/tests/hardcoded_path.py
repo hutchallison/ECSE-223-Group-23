@@ -67,7 +67,6 @@ def test_forward(nav):
     log.info("=== TEST: forward ===")
     nav.move_forward(SIDE_CM)
     report(nav, "after forward")
-    log.info("Expected pos ~(30, 0). Error: Δx=%.1f Δy=%.1f", abs(x - 30), abs(y))
 
 
 def test_turn_right(nav):
@@ -75,7 +74,6 @@ def test_turn_right(nav):
     log.info("=== TEST: turn_right ===")
     nav.turn(-90)
     report(nav, "after turn_right")
-    log.info("Expected heading ~-90. Error: %.1f°", abs(h - (-90)))
 
 
 def test_turn_left(nav):
@@ -83,7 +81,6 @@ def test_turn_left(nav):
     log.info("=== TEST: turn_left ===")
     nav.turn(90)
     report(nav, "after turn_left")
-    log.info("Expected heading ~90. Error: %.1f°", abs(h - 90))
 
 
 def test_box(nav):
