@@ -114,3 +114,4 @@ class Config:
         DOOR_EXIT_DISTANCE_CM = 50      # US distance (cm) that indicates robot is at/past the door
 
         DISTANCE_ROOM4_WALL = 95
+        STOP_PHARMACY = 15

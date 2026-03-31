@@ -47,7 +47,7 @@ class Controller:
     def go_to_room1(self):
         self.nav.turn_left()
         self.nav.move_backward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
-        self.nav.turn_left(bias=-8)
+        self.nav.turn_left(bias=-5)
         self.nav.move_forward(Config.Controller.S2_SEGMENT2, assessor=self.assessor)
 
     def sweep_room(self, sweep_left_angle: int, sweep_right_angle: int):
@@ -141,19 +141,19 @@ class Controller:
         elif from_room == 2:
             self.nav.move_backward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
             self.nav.turn_left()
-            self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
+            self.nav.move_until_distance(Config.Controller.STOP_PHARMACY)
 
         elif from_room == 3:
             self.nav.turn_right()
             self.nav.move_forward(2 * Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
             self.nav.turn_left()
-            self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
+            self.nav.move_until_distance(Config.Controller.STOP_PHARMACY)
 
         elif from_room == 4:
             self.nav.turn_right()
             self.nav.move_forward(3 * Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
             self.nav.turn_left()
-            self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
+            self.nav.move_until_distance(Config.Controller.STOP_PHARMACY)
 
 if __name__ == "__main__":
     use_gyro = input("Use gyro? (y/n): ").strip().lower() == "y"
