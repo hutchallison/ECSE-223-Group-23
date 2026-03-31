@@ -47,7 +47,7 @@ class Controller:
     def go_to_room1(self):
         self.nav.turn_left()
         self.nav.move_backward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
-        self.nav.turn_left(bias=5)
+        self.nav.turn_left(bias=8)
         self.nav.move_forward(Config.Controller.S2_SEGMENT2, assessor=self.assessor)
 
     def sweep_room(self, sweep_left_angle: int, sweep_right_angle: int):
