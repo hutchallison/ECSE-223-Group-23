@@ -3,14 +3,14 @@ class Config:
 
     class Ports:
         # Sensors (S1-S4)
-        COLOR = 3
+        COLOR = 2
         ULTRASONIC = 1
-        GYRO = 4
-        TOUCH = 2
+        GYRO = 3
+        TOUCH = 4
         
         # Motors (A-D)
-        LEFT_MOTOR = "A"
-        RIGHT_MOTOR = "D"
+        LEFT_MOTOR = "D"
+        RIGHT_MOTOR = "A"
         CLAMP_MOTOR = "C"
         LIFT_MOTOR = "B"
 
@@ -42,11 +42,12 @@ class Config:
 
         # Tolerances
         STOP_DISTANCE_CM = 5.0  # Wall avoidance threshold
-        OBSTACLE_STOP_CM = 10.0  # Emergency stop distance during move_forward (cm)
+        OBSTACLE_STOP_CM = 11.0  # Emergency stop distance during move_forward (cm)
 
         # Sensor feedback
         POLL_INTERVAL_S = 0.5       # Polling rate for gyro/US sensors
-        HEADING_CORRECTION_KP = 2.0 # Proportional gain: heading error (deg) -> DPS offset
+        HEADING_CORRECTION_KP = 2.0       # Proportional gain: heading error (deg) -> DPS offset
+        HEADING_CORRECTION_KP_BOOST = 8.0  # Boosted gain when follow_line detects robot left black line
         TURN_TOLERANCE_DEG = 1.0    # Stop turning when within this many degrees of target
         GYRO_SCALE_RIGHT = 1.8000
         GYRO_SCALE_LEFT = 1.7647           # Gyro angle scale factor (adjust if gyro is inaccurate)
@@ -111,7 +112,7 @@ class Config:
         MID_ROOM_DIST = 15              # cm to move forward into room before sweeping
         BIAS = 0
         MAX_ROOM_EXIT_DIST = 60         # safety cap for move_until_distance room exit (cm)
-        DOOR_EXIT_DISTANCE_CM = 50      # US distance (cm) that indicates robot is at/past the door
+        DOOR_EXIT_DISTANCE_CM = 52      # US distance (cm) that indicates robot is at/past the door
 
         DISTANCE_ROOM4_WALL = 95
         STOP_PHARMACY = 15

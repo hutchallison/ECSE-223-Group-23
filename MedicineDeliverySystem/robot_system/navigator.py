@@ -109,11 +109,14 @@ class Navigator:
 
     # ── Movement ─────────────────────────────────────────────────────
 
-    def move(self, distance_cm, direction, assessor=None):
+    def move(self, distance_cm, direction, assessor=None, follow_line=False):
         """
         Move by distance_cm in direction (1=forward, -1=backward).
         If assessor is provided, samples the color sensor each loop tick and
         returns the last detected room string. Otherwise returns None.
+        If follow_line=True and assessor is provided, boosts heading correction
+        gain whenever the color sensor leaves black, steering the robot back.
+        Only effective when moving forward (direction=1).
         """
         log.info("move %.1f cm direction=%d | heading=%.1f", distance_cm, direction, self.heading)
 
@@ -141,7 +144,14 @@ class Navigator:
             current_heading = self._read_gyro()
             if current_heading is not None:
                 self.heading = current_heading
-                correction = kp * (target_heading - current_heading)
+                active_kp = kp
+                if follow_line and direction == 1 and assessor is not None:
+                    on_line = assessor.fast_color(n_samples=3)
+                    if on_line != "black":
+                        active_kp = Config.Navigation.HEADING_CORRECTION_KP_BOOST
+                        log.debug("follow_line: off black (%s), boosting KP heading=%.1f",
+                                  on_line, self.heading)
+                correction = active_kp * (target_heading - current_heading)
 
             lp = direction * Config.Navigation.LEFT_MOTOR_POLARITY
             rp = direction * Config.Navigation.RIGHT_MOTOR_POLARITY
@@ -181,8 +191,8 @@ class Navigator:
                  actual_distance, self.heading, current_room if assessor else "-")
         return current_room if assessor is not None else None
 
-    def move_forward(self, distance_cm, assessor=None):
-        return self.move(distance_cm, 1, assessor)
+    def move_forward(self, distance_cm, assessor=None, follow_line=False):
+        return self.move(distance_cm, 1, assessor, follow_line=follow_line)
 
     def move_backward(self, distance_cm, assessor=None):
         return self.move(distance_cm, -1, assessor)

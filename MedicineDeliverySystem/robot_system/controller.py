@@ -38,9 +38,9 @@ class Controller:
     
     def collect_medicine(self):
         # Code to navigate to the medicine location and collect it
-        self.nav.move_forward(Config.Controller.EXIT_ROOM_DIST, assessor=self.assessor)
+        self.nav.move_forward(Config.Controller.EXIT_ROOM_DIST, assessor=self.assessor, follow_line=True)
         self.nav.turn_right()
-        self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
+        self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor, follow_line=True)
         self.nav.turn_right()
         self.payload.pharmacy_pickup()
 
@@ -114,13 +114,13 @@ class Controller:
 
     def go_to_room2(self):
         self.nav.turn_right()
-        self.nav.move_forward(2 * Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
+        self.nav.move_forward(2 * Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor, follow_line=True)
     
     def sweep_room_standard(self):
         self.sweep_room(Config.Controller.SWEEP_ANGLE, Config.Controller.SWEEP_ANGLE)
     
     def go_to_room3(self):
-        self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
+        self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor, follow_line=True)
         self.nav.turn_right()
 
     def go_to_room4(self):
@@ -145,13 +145,13 @@ class Controller:
 
         elif from_room == 3:
             self.nav.turn_right()
-            self.nav.move_forward(2 * Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
+            self.nav.move_forward(2 * Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor, follow_line=True)
             self.nav.turn_left()
             self.nav.move_until_distance(Config.Controller.STOP_PHARMACY)
 
         elif from_room == 4:
             self.nav.turn_right()
-            self.nav.move_forward(3 * Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
+            self.nav.move_forward(3 * Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor, follow_line=True)
             self.nav.turn_left()
             self.nav.move_until_distance(Config.Controller.STOP_PHARMACY)
 
