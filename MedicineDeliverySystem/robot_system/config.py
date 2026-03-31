@@ -57,7 +57,7 @@ class Config:
 
         # Lift Positions (Degrees, absolute)
         LIFT_UP_POS  = -15           # absolute encoder position for raised lift
-        LIFT_DOWN_POS = 20           # absolute encoder position for lowered lift
+        LIFT_DOWN_POS = 15           # absolute encoder position for lowered lift
 
         # Sleep durations (seconds)
         ENGAGE_SLEEP_S    = 0.5      # wait after closing clamp
