@@ -57,7 +57,6 @@ def pause():
 
 
 def report(nav, label=""):
-    x, y, h = nav.get_position()
     log.info("%-20s → pos=(%.1f, %.1f) heading=%.1f°", label, x, y, h)
 
 
@@ -68,7 +67,6 @@ def test_forward(nav):
     log.info("=== TEST: forward ===")
     nav.move_forward(SIDE_CM)
     report(nav, "after forward")
-    x, y, _ = nav.get_position()
     log.info("Expected pos ~(30, 0). Error: Δx=%.1f Δy=%.1f", abs(x - 30), abs(y))
 
 
@@ -77,7 +75,6 @@ def test_turn_right(nav):
     log.info("=== TEST: turn_right ===")
     nav.turn(-90)
     report(nav, "after turn_right")
-    _, _, h = nav.get_position()
     log.info("Expected heading ~-90. Error: %.1f°", abs(h - (-90)))
 
 
@@ -86,7 +83,6 @@ def test_turn_left(nav):
     log.info("=== TEST: turn_left ===")
     nav.turn(90)
     report(nav, "after turn_left")
-    _, _, h = nav.get_position()
     log.info("Expected heading ~90. Error: %.1f°", abs(h - 90))
 
 
@@ -104,14 +100,6 @@ def test_box(nav):
         report(nav, f"turn {side} done")
         pause()
 
-    x, y, h = nav.get_position()
-    pos_error = (x**2 + y**2) ** 0.5
-    heading_error = abs(h % 360)
-    log.info("=== BOX RESULT ===")
-    log.info("Final pos=(%.1f, %.1f) heading=%.1f°", x, y, h)
-    log.info("Position error from origin: %.1f cm", pos_error)
-    log.info("Heading error from 0°: %.1f°", heading_error)
-
 
 def test_box_back(nav):
     """
@@ -126,12 +114,6 @@ def test_box_back(nav):
         nav.turn(90)
         report(nav, f"turn {side} done")
         pause()
-
-    x, y, h = nav.get_position()
-    pos_error = (x**2 + y**2) ** 0.5
-    log.info("=== BOX_BACK RESULT ===")
-    log.info("Final pos=(%.1f, %.1f) heading=%.1f°", x, y, h)
-    log.info("Position error from origin: %.1f cm", pos_error)
 
 def go_to_room(nav):
 	input("Position robot at start point and press Enter to begin...")
