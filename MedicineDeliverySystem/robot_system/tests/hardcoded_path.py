@@ -13,7 +13,8 @@ Available tests:
     box_back   - drive a square in reverse direction (CCW)
 
 Flags:
-    --gyro     - enable gyro sensor for turn trimming (default: blind turns only)
+    --gyro              - enable gyro sensor for turn trimming (default: blind turns only)
+    --left-comp=<dps>   - extra DPS added to left wheel during move_forward to compensate for weakness (default: 0)
 
 With no argument, runs the box test by default.
 """
@@ -149,6 +150,9 @@ if __name__ == "__main__":
     use_gyro = "--gyro" in args
     test_name = next((a for a in args if not a.startswith("--")), "box")
 
+    left_comp_arg = next((a for a in args if a.startswith("--left-comp=")), None)
+    left_comp = float(left_comp_arg.split("=", 1)[1]) if left_comp_arg else 0.0
+
     input("Press Enter to start the test...")
     if test_name not in TESTS:
         log.error("Unknown test '%s'. Available: %s", test_name, ", ".join(TESTS))
@@ -163,7 +167,7 @@ if __name__ == "__main__":
     else:
         log.info("Running without gyro (blind turns)")
 
-    nav = Navigator(gyro=gyro)
+    nav = Navigator(gyro=gyro, left_wheel_compensation=left_comp)
 
     log.info("Starting test: %s", test_name)
     input("Position robot at start point and press Enter to begin...")
