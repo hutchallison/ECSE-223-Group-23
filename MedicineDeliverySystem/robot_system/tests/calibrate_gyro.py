@@ -29,7 +29,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
 from utils.brick import EV3GyroSensor, wait_ready_sensors
 from robot_system.config import Config
 
-CURRENT_SCALE = Config.Navigation.GYRO_SCALE
+CURRENT_SCALE = Config.Navigation.GYRO_SCALE_LEFT
 
 print("Initializing gyro...")
 gyro = EV3GyroSensor(Config.Ports.GYRO, mode="abs")
