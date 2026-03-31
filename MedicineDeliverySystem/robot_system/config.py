@@ -42,7 +42,7 @@ class Config:
 
         # Tolerances
         STOP_DISTANCE_CM = 5.0  # Wall avoidance threshold
-        OBSTACLE_STOP_CM = 11.0  # Emergency stop distance during move_forward (cm)
+        OBSTACLE_STOP_CM = 15.0  # Emergency stop distance during move_forward (cm)
 
         # Sensor feedback
         POLL_INTERVAL_S = 0.5       # Polling rate for gyro/US sensors
