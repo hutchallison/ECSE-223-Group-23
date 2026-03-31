@@ -99,7 +99,7 @@ class Controller:
             if self.gyro is not None:
                 self.nav.turn_to_heading(sweep_origin - Config.Controller.BIAS)
                 log.info("No bed detected, returning to heading %d° and moving forward for next sweep…", sweep_origin - Config.Controller.BIAS)
-                
+
             else:
                 self.nav.turn(-self.nav.heading)
 
@@ -113,13 +113,11 @@ class Controller:
     def go_to_room2(self):
         self.nav.turn_right()
         self.nav.move_forward(2 * Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
-        self.nav.turn_left()
     
     def sweep_room_standard(self):
         self.sweep_room(Config.Controller.SWEEP_ANGLE, Config.Controller.SWEEP_ANGLE)
     
     def go_to_room3(self):
-        self.nav.turn_right()
         self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
         self.nav.turn_right()
 
