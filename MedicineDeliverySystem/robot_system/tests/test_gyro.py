@@ -17,7 +17,7 @@ from utils.brick import EV3GyroSensor, wait_ready_sensors
 from robot_system.config import Config
 
 GYRO_PORT = Config.Ports.GYRO  # Port 4
-SCALE = Config.Navigation.GYRO_SCALE
+SCALE = Config.Navigation.GYRO_SCALE_LEFT
 
 print(f"Initializing gyro on port {GYRO_PORT} ...")
 gyro = EV3GyroSensor(GYRO_PORT, mode="both")
