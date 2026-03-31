@@ -301,13 +301,13 @@ class Navigator:
         self._pid_rotate(angle_deg)
         log.info("turn done | heading=%.1f", self.heading)
 
-    def turn_right(self):
+    def turn_right(self, bias: int = 0):
         """Rotate 90 degrees clockwise in place."""
-        self.turn(-90)
+        self.turn(-90 + bias)
 
-    def turn_left(self):
+    def turn_left(self, bias: int = 0):
         """Rotate 90 degrees counter-clockwise in place."""
-        self.turn(90)
+        self.turn(90 + bias)
     
     def diff_turn(self, angle_deg, pivot_wheel):
         """Pivot turn around one wheel using PID gyro control.

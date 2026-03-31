@@ -47,7 +47,7 @@ class Controller:
     def go_to_room1(self):
         self.nav.turn_left()
         self.nav.move_backward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
-        self.nav.turn_left()
+        self.nav.turn_left(bias=5)
         self.nav.move_forward(Config.Controller.S2_SEGMENT2, assessor=self.assessor)
 
     def sweep_room(self, sweep_left_angle: int, sweep_right_angle: int):
@@ -182,6 +182,8 @@ if __name__ == "__main__":
 
     if controller._medicine_dropped == 2:
         controller.return_to_pharmacy(from_room=3)
+        input("Delivery complete!")
+        exit(0)
     
     input("Continue? Press Enter to go to room 4... (dropped packets: %d)" % controller._medicine_dropped)
     controller.go_to_room4()
@@ -190,5 +192,5 @@ if __name__ == "__main__":
 
     if controller._medicine_dropped == 2:
         controller.return_to_pharmacy(from_room=4)
-
-    
+        input("Delivery complete!")
+        exit(0)
