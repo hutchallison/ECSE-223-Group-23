@@ -47,8 +47,8 @@ class Config:
         POLL_INTERVAL_S = 0.5       # Polling rate for gyro/US sensors
         HEADING_CORRECTION_KP = 2.0 # Proportional gain: heading error (deg) -> DPS offset
         TURN_TOLERANCE_DEG = 1.0    # Stop turning when within this many degrees of target
-        # GYRO_SCALE = 1.8000
-        GYRO_SCALE = 1.7690           # Gyro angle scale factor (adjust if gyro is inaccurate)
+        GYRO_SCALE_RIGHT = 1.8000
+        GYRO_SCALE_LEFT = 1.7647           # Gyro angle scale factor (adjust if gyro is inaccurate)
 
     class Payload:
         # Clamp Positions (Degrees, relative)

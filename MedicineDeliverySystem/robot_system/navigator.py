@@ -14,6 +14,9 @@ class Navigator:
         self.gyro = gyro
         self.us = EV3UltrasonicSensor(Config.Ports.ULTRASONIC)
         self.heading = 0.0
+        # Directional scale: CCW (left) and CW (right) are calibrated separately.
+        # _gyro_scale is set to the appropriate value at the start of every rotation.
+        self._gyro_scale = Config.Navigation.GYRO_SCALE_LEFT
 
         # Gyro baseline so heading starts at 0
         self._gyro_offset = 0.0
@@ -35,7 +38,7 @@ class Navigator:
         if reading is None:
             log.warning("Gyro read returned None")
             return None
-        return (reading - self._gyro_offset) * Config.Navigation.GYRO_SCALE
+        return (reading - self._gyro_offset) * self._gyro_scale
 
     def get_wall_distance(self):
         """Read ultrasonic distance in cm. Returns None on sensor error."""
@@ -202,6 +205,11 @@ class Navigator:
             self._turn_blind(angle_deg)
             return
 
+        # Select scale based on rotation direction before zeroing the offset.
+        self._gyro_scale = (Config.Navigation.GYRO_SCALE_LEFT
+                            if angle_deg > 0
+                            else Config.Navigation.GYRO_SCALE_RIGHT)
+
         # Zero gyro relative to current physical pose (motors stationary = clean read).
         pre_turn_heading = self.heading
         raw_before = self.gyro.get_abs_measure()
@@ -275,7 +283,7 @@ class Navigator:
         # Re-anchor offset so _read_gyro() == self.heading for move() and turn_to_heading().
         raw_after = self.gyro.get_abs_measure()
         if raw_after is not None:
-            self._gyro_offset = raw_after - (self.heading / Config.Navigation.GYRO_SCALE)
+            self._gyro_offset = raw_after - (self.heading / self._gyro_scale)
 
         log.info("_pid_rotate done | target=%.1f actual=%.1f heading=%.1f",
                  angle_deg, actual_rotation or angle_deg, self.heading)
@@ -384,6 +392,9 @@ class Navigator:
         # Settle then read gyro for heading state only — no motor correction.
         # This keeps self.heading accurate so turn_to_heading(sweep_origin) works.
         if use_gyro and self.gyro is not None:
+            self._gyro_scale = (Config.Navigation.GYRO_SCALE_LEFT
+                                if angle_deg > 0
+                                else Config.Navigation.GYRO_SCALE_RIGHT)
             time.sleep(0.3)
             h = self._read_gyro()
             self.heading = h if h is not None else self.heading + angle_deg
@@ -404,7 +415,7 @@ class Navigator:
             return
         raw = self.gyro.get_abs_measure()
         if raw is not None:
-            self._gyro_offset = raw - (known_heading / Config.Navigation.GYRO_SCALE)
+            self._gyro_offset = raw - (known_heading / self._gyro_scale)
         self.heading = known_heading
         log.info("reset_heading | physical_heading=%.1f new_offset=%.1f",
                  known_heading, self._gyro_offset)
@@ -432,6 +443,11 @@ class Navigator:
         if abs(target_heading - current) <= tolerance:
             self.heading = current
             return
+
+        # Set directional scale before the feedback loop.
+        self._gyro_scale = (Config.Navigation.GYRO_SCALE_LEFT
+                            if target_heading > current
+                            else Config.Navigation.GYRO_SCALE_RIGHT)
 
         kp      = 3.0   # dps per degree of error
         min_dps = 35    # below this motors stall; also limits coast to ~0.35 deg
