@@ -156,6 +156,13 @@ class Navigator:
                           progress, self.heading, correction, left_deg, right_deg)
                 last_log_time = now
 
+            # Obstacle check — only while moving forward
+            if direction == 1:
+                us_dist = self.get_wall_distance()
+                if us_dist is not None and us_dist < Config.Navigation.OBSTACLE_STOP_CM:
+                    log.warning("move: obstacle at %.1f cm — stopping early", us_dist)
+                    break
+
             # Color scanning — runs inline, no threading needed
             if assessor is not None:
                 detected = assessor.current_room()
