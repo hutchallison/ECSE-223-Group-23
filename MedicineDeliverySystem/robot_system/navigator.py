@@ -339,7 +339,7 @@ class Navigator:
         rb = Config.Navigation.TRACK_WIDTH_CM / 2
         wheel_degrees = angle_deg * (rb / rw)
 
-        self.left_motor.set_limits(dps=Config.Navigation.SPEED_ROTATE)
+        self.left_motor.set_limits(dps=Config.Navigation.SPEED_ROTATE + self.left_wheel_compensation)
         self.right_motor.set_limits(dps=Config.Navigation.SPEED_ROTATE)
 
         lp = Config.Navigation.LEFT_MOTOR_POLARITY

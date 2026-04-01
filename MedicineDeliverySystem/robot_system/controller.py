@@ -22,7 +22,7 @@ logging.basicConfig(
 log = logging.getLogger("controller")
 
 class Controller:
-    def __init__(self, use_gyro=True):
+    def __init__(self, use_gyro=True, left_wheel_compensation=0):
 
         if use_gyro:
             gyro = EV3GyroSensor(Config.Ports.GYRO)
@@ -31,7 +31,7 @@ class Controller:
             gyro = None
 
         self.gyro = gyro
-        self.nav = Navigator(gyro=gyro)
+        self.nav = Navigator(gyro=gyro, left_wheel_compensation=left_wheel_compensation)
         self.assessor = PatientAssessor()
         self.payload = PayloadController(self.nav)
         self._medicine_dropped = 0
@@ -221,7 +221,8 @@ class Controller:
 
 if __name__ == "__main__":
     use_gyro = input("Use gyro? (y/n): ").strip().lower() == "y"
-    controller = Controller(use_gyro=use_gyro)
+    left_wheel_compensation = int(input("Left wheel compensation DPS (0 = none): ").strip() or "0")
+    controller = Controller(use_gyro=use_gyro, left_wheel_compensation=left_wheel_compensation)
     # controller.payload.engage_clamp()
     # controller.payload.lift_clamp()
 
