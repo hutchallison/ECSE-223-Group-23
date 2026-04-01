@@ -38,16 +38,16 @@ class Controller:
     
     def collect_medicine(self):
         # Code to navigate to the medicine location and collect it
-        self.nav.move_forward(Config.Controller.EXIT_ROOM_DIST, assessor=self.assessor, follow_line=True)
-        self.nav.turn_right()
-        self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor, follow_line=True)
-        self.nav.turn_right()
+        self.nav.move_forward(Config.Controller.EXIT_ROOM_DIST, assessor=self.assessor)#, follow_line=True)
+        self.nav.turn_right(bias=-10)
+        self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)#, follow_line=True)
+        self.nav.turn_right(bias=-6)
         self.payload.pharmacy_pickup()
 
     def go_to_room1(self):
         self.nav.turn_left()
-        self.nav.move_backward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
-        self.nav.turn_left(bias=-15)
+        self.nav.move_backward(Config.Controller.BLACK_LINE_SEGMENT - 1, assessor=self.assessor)
+        self.nav.turn_left(bias=10)
         self.nav.move_forward(Config.Controller.S2_SEGMENT2, assessor=self.assessor)
 
     def sweep_room(self, sweep_left_angle: int, sweep_right_angle: int):
@@ -131,6 +131,11 @@ class Controller:
     def sweep_room4(self):
         self.sweep_room(Config.Controller.SWEEP_ANGLE, Config.Controller.OBSTACLE_SWEEP_ANGLE)
     
+    def sweep_room_cuts(self):
+        self.nav.move_forward(35)
+        self.nav.turn_left(10)
+        self.nav.turn_right(10)
+        self.nav.move_backwards(35)
     def return_to_pharmacy(self, from_room: int):
         # Code to return to the pharmacy after deliveries
         if from_room == 1:

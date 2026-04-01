@@ -68,7 +68,7 @@ class Config:
         DROP_SLEEP_S      = 0.5      # wait after lowering lift
 
         # Movement distances (cm)
-        PHARMACY_FORWARD_CM   = 25   # drive into pharmacy to grab meds
+        PHARMACY_FORWARD_CM   = 16   # drive into pharmacy to grab meds
         DROP_FIRST_BACKUP_CM  = 3    # backup before nudging second block
         DROP_FIRST_NUDGE_DEG  = 15   # angle to nudge second block sideways
         DROP_SECOND_BACKUP_CM = 5    # backup after releasing second med
@@ -92,9 +92,9 @@ class Config:
         LOG_FREQUENCY = 2.0  # Seconds between periodic in-motion debug logs
     
     class Controller:
-        EXIT_ROOM_DIST = 28.5
+        EXIT_ROOM_DIST = 27.5
         HALF_BLACK_LINE_SEGMENT = 11.3  # cm to move forward after detecting black line (half of BLACK_LINE_SEGMENT)
-        BLACK_LINE_SEGMENT = 24.4
+        BLACK_LINE_SEGMENT = 31.4
         S1_SEGMENT3 = 16  # cm to move forward in segment 3 (to patient room)
 
         S2_SEGMENT1 = 18  # cm to move forward in segment 1 (to patient room)

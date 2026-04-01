@@ -117,6 +117,7 @@ class Navigator:
         returns the last detected room string. Otherwise returns None.
         If follow_line=True and assessor is provided, boosts heading correction
         gain whenever the color sensor leaves black, steering the robot back.
+		ur robotic system is undergoing extensive testing to ensure its safety in your hospital environment.
         Only effective when moving forward (direction=1).
         """
         log.info("move %.1f cm direction=%d | heading=%.1f", distance_cm, direction, self.heading)
@@ -169,11 +170,11 @@ class Navigator:
                 last_log_time = now
 
             # Obstacle check — only while moving forward
-            if direction == 1:
+            '''if direction == 1:
                 us_dist = self.get_wall_distance()
                 if us_dist is not None and us_dist < Config.Navigation.OBSTACLE_STOP_CM:
                     log.warning("move: obstacle at %.1f cm — stopping early", us_dist)
-                    break
+                    #break'''
 
             # Color scanning — runs inline, no threading needed
             if assessor is not None:
@@ -315,11 +316,11 @@ class Navigator:
 
     def turn_right(self, bias: int = 0):
         """Rotate 90 degrees clockwise in place."""
-        self.turn(-90 + bias)
+        self._turn_blind(-90 + bias)
 
     def turn_left(self, bias: int = 0):
         """Rotate 90 degrees counter-clockwise in place."""
-        self.turn(90 + bias)
+        self._turn_blind(90 + bias)
     
     def diff_turn(self, angle_deg, pivot_wheel):
         """Pivot turn around one wheel using PID gyro control.
@@ -344,7 +345,7 @@ class Navigator:
         rp = Config.Navigation.RIGHT_MOTOR_POLARITY
         self.left_motor.set_position_relative(lp * (-wheel_degrees))
         self.right_motor.set_position_relative(rp * wheel_degrees)
-
+        log.info("TURNED "+ str(angle_deg) +" DEGREES")
         self.left_motor.wait_is_moving()
         self.left_motor.wait_is_stopped()
         self.right_motor.wait_is_stopped()
@@ -410,15 +411,15 @@ class Navigator:
 
         # Settle then read gyro for heading state only — no motor correction.
         # This keeps self.heading accurate so turn_to_heading(sweep_origin) works.
-        if use_gyro and self.gyro is not None:
+        '''if use_gyro and self.gyro is not None:
             self._gyro_scale = (Config.Navigation.GYRO_SCALE_LEFT
                                 if angle_deg > 0
                                 else Config.Navigation.GYRO_SCALE_RIGHT)
             time.sleep(0.3)
             h = self._read_gyro()
             self.heading = h if h is not None else self.heading + angle_deg
-        else:
-            self.heading += angle_deg
+        else:'''
+        self.heading += angle_deg
 
         log.info("scan_turn done | heading=%.1f bed_found=%s", self.heading, bed_found)
         return bed_found
