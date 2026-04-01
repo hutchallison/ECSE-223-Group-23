@@ -40,7 +40,7 @@ class Controller:
         # Code to navigate to the medicine location and collect it
         self.nav.move_forward(Config.Controller.EXIT_ROOM_DIST, assessor=self.assessor)#, follow_line=True)
         self.nav.turn_right(bias=-10)
-        self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)#, follow_line=True)
+        self.nav.move_forward(Config.Controller.ENTER_PHARMA, assessor=self.assessor)#, follow_line=True)
         self.nav.turn_right(bias=-6)
         self.payload.pharmacy_pickup()
 
