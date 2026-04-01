@@ -26,7 +26,7 @@ class Config:
         WHEEL_CIRCUMFERENCE = 2 * 3.14159 * WHEEL_RADIUS_CM
         
         # Speeds (Degrees Per Second)
-        SPEED_NORMAL = 300
+        SPEED_NORMAL = 500
         SPEED_ROTATE = 150
         SPEED_ROTATE_ADJUST = 50        # Slow scan/trim speed — lower = less vibration-induced gyro drift
 

@@ -257,7 +257,7 @@ if __name__ == "__main__":
     input("Continue? Press Enter to start room 4 sweep... (dropped packets: %d)" % controller._medicine_dropped)
     controller.sweep_room4()
 
-    if controller._medicine_dropped == 2:
+    if controller._medicine_dropped == 2 or controller._medicine_dropped == 0:
         controller.return_to_pharmacy(from_room=4)
         input("Delivery complete!")
         exit(0)
