@@ -334,7 +334,7 @@ class Navigator:
 
     def _turn_blind(self, angle_deg):
         """Encoder-based turn at constant SPEED_ROTATE. No feedback."""
-        time.sleep(0.1)		
+        time.sleep(0.2)		
         rw = Config.Navigation.WHEEL_RADIUS_CM
         rb = Config.Navigation.TRACK_WIDTH_CM / 2
         wheel_degrees = angle_deg * (rb / rw)
