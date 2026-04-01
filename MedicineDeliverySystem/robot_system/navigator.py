@@ -354,73 +354,19 @@ class Navigator:
 
     def scan_turn(self, angle_deg, assessor=None, use_gyro=True):
         """
-        Rotate slowly at SPEED_ROTATE_ADJUST, sampling the color sensor inline.
+        Blind turn using _turn_blind then sample the color sensor at the endpoint.
         Positive angle_deg = CCW (left), negative = CW (right).
 
-        Returns True if a bed is detected mid-sweep, False otherwise.
-
-        Always uses encoder odometry to track rotation progress — gyro is not
-        used mid-sweep because motor vibration corrupts its integrator. When
-        use_gyro=True (default) and a gyro is available, the final heading is
-        read from the gyro after a 300ms settle (no motor correction). This
-        keeps self.heading accurate for subsequent turn_to_heading() calls.
+        Returns True if a bed is detected after the turn, False otherwise.
         """
         angle_deg = float(angle_deg)
         if angle_deg == 0:
             return False
 
-        direction = 1 if angle_deg > 0 else -1
-        target_abs_deg = abs(angle_deg)
-        dps = Config.Navigation.SPEED_ROTATE_ADJUST
-        loop_dt = 0.02
-
-        rw = Config.Navigation.WHEEL_RADIUS_CM
-        rb = Config.Navigation.TRACK_WIDTH_CM / 2
-        target_wheel_deg = target_abs_deg * (rb / rw)
-
-        lp = Config.Navigation.LEFT_MOTOR_POLARITY
-        rp = Config.Navigation.RIGHT_MOTOR_POLARITY
-
         log.info("scan_turn %.1f deg | heading=%.1f", angle_deg, self.heading)
+        self._turn_blind(angle_deg)
 
-        self.left_motor.reset_encoder()
-        self.right_motor.reset_encoder()
-        self.left_motor.set_limits(dps=dps)
-        self.right_motor.set_limits(dps=dps)
-        self.left_motor.set_dps(lp * (-direction * dps))
-        self.right_motor.set_dps(rp * (direction * dps))
-
-        bed_found = False
-        while True:
-            traveled = (abs(self.left_motor.get_encoder()) +
-                        abs(self.right_motor.get_encoder())) / 2
-
-            if assessor is not None and assessor.needs_medicine():
-                bed_found = True
-                robot_deg = traveled / (rb / rw)
-                log.info("scan_turn: bed detected at ~%.1f deg into sweep", robot_deg)
-                break
-
-            if traveled >= target_wheel_deg:
-                break
-
-            time.sleep(loop_dt)
-
-        self.left_motor.set_dps(0)
-        self.right_motor.set_dps(0)
-
-        # Settle then read gyro for heading state only — no motor correction.
-        # This keeps self.heading accurate so turn_to_heading(sweep_origin) works.
-        '''if use_gyro and self.gyro is not None:
-            self._gyro_scale = (Config.Navigation.GYRO_SCALE_LEFT
-                                if angle_deg > 0
-                                else Config.Navigation.GYRO_SCALE_RIGHT)
-            time.sleep(0.3)
-            h = self._read_gyro()
-            self.heading = h if h is not None else self.heading + angle_deg
-        else:'''
-        self.heading += angle_deg
-
+        bed_found = assessor is not None and assessor.needs_medicine()
         log.info("scan_turn done | heading=%.1f bed_found=%s", self.heading, bed_found)
         return bed_found
 

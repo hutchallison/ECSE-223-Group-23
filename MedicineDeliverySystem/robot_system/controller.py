@@ -46,11 +46,52 @@ class Controller:
 
     def go_to_room1(self):
         self.nav.turn_left()
-        self.nav.move_backward(Config.Controller.BLACK_LINE_SEGMENT - 1, assessor=self.assessor)
-        self.nav.turn_left(bias=10)
+        self.nav.move_backward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
+        self.nav.turn_left()
         self.nav.move_forward(Config.Controller.S2_SEGMENT2, assessor=self.assessor)
 
     def sweep_room(self, sweep_left_angle: int, sweep_right_angle: int):
+        if self.gyro:
+            self.sweep_room_gyro(sweep_left_angle, sweep_right_angle)
+        else:
+            self.sweep_room_dumb(sweep_left_angle, sweep_right_angle)
+
+    def sweep_room_dumb(self, sweep_left_angle: int, sweep_right_angle: int):
+        self.nav.move_forward(Config.Controller.MID_ROOM_DIST, assessor=self.assessor)
+        forward_dist = Config.Controller.MID_ROOM_DIST
+        for _ in range(Config.Controller.TOTAL_SWEEPS):
+            self.nav.move_forward(Config.Controller.HALF_BED_DIST, assessor=self.assessor)
+            forward_dist += Config.Controller.HALF_BED_DIST
+
+            bed_found = self.nav.scan_turn(sweep_left_angle, self.assessor)
+            if not bed_found:
+                total_right = sweep_left_angle + sweep_right_angle
+                bed_found = self.nav.scan_turn(-total_right, self.assessor)
+
+            if bed_found:
+                self.nav.move_backward(Config.Controller.SWEEP_BACKUP_TO_DROP_DIST)
+                if self._medicine_dropped == 0:
+                    self.payload.drop_first_med()
+                else:
+                    self.payload.drop_second_med()
+                self._medicine_dropped += 1
+                # Return to entry heading blindly then exit room
+                self.nav._turn_blind(sweep_right_angle)
+                self.nav.move_backward(forward_dist - Config.Controller.HALF_BED_DIST)
+                self.nav.move_backward_until_distance(
+                    Config.Controller.DOOR_EXIT_DISTANCE_CM,
+                    max_dist_cm=Config.Controller.MAX_ROOM_EXIT_DIST
+                )
+                break
+
+            self.nav._turn_blind(sweep_right_angle)
+
+        self.nav.move_backward(forward_dist - Config.Controller.HALF_BED_DIST, assessor=self.assessor)
+        self.nav.move_backward_until_distance(Config.Controller.DOOR_EXIT_DISTANCE_CM, max_dist_cm=Config.Controller.MAX_ROOM_EXIT_DIST)
+
+
+
+    def sweep_room_gyro(self, sweep_left_angle: int, sweep_right_angle: int):
         """Angular sweep of room 1. Scans left then right using encoders (no gyro).
         Encoder-based scan_turn avoids motor-vibration-induced gyro drift during the sweep.
         Gyro is used only for the absolute return to sweep_origin, which is accurate
