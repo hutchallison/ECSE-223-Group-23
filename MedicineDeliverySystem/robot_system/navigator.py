@@ -78,9 +78,14 @@ class Navigator:
                 break
 
             dist = self.get_wall_distance()
-            if dist is not None and dist <= threshold_cm:
-                log.info("move_until_distance: stopped at %.1f cm from wall", dist)
-                break
+            if direction == 1:
+                if dist is not None and dist <= threshold_cm:
+                    log.info("move_until_distance: stopped at %.1f cm from wall (forward)", dist)
+                    break
+            else:
+                if dist is not None and dist >= threshold_cm:
+                    log.info("move_until_distance: stopped at %.1f cm from wall (backward)", dist)
+                    break
 
             correction = 0
             current_heading = self._read_gyro()
@@ -90,8 +95,10 @@ class Navigator:
 
             lp = direction * Config.Navigation.LEFT_MOTOR_POLARITY
             rp = direction * Config.Navigation.RIGHT_MOTOR_POLARITY
-            self.left_motor.set_dps(lp * (base_dps - correction))
-            self.right_motor.set_dps(rp * (base_dps + correction))
+            left_comp = self.left_wheel_compensation if direction == 1 else 0
+            right_comp = self.right_wheel_compensation if direction == 1 else 0
+            self.left_motor.set_dps(lp * (base_dps - correction + left_comp))
+            self.right_motor.set_dps(rp * (base_dps + correction + right_comp))
 
             time.sleep(0.05)
 
