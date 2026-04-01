@@ -113,7 +113,7 @@ class Config:
         MID_ROOM_DIST = 15              # cm to move forward into room before sweeping
         BIAS = 0
         MAX_ROOM_EXIT_DIST = 60         # safety cap for move_until_distance room exit (cm)
-        DOOR_EXIT_DISTANCE_CM = 62.4      # US distance (cm) that indicates robot is at/past the door
+        DOOR_EXIT_DISTANCE_CM = 52.4      # US distance (cm) that indicates robot is at/past the door
 
         DISTANCE_ROOM4_WALL = 101
         STOP_PHARMACY = 15
