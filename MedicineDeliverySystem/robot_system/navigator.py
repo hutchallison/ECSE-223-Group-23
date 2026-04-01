@@ -325,11 +325,11 @@ class Navigator:
 
     def turn_right(self, bias: int = 0):
         """Rotate 90 degrees clockwise in place."""
-        self._turn_blind(-90 + bias)
+        self.turn(-90 + bias)
 
     def turn_left(self, bias: int = 0):
         """Rotate 90 degrees counter-clockwise in place."""
-        self._turn_blind(90 + bias)
+        self.turn(90 + bias)
     
     def diff_turn(self, angle_deg, pivot_wheel):
         """Pivot turn around one wheel using PID gyro control.
@@ -342,8 +342,7 @@ class Navigator:
         log.info("diff_turn done | heading=%.1f", self.heading)
 
     def _turn_blind(self, angle_deg):
-        """Encoder-based turn at constant SPEED_ROTATE. No feedback."""
-        time.sleep(0.2)		
+        """Encoder-based turn at constant SPEED_ROTATE. No feedback."""		
         rw = Config.Navigation.WHEEL_RADIUS_CM
         rb = Config.Navigation.TRACK_WIDTH_CM / 2
         wheel_degrees = angle_deg * (rb / rw)
@@ -356,10 +355,11 @@ class Navigator:
         self.left_motor.set_position_relative(lp * (-wheel_degrees))
         self.right_motor.set_position_relative(rp * wheel_degrees)
         log.info("TURNED "+ str(angle_deg) +" DEGREES")
+        time.sleep(0.2)
         self.left_motor.wait_is_moving()
+        self.right_motor.wait_is_moving()
         self.left_motor.wait_is_stopped()
         self.right_motor.wait_is_stopped()
-
         self.heading += angle_deg
 
     def scan_turn(self, angle_deg, assessor=None, use_gyro=True):
