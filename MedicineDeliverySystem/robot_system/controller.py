@@ -57,28 +57,39 @@ class Controller:
             self.sweep_room_dumb(sweep_left_angle, sweep_right_angle)
 
     def sweep_room_dumb(self, sweep_left_angle: int, sweep_right_angle: int):
+        log.info("sweep_room_dumb start | left=%d right=%d", sweep_left_angle, sweep_right_angle)
         self.nav.move_forward(Config.Controller.MID_ROOM_DIST, assessor=self.assessor)
         forward_dist = Config.Controller.MID_ROOM_DIST
         bed_was_found = False
-        for _ in range(Config.Controller.TOTAL_SWEEPS):
+        for sweep_i in range(Config.Controller.TOTAL_SWEEPS):
+            log.info("sweep_room_dumb sweep %d/%d | forward_dist=%.1f", sweep_i + 1, Config.Controller.TOTAL_SWEEPS, forward_dist)
             self.nav.move_forward(Config.Controller.HALF_BED_DIST, assessor=self.assessor)
             forward_dist += Config.Controller.HALF_BED_DIST
 
+            log.info("sweep_room_dumb scanning LEFT %d deg", sweep_left_angle)
             bed_found = self.nav.scan_turn(sweep_left_angle, self.assessor)
             if bed_found:
+                log.info("sweep_room_dumb bed found on LEFT scan")
                 correction = -sweep_left_angle
             else:
                 total_right = sweep_left_angle + sweep_right_angle
+                log.info("sweep_room_dumb no bed on left, scanning RIGHT %d deg", total_right)
                 bed_found = self.nav.scan_turn(-total_right, self.assessor)
                 correction = sweep_right_angle  # returns to entry heading whether bed found or not
+                if bed_found:
+                    log.info("sweep_room_dumb bed found on RIGHT scan")
+                else:
+                    log.info("sweep_room_dumb no bed found this sweep")
 
             if bed_found:
+                log.info("sweep_room_dumb dropping medicine #%d | correction=%.1f deg", self._medicine_dropped + 1, correction)
                 self.nav.move_backward(Config.Controller.SWEEP_BACKUP_TO_DROP_DIST)
                 if self._medicine_dropped == 0:
                     self.payload.drop_first_med()
                 else:
                     self.payload.drop_second_med()
                 self._medicine_dropped += 1
+                log.info("sweep_room_dumb returning to entry heading, then exiting room")
                 self.nav._turn_blind(correction)
                 self.nav.move_backward(forward_dist - Config.Controller.HALF_BED_DIST)
                 self.nav.move_backward_until_distance(
@@ -88,10 +99,13 @@ class Controller:
                 bed_was_found = True
                 break
 
+            log.info("sweep_room_dumb correcting back to entry heading (%d deg)", correction)
             self.nav._turn_blind(correction)
 
         if bed_was_found:
+            log.info("sweep_room_dumb done | bed found, medicine_dropped=%d", self._medicine_dropped)
             return
+        log.info("sweep_room_dumb done | no bed found after all sweeps, exiting room")
         self.nav.move_backward(forward_dist - Config.Controller.HALF_BED_DIST, assessor=self.assessor)
         self.nav.move_backward_until_distance(Config.Controller.DOOR_EXIT_DISTANCE_CM, max_dist_cm=Config.Controller.MAX_ROOM_EXIT_DIST)
 
