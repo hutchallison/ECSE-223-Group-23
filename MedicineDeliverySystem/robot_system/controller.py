@@ -184,7 +184,7 @@ class Controller:
 
     def go_to_room4(self):
         self.nav.turn_right()
-        self.nav.move_backward_until_distance(Config.Controller.DISTANCE_ROOM4_WALL, di)
+        self.nav.move_backward_until_distance(Config.Controller.DISTANCE_ROOM4_WALL)
         self.nav.turn_left()
     
     def sweep_room4(self):
@@ -195,6 +195,7 @@ class Controller:
         self.nav.turn_left(10)
         self.nav.turn_right(10)
         self.nav.move_backwards(35)
+    
     def return_to_pharmacy(self, from_room: int):
         # Code to return to the pharmacy after deliveries
         if from_room == 1:
