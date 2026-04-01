@@ -22528,3 +22528,345 @@
 2026-04-01 21:19:37,361 INFO     navigator | move 27.0 cm direction=-1 | heading=0.0
 2026-04-01 21:19:39,853 INFO     navigator | move done | traveled=27.3 cm heading=0.0 room=unknown
 2026-04-01 21:19:39,854 INFO     navigator | move_until_distance threshold=52.0 direction=-1 | heading=0.0
+2026-04-01 21:48:43,542 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-01 21:48:43,548 INFO     patient_assessor | PatientAssessor loaded 7 color profiles from /home/pi/ECSE-223-Group-23/MedicineDeliverySystem/robot_system/color_detection/final_project.cal
+2026-04-01 21:48:43,550 INFO     navigator | move 27.5 cm direction=1 | heading=0.0
+2026-04-01 21:48:46,138 INFO     navigator | move done | traveled=28.2 cm heading=0.0 room=unknown
+2026-04-01 21:48:46,140 INFO     navigator | TURNED -100 DEGREES
+2026-04-01 21:48:48,735 INFO     navigator | move 31.4 cm direction=1 | heading=-100.0
+2026-04-01 21:48:51,655 INFO     navigator | move done | traveled=31.7 cm heading=-100.0 room=unknown
+2026-04-01 21:48:51,657 INFO     navigator | TURNED -96 DEGREES
+2026-04-01 21:48:55,661 INFO     navigator | move 16.0 cm direction=1 | heading=-196.0
+2026-04-01 21:48:57,209 INFO     navigator | move done | traveled=16.5 cm heading=-196.0 room=-
+2026-04-01 21:48:58,714 INFO     navigator | move 10.0 cm direction=-1 | heading=-196.0
+2026-04-01 21:48:59,694 INFO     navigator | move done | traveled=10.4 cm heading=-196.0 room=-
+2026-04-01 21:49:01,712 INFO     navigator | TURNED 90 DEGREES
+2026-04-01 21:49:04,191 INFO     navigator | move 31.4 cm direction=-1 | heading=-106.0
+2026-04-01 21:49:07,069 INFO     navigator | move done | traveled=31.4 cm heading=-106.0 room=unknown
+2026-04-01 21:49:07,071 INFO     navigator | TURNED 90 DEGREES
+2026-04-01 21:49:09,585 INFO     navigator | move 24.8 cm direction=1 | heading=-16.0
+2026-04-01 21:49:11,937 INFO     navigator | move done | traveled=25.5 cm heading=-16.0 room=unknown
+2026-04-01 21:49:23,073 INFO     navigator | move 15.0 cm direction=1 | heading=-16.0
+2026-04-01 21:49:24,560 INFO     navigator | move done | traveled=15.9 cm heading=-16.0 room=unknown
+2026-04-01 21:49:24,561 INFO     navigator | move 6.0 cm direction=1 | heading=-16.0
+2026-04-01 21:49:25,239 INFO     navigator | move done | traveled=7.0 cm heading=-16.0 room=unknown
+2026-04-01 21:49:25,240 INFO     navigator | scan_turn 13.0 deg | heading=-16.0
+2026-04-01 21:49:25,243 INFO     navigator | TURNED 13.0 DEGREES
+2026-04-01 21:49:25,779 INFO     navigator | scan_turn done | heading=-3.0 bed_found=None
+2026-04-01 21:49:25,780 INFO     navigator | scan_turn -43.0 deg | heading=-3.0
+2026-04-01 21:49:25,783 INFO     navigator | TURNED -43.0 DEGREES
+2026-04-01 21:49:25,841 INFO     navigator | scan_turn done | heading=-46.0 bed_found=None
+2026-04-01 21:49:25,844 INFO     navigator | TURNED 30 DEGREES
+2026-04-01 21:49:25,932 INFO     navigator | move 6.0 cm direction=1 | heading=-16.0
+2026-04-01 21:49:26,611 INFO     navigator | move done | traveled=6.9 cm heading=-16.0 room=unknown
+2026-04-01 21:49:26,612 INFO     navigator | scan_turn 13.0 deg | heading=-16.0
+2026-04-01 21:49:26,614 INFO     navigator | TURNED 13.0 DEGREES
+2026-04-01 21:49:27,214 INFO     navigator | scan_turn done | heading=-3.0 bed_found=None
+2026-04-01 21:49:27,215 INFO     navigator | scan_turn -43.0 deg | heading=-3.0
+2026-04-01 21:49:27,216 INFO     navigator | TURNED -43.0 DEGREES
+2026-04-01 21:49:28,637 INFO     navigator | scan_turn done | heading=-46.0 bed_found=None
+2026-04-01 21:49:28,639 INFO     navigator | TURNED 30 DEGREES
+2026-04-01 21:49:29,648 INFO     navigator | move 6.0 cm direction=1 | heading=-16.0
+2026-04-01 21:49:30,265 INFO     navigator | move done | traveled=6.2 cm heading=-16.0 room=unknown
+2026-04-01 21:49:30,265 INFO     navigator | scan_turn 13.0 deg | heading=-16.0
+2026-04-01 21:49:30,267 INFO     navigator | TURNED 13.0 DEGREES
+2026-04-01 21:49:30,849 INFO     navigator | scan_turn done | heading=-3.0 bed_found=None
+2026-04-01 21:49:30,850 INFO     navigator | scan_turn -43.0 deg | heading=-3.0
+2026-04-01 21:49:30,852 INFO     navigator | TURNED -43.0 DEGREES
+2026-04-01 21:49:32,229 INFO     navigator | scan_turn done | heading=-46.0 bed_found=None
+2026-04-01 21:49:32,232 INFO     navigator | TURNED 30 DEGREES
+2026-04-01 21:49:33,261 INFO     navigator | move 27.0 cm direction=-1 | heading=-16.0
+2026-04-01 21:49:35,833 INFO     navigator | move done | traveled=28.0 cm heading=-16.0 room=unknown
+2026-04-01 21:49:35,834 INFO     navigator | move_until_distance threshold=52.0 direction=-1 | heading=-16.0
+2026-04-01 21:49:35,836 INFO     navigator | move_until_distance: stopped at 41.0 cm from wall
+2026-04-01 21:49:35,838 INFO     navigator | move_until_distance done | traveled=0.0 cm
+2026-04-01 21:50:32,297 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-01 21:50:32,301 INFO     patient_assessor | PatientAssessor loaded 7 color profiles from /home/pi/ECSE-223-Group-23/MedicineDeliverySystem/robot_system/color_detection/final_project.cal
+2026-04-01 21:50:32,303 INFO     navigator | move 27.5 cm direction=1 | heading=0.0
+2026-04-01 21:50:34,857 INFO     navigator | move done | traveled=27.9 cm heading=0.0 room=unknown
+2026-04-01 21:50:34,859 INFO     navigator | TURNED -100 DEGREES
+2026-04-01 21:50:37,476 INFO     navigator | move 31.4 cm direction=1 | heading=-100.0
+2026-04-01 21:50:40,402 INFO     navigator | move done | traveled=32.0 cm heading=-100.0 room=unknown
+2026-04-01 21:50:40,404 INFO     navigator | TURNED -96 DEGREES
+2026-04-01 21:50:42,004 INFO     navigator | move 17.0 cm direction=1 | heading=-196.0
+2026-04-01 21:51:08,224 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-01 21:51:08,227 INFO     patient_assessor | PatientAssessor loaded 7 color profiles from /home/pi/ECSE-223-Group-23/MedicineDeliverySystem/robot_system/color_detection/final_project.cal
+2026-04-01 21:51:08,229 INFO     navigator | move 27.5 cm direction=1 | heading=0.0
+2026-04-01 21:51:10,792 INFO     navigator | move done | traveled=28.1 cm heading=0.0 room=unknown
+2026-04-01 21:51:10,795 INFO     navigator | TURNED -100 DEGREES
+2026-04-01 21:51:13,405 INFO     navigator | move 31.4 cm direction=1 | heading=-100.0
+2026-04-01 21:51:16,323 INFO     navigator | move done | traveled=31.9 cm heading=-100.0 room=unknown
+2026-04-01 21:51:16,325 INFO     navigator | TURNED -96 DEGREES
+2026-04-01 21:51:20,440 INFO     navigator | move 17.0 cm direction=1 | heading=-196.0
+2026-04-01 21:51:22,039 INFO     navigator | move done | traveled=17.4 cm heading=-196.0 room=-
+2026-04-01 21:51:23,543 INFO     navigator | move 11.0 cm direction=-1 | heading=-196.0
+2026-04-01 21:51:24,576 INFO     navigator | move done | traveled=11.1 cm heading=-196.0 room=-
+2026-04-01 21:51:36,174 INFO     navigator | TURNED 90 DEGREES
+2026-04-01 21:51:38,510 INFO     navigator | move 31.4 cm direction=-1 | heading=-106.0
+2026-04-01 21:51:41,439 INFO     navigator | move done | traveled=32.2 cm heading=-106.0 room=unknown
+2026-04-01 21:51:41,441 INFO     navigator | TURNED 90 DEGREES
+2026-04-01 21:51:43,882 INFO     navigator | move 24.8 cm direction=1 | heading=-16.0
+2026-04-01 21:51:46,230 INFO     navigator | move done | traveled=25.5 cm heading=-16.0 room=unknown
+2026-04-01 21:52:33,453 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-01 21:52:33,457 INFO     patient_assessor | PatientAssessor loaded 7 color profiles from /home/pi/ECSE-223-Group-23/MedicineDeliverySystem/robot_system/color_detection/final_project.cal
+2026-04-01 21:52:33,458 INFO     navigator | move 27.5 cm direction=1 | heading=0.0
+2026-04-01 21:52:36,013 INFO     navigator | move done | traveled=27.9 cm heading=0.0 room=unknown
+2026-04-01 21:52:36,015 INFO     navigator | TURNED -100 DEGREES
+2026-04-01 21:52:38,738 INFO     navigator | move 31.4 cm direction=1 | heading=-100.0
+2026-04-01 21:52:41,659 INFO     navigator | move done | traveled=32.0 cm heading=-100.0 room=unknown
+2026-04-01 21:52:41,661 INFO     navigator | TURNED -96 DEGREES
+2026-04-01 21:52:43,250 INFO     navigator | move 18.0 cm direction=1 | heading=-196.0
+2026-04-01 21:53:09,636 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-01 21:53:09,640 INFO     patient_assessor | PatientAssessor loaded 7 color profiles from /home/pi/ECSE-223-Group-23/MedicineDeliverySystem/robot_system/color_detection/final_project.cal
+2026-04-01 21:53:09,641 INFO     navigator | move 27.5 cm direction=1 | heading=0.0
+2026-04-01 21:53:12,190 INFO     navigator | move done | traveled=27.9 cm heading=0.0 room=unknown
+2026-04-01 21:53:12,192 INFO     navigator | TURNED -100 DEGREES
+2026-04-01 21:53:14,907 INFO     navigator | move 31.4 cm direction=1 | heading=-100.0
+2026-04-01 21:53:17,805 INFO     navigator | move done | traveled=31.8 cm heading=-100.0 room=unknown
+2026-04-01 21:53:17,806 INFO     navigator | TURNED -96 DEGREES
+2026-04-01 21:53:21,872 INFO     navigator | move 18.0 cm direction=1 | heading=-196.0
+2026-04-01 21:53:23,573 INFO     navigator | move done | traveled=18.4 cm heading=-196.0 room=-
+2026-04-01 21:53:25,077 INFO     navigator | move 12.0 cm direction=-1 | heading=-196.0
+2026-04-01 21:53:26,214 INFO     navigator | move done | traveled=12.3 cm heading=-196.0 room=-
+2026-04-01 21:53:28,086 INFO     navigator | TURNED 90 DEGREES
+2026-04-01 21:53:30,409 INFO     navigator | move 31.4 cm direction=-1 | heading=-106.0
+2026-04-01 21:53:33,365 INFO     navigator | move done | traveled=32.5 cm heading=-106.0 room=unknown
+2026-04-01 21:53:33,367 INFO     navigator | TURNED 90 DEGREES
+2026-04-01 21:53:35,838 INFO     navigator | move 24.8 cm direction=1 | heading=-16.0
+2026-04-01 21:53:38,121 INFO     navigator | move done | traveled=24.9 cm heading=-16.0 room=unknown
+2026-04-01 21:53:45,870 INFO     navigator | move 15.0 cm direction=1 | heading=-16.0
+2026-04-01 21:53:47,339 INFO     navigator | move done | traveled=15.8 cm heading=-16.0 room=unknown
+2026-04-01 21:53:47,340 INFO     navigator | move 6.0 cm direction=1 | heading=-16.0
+2026-04-01 21:53:47,923 INFO     navigator | move done | traveled=6.1 cm heading=-16.0 room=unknown
+2026-04-01 21:53:47,924 INFO     navigator | scan_turn 13.0 deg | heading=-16.0
+2026-04-01 21:53:47,925 INFO     navigator | TURNED 13.0 DEGREES
+2026-04-01 21:53:48,441 INFO     navigator | scan_turn done | heading=-3.0 bed_found=None
+2026-04-01 21:53:48,442 INFO     navigator | scan_turn -43.0 deg | heading=-3.0
+2026-04-01 21:53:48,444 INFO     navigator | TURNED -43.0 DEGREES
+2026-04-01 21:53:48,502 INFO     navigator | scan_turn done | heading=-46.0 bed_found=None
+2026-04-01 21:53:48,504 INFO     navigator | TURNED 30 DEGREES
+2026-04-01 21:53:49,463 INFO     navigator | move 6.0 cm direction=1 | heading=-16.0
+2026-04-01 21:53:50,146 INFO     navigator | move done | traveled=7.1 cm heading=-16.0 room=unknown
+2026-04-01 21:53:50,147 INFO     navigator | scan_turn 13.0 deg | heading=-16.0
+2026-04-01 21:53:50,148 INFO     navigator | TURNED 13.0 DEGREES
+2026-04-01 21:53:50,683 INFO     navigator | scan_turn done | heading=-3.0 bed_found=None
+2026-04-01 21:53:50,683 INFO     navigator | scan_turn -43.0 deg | heading=-3.0
+2026-04-01 21:53:50,685 INFO     navigator | TURNED -43.0 DEGREES
+2026-04-01 21:53:51,912 INFO     navigator | scan_turn done | heading=-46.0 bed_found=None
+2026-04-01 21:53:51,915 INFO     navigator | TURNED 30 DEGREES
+2026-04-01 21:53:52,878 INFO     navigator | move 6.0 cm direction=1 | heading=-16.0
+2026-04-01 21:53:53,474 INFO     navigator | move done | traveled=6.1 cm heading=-16.0 room=unknown
+2026-04-01 21:53:53,475 INFO     navigator | scan_turn 13.0 deg | heading=-16.0
+2026-04-01 21:53:53,476 INFO     navigator | TURNED 13.0 DEGREES
+2026-04-01 21:53:54,009 INFO     navigator | scan_turn done | heading=-3.0 bed_found=None
+2026-04-01 21:53:54,010 INFO     navigator | scan_turn -43.0 deg | heading=-3.0
+2026-04-01 21:53:54,012 INFO     navigator | TURNED -43.0 DEGREES
+2026-04-01 21:53:54,070 INFO     navigator | scan_turn done | heading=-46.0 bed_found=None
+2026-04-01 21:53:54,072 INFO     navigator | TURNED 30 DEGREES
+2026-04-01 21:53:55,064 INFO     navigator | move 27.0 cm direction=-1 | heading=-16.0
+2026-04-01 22:01:10,938 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-01 22:01:10,940 INFO     patient_assessor | PatientAssessor loaded 7 color profiles from /home/pi/ECSE-223-Group-23/MedicineDeliverySystem/robot_system/color_detection/final_project.cal
+2026-04-01 22:01:10,940 INFO     navigator | move 27.5 cm direction=1 | heading=0.0
+2026-04-01 22:01:13,500 INFO     navigator | move done | traveled=28.1 cm heading=0.0 room=unknown
+2026-04-01 22:01:13,502 INFO     navigator | TURNED -100 DEGREES
+2026-04-01 22:01:16,091 INFO     navigator | move 31.4 cm direction=1 | heading=-100.0
+2026-04-01 22:01:19,039 INFO     navigator | move done | traveled=32.5 cm heading=-100.0 room=unknown
+2026-04-01 22:01:19,041 INFO     navigator | TURNED -96 DEGREES
+2026-04-01 22:01:23,061 INFO     navigator | move 18.0 cm direction=1 | heading=-196.0
+2026-04-01 22:01:24,763 INFO     navigator | move done | traveled=18.5 cm heading=-196.0 room=-
+2026-04-01 22:01:26,266 INFO     navigator | move 12.0 cm direction=-1 | heading=-196.0
+2026-04-01 22:01:27,404 INFO     navigator | move done | traveled=12.3 cm heading=-196.0 room=-
+2026-04-01 22:01:31,294 INFO     navigator | TURNED 90 DEGREES
+2026-04-01 22:01:33,638 INFO     navigator | move 31.4 cm direction=-1 | heading=-106.0
+2026-04-01 22:01:36,497 INFO     navigator | move done | traveled=31.5 cm heading=-106.0 room=unknown
+2026-04-01 22:01:36,499 INFO     navigator | TURNED 90 DEGREES
+2026-04-01 22:01:38,970 INFO     navigator | move 24.8 cm direction=1 | heading=-16.0
+2026-04-01 22:01:41,278 INFO     navigator | move done | traveled=25.4 cm heading=-16.0 room=unknown
+2026-04-01 22:01:46,020 INFO     navigator | move 15.0 cm direction=1 | heading=-16.0
+2026-04-01 22:01:47,500 INFO     navigator | move done | traveled=16.1 cm heading=-16.0 room=unknown
+2026-04-01 22:01:47,501 INFO     navigator | move 6.0 cm direction=1 | heading=-16.0
+2026-04-01 22:01:48,089 INFO     navigator | move done | traveled=6.2 cm heading=-16.0 room=unknown
+2026-04-01 22:01:48,089 INFO     navigator | scan_turn 13.0 deg | heading=-16.0
+2026-04-01 22:01:48,091 INFO     navigator | TURNED 13.0 DEGREES
+2026-04-01 22:01:48,608 INFO     navigator | scan_turn done | heading=-3.0 bed_found=None
+2026-04-01 22:01:48,609 INFO     navigator | scan_turn -43.0 deg | heading=-3.0
+2026-04-01 22:01:48,611 INFO     navigator | TURNED -43.0 DEGREES
+2026-04-01 22:01:49,846 INFO     navigator | scan_turn done | heading=-46.0 bed_found=None
+2026-04-01 22:01:49,848 INFO     navigator | TURNED 30 DEGREES
+2026-04-01 22:01:50,660 INFO     navigator | move 6.0 cm direction=1 | heading=-16.0
+2026-04-01 22:01:51,282 INFO     navigator | move done | traveled=6.4 cm heading=-16.0 room=unknown
+2026-04-01 22:01:51,283 INFO     navigator | scan_turn 13.0 deg | heading=-16.0
+2026-04-01 22:01:51,285 INFO     navigator | TURNED 13.0 DEGREES
+2026-04-01 22:01:51,815 INFO     navigator | scan_turn done | heading=-3.0 bed_found=None
+2026-04-01 22:01:51,816 INFO     navigator | scan_turn -43.0 deg | heading=-3.0
+2026-04-01 22:01:51,818 INFO     navigator | TURNED -43.0 DEGREES
+2026-04-01 22:01:51,887 INFO     navigator | scan_turn done | heading=-46.0 bed_found=None
+2026-04-01 22:01:51,890 INFO     navigator | TURNED 30 DEGREES
+2026-04-01 22:01:52,859 INFO     navigator | move 6.0 cm direction=1 | heading=-16.0
+2026-04-01 22:01:53,477 INFO     navigator | move done | traveled=6.5 cm heading=-16.0 room=unknown
+2026-04-01 22:01:53,478 INFO     navigator | scan_turn 13.0 deg | heading=-16.0
+2026-04-01 22:01:53,480 INFO     navigator | TURNED 13.0 DEGREES
+2026-04-01 22:01:53,988 INFO     navigator | scan_turn done | heading=-3.0 bed_found=None
+2026-04-01 22:01:53,988 INFO     navigator | scan_turn -43.0 deg | heading=-3.0
+2026-04-01 22:01:53,990 INFO     navigator | TURNED -43.0 DEGREES
+2026-04-01 22:01:55,345 INFO     navigator | scan_turn done | heading=-46.0 bed_found=None
+2026-04-01 22:01:55,349 INFO     navigator | TURNED 30 DEGREES
+2026-04-01 22:01:56,162 INFO     navigator | move 27.0 cm direction=-1 | heading=-16.0
+2026-04-01 22:01:58,646 INFO     navigator | move done | traveled=27.4 cm heading=-16.0 room=unknown
+2026-04-01 22:01:58,647 INFO     navigator | move_until_distance threshold=52.0 direction=-1 | heading=-16.0
+2026-04-01 22:01:58,649 INFO     navigator | move_until_distance: stopped at 36.6 cm from wall
+2026-04-01 22:01:58,651 INFO     navigator | move_until_distance done | traveled=0.0 cm
+2026-04-01 22:03:08,445 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-01 22:03:08,449 INFO     patient_assessor | PatientAssessor loaded 7 color profiles from /home/pi/ECSE-223-Group-23/MedicineDeliverySystem/robot_system/color_detection/final_project.cal
+2026-04-01 22:03:08,450 INFO     navigator | move 27.5 cm direction=1 | heading=0.0
+2026-04-01 22:03:11,026 INFO     navigator | move done | traveled=28.3 cm heading=0.0 room=unknown
+2026-04-01 22:03:11,028 INFO     navigator | TURNED -100 DEGREES
+2026-04-01 22:03:13,637 INFO     navigator | move 31.4 cm direction=1 | heading=-100.0
+2026-04-01 22:03:16,574 INFO     navigator | move done | traveled=32.4 cm heading=-100.0 room=unknown
+2026-04-01 22:03:16,577 INFO     navigator | TURNED -96 DEGREES
+2026-04-01 22:03:20,545 INFO     navigator | move 18.0 cm direction=1 | heading=-196.0
+2026-04-01 22:03:22,247 INFO     navigator | move done | traveled=18.5 cm heading=-196.0 room=-
+2026-04-01 22:03:23,751 INFO     navigator | move 12.0 cm direction=-1 | heading=-196.0
+2026-04-01 22:03:24,886 INFO     navigator | move done | traveled=12.3 cm heading=-196.0 room=-
+2026-04-01 22:03:34,593 INFO     navigator | TURNED 90 DEGREES
+2026-04-01 22:03:36,912 INFO     navigator | move 31.4 cm direction=-1 | heading=-106.0
+2026-04-01 22:03:39,823 INFO     navigator | move done | traveled=32.2 cm heading=-106.0 room=unknown
+2026-04-01 22:03:39,826 INFO     navigator | TURNED 90 DEGREES
+2026-04-01 22:03:42,186 INFO     navigator | move 24.8 cm direction=1 | heading=-16.0
+2026-04-01 22:03:44,483 INFO     navigator | move done | traveled=25.2 cm heading=-16.0 room=unknown
+2026-04-01 22:04:01,308 INFO     navigator | move 15.0 cm direction=1 | heading=-16.0
+2026-04-01 22:04:02,781 INFO     navigator | move done | traveled=16.0 cm heading=-16.0 room=unknown
+2026-04-01 22:04:02,781 INFO     navigator | move 6.0 cm direction=1 | heading=-16.0
+2026-04-01 22:04:03,375 INFO     navigator | move done | traveled=6.1 cm heading=-16.0 room=unknown
+2026-04-01 22:04:03,376 INFO     navigator | scan_turn 13.0 deg | heading=-16.0
+2026-04-01 22:04:03,378 INFO     navigator | TURNED 13.0 DEGREES
+2026-04-01 22:04:03,843 INFO     navigator | scan_turn done | heading=-3.0 bed_found=None
+2026-04-01 22:04:03,844 INFO     navigator | scan_turn -43.0 deg | heading=-3.0
+2026-04-01 22:04:03,846 INFO     navigator | TURNED -43.0 DEGREES
+2026-04-01 22:04:05,059 INFO     navigator | scan_turn done | heading=-46.0 bed_found=None
+2026-04-01 22:04:05,062 INFO     navigator | TURNED 30 DEGREES
+2026-04-01 22:04:05,878 INFO     navigator | move 6.0 cm direction=1 | heading=-16.0
+2026-04-01 22:04:06,479 INFO     navigator | move done | traveled=6.2 cm heading=-16.0 room=unknown
+2026-04-01 22:04:06,479 INFO     navigator | scan_turn 13.0 deg | heading=-16.0
+2026-04-01 22:04:06,481 INFO     navigator | TURNED 13.0 DEGREES
+2026-04-01 22:04:07,009 INFO     navigator | scan_turn done | heading=-3.0 bed_found=None
+2026-04-01 22:04:07,010 INFO     navigator | scan_turn -43.0 deg | heading=-3.0
+2026-04-01 22:04:07,012 INFO     navigator | TURNED -43.0 DEGREES
+2026-04-01 22:04:08,368 INFO     navigator | scan_turn done | heading=-46.0 bed_found=None
+2026-04-01 22:04:08,375 INFO     navigator | TURNED 30 DEGREES
+2026-04-01 22:04:09,196 INFO     navigator | move 6.0 cm direction=1 | heading=-16.0
+2026-04-01 22:04:09,798 INFO     navigator | move done | traveled=6.3 cm heading=-16.0 room=unknown
+2026-04-01 22:04:09,799 INFO     navigator | scan_turn 13.0 deg | heading=-16.0
+2026-04-01 22:04:09,800 INFO     navigator | TURNED 13.0 DEGREES
+2026-04-01 22:04:10,263 INFO     navigator | scan_turn done | heading=-3.0 bed_found=None
+2026-04-01 22:04:10,264 INFO     navigator | scan_turn -43.0 deg | heading=-3.0
+2026-04-01 22:04:10,265 INFO     navigator | TURNED -43.0 DEGREES
+2026-04-01 22:04:10,333 INFO     navigator | scan_turn done | heading=-46.0 bed_found=None
+2026-04-01 22:04:10,335 INFO     navigator | TURNED 30 DEGREES
+2026-04-01 22:04:11,345 INFO     navigator | move 27.0 cm direction=-1 | heading=-16.0
+2026-04-01 22:04:13,832 INFO     navigator | move done | traveled=27.4 cm heading=-16.0 room=unknown
+2026-04-01 22:04:13,839 INFO     navigator | move_until_distance threshold=52.0 direction=-1 | heading=-16.0
+2026-04-01 22:04:13,842 INFO     navigator | move_until_distance: stopped at 43.9 cm from wall
+2026-04-01 22:04:13,845 INFO     navigator | move_until_distance done | traveled=0.1 cm
+2026-04-01 22:10:57,012 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-01 22:10:57,016 INFO     patient_assessor | PatientAssessor loaded 7 color profiles from /home/pi/ECSE-223-Group-23/MedicineDeliverySystem/robot_system/color_detection/final_project.cal
+2026-04-01 22:10:57,017 INFO     navigator | move 27.5 cm direction=1 | heading=0.0
+2026-04-01 22:10:59,582 INFO     navigator | move done | traveled=28.3 cm heading=0.0 room=unknown
+2026-04-01 22:10:59,685 INFO     navigator | TURNED -100 DEGREES
+2026-04-01 22:11:02,399 INFO     navigator | move 31.4 cm direction=1 | heading=-100.0
+2026-04-01 22:11:05,339 INFO     navigator | move done | traveled=32.5 cm heading=-100.0 room=unknown
+2026-04-01 22:11:05,442 INFO     navigator | TURNED -96 DEGREES
+2026-04-01 22:11:09,456 INFO     navigator | move 18.0 cm direction=1 | heading=-196.0
+2026-04-01 22:11:11,156 INFO     navigator | move done | traveled=18.5 cm heading=-196.0 room=-
+2026-04-01 22:11:12,660 INFO     navigator | move 12.0 cm direction=-1 | heading=-196.0
+2026-04-01 22:11:13,796 INFO     navigator | move done | traveled=12.3 cm heading=-196.0 room=-
+2026-04-01 22:11:14,280 INFO     navigator | TURNED 90 DEGREES
+2026-04-01 22:11:16,649 INFO     navigator | move 31.4 cm direction=-1 | heading=-106.0
+2026-04-01 22:11:19,545 INFO     navigator | move done | traveled=32.0 cm heading=-106.0 room=unknown
+2026-04-01 22:11:19,648 INFO     navigator | TURNED 90 DEGREES
+2026-04-01 22:11:21,969 INFO     navigator | move 24.8 cm direction=1 | heading=-16.0
+2026-04-01 22:11:24,278 INFO     navigator | move done | traveled=25.3 cm heading=-16.0 room=unknown
+2026-04-01 22:11:29,894 INFO     navigator | move 15.0 cm direction=1 | heading=-16.0
+2026-04-01 22:11:31,295 INFO     navigator | move done | traveled=15.2 cm heading=-16.0 room=unknown
+2026-04-01 22:11:31,295 INFO     navigator | move 6.0 cm direction=1 | heading=-16.0
+2026-04-01 22:11:31,887 INFO     navigator | move done | traveled=6.2 cm heading=-16.0 room=unknown
+2026-04-01 22:11:31,888 INFO     navigator | scan_turn 13.0 deg | heading=-16.0
+2026-04-01 22:11:31,990 INFO     navigator | TURNED 13.0 DEGREES
+2026-04-01 22:11:32,424 INFO     navigator | scan_turn done | heading=-3.0 bed_found=None
+2026-04-01 22:11:32,425 INFO     navigator | scan_turn -43.0 deg | heading=-3.0
+2026-04-01 22:11:32,528 INFO     navigator | TURNED -43.0 DEGREES
+2026-04-01 22:11:32,685 INFO     navigator | scan_turn done | heading=-46.0 bed_found=None
+2026-04-01 22:11:32,788 INFO     navigator | TURNED 30 DEGREES
+2026-04-01 22:11:33,772 INFO     navigator | move 6.0 cm direction=1 | heading=-16.0
+2026-04-01 22:11:34,404 INFO     navigator | move done | traveled=6.6 cm heading=-16.0 room=unknown
+2026-04-01 22:11:34,405 INFO     navigator | scan_turn 13.0 deg | heading=-16.0
+2026-04-01 22:11:34,508 INFO     navigator | TURNED 13.0 DEGREES
+2026-04-01 22:11:44,675 INFO     navigator | scan_turn done | heading=-3.0 bed_found=None
+2026-04-01 22:11:44,676 INFO     navigator | scan_turn -43.0 deg | heading=-3.0
+2026-04-01 22:11:44,779 INFO     navigator | TURNED -43.0 DEGREES
+2026-04-01 22:11:46,056 INFO     navigator | scan_turn done | heading=-46.0 bed_found=None
+2026-04-01 22:11:46,160 INFO     navigator | TURNED 30 DEGREES
+2026-04-01 22:11:47,049 INFO     navigator | move 6.0 cm direction=1 | heading=-16.0
+2026-04-01 22:11:47,669 INFO     navigator | move done | traveled=6.5 cm heading=-16.0 room=unknown
+2026-04-01 22:11:47,670 INFO     navigator | scan_turn 13.0 deg | heading=-16.0
+2026-04-01 22:11:47,773 INFO     navigator | TURNED 13.0 DEGREES
+2026-04-01 22:11:48,183 INFO     navigator | scan_turn done | heading=-3.0 bed_found=None
+2026-04-01 22:11:48,184 INFO     navigator | scan_turn -43.0 deg | heading=-3.0
+2026-04-01 22:11:48,287 INFO     navigator | TURNED -43.0 DEGREES
+2026-04-01 22:11:49,671 INFO     navigator | scan_turn done | heading=-46.0 bed_found=None
+2026-04-01 22:11:49,774 INFO     navigator | TURNED 30 DEGREES
+2026-04-01 22:11:50,630 INFO     navigator | move 27.0 cm direction=-1 | heading=-16.0
+2026-04-01 22:11:53,168 INFO     navigator | move done | traveled=28.0 cm heading=-16.0 room=unknown
+2026-04-01 22:11:53,169 INFO     navigator | move_until_distance threshold=52.0 direction=-1 | heading=-16.0
+2026-04-01 22:11:57,825 INFO     navigator | move_until_distance: stopped at 11.2 cm from wall
+2026-04-01 22:11:57,828 INFO     navigator | move_until_distance done | traveled=51.8 cm
+2026-04-01 22:12:18,409 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-01 22:12:18,413 INFO     patient_assessor | PatientAssessor loaded 7 color profiles from /home/pi/ECSE-223-Group-23/MedicineDeliverySystem/robot_system/color_detection/final_project.cal
+2026-04-01 22:12:18,414 INFO     navigator | move 27.5 cm direction=1 | heading=0.0
+2026-04-01 22:12:20,997 INFO     navigator | move done | traveled=28.5 cm heading=0.0 room=unknown
+2026-04-01 22:12:21,101 INFO     navigator | TURNED -100 DEGREES
+2026-04-01 22:12:23,675 INFO     navigator | move 31.4 cm direction=1 | heading=-100.0
+2026-04-01 22:12:26,560 INFO     navigator | move done | traveled=31.8 cm heading=-100.0 room=unknown
+2026-04-01 22:12:26,663 INFO     navigator | TURNED -96 DEGREES
+2026-04-01 22:12:30,691 INFO     navigator | move 18.0 cm direction=1 | heading=-196.0
+2026-04-01 22:12:32,393 INFO     navigator | move done | traveled=18.6 cm heading=-196.0 room=-
+2026-04-01 22:12:33,897 INFO     navigator | move 12.0 cm direction=-1 | heading=-196.0
+2026-04-01 22:12:35,035 INFO     navigator | move done | traveled=12.3 cm heading=-196.0 room=-
+2026-04-01 22:12:39,508 INFO     navigator | TURNED 90 DEGREES
+2026-04-01 22:12:41,839 INFO     navigator | move 31.4 cm direction=-1 | heading=-106.0
+2026-04-01 22:12:44,734 INFO     navigator | move done | traveled=32.0 cm heading=-106.0 room=unknown
+2026-04-01 22:12:44,843 INFO     navigator | TURNED 90 DEGREES
+2026-04-01 22:12:47,190 INFO     navigator | move 24.8 cm direction=1 | heading=-16.0
+2026-04-01 22:12:49,485 INFO     navigator | move done | traveled=25.2 cm heading=-16.0 room=unknown
+2026-04-01 22:12:54,990 INFO     navigator | move 15.0 cm direction=1 | heading=-16.0
+2026-04-01 22:12:56,400 INFO     navigator | move done | traveled=15.3 cm heading=-16.0 room=unknown
+2026-04-01 22:12:56,401 INFO     navigator | move 6.0 cm direction=1 | heading=-16.0
+2026-04-01 22:12:56,992 INFO     navigator | move done | traveled=6.2 cm heading=-16.0 room=unknown
+2026-04-01 22:12:56,998 INFO     navigator | scan_turn 13.0 deg | heading=-16.0
+2026-04-01 22:12:57,100 INFO     navigator | TURNED 13.0 DEGREES
+2026-04-01 22:12:57,512 INFO     navigator | scan_turn done | heading=-3.0 bed_found=None
+2026-04-01 22:12:57,513 INFO     navigator | scan_turn -43.0 deg | heading=-3.0
+2026-04-01 22:12:57,616 INFO     navigator | TURNED -43.0 DEGREES
+2026-04-01 22:12:57,708 INFO     navigator | scan_turn done | heading=-46.0 bed_found=None
+2026-04-01 22:12:57,811 INFO     navigator | TURNED 30 DEGREES
+2026-04-01 22:12:57,856 INFO     navigator | move 6.0 cm direction=1 | heading=-16.0
+2026-04-01 22:12:58,448 INFO     navigator | move done | traveled=6.1 cm heading=-16.0 room=unknown
+2026-04-01 22:12:58,449 INFO     navigator | scan_turn 13.0 deg | heading=-16.0
+2026-04-01 22:12:58,552 INFO     navigator | TURNED 13.0 DEGREES
+2026-04-01 22:12:59,102 INFO     navigator | scan_turn done | heading=-3.0 bed_found=None
+2026-04-01 22:12:59,103 INFO     navigator | scan_turn -43.0 deg | heading=-3.0
+2026-04-01 22:12:59,206 INFO     navigator | TURNED -43.0 DEGREES
+2026-04-01 22:12:59,330 INFO     navigator | scan_turn done | heading=-46.0 bed_found=None
+2026-04-01 22:12:59,433 INFO     navigator | TURNED 30 DEGREES
+2026-04-01 22:13:00,289 INFO     navigator | move 6.0 cm direction=1 | heading=-16.0
+2026-04-01 22:13:00,904 INFO     navigator | move done | traveled=6.5 cm heading=-16.0 room=unknown
+2026-04-01 22:13:00,906 INFO     navigator | scan_turn 13.0 deg | heading=-16.0
+2026-04-01 22:13:01,009 INFO     navigator | TURNED 13.0 DEGREES
+2026-04-01 22:13:01,454 INFO     navigator | scan_turn done | heading=-3.0 bed_found=None
+2026-04-01 22:13:01,455 INFO     navigator | scan_turn -43.0 deg | heading=-3.0
+2026-04-01 22:13:01,557 INFO     navigator | TURNED -43.0 DEGREES
+2026-04-01 22:13:02,762 INFO     navigator | scan_turn done | heading=-46.0 bed_found=None
+2026-04-01 22:13:02,865 INFO     navigator | TURNED 30 DEGREES
+2026-04-01 22:13:03,676 INFO     navigator | move 27.0 cm direction=-1 | heading=-16.0
+2026-04-01 22:13:06,154 INFO     navigator | move done | traveled=27.4 cm heading=-16.0 room=unknown
+2026-04-01 22:13:06,155 INFO     navigator | move_until_distance threshold=52.0 direction=-1 | heading=-16.0

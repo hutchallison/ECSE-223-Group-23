@@ -68,7 +68,7 @@ class Config:
         DROP_SLEEP_S      = 0.5      # wait after lowering lift
 
         # Movement distances (cm)
-        PHARMACY_FORWARD_CM   = 16   # drive into pharmacy to grab meds
+        PHARMACY_FORWARD_CM   = 18   # drive into pharmacy to grab meds
         DROP_FIRST_BACKUP_CM  = 3    # backup before nudging second block
         DROP_FIRST_NUDGE_DEG  = 15   # angle to nudge second block sideways
         DROP_SECOND_BACKUP_CM = 5    # backup after releasing second med
