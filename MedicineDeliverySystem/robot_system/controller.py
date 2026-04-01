@@ -46,7 +46,7 @@ class Controller:
 
     def go_to_room1(self):
         self.nav.turn_left()
-        self.nav.move_backward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor)
+        self.nav.move_backward(Config.Controller.ENTER_PHARMA, assessor=self.assessor)
         self.nav.turn_left()
         self.nav.move_forward(Config.Controller.S2_SEGMENT2, assessor=self.assessor)
 
