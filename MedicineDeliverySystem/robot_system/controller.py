@@ -59,14 +59,18 @@ class Controller:
     def sweep_room_dumb(self, sweep_left_angle: int, sweep_right_angle: int):
         self.nav.move_forward(Config.Controller.MID_ROOM_DIST, assessor=self.assessor)
         forward_dist = Config.Controller.MID_ROOM_DIST
+        bed_was_found = False
         for _ in range(Config.Controller.TOTAL_SWEEPS):
             self.nav.move_forward(Config.Controller.HALF_BED_DIST, assessor=self.assessor)
             forward_dist += Config.Controller.HALF_BED_DIST
 
             bed_found = self.nav.scan_turn(sweep_left_angle, self.assessor)
-            if not bed_found:
+            if bed_found:
+                correction = -sweep_left_angle
+            else:
                 total_right = sweep_left_angle + sweep_right_angle
                 bed_found = self.nav.scan_turn(-total_right, self.assessor)
+                correction = sweep_right_angle  # returns to entry heading whether bed found or not
 
             if bed_found:
                 self.nav.move_backward(Config.Controller.SWEEP_BACKUP_TO_DROP_DIST)
@@ -75,21 +79,21 @@ class Controller:
                 else:
                     self.payload.drop_second_med()
                 self._medicine_dropped += 1
-                # Return to entry heading blindly then exit room
-                self.nav._turn_blind(sweep_right_angle)
+                self.nav._turn_blind(correction)
                 self.nav.move_backward(forward_dist - Config.Controller.HALF_BED_DIST)
                 self.nav.move_backward_until_distance(
                     Config.Controller.DOOR_EXIT_DISTANCE_CM,
                     max_dist_cm=Config.Controller.MAX_ROOM_EXIT_DIST
                 )
+                bed_was_found = True
                 break
 
-            self.nav._turn_blind(sweep_right_angle)
+            self.nav._turn_blind(correction)
 
+        if bed_was_found:
+            return
         self.nav.move_backward(forward_dist - Config.Controller.HALF_BED_DIST, assessor=self.assessor)
         self.nav.move_backward_until_distance(Config.Controller.DOOR_EXIT_DISTANCE_CM, max_dist_cm=Config.Controller.MAX_ROOM_EXIT_DIST)
-
-
 
     def sweep_room_gyro(self, sweep_left_angle: int, sweep_right_angle: int):
         """Angular sweep of room 1. Scans left then right using encoders (no gyro).
