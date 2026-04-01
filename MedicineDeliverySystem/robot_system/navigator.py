@@ -8,11 +8,12 @@ log = logging.getLogger(__name__)
 
 
 class Navigator:
-    def __init__(self, gyro=None, left_wheel_compensation=0):
+    def __init__(self, gyro=None, left_wheel_compensation=0, right_wheel_compensation=0):
         self.left_motor = Motor(Config.Ports.LEFT_MOTOR)
         self.right_motor = Motor(Config.Ports.RIGHT_MOTOR)
         self.gyro = gyro
         self.left_wheel_compensation = left_wheel_compensation
+        self.right_wheel_compensation = right_wheel_compensation
         self.us = EV3UltrasonicSensor(Config.Ports.ULTRASONIC)
         self.heading = 0.0
         # Directional scale: CCW (left) and CW (right) are calibrated separately.
@@ -158,8 +159,9 @@ class Navigator:
             lp = direction * Config.Navigation.LEFT_MOTOR_POLARITY
             rp = direction * Config.Navigation.RIGHT_MOTOR_POLARITY
             left_comp = self.left_wheel_compensation if direction == 1 else 0
+            right_comp = self.right_wheel_compensation if direction == 1 else 0
             self.left_motor.set_dps(lp * (base_dps - correction + left_comp))
-            self.right_motor.set_dps(rp * (base_dps + correction))
+            self.right_motor.set_dps(rp * (base_dps + correction + right_comp))
 
             # Log position every 2 seconds
             now = time.time()
@@ -340,7 +342,7 @@ class Navigator:
         wheel_degrees = angle_deg * (rb / rw)
 
         self.left_motor.set_limits(dps=Config.Navigation.SPEED_ROTATE + self.left_wheel_compensation)
-        self.right_motor.set_limits(dps=Config.Navigation.SPEED_ROTATE)
+        self.right_motor.set_limits(dps=Config.Navigation.SPEED_ROTATE + self.right_wheel_compensation)
 
         lp = Config.Navigation.LEFT_MOTOR_POLARITY
         rp = Config.Navigation.RIGHT_MOTOR_POLARITY
