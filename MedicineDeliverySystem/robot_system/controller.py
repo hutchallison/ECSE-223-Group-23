@@ -45,9 +45,9 @@ class Controller:
         self.payload.pharmacy_pickup()
 
     def go_to_room1(self):
-        self.nav.turn_left()
+        self.nav.turn_left(bias=6)
         self.nav.move_backward(Config.Controller.ENTER_PHARMA, assessor=self.assessor)
-        self.nav.turn_left()
+        self.nav.turn_left(bias=10)
         self.nav.move_forward(Config.Controller.S2_SEGMENT2, assessor=self.assessor)
 
     def sweep_room(self, sweep_left_angle: int, sweep_right_angle: int):
