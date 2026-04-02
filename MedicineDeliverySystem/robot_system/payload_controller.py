@@ -41,7 +41,7 @@ class PayloadController:
         
     def pharmacy_pickup(self) -> None:
         #log.info("Picking up meds from pharmacy...")
-        self.drop_clamp()
+        #self.drop_clamp()
         self.disengage_clamp()
         self.nav.move_forward(Config.Payload.PHARMACY_FORWARD_CM)
         self.engage_clamp()

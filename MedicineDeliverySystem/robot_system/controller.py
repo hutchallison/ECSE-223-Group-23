@@ -45,9 +45,9 @@ class Controller:
         self.payload.pharmacy_pickup()
 
     def go_to_room1(self):
-        self.nav.turn_left(bias=6)
+        self.nav.turn_left(bias=0)
         self.nav.move_backward(Config.Controller.ENTER_PHARMA, assessor=self.assessor)
-        self.nav.turn_left(bias=10)
+        self.nav.turn_left(bias=5)
         self.nav.move_forward(Config.Controller.S2_SEGMENT2, assessor=self.assessor)
 
     def sweep_room(self, sweep_left_angle: int, sweep_right_angle: int):
@@ -172,15 +172,15 @@ class Controller:
         self.sweep_room(Config.Controller.OBSTACLE_SWEEP_ANGLE, Config.Controller.SWEEP_ANGLE)
 
     def go_to_room2(self):
-        self.nav.turn_right()
-        self.nav.move_forward(2 * Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor, follow_line=True)
+        self.nav.turn_right(bias=3)
+        self.nav.move_forward(1.90 * Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor, follow_line=True)
     
     def sweep_room_standard(self):
         self.sweep_room(Config.Controller.SWEEP_ANGLE, Config.Controller.SWEEP_ANGLE)
     
     def go_to_room3(self):
         self.nav.move_forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor, follow_line=True)
-        self.nav.turn_right()
+        self.nav.turn_right(bias=-3)
 
     def go_to_room4(self):
         self.nav.turn_right()

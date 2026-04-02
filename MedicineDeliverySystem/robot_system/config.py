@@ -94,7 +94,7 @@ class Config:
     class Controller:
         EXIT_ROOM_DIST = 27.5
         HALF_BLACK_LINE_SEGMENT = 11.3  # cm to move forward after detecting black line (half of BLACK_LINE_SEGMENT)
-        BLACK_LINE_SEGMENT = 24.4
+        BLACK_LINE_SEGMENT = 27.0
         ENTER_PHARMA = 31.4
         S1_SEGMENT3 = 16  # cm to move forward in segment 3 (to patient room)
 
