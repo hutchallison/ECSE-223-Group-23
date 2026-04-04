@@ -4,11 +4,12 @@ import time
 
 from navigator import Navigator
 from config import Config
-from utils.brick import EV3GyroSensor, wait_ready_sensors
+from utils.brick import EV3GyroSensor, TouchSensor, wait_ready_sensors
 from patient_assessor import PatientAssessor
 from payload_controller import PayloadController
 import logging
 import math
+import threading
 
 log = logging.getLogger(__name__)
 
@@ -27,10 +28,13 @@ class Controller:
     def __init__(self, use_gyro=True, left_wheel_compensation=0, right_wheel_compensation=0):
 
         if use_gyro:
-            gyro = EV3GyroSensor(Config.Ports.GYRO)
+            touch = EV3GyroSensor(Config.Ports.GYRO)
             wait_ready_sensors()
         else:
             gyro = None
+
+        self.touch_sensor = TouchSensor(4)
+        wait_ready_sensors()
 
         self.gyro = gyro
         self.nav = Navigator(gyro=gyro, left_wheel_compensation=left_wheel_compensation, right_wheel_compensation=right_wheel_compensation)
@@ -175,12 +179,24 @@ class Controller:
             self.nav.turn_left()
             self.nav.move_until_distance(Config.Controller.STOP_PHARMACY)
 
+    def check_emegency_stop(self):
+        if self.touch_sensor.is_pressed():
+            log.warning("Emergency stop triggered!")
+            self.nav.stop()
+            sys.exit(0)
+
+    def start_emergency_thread(self):
+        thread = threading.Thread(target=self.check_emegency_stop, daemon=True)
+        thread.start()
+
+
+
 if __name__ == "__main__":
     use_gyro = False #input("Use gyro? (y/n): ").strip().lower() == "y"
     left_wheel_compensation = 0 #int(input("Left wheel compensation DPS (0 = none): ").strip() or "0")
     right_wheel_compensation = 0 #int(input("Right wheel compensation DPS (0 = none): ").strip() or "0")
     controller = Controller(use_gyro=use_gyro, left_wheel_compensation=left_wheel_compensation, right_wheel_compensation=right_wheel_compensation)
-
+    controller.start_emergency_thread()
     controller.collect_medicine()
     input("Press Enter to start room 1 sweep...")
     controller.sweep_room1()
