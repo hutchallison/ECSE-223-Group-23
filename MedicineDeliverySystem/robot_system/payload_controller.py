@@ -28,8 +28,9 @@ class PayloadController:
         #log.info("Claw closed")
 
     def actually_open(self) -> None:
-        self.clamp_motor.set_position_relative(-Config.Payload.CLAMP_CLOSE_DEG + 5)
-        time.sleep(Config.Payload.DISENGAGE_SLEEP_S)
+        self.disengage_clamp()
+        #self.clamp_motor.set_position_relative(-Config.Payload.CLAMP_CLOSE_DEG + 5)
+        #time.sleep(Config.Payload.DISENGAGE_SLEEP_S)
 
     def disengage_clamp(self) -> None:
         # opens the claw
