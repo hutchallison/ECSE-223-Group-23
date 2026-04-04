@@ -3,6 +3,7 @@ import sys
 import pickle
 import logging
 import numpy as np
+import time
 
 # Make color_detection importable regardless of cwd
 _here = os.path.dirname(os.path.abspath(__file__))
@@ -11,7 +12,7 @@ if _here not in sys.path:
 
 from color_detection.create_gauss import create_gaussian
 from color_detection.bhatta_dist import bhatta_distance
-from utils.brick import EV3ColorSensor
+from utils.brick import EV3ColorSensor, wait_ready_sensors
 from config import Config
 
 log = logging.getLogger(__name__)
@@ -29,7 +30,7 @@ _COLOR_TO_ROOM = {
 _NEEDS_MEDICINE_COLOR = "green"
 _NO_MEDICINE_COLOR    = "red"
 
-_CAL_FILE = os.path.join(_here, "color_detection", "final_project.cal")
+_CAL_FILE = "test1.pkl"
 
 
 class PatientAssessor:
@@ -43,11 +44,12 @@ class PatientAssessor:
     Meds:   True (needs) | False (healthy) | None (undetermined)
     """
 
-    WINDOW_SIZE = 500
+    WINDOW_SIZE = 250
 
     def __init__(self, cal_file: str = _CAL_FILE):
         self._sensor = EV3ColorSensor(Config.Ports.COLOR)
-        self._window = np.zeros((3, self.WINDOW_SIZE))
+        wait_ready_sensors(True)
+        self._unknown_data = np.zeros((3, self.WINDOW_SIZE))
 
         try:
             with open(cal_file, "rb") as f:
@@ -62,27 +64,31 @@ class PatientAssessor:
 
     def detect(self):
         """Sample the sensor, update the sliding window, return closest color name."""
-        if not self._known_colors:
-            return None
+        for _ in range(self.WINDOW_SIZE):
+            time.sleep(0.00001)
+            rgb_values = self._sensor.get_rgb()
+            if rgb_values and None not in rgb_values:
+                self._unknown_data = np.roll(self._unknown_data, -1, axis=1)
+                red, green, blue = rgb_values
+                self._unknown_data[:, -1] = [int(red), int(green), int(blue)]
 
-        for _ in range(self.WINDOW_SIZE // 4):
-            rgb = self._sensor.get_rgb()
-            if rgb and None not in rgb:
-                self._window = np.roll(self._window, -1, axis=1)
-                self._window[:, -1] = [int(rgb[0]), int(rgb[1]), int(rgb[2])]
+        mean1, cov1 = create_gaussian(self._unknown_data)
 
-        mean1, cov1 = create_gaussian(self._window)
-
-        best_color, best_dist = None, None
-        for name, profile in self._known_colors.items():
-            dist = bhatta_distance(mean1, cov1, profile["mean"], profile["cov"])
-            if dist is None:
-                continue
-            if best_dist is None or dist < best_dist:
-                best_dist, best_color = dist, name
-
-        log.debug("PatientAssessor.detect → %s (dist=%s)", best_color, best_dist)
-        return best_color
+        min_bhatta_dist = None
+        min_bhatta_dist_color = None
+        for key in self._known_colors:
+            mean2 = self._known_colors[key]["mean"]
+            cov2 = self._known_colors[key]["cov"]
+            current_bhatta_dist = bhatta_distance(mean1, cov1, mean2, cov2)
+            if min_bhatta_dist is None:
+                min_bhatta_dist = current_bhatta_dist
+                min_bhatta_dist_color = key
+            elif current_bhatta_dist is None:
+                print("wtf")
+            elif current_bhatta_dist < min_bhatta_dist:
+                min_bhatta_dist = current_bhatta_dist
+                min_bhatta_dist_color = key
+        return  min_bhatta_dist_color #, unknown_color_data
 
     # ── Public API ───────────────────────────────────────────────────────────
 
@@ -131,3 +137,8 @@ class PatientAssessor:
         """Returns True if fast_color() matches target (case-insensitive)."""
         detected = self.fast_color(n_samples)
         return detected is not None and detected.lower() == target.lower()
+
+if __name__ == "__main__":
+    assessor = PatientAssessor()
+    while True:
+        print(assessor.detect())

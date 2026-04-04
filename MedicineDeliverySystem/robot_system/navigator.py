@@ -67,7 +67,6 @@ class Navigator:
 
         self.left_motor.reset_encoder()
         self.right_motor.reset_encoder()
-
         while True:
             left_deg  = abs(self.left_motor.get_encoder())
             right_deg = abs(self.right_motor.get_encoder())
@@ -79,10 +78,14 @@ class Navigator:
 
             dist = self.get_wall_distance()
             if direction == 1:
+                time.sleep(0.1)
+                dist = self.get_wall_distance()
                 if dist is not None and dist <= threshold_cm:
                     log.info("move_until_distance: stopped at %.1f cm from wall (forward)", dist)
                     break
             else:
+                time.sleep(0.1)
+                dist = self.get_wall_distance()
                 if dist is not None and dist >= threshold_cm:
                     log.info("move_until_distance: stopped at %.1f cm from wall (backward)", dist)
                     break

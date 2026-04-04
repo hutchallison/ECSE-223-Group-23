@@ -52,20 +52,23 @@ class Config:
         GYRO_SCALE_RIGHT = 1.8367
         GYRO_SCALE_LEFT = 1.8367           # Gyro angle scale factor (adjust if gyro is inaccurate)
 
+    class Drop:
+        BACK = 10.7
+        LENGTH = BACK + 6.9
     class Payload:
         # Clamp Positions (Degrees, relative)
         CLAMP_CLOSE_DEG = 110        # degrees to close the clamp
         CLAMP_OPEN_DEG  = -90        # degrees to open the clamp (reverse close)
 
         # Lift Positions (Degrees, absolute)
-        LIFT_UP_POS  = -15           # absolute encoder position for raised lift
-        LIFT_DOWN_POS = 5           # absolute encoder position for lowered lift
+        LIFT_UP_POS  = -40          # absolute encoder position for raised lift
+        LIFT_DOWN_POS = 0           # absolute encoder position for lowered lift
 
         # Sleep durations (seconds)
         ENGAGE_SLEEP_S    = 0.5      # wait after closing clamp
         DISENGAGE_SLEEP_S = 1.0      # wait after opening clamp
         LIFT_SLEEP_S      = 1.0      # wait after raising lift
-        DROP_SLEEP_S      = 0.5      # wait after lowering lift
+        DROP_SLEEP_S      = 1      # wait after lowering lift
 
         # Movement distances (cm)
         PHARMACY_FORWARD_CM   = 18   # drive into pharmacy to grab meds
@@ -105,8 +108,8 @@ class Config:
         SWEEP_DIFF = 5 # cm to move forward/backward during sweep turns
 
         # Angular sweep (room 1 redesign)
-        OBSTACLE_SWEEP_ANGLE = 13           # degrees CCW from entry heading
-        SWEEP_ANGLE = 30          # degrees CW from entry heading
+        OBSTACLE_SWEEP_ANGLE = 15           # degrees CCW from entry heading
+        SWEEP_ANGLE = 33          # degrees CW from entry heading
         HALF_BED_DIST = 6               # cm nudge forward when no bed detected
         SWEEP_BACKUP_TO_DROP_DIST = 4
         TOTAL_SWEEPS = 3                # Number of times to repeat sweep if no bed found

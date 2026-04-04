@@ -16,12 +16,20 @@ class PayloadController:
         self.nav = navigator
         self.clamp_motor = Motor(Config.Ports.CLAMP_MOTOR)
         self.lift_motor = Motor(Config.Ports.LIFT_MOTOR)
+        self.clamp_motor.reset_encoder()
+        self.clamp_motor.reset_position()
+        self.lift_motor.reset_encoder()
+        self.lift_motor.reset_position()
     
     def engage_clamp(self) -> None:
         # closes the claw
         self.clamp_motor.set_position_relative(Config.Payload.CLAMP_CLOSE_DEG)
         time.sleep(Config.Payload.ENGAGE_SLEEP_S)
         #log.info("Claw closed")
+
+    def actually_open(self) -> None:
+        self.clamp_motor.set_position_relative(-Config.Payload.CLAMP_CLOSE_DEG + 5)
+        time.sleep(Config.Payload.DISENGAGE_SLEEP_S)
 
     def disengage_clamp(self) -> None:
         # opens the claw
@@ -74,14 +82,30 @@ class PayloadController:
         self.engage_clamp()
         self.lift_clamp()
         #log.info("Dropped second medicine")
-		
+    def drop(self) -> None:
+        self.drop_clamp()
+        self.disengage_clamp()
+        time.sleep(0.5)
+        self.lift_clamp()
+        self.engage_clamp()
+    def pickup(self) -> None:
+        self.engage_clamp()
+        self.lift_clamp()		
 if __name__ =="__main__" :
-	from utils.brick import EV3GyroSensor, wait_ready_sensors
-	gyro = EV3GyroSensor(4)
-	wait_ready_sensors()
+    nav = Navigator()
+    self = PayloadController(nav)
+    self.drop_clamp()
+    self.disengage_clamp()
+    '''self.disengage_clamp()
+    time.sleep(1.5)
+    self.engage_clamp()
+    self.lift_clamp()
+    time.sleep(1)
+    self.drop_one()
+    
 	nav = Navigator(gyro=gyro)
 	pc = PayloadController(nav)
 	pc.pharmacy_pickup()
 	time.sleep(1)
 	pc.drop_first_med()
-
+'''
