@@ -7,6 +7,7 @@ from config import Config
 from utils.brick import EV3GyroSensor, TouchSensor, wait_ready_sensors
 from patient_assessor import PatientAssessor
 from payload_controller import PayloadController
+from audio_controller import AudioController
 import logging
 import math
 import threading
@@ -40,6 +41,7 @@ class Controller:
         self.nav = Navigator(gyro=gyro, left_wheel_compensation=left_wheel_compensation, right_wheel_compensation=right_wheel_compensation)
         self.assessor = PatientAssessor()
         self.payload = PayloadController(self.nav)
+        self.audio = AudioController()
         self._medicine_dropped = 0
         self.room = 1
     
@@ -78,6 +80,7 @@ class Controller:
             self.nav.scan_turn(new_angle)
             self.payload.drop()
             self.nav.scan_turn(new_angle*-1)
+            self.audio.play_delivery_sound()
         self._medicine_dropped += 1
 
     def sweep_with_red(self,sweep_left_angle: int, sweep_right_angle: int):
@@ -178,12 +181,14 @@ class Controller:
             self.nav.move_forward(3 * Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor, follow_line=True)
             self.nav.turn_left()
             self.nav.move_until_distance(Config.Controller.STOP_PHARMACY)
+        self.audio.play_mission_complete()
 
     def check_emegency_stop(self):
-        if self.touch_sensor.is_pressed():
-            log.warning("Emergency stop triggered!")
-            self.nav.stop()
-            sys.exit(0)
+        while True:
+            if self.touch_sensor.is_pressed():
+                log.warning("Emergency stop triggered!")
+                self.nav.stop()
+                sys.exit(0)
 
     def start_emergency_thread(self):
         thread = threading.Thread(target=self.check_emegency_stop, daemon=True)
