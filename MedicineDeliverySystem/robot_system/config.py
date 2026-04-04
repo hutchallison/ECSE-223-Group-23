@@ -58,7 +58,7 @@ class Config:
     class Payload:
         # Clamp Positions (Degrees, relative)
         CLAMP_CLOSE_DEG = 110        # degrees to close the clamp
-        CLAMP_OPEN_DEG  = 0        # degrees to open the clamp (reverse close)
+        CLAMP_OPEN_DEG  = -90        # degrees to open the clamp (reverse close)
 
         # Lift Positions (Degrees, absolute)
         LIFT_UP_POS  = -40          # absolute encoder position for raised lift
