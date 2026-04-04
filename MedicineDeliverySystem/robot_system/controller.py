@@ -40,12 +40,6 @@ class Controller:
         self.room = 1
     
     def collect_medicine(self):
-        # Code to navigate to the medicine location and collect it
-        #self.nav.move_forward(Config.Controller.EXIT_ROOM_DIST + 10, assessor=self.assessor)#, follow_line=True)
-        #self.nav.turn_right(bias=0)
-        #self.nav.move_until_distance(70.4)#forward(Config.Controller.ENTER_PHARMA, assessor=self.assessor)#, follow_line=True)
-        #self.nav.turn_right(bias=0)
-        #self.payload.pharmacy_pickup()
         self.payload.pickup()
         self.nav.move_backward_until_distance(102.0)
         self.nav.turn_left()
@@ -57,11 +51,20 @@ class Controller:
         self.nav.turn_left(bias=2)
         self.nav.move_forward(Config.Controller.S2_SEGMENT2, assessor=self.assessor)
 
-    def sweep_room(self, sweep_left_angle: int, sweep_right_angle: int):
-        if self.gyro:
-            self.sweep_room_gyro(sweep_left_angle, sweep_right_angle)
-        else:
-            self.sweep_room_dumb(sweep_left_angle, sweep_right_angle)
+    def go_to_room2(self):
+        self.room = 2
+        self.nav.move_until_distance(54.5)
+        self.nav.turn_left()
+
+    def go_to_room3(self):
+        self.room = 3
+        self.nav.move_until_distance(28.8)#forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor, follow_line=True)
+        self.nav.turn_right()
+
+    def go_to_room4(self):
+        self.nav.move_backward_until_distance(Config.Controller.DISTANCE_ROOM4_WALL - 0.5)
+        self.nav.turn_left()
+
     def drop_cube(self, turn_angle):
         self.nav.scan_turn(turn_angle*-1)
         if self.room != 2 or self._medicine_dropped != 1:
@@ -116,25 +119,35 @@ class Controller:
     
     def sweep_room1(self):
         self.sweep_with_red(Config.Controller.OBSTACLE_SWEEP_ANGLE, Config.Controller.SWEEP_ANGLE)
-
-    def go_to_room2(self):
-        self.room = 2
-        self.nav.move_until_distance(54.5)
     
     def sweep_room_standard(self):
         self.sweep_with_red(Config.Controller.SWEEP_ANGLE, Config.Controller.SWEEP_ANGLE)
     
-    def go_to_room3(self):
-        self.room = 3
-        self.nav.move_until_distance(28.8)#forward(Config.Controller.BLACK_LINE_SEGMENT, assessor=self.assessor, follow_line=True)
-        self.nav.turn_right()
-
-    def go_to_room4(self):
-        self.nav.move_backward_until_distance(Config.Controller.DISTANCE_ROOM4_WALL - 0.5)
-        self.nav.turn_left()
-    
     def sweep_room4(self):
         self.sweep_with_red(Config.Controller.OBSTACLE_SWEEP_ANGLE, Config.Controller.SWEEP_ANGLE)
+
+    def get_cube(self, from_room: int):
+        if from_room == 2:
+            self.nav.turn_left()
+            self.nav.move_until_distance(38.9)
+            self.nav.turn_left()
+            self.payload.drop_clamp()
+            self.payload.actually_open()
+            self.nav.move_until_distance(23.7)
+            self.payload.pickup()
+            self.nav.move_backward_until_distance(51.8)
+            self.nav.turn_left()
+
+        elif from_room == 3:
+            self.nav.turn_right()
+            self.nav.move_until_distance(38.9)
+            self.nav.turn_left()
+            self.payload.drop_clamp()
+            self.payload.actually_open()
+            self.nav.move_until_distance(23.7)
+            self.payload.pickup()
+            self.nav.move_backward_until_distance(51.8)
+            self.nav.turn_right()
     
     def return_to_pharmacy(self, from_room: int):
         # Code to return to the pharmacy after deliveries
@@ -167,12 +180,8 @@ if __name__ == "__main__":
     left_wheel_compensation = 0 #int(input("Left wheel compensation DPS (0 = none): ").strip() or "0")
     right_wheel_compensation = 0 #int(input("Right wheel compensation DPS (0 = none): ").strip() or "0")
     controller = Controller(use_gyro=use_gyro, left_wheel_compensation=left_wheel_compensation, right_wheel_compensation=right_wheel_compensation)
-    # controller.payload.engage_clamp()
-    # controller.payload.lift_clamp()
 
     controller.collect_medicine()
-    input("Press Enter to start room 1 navigation...")
-    #controller.go_to_room1()
     input("Press Enter to start room 1 sweep...")
     controller.sweep_room1()
     input("Continue? Press Enter to go to room 2... (dropped packets: %d)" % controller._medicine_dropped)
@@ -184,36 +193,23 @@ if __name__ == "__main__":
     controller.nav.turn_left()
     controller.sweep_room_standard()
     picked_up = False
+
     if controller._medicine_dropped == 2:
-        controller.nav.turn_left()
-        controller.nav.move_until_distance(38.9)
-        controller.nav.turn_left()
-        controller.payload.drop_clamp()
-        controller.payload.actually_open()
-        controller.nav.move_until_distance(23.7)
-        controller.payload.pickup()
-        controller.nav.move_backward_until_distance(51.8)
-        controller.nav.turn_left()
+        controller.get_cube(from_room=2)
         controller.go_to_room2()
-        controller.nav.turn_left()
         controller.sweep_room_standard()
         controller.return_to_pharmacy(from_room=2)
+
     elif controller._medicine_dropped == 0:
         controller.nav.turn_right(-2)
+
     elif controller._medicine_dropped == 1:
-        controller.nav.turn_left()
-        controller.nav.move_until_distance(38.9)
-        controller.nav.turn_left()
-        controller.payload.drop_clamp()
-        controller.payload.actually_open()
-        controller.nav.move_until_distance(23.7)
-        controller.payload.pickup()
-        controller.nav.move_backward_until_distance(51.8)
-        controller.nav.turn_left()
+        controller.get_cube(from_room=2)
         picked_up = True    
 
     input("Continue? Press Enter to go to room 3... (dropped packets: %d)" % controller._medicine_dropped)
     controller.go_to_room3()
+
     input("Continue? Press Enter to start room 3 sweep... (dropped packets: %d)" % controller._medicine_dropped)
     controller.sweep_room_standard()
 
@@ -222,15 +218,7 @@ if __name__ == "__main__":
         input("Delivery complete!")
         exit(0)
     if not picked_up:
-        controller.nav.turn_right()
-        controller.nav.move_until_distance(38.9)
-        controller.nav.turn_left()
-        controller.payload.drop_clamp()
-        controller.payload.actually_open()
-        controller.nav.move_until_distance(23.7)
-        controller.payload.pickup()
-        controller.nav.move_backward_until_distance(51.8)
-        controller.nav.turn_right()
+        controller.get_cube(from_room=3)
     else:
         controller.nav.turn_right()
             
