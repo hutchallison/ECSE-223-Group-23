@@ -40,7 +40,8 @@ class Controller:
     
     def collect_medicine(self):
         self.payload.pickup()
-        self.nav.move_backward_until_distance(102.0)
+        self.nav.move_backward(13)
+        #self.nav.move_backward_until_distance(100.0)
         self.nav.turn_left()
         self.nav.move_until_distance(54.6)
 
@@ -48,7 +49,7 @@ class Controller:
         self.room = 1
         self.nav.turn_left(bias=0)
         self.nav.move_backward(Config.Controller.ENTER_PHARMA, assessor=self.assessor)
-        self.nav.turn_left(bias=2)
+        self.nav.turn_left(bias=0)
         self.nav.move_forward(Config.Controller.S2_SEGMENT2, assessor=self.assessor)
 
     def go_to_room2(self):
@@ -130,7 +131,7 @@ class Controller:
 
     def get_cube(self, from_room: int):
         if from_room == 2:
-            self.nav.turn_left()
+            self.nav.turn_left(bias=1)
             self.nav.move_until_distance(38.9)
             self.nav.turn_left()
             self.payload.drop_clamp()
@@ -138,7 +139,7 @@ class Controller:
             self.nav.move_until_distance(23.7)
             self.payload.pickup()
             self.nav.move_backward_until_distance(51.8)
-            self.nav.turn_left()
+            self.nav.turn_left(bias=-1)
 
         elif from_room == 3:
             self.nav.turn_right()
@@ -202,11 +203,10 @@ if __name__ == "__main__":
     controller.sweep_room1()
     input("Continue? Press Enter to go to room 2... (dropped packets: %d)" % controller._medicine_dropped)
     
-    controller.nav.turn_right(bias=-1)
+    controller.nav.turn_right(bias=0)
     controller.go_to_room2()
 
     input("Continue to room2 sweep?")
-    controller.nav.turn_left()
     controller.sweep_room_standard()
     picked_up = False
 

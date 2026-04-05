@@ -40072,3 +40072,2293 @@
 2026-04-04 05:54:35,580 INFO     navigator | move_until_distance done | traveled=51.9 cm
 2026-04-04 05:54:35,584 INFO     navigator | turn 90.0 deg | heading=0.0
 2026-04-04 05:54:35,585 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:22:18,334 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 21:22:21,045 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 21:22:22,552 INFO     navigator | move_until_distance threshold=102.0 direction=-1 | heading=0.0
+2026-04-04 21:22:23,721 INFO     navigator | move_until_distance: stopped at 102.3 cm from wall (backward)
+2026-04-04 21:22:23,724 INFO     navigator | move_until_distance done | traveled=15.3 cm
+2026-04-04 21:22:23,725 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 21:22:23,727 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:22:26,246 INFO     navigator | turn done | heading=90.0
+2026-04-04 21:22:26,248 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 21:22:29,863 INFO     navigator | move_until_distance: stopped at 53.4 cm from wall (forward)
+2026-04-04 21:22:29,866 INFO     navigator | move_until_distance done | traveled=51.3 cm
+2026-04-04 21:22:30,712 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 21:22:31,790 INFO     navigator | move done | traveled=15.4 cm heading=90.0 room=-
+2026-04-04 21:22:31,792 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 21:22:32,261 INFO     navigator | move done | traveled=6.3 cm heading=90.0 room=-
+2026-04-04 21:22:32,469 INFO     controller | yelllow
+2026-04-04 21:22:32,470 INFO     navigator | scan_turn 15.0 deg | heading=90.0
+2026-04-04 21:22:32,472 INFO     navigator | TURNED 15.0 DEGREES
+2026-04-04 21:22:33,036 INFO     navigator | scan_turn done | heading=105.0 bed_found=False
+2026-04-04 21:22:33,223 INFO     controller | green
+2026-04-04 21:22:33,224 INFO     navigator | scan_turn -15.0 deg | heading=105.0
+2026-04-04 21:22:33,226 INFO     navigator | TURNED -15.0 DEGREES
+2026-04-04 21:22:33,800 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 21:22:33,801 INFO     navigator | move 7.0 cm direction=-1 | heading=90.0
+2026-04-04 21:22:34,369 INFO     navigator | move done | traveled=7.8 cm heading=90.0 room=-
+2026-04-04 21:22:34,370 INFO     navigator | scan_turn 9.1 deg | heading=90.0
+2026-04-04 21:22:34,372 INFO     navigator | TURNED 9.05312653963082 DEGREES
+2026-04-04 21:22:34,769 INFO     navigator | scan_turn done | heading=99.1 bed_found=False
+2026-04-04 21:22:38,777 INFO     navigator | scan_turn -9.1 deg | heading=99.1
+2026-04-04 21:22:38,780 INFO     navigator | TURNED -9.05312653963082 DEGREES
+2026-04-04 21:22:39,220 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 21:22:39,221 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 21:22:40,543 INFO     navigator | move_until_distance: stopped at 54.4 cm from wall (backward)
+2026-04-04 21:22:40,546 INFO     navigator | move_until_distance done | traveled=17.7 cm
+2026-04-04 21:23:49,272 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 21:23:52,707 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 21:23:54,214 INFO     navigator | move_until_distance threshold=102.0 direction=-1 | heading=0.0
+2026-04-04 21:23:55,383 INFO     navigator | move_until_distance: stopped at 103.2 cm from wall (backward)
+2026-04-04 21:23:55,386 INFO     navigator | move_until_distance done | traveled=15.4 cm
+2026-04-04 21:23:55,387 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 21:23:55,390 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:23:57,730 INFO     navigator | turn done | heading=90.0
+2026-04-04 21:23:57,731 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 21:24:01,340 INFO     navigator | move_until_distance: stopped at 53.5 cm from wall (forward)
+2026-04-04 21:24:01,343 INFO     navigator | move_until_distance done | traveled=51.3 cm
+2026-04-04 21:24:01,805 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 21:24:02,889 INFO     navigator | move done | traveled=15.6 cm heading=90.0 room=-
+2026-04-04 21:24:02,890 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 21:24:03,359 INFO     navigator | move done | traveled=6.5 cm heading=90.0 room=-
+2026-04-04 21:24:03,546 INFO     controller | yelllow
+2026-04-04 21:24:03,547 INFO     navigator | scan_turn 15.0 deg | heading=90.0
+2026-04-04 21:24:03,549 INFO     navigator | TURNED 15.0 DEGREES
+2026-04-04 21:24:04,123 INFO     navigator | scan_turn done | heading=105.0 bed_found=False
+2026-04-04 21:24:04,308 INFO     controller | yelllow
+2026-04-04 21:24:04,308 INFO     navigator | scan_turn -31.5 deg | heading=105.0
+2026-04-04 21:24:04,310 INFO     navigator | TURNED -31.5 DEGREES
+2026-04-04 21:24:05,162 INFO     navigator | scan_turn done | heading=73.5 bed_found=False
+2026-04-04 21:24:05,354 INFO     controller | yelllow
+2026-04-04 21:24:05,354 INFO     navigator | scan_turn -16.5 deg | heading=73.5
+2026-04-04 21:24:05,356 INFO     navigator | TURNED -16.5 DEGREES
+2026-04-04 21:24:05,941 INFO     navigator | scan_turn done | heading=57.0 bed_found=False
+2026-04-04 21:24:06,124 INFO     controller | yelllow
+2026-04-04 21:24:06,124 INFO     navigator | scan_turn 33.0 deg | heading=57.0
+2026-04-04 21:24:06,126 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 21:24:06,989 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 21:24:06,990 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 21:24:07,456 INFO     navigator | move done | traveled=6.4 cm heading=90.0 room=-
+2026-04-04 21:24:07,703 INFO     controller | yelllow
+2026-04-04 21:24:07,704 INFO     navigator | scan_turn 15.0 deg | heading=90.0
+2026-04-04 21:24:07,706 INFO     navigator | TURNED 15.0 DEGREES
+2026-04-04 21:24:08,250 INFO     navigator | scan_turn done | heading=105.0 bed_found=False
+2026-04-04 21:24:08,444 INFO     controller | yelllow
+2026-04-04 21:24:08,444 INFO     navigator | scan_turn -31.5 deg | heading=105.0
+2026-04-04 21:24:08,446 INFO     navigator | TURNED -31.5 DEGREES
+2026-04-04 21:24:09,400 INFO     navigator | scan_turn done | heading=73.5 bed_found=False
+2026-04-04 21:24:09,590 INFO     controller | yelllow
+2026-04-04 21:24:09,590 INFO     navigator | scan_turn -16.5 deg | heading=73.5
+2026-04-04 21:24:09,592 INFO     navigator | TURNED -16.5 DEGREES
+2026-04-04 21:24:10,049 INFO     navigator | scan_turn done | heading=57.0 bed_found=False
+2026-04-04 21:24:10,195 INFO     controller | yelllow
+2026-04-04 21:24:10,196 INFO     navigator | scan_turn 33.0 deg | heading=57.0
+2026-04-04 21:24:10,198 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 21:24:11,199 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 21:24:11,200 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 21:24:11,667 INFO     navigator | move done | traveled=6.5 cm heading=90.0 room=-
+2026-04-04 21:24:11,870 INFO     controller | yelllow
+2026-04-04 21:24:11,871 INFO     navigator | scan_turn 15.0 deg | heading=90.0
+2026-04-04 21:24:11,872 INFO     navigator | TURNED 15.0 DEGREES
+2026-04-04 21:24:12,298 INFO     navigator | scan_turn done | heading=105.0 bed_found=False
+2026-04-04 21:24:12,446 INFO     controller | yelllow
+2026-04-04 21:24:12,447 INFO     navigator | scan_turn -31.5 deg | heading=105.0
+2026-04-04 21:24:12,449 INFO     navigator | TURNED -31.5 DEGREES
+2026-04-04 21:24:35,570 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 21:24:38,088 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 21:24:39,594 INFO     navigator | move_until_distance threshold=102.0 direction=-1 | heading=0.0
+2026-04-04 21:24:39,698 INFO     navigator | move_until_distance: stopped at 255.0 cm from wall (backward)
+2026-04-04 21:24:39,701 INFO     navigator | move_until_distance done | traveled=0.5 cm
+2026-04-04 21:24:39,702 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 21:24:39,704 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:24:42,059 INFO     navigator | turn done | heading=90.0
+2026-04-04 21:24:42,061 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 21:24:45,514 INFO     navigator | move_until_distance: stopped at 14.9 cm from wall (forward)
+2026-04-04 21:24:45,516 INFO     navigator | move_until_distance done | traveled=49.5 cm
+2026-04-04 21:25:02,800 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 21:25:06,588 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 21:25:08,095 INFO     navigator | move_until_distance threshold=102.0 direction=-1 | heading=0.0
+2026-04-04 21:25:09,266 INFO     navigator | move_until_distance: stopped at 103.2 cm from wall (backward)
+2026-04-04 21:25:09,268 INFO     navigator | move_until_distance done | traveled=15.4 cm
+2026-04-04 21:25:09,269 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 21:25:09,270 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:25:11,610 INFO     navigator | turn done | heading=90.0
+2026-04-04 21:25:11,611 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 21:25:15,225 INFO     navigator | move_until_distance: stopped at 54.4 cm from wall (forward)
+2026-04-04 21:25:15,227 INFO     navigator | move_until_distance done | traveled=51.5 cm
+2026-04-04 21:25:15,663 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 21:25:16,743 INFO     navigator | move done | traveled=15.5 cm heading=90.0 room=-
+2026-04-04 21:25:16,748 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 21:25:17,213 INFO     navigator | move done | traveled=6.5 cm heading=90.0 room=-
+2026-04-04 21:25:17,406 INFO     controller | yelllow
+2026-04-04 21:25:17,407 INFO     navigator | scan_turn 15.0 deg | heading=90.0
+2026-04-04 21:25:17,409 INFO     navigator | TURNED 15.0 DEGREES
+2026-04-04 21:25:17,963 INFO     navigator | scan_turn done | heading=105.0 bed_found=False
+2026-04-04 21:25:18,154 INFO     controller | green
+2026-04-04 21:25:18,155 INFO     navigator | scan_turn -15.0 deg | heading=105.0
+2026-04-04 21:25:18,157 INFO     navigator | TURNED -15.0 DEGREES
+2026-04-04 21:25:18,583 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 21:25:18,584 INFO     navigator | move 7.0 cm direction=-1 | heading=90.0
+2026-04-04 21:25:19,099 INFO     navigator | move done | traveled=7.1 cm heading=90.0 room=-
+2026-04-04 21:25:19,100 INFO     navigator | scan_turn 9.1 deg | heading=90.0
+2026-04-04 21:25:19,102 INFO     navigator | TURNED 9.05312653963082 DEGREES
+2026-04-04 21:25:19,394 INFO     navigator | scan_turn done | heading=99.1 bed_found=False
+2026-04-04 21:25:23,399 INFO     navigator | scan_turn -9.1 deg | heading=99.1
+2026-04-04 21:25:23,405 INFO     navigator | TURNED -9.05312653963082 DEGREES
+2026-04-04 21:25:23,815 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 21:25:23,817 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 21:25:25,139 INFO     navigator | move_until_distance: stopped at 54.4 cm from wall (backward)
+2026-04-04 21:25:25,143 INFO     navigator | move_until_distance done | traveled=18.1 cm
+2026-04-04 21:25:25,447 INFO     navigator | turn -91.0 deg | heading=90.0
+2026-04-04 21:25:25,450 INFO     navigator | TURNED -91.0 DEGREES
+2026-04-04 21:25:27,796 INFO     navigator | turn done | heading=-1.0
+2026-04-04 21:25:27,798 INFO     navigator | move_until_distance threshold=54.5 direction=1 | heading=-1.0
+2026-04-04 21:25:28,820 INFO     navigator | move_until_distance: stopped at 41.2 cm from wall (forward)
+2026-04-04 21:25:28,822 INFO     navigator | move_until_distance done | traveled=12.8 cm
+2026-04-04 21:25:28,823 INFO     navigator | turn 90.0 deg | heading=-1.0
+2026-04-04 21:25:28,825 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:25:31,257 INFO     navigator | turn done | heading=89.0
+2026-04-04 21:26:10,320 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 21:26:13,803 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 21:26:15,310 INFO     navigator | move_until_distance threshold=102.0 direction=-1 | heading=0.0
+2026-04-04 21:26:16,632 INFO     navigator | move_until_distance: stopped at 104.6 cm from wall (backward)
+2026-04-04 21:26:16,634 INFO     navigator | move_until_distance done | traveled=17.7 cm
+2026-04-04 21:26:16,634 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 21:26:16,636 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:26:18,974 INFO     navigator | turn done | heading=90.0
+2026-04-04 21:26:18,975 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 21:26:40,271 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 21:26:42,751 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 21:26:44,259 INFO     navigator | move_until_distance threshold=102.0 direction=-1 | heading=0.0
+2026-04-04 21:26:45,583 INFO     navigator | move_until_distance: stopped at 103.1 cm from wall (backward)
+2026-04-04 21:26:45,586 INFO     navigator | move_until_distance done | traveled=17.7 cm
+2026-04-04 21:26:45,587 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 21:26:45,589 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:26:47,903 INFO     navigator | turn done | heading=90.0
+2026-04-04 21:26:47,904 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 21:27:40,942 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 21:27:43,336 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 21:27:44,847 INFO     navigator | move_until_distance threshold=102.0 direction=-1 | heading=0.0
+2026-04-04 21:27:46,017 INFO     navigator | move_until_distance: stopped at 102.0 cm from wall (backward)
+2026-04-04 21:27:46,020 INFO     navigator | move_until_distance done | traveled=15.4 cm
+2026-04-04 21:27:46,021 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 21:27:46,024 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:27:48,367 INFO     navigator | turn done | heading=90.0
+2026-04-04 21:27:48,372 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 21:28:33,338 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 21:28:37,154 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 21:28:38,661 INFO     navigator | move_until_distance threshold=101.0 direction=-1 | heading=0.0
+2026-04-04 21:28:40,894 INFO     navigator | move_until_distance: stopped at 109.9 cm from wall (backward)
+2026-04-04 21:28:40,897 INFO     navigator | move_until_distance done | traveled=31.3 cm
+2026-04-04 21:28:40,898 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 21:28:40,900 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:30:36,034 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 21:30:38,990 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 21:30:40,497 INFO     navigator | move_until_distance threshold=101.0 direction=-1 | heading=0.0
+2026-04-04 21:30:41,668 INFO     navigator | move_until_distance: stopped at 103.0 cm from wall (backward)
+2026-04-04 21:30:41,671 INFO     navigator | move_until_distance done | traveled=15.4 cm
+2026-04-04 21:30:41,672 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 21:30:41,675 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:30:44,157 INFO     navigator | turn done | heading=90.0
+2026-04-04 21:30:44,158 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 21:30:47,767 INFO     navigator | move_until_distance: stopped at 54.2 cm from wall (forward)
+2026-04-04 21:30:47,769 INFO     navigator | move_until_distance done | traveled=51.4 cm
+2026-04-04 21:30:48,337 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 21:30:49,421 INFO     navigator | move done | traveled=15.6 cm heading=90.0 room=-
+2026-04-04 21:30:49,422 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 21:30:49,887 INFO     navigator | move done | traveled=6.5 cm heading=90.0 room=-
+2026-04-04 21:30:50,038 INFO     controller | yelllow
+2026-04-04 21:30:50,039 INFO     navigator | scan_turn 15.0 deg | heading=90.0
+2026-04-04 21:30:50,041 INFO     navigator | TURNED 15.0 DEGREES
+2026-04-04 21:30:50,588 INFO     navigator | scan_turn done | heading=105.0 bed_found=False
+2026-04-04 21:30:50,769 INFO     controller | green
+2026-04-04 21:30:50,770 INFO     navigator | scan_turn -15.0 deg | heading=105.0
+2026-04-04 21:30:50,771 INFO     navigator | TURNED -15.0 DEGREES
+2026-04-04 21:30:51,197 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 21:30:51,197 INFO     navigator | move 7.0 cm direction=-1 | heading=90.0
+2026-04-04 21:30:51,713 INFO     navigator | move done | traveled=7.1 cm heading=90.0 room=-
+2026-04-04 21:30:51,714 INFO     navigator | scan_turn 9.1 deg | heading=90.0
+2026-04-04 21:30:51,721 INFO     navigator | TURNED 9.05312653963082 DEGREES
+2026-04-04 21:30:52,010 INFO     navigator | scan_turn done | heading=99.1 bed_found=False
+2026-04-04 21:30:56,017 INFO     navigator | scan_turn -9.1 deg | heading=99.1
+2026-04-04 21:30:56,020 INFO     navigator | TURNED -9.05312653963082 DEGREES
+2026-04-04 21:30:56,483 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 21:30:56,484 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 21:30:59,478 INFO     navigator | move_until_distance: stopped at 53.7 cm from wall (backward)
+2026-04-04 21:30:59,480 INFO     navigator | move_until_distance done | traveled=42.9 cm
+2026-04-04 21:34:17,152 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 21:34:20,097 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 21:34:21,604 INFO     navigator | move_until_distance threshold=101.0 direction=-1 | heading=0.0
+2026-04-04 21:34:24,599 INFO     navigator | move_until_distance: stopped at 110.7 cm from wall (backward)
+2026-04-04 21:34:24,602 INFO     navigator | move_until_distance done | traveled=42.7 cm
+2026-04-04 21:34:24,603 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 21:34:24,606 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:34:27,075 INFO     navigator | turn done | heading=90.0
+2026-04-04 21:34:27,076 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 21:38:11,383 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 21:38:14,370 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 21:38:15,877 INFO     navigator | move_until_distance threshold=101.0 direction=-1 | heading=0.0
+2026-04-04 21:38:17,195 INFO     navigator | move_until_distance: stopped at 103.6 cm from wall (backward)
+2026-04-04 21:38:17,198 INFO     navigator | move_until_distance done | traveled=17.6 cm
+2026-04-04 21:38:17,199 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 21:38:17,202 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:38:19,660 INFO     navigator | turn done | heading=90.0
+2026-04-04 21:38:19,662 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 21:38:45,640 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 21:38:49,264 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 21:38:50,768 INFO     navigator | move_until_distance threshold=101.0 direction=-1 | heading=0.0
+2026-04-04 21:38:52,089 INFO     navigator | move_until_distance: stopped at 102.2 cm from wall (backward)
+2026-04-04 21:38:52,092 INFO     navigator | move_until_distance done | traveled=17.7 cm
+2026-04-04 21:38:52,093 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 21:38:52,096 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:38:54,544 INFO     navigator | turn done | heading=90.0
+2026-04-04 21:38:54,545 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 21:39:16,483 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 21:39:52,750 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 21:39:55,609 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 21:39:57,116 INFO     navigator | move_until_distance threshold=100.0 direction=-1 | heading=0.0
+2026-04-04 21:39:58,283 INFO     navigator | move_until_distance: stopped at 101.4 cm from wall (backward)
+2026-04-04 21:39:58,287 INFO     navigator | move_until_distance done | traveled=15.4 cm
+2026-04-04 21:39:58,288 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 21:39:58,290 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:40:00,754 INFO     navigator | turn done | heading=90.0
+2026-04-04 21:40:00,755 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 21:40:04,361 INFO     navigator | move_until_distance: stopped at 53.8 cm from wall (forward)
+2026-04-04 21:40:04,364 INFO     navigator | move_until_distance done | traveled=51.4 cm
+2026-04-04 21:40:05,124 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 21:40:06,210 INFO     navigator | move done | traveled=15.7 cm heading=90.0 room=-
+2026-04-04 21:40:06,211 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 21:40:06,682 INFO     navigator | move done | traveled=6.5 cm heading=90.0 room=-
+2026-04-04 21:40:06,861 INFO     controller | yelllow
+2026-04-04 21:40:06,861 INFO     navigator | scan_turn 15.0 deg | heading=90.0
+2026-04-04 21:40:06,863 INFO     navigator | TURNED 15.0 DEGREES
+2026-04-04 21:40:07,406 INFO     navigator | scan_turn done | heading=105.0 bed_found=False
+2026-04-04 21:40:07,593 INFO     controller | green
+2026-04-04 21:40:07,594 INFO     navigator | scan_turn -15.0 deg | heading=105.0
+2026-04-04 21:40:07,595 INFO     navigator | TURNED -15.0 DEGREES
+2026-04-04 21:40:08,031 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 21:40:08,032 INFO     navigator | move 7.0 cm direction=-1 | heading=90.0
+2026-04-04 21:40:08,549 INFO     navigator | move done | traveled=7.1 cm heading=90.0 room=-
+2026-04-04 21:40:08,550 INFO     navigator | scan_turn 9.1 deg | heading=90.0
+2026-04-04 21:40:08,552 INFO     navigator | TURNED 9.05312653963082 DEGREES
+2026-04-04 21:40:08,994 INFO     navigator | scan_turn done | heading=99.1 bed_found=False
+2026-04-04 21:40:13,001 INFO     navigator | scan_turn -9.1 deg | heading=99.1
+2026-04-04 21:40:13,004 INFO     navigator | TURNED -9.05312653963082 DEGREES
+2026-04-04 21:40:13,282 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 21:40:13,282 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 21:40:14,752 INFO     navigator | move_until_distance: stopped at 56.3 cm from wall (backward)
+2026-04-04 21:40:14,754 INFO     navigator | move_until_distance done | traveled=20.3 cm
+2026-04-04 21:40:15,174 INFO     navigator | turn -91.0 deg | heading=90.0
+2026-04-04 21:40:15,177 INFO     navigator | TURNED -91.0 DEGREES
+2026-04-04 21:40:17,530 INFO     navigator | turn done | heading=-1.0
+2026-04-04 21:40:17,531 INFO     navigator | move_until_distance threshold=54.5 direction=1 | heading=-1.0
+2026-04-04 21:40:20,981 INFO     navigator | move_until_distance: stopped at 52.7 cm from wall (forward)
+2026-04-04 21:40:20,983 INFO     navigator | move_until_distance done | traveled=49.1 cm
+2026-04-04 21:40:20,984 INFO     navigator | turn 90.0 deg | heading=-1.0
+2026-04-04 21:40:20,986 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:40:23,443 INFO     navigator | turn done | heading=89.0
+2026-04-04 21:40:23,444 INFO     navigator | turn 90.0 deg | heading=89.0
+2026-04-04 21:40:23,447 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:40:25,916 INFO     navigator | turn done | heading=179.0
+2026-04-04 21:40:25,917 INFO     navigator | move 15.0 cm direction=1 | heading=179.0
+2026-04-04 21:40:27,003 INFO     navigator | move done | traveled=15.6 cm heading=179.0 room=-
+2026-04-04 21:40:27,004 INFO     navigator | move 6.0 cm direction=1 | heading=179.0
+2026-04-04 21:40:27,471 INFO     navigator | move done | traveled=6.4 cm heading=179.0 room=-
+2026-04-04 21:40:27,659 INFO     controller | white
+2026-04-04 21:40:27,660 INFO     navigator | scan_turn 33.0 deg | heading=179.0
+2026-04-04 21:40:27,662 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 21:40:28,720 INFO     navigator | scan_turn done | heading=212.0 bed_found=False
+2026-04-04 21:40:28,926 INFO     controller | white
+2026-04-04 21:40:28,927 INFO     navigator | scan_turn -49.5 deg | heading=212.0
+2026-04-04 21:40:28,929 INFO     navigator | TURNED -49.5 DEGREES
+2026-04-04 21:40:30,233 INFO     navigator | scan_turn done | heading=162.5 bed_found=False
+2026-04-04 21:40:30,431 INFO     controller | black
+2026-04-04 21:40:30,432 INFO     navigator | scan_turn -16.5 deg | heading=162.5
+2026-04-04 21:40:30,434 INFO     navigator | TURNED -16.5 DEGREES
+2026-04-04 21:40:30,891 INFO     navigator | scan_turn done | heading=146.0 bed_found=False
+2026-04-04 21:40:31,035 INFO     controller | white
+2026-04-04 21:40:31,036 INFO     navigator | scan_turn 33.0 deg | heading=146.0
+2026-04-04 21:40:31,038 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 21:40:32,048 INFO     navigator | scan_turn done | heading=179.0 bed_found=False
+2026-04-04 21:40:32,049 INFO     navigator | move 6.0 cm direction=1 | heading=179.0
+2026-04-04 21:40:32,516 INFO     navigator | move done | traveled=6.3 cm heading=179.0 room=-
+2026-04-04 21:40:32,727 INFO     controller | white
+2026-04-04 21:40:32,728 INFO     navigator | scan_turn 33.0 deg | heading=179.0
+2026-04-04 21:40:32,730 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 21:42:03,964 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 21:42:06,180 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 21:42:07,687 INFO     navigator | move_until_distance threshold=100.0 direction=-1 | heading=0.0
+2026-04-04 21:42:08,856 INFO     navigator | move_until_distance: stopped at 102.0 cm from wall (backward)
+2026-04-04 21:42:08,859 INFO     navigator | move_until_distance done | traveled=15.4 cm
+2026-04-04 21:42:08,863 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 21:42:08,866 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:42:11,199 INFO     navigator | turn done | heading=90.0
+2026-04-04 21:42:11,200 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 21:42:14,952 INFO     navigator | move_until_distance: stopped at 51.9 cm from wall (forward)
+2026-04-04 21:42:14,955 INFO     navigator | move_until_distance done | traveled=53.6 cm
+2026-04-04 21:42:15,554 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 21:42:16,636 INFO     navigator | move done | traveled=15.6 cm heading=90.0 room=-
+2026-04-04 21:42:16,636 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 21:42:17,102 INFO     navigator | move done | traveled=6.5 cm heading=90.0 room=-
+2026-04-04 21:42:17,300 INFO     controller | yelllow
+2026-04-04 21:42:17,301 INFO     navigator | scan_turn 15.0 deg | heading=90.0
+2026-04-04 21:42:17,303 INFO     navigator | TURNED 15.0 DEGREES
+2026-04-04 21:42:17,856 INFO     navigator | scan_turn done | heading=105.0 bed_found=False
+2026-04-04 21:42:18,040 INFO     controller | green
+2026-04-04 21:42:18,041 INFO     navigator | scan_turn -15.0 deg | heading=105.0
+2026-04-04 21:42:18,042 INFO     navigator | TURNED -15.0 DEGREES
+2026-04-04 21:42:18,606 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 21:42:18,607 INFO     navigator | move 7.0 cm direction=-1 | heading=90.0
+2026-04-04 21:42:19,123 INFO     navigator | move done | traveled=7.1 cm heading=90.0 room=-
+2026-04-04 21:42:19,131 INFO     navigator | scan_turn 9.1 deg | heading=90.0
+2026-04-04 21:42:19,133 INFO     navigator | TURNED 9.05312653963082 DEGREES
+2026-04-04 21:42:19,412 INFO     navigator | scan_turn done | heading=99.1 bed_found=False
+2026-04-04 21:42:23,419 INFO     navigator | scan_turn -9.1 deg | heading=99.1
+2026-04-04 21:42:23,422 INFO     navigator | TURNED -9.05312653963082 DEGREES
+2026-04-04 21:42:23,819 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 21:42:23,820 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 21:42:25,290 INFO     navigator | move_until_distance: stopped at 54.4 cm from wall (backward)
+2026-04-04 21:42:25,292 INFO     navigator | move_until_distance done | traveled=20.3 cm
+2026-04-04 21:42:25,991 INFO     navigator | turn -91.0 deg | heading=90.0
+2026-04-04 21:42:25,994 INFO     navigator | TURNED -91.0 DEGREES
+2026-04-04 21:42:28,465 INFO     navigator | turn done | heading=-1.0
+2026-04-04 21:42:28,466 INFO     navigator | move_until_distance threshold=54.5 direction=1 | heading=-1.0
+2026-04-04 21:42:31,917 INFO     navigator | move_until_distance: stopped at 52.7 cm from wall (forward)
+2026-04-04 21:42:31,920 INFO     navigator | move_until_distance done | traveled=49.3 cm
+2026-04-04 21:42:31,921 INFO     navigator | turn 90.0 deg | heading=-1.0
+2026-04-04 21:42:31,923 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:42:34,390 INFO     navigator | turn done | heading=89.0
+2026-04-04 21:42:35,845 INFO     navigator | move 15.0 cm direction=1 | heading=89.0
+2026-04-04 21:42:36,929 INFO     navigator | move done | traveled=15.7 cm heading=89.0 room=-
+2026-04-04 21:42:36,930 INFO     navigator | move 6.0 cm direction=1 | heading=89.0
+2026-04-04 21:42:37,400 INFO     navigator | move done | traveled=6.4 cm heading=89.0 room=-
+2026-04-04 21:42:37,590 INFO     controller | red
+2026-04-04 21:42:37,590 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=89.0
+2026-04-04 21:42:39,211 INFO     navigator | move_until_distance: stopped at 55.1 cm from wall (backward)
+2026-04-04 21:42:39,214 INFO     navigator | move_until_distance done | traveled=22.2 cm
+2026-04-04 21:42:39,216 INFO     navigator | turn 90.0 deg | heading=89.0
+2026-04-04 21:42:39,219 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:42:41,567 INFO     navigator | turn done | heading=179.0
+2026-04-04 21:42:41,569 INFO     navigator | move_until_distance threshold=38.9 direction=1 | heading=179.0
+2026-04-04 21:42:42,888 INFO     navigator | move_until_distance: stopped at 37.2 cm from wall (forward)
+2026-04-04 21:42:42,891 INFO     navigator | move_until_distance done | traveled=17.3 cm
+2026-04-04 21:42:42,892 INFO     navigator | turn 90.0 deg | heading=179.0
+2026-04-04 21:42:42,894 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:42:45,344 INFO     navigator | turn done | heading=269.0
+2026-04-04 21:42:47,349 INFO     navigator | move_until_distance threshold=23.7 direction=1 | heading=269.0
+2026-04-04 21:42:49,582 INFO     navigator | move_until_distance: stopped at 21.1 cm from wall (forward)
+2026-04-04 21:42:49,584 INFO     navigator | move_until_distance done | traveled=31.6 cm
+2026-04-04 21:42:51,088 INFO     navigator | move_until_distance threshold=51.8 direction=-1 | heading=269.0
+2026-04-04 21:42:53,623 INFO     navigator | move_until_distance: stopped at 55.5 cm from wall (backward)
+2026-04-04 21:42:53,626 INFO     navigator | move_until_distance done | traveled=35.9 cm
+2026-04-04 21:42:53,627 INFO     navigator | turn 90.0 deg | heading=269.0
+2026-04-04 21:42:53,629 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:42:55,971 INFO     navigator | turn done | heading=359.0
+2026-04-04 21:42:56,558 INFO     navigator | move_until_distance threshold=28.8 direction=1 | heading=359.0
+2026-04-04 21:42:59,710 INFO     navigator | move_until_distance: stopped at 24.9 cm from wall (forward)
+2026-04-04 21:42:59,713 INFO     navigator | move_until_distance done | traveled=44.8 cm
+2026-04-04 21:42:59,714 INFO     navigator | turn -90.0 deg | heading=359.0
+2026-04-04 21:42:59,716 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 21:43:02,170 INFO     navigator | turn done | heading=269.0
+2026-04-04 21:43:02,712 INFO     navigator | move 15.0 cm direction=1 | heading=269.0
+2026-04-04 21:43:03,798 INFO     navigator | move done | traveled=15.6 cm heading=269.0 room=-
+2026-04-04 21:43:03,799 INFO     navigator | move 6.0 cm direction=1 | heading=269.0
+2026-04-04 21:43:04,267 INFO     navigator | move done | traveled=6.5 cm heading=269.0 room=-
+2026-04-04 21:43:04,476 INFO     controller | red
+2026-04-04 21:43:04,477 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=269.0
+2026-04-04 21:43:06,556 INFO     navigator | move_until_distance: stopped at 55.3 cm from wall (backward)
+2026-04-04 21:43:06,558 INFO     navigator | move_until_distance done | traveled=29.0 cm
+2026-04-04 21:43:06,559 INFO     navigator | turn -90.0 deg | heading=269.0
+2026-04-04 21:43:06,562 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 21:43:08,975 INFO     navigator | turn done | heading=179.0
+2026-04-04 21:43:09,536 INFO     navigator | move_until_distance threshold=97.5 direction=-1 | heading=179.0
+2026-04-04 21:43:11,008 INFO     navigator | move_until_distance: stopped at 99.8 cm from wall (backward)
+2026-04-04 21:43:11,011 INFO     navigator | move_until_distance done | traveled=20.4 cm
+2026-04-04 21:43:11,012 INFO     navigator | turn 90.0 deg | heading=179.0
+2026-04-04 21:43:11,014 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:43:13,344 INFO     navigator | turn done | heading=269.0
+2026-04-04 21:43:14,058 INFO     navigator | move 15.0 cm direction=1 | heading=269.0
+2026-04-04 21:43:15,140 INFO     navigator | move done | traveled=15.6 cm heading=269.0 room=-
+2026-04-04 21:43:15,141 INFO     navigator | move 6.0 cm direction=1 | heading=269.0
+2026-04-04 21:43:15,610 INFO     navigator | move done | traveled=6.5 cm heading=269.0 room=-
+2026-04-04 21:43:15,861 INFO     controller | yelllow
+2026-04-04 21:43:15,862 INFO     navigator | scan_turn 15.0 deg | heading=269.0
+2026-04-04 21:43:15,864 INFO     navigator | TURNED 15.0 DEGREES
+2026-04-04 21:43:16,280 INFO     navigator | scan_turn done | heading=284.0 bed_found=False
+2026-04-04 21:43:16,428 INFO     controller | yelllow
+2026-04-04 21:43:16,429 INFO     navigator | scan_turn -31.5 deg | heading=284.0
+2026-04-04 21:43:16,430 INFO     navigator | TURNED -31.5 DEGREES
+2026-04-04 21:43:17,272 INFO     navigator | scan_turn done | heading=252.5 bed_found=False
+2026-04-04 21:43:17,499 INFO     controller | yelllow
+2026-04-04 21:43:17,500 INFO     navigator | scan_turn -16.5 deg | heading=252.5
+2026-04-04 21:43:17,501 INFO     navigator | TURNED -16.5 DEGREES
+2026-04-04 21:43:17,959 INFO     navigator | scan_turn done | heading=236.0 bed_found=False
+2026-04-04 21:43:18,113 INFO     controller | yelllow
+2026-04-04 21:43:18,113 INFO     navigator | scan_turn 33.0 deg | heading=236.0
+2026-04-04 21:43:18,115 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 21:43:19,139 INFO     navigator | scan_turn done | heading=269.0 bed_found=False
+2026-04-04 21:43:19,140 INFO     navigator | move 6.0 cm direction=1 | heading=269.0
+2026-04-04 21:43:19,608 INFO     navigator | move done | traveled=6.4 cm heading=269.0 room=-
+2026-04-04 21:43:19,798 INFO     controller | yelllow
+2026-04-04 21:43:19,799 INFO     navigator | scan_turn 15.0 deg | heading=269.0
+2026-04-04 21:43:19,801 INFO     navigator | TURNED 15.0 DEGREES
+2026-04-04 21:43:20,227 INFO     navigator | scan_turn done | heading=284.0 bed_found=False
+2026-04-04 21:43:20,382 INFO     controller | green
+2026-04-04 21:43:20,383 INFO     navigator | scan_turn -15.0 deg | heading=284.0
+2026-04-04 21:43:20,385 INFO     navigator | TURNED -15.0 DEGREES
+2026-04-04 21:43:20,822 INFO     navigator | scan_turn done | heading=269.0 bed_found=False
+2026-04-04 21:43:20,824 INFO     navigator | move 7.0 cm direction=-1 | heading=269.0
+2026-04-04 21:43:21,339 INFO     navigator | move done | traveled=7.2 cm heading=269.0 room=-
+2026-04-04 21:43:21,341 INFO     navigator | scan_turn 9.1 deg | heading=269.0
+2026-04-04 21:43:21,344 INFO     navigator | TURNED 9.05312653963082 DEGREES
+2026-04-04 21:43:21,634 INFO     navigator | scan_turn done | heading=278.1 bed_found=False
+2026-04-04 21:43:25,642 INFO     navigator | scan_turn -9.1 deg | heading=278.1
+2026-04-04 21:43:25,646 INFO     navigator | TURNED -9.05312653963082 DEGREES
+2026-04-04 21:43:25,915 INFO     navigator | scan_turn done | heading=269.0 bed_found=False
+2026-04-04 21:43:25,917 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=269.0
+2026-04-04 21:43:27,694 INFO     navigator | move_until_distance: stopped at 57.4 cm from wall (backward)
+2026-04-04 21:43:27,697 INFO     navigator | move_until_distance done | traveled=24.9 cm
+2026-04-04 21:43:27,698 INFO     navigator | turn -90.0 deg | heading=269.0
+2026-04-04 21:43:27,700 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 21:43:30,150 INFO     navigator | turn done | heading=179.0
+2026-04-04 21:43:30,151 INFO     navigator | move 81.0 cm direction=1 | heading=179.0
+2026-04-04 21:43:35,781 INFO     navigator | move done | traveled=83.5 cm heading=179.0 room=hallway
+2026-04-04 21:43:35,782 INFO     navigator | turn 90.0 deg | heading=179.0
+2026-04-04 21:43:35,784 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:43:38,221 INFO     navigator | turn done | heading=269.0
+2026-04-04 21:43:38,222 INFO     navigator | move_until_distance threshold=15.0 direction=1 | heading=269.0
+2026-04-04 21:43:41,673 INFO     navigator | move_until_distance: stopped at 12.0 cm from wall (forward)
+2026-04-04 21:43:41,675 INFO     navigator | move_until_distance done | traveled=49.9 cm
+2026-04-04 21:45:30,060 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 21:45:33,262 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 21:45:34,769 INFO     navigator | move_until_distance threshold=100.0 direction=-1 | heading=0.0
+2026-04-04 21:45:35,937 INFO     navigator | move_until_distance: stopped at 100.2 cm from wall (backward)
+2026-04-04 21:45:35,940 INFO     navigator | move_until_distance done | traveled=15.5 cm
+2026-04-04 21:45:35,941 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 21:45:35,943 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:45:38,256 INFO     navigator | turn done | heading=90.0
+2026-04-04 21:45:38,257 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 21:45:42,010 INFO     navigator | move_until_distance: stopped at 51.5 cm from wall (forward)
+2026-04-04 21:45:42,012 INFO     navigator | move_until_distance done | traveled=53.7 cm
+2026-04-04 21:46:20,394 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 21:46:23,660 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 21:46:25,166 INFO     navigator | move_until_distance threshold=100.0 direction=-1 | heading=0.0
+2026-04-04 21:46:26,637 INFO     navigator | move_until_distance: stopped at 105.8 cm from wall (backward)
+2026-04-04 21:46:26,640 INFO     navigator | move_until_distance done | traveled=20.0 cm
+2026-04-04 21:46:26,641 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 21:46:26,644 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:46:55,424 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 21:46:57,991 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 21:46:59,498 INFO     navigator | move_until_distance threshold=100.0 direction=-1 | heading=0.0
+2026-04-04 21:47:01,276 INFO     navigator | move_until_distance: stopped at 110.1 cm from wall (backward)
+2026-04-04 21:47:01,279 INFO     navigator | move_until_distance done | traveled=24.5 cm
+2026-04-04 21:47:01,281 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 21:47:01,283 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:48:09,852 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 21:48:13,715 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 21:48:15,222 INFO     navigator | move_until_distance threshold=100.0 direction=-1 | heading=0.0
+2026-04-04 21:48:16,175 INFO     navigator | move_until_distance: stopped at 100.6 cm from wall (backward)
+2026-04-04 21:48:16,183 INFO     navigator | move_until_distance done | traveled=13.7 cm
+2026-04-04 21:48:16,184 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 21:48:16,188 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:48:18,662 INFO     navigator | turn done | heading=90.0
+2026-04-04 21:48:18,663 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 21:48:22,102 INFO     navigator | move_until_distance: stopped at 54.6 cm from wall (forward)
+2026-04-04 21:48:22,104 INFO     navigator | move_until_distance done | traveled=50.6 cm
+2026-04-04 21:48:23,241 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 21:48:24,324 INFO     navigator | move done | traveled=15.6 cm heading=90.0 room=-
+2026-04-04 21:48:24,325 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 21:48:24,792 INFO     navigator | move done | traveled=6.5 cm heading=90.0 room=-
+2026-04-04 21:48:25,001 INFO     controller | yelllow
+2026-04-04 21:48:25,002 INFO     navigator | scan_turn 15.0 deg | heading=90.0
+2026-04-04 21:48:25,003 INFO     navigator | TURNED 15.0 DEGREES
+2026-04-04 21:48:25,546 INFO     navigator | scan_turn done | heading=105.0 bed_found=False
+2026-04-04 21:48:25,706 INFO     controller | green
+2026-04-04 21:48:25,707 INFO     navigator | scan_turn -15.0 deg | heading=105.0
+2026-04-04 21:48:25,710 INFO     navigator | TURNED -15.0 DEGREES
+2026-04-04 21:48:26,147 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 21:48:26,147 INFO     navigator | move 7.0 cm direction=-1 | heading=90.0
+2026-04-04 21:48:26,713 INFO     navigator | move done | traveled=7.8 cm heading=90.0 room=-
+2026-04-04 21:48:26,715 INFO     navigator | scan_turn 9.1 deg | heading=90.0
+2026-04-04 21:48:26,717 INFO     navigator | TURNED 9.05312653963082 DEGREES
+2026-04-04 21:48:27,115 INFO     navigator | scan_turn done | heading=99.1 bed_found=False
+2026-04-04 21:48:31,121 INFO     navigator | scan_turn -9.1 deg | heading=99.1
+2026-04-04 21:48:31,123 INFO     navigator | TURNED -9.05312653963082 DEGREES
+2026-04-04 21:48:31,402 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 21:48:31,403 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 21:48:32,507 INFO     navigator | move_until_distance: stopped at 52.7 cm from wall (backward)
+2026-04-04 21:48:32,509 INFO     navigator | move_until_distance done | traveled=15.7 cm
+2026-04-04 21:48:33,262 INFO     navigator | turn -90.0 deg | heading=90.0
+2026-04-04 21:48:33,265 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 21:48:35,709 INFO     navigator | turn done | heading=0.0
+2026-04-04 21:48:35,710 INFO     navigator | move_until_distance threshold=54.5 direction=1 | heading=0.0
+2026-04-04 21:48:38,995 INFO     navigator | move_until_distance: stopped at 54.2 cm from wall (forward)
+2026-04-04 21:48:38,998 INFO     navigator | move_until_distance done | traveled=48.3 cm
+2026-04-04 21:48:38,999 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 21:48:39,001 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:48:41,457 INFO     navigator | turn done | heading=90.0
+2026-04-04 21:48:42,207 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 21:48:43,294 INFO     navigator | move done | traveled=15.7 cm heading=90.0 room=-
+2026-04-04 21:48:43,295 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 21:48:43,764 INFO     navigator | move done | traveled=6.5 cm heading=90.0 room=-
+2026-04-04 21:48:43,972 INFO     controller | red
+2026-04-04 21:48:43,973 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 21:48:45,746 INFO     navigator | move_until_distance: stopped at 53.2 cm from wall (backward)
+2026-04-04 21:48:45,748 INFO     navigator | move_until_distance done | traveled=25.8 cm
+2026-04-04 21:48:45,749 INFO     navigator | turn 90.0 deg | heading=90.0
+2026-04-04 21:48:45,752 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:48:48,100 INFO     navigator | turn done | heading=180.0
+2026-04-04 21:48:48,101 INFO     navigator | move_until_distance threshold=38.9 direction=1 | heading=180.0
+2026-04-04 21:48:49,190 INFO     navigator | move_until_distance: stopped at 38.4 cm from wall (forward)
+2026-04-04 21:48:49,193 INFO     navigator | move_until_distance done | traveled=15.4 cm
+2026-04-04 21:48:49,194 INFO     navigator | turn 90.0 deg | heading=180.0
+2026-04-04 21:48:49,196 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:48:51,664 INFO     navigator | turn done | heading=270.0
+2026-04-04 21:48:53,668 INFO     navigator | move_until_distance threshold=23.7 direction=1 | heading=270.0
+2026-04-04 21:48:55,675 INFO     navigator | move_until_distance: stopped at 23.5 cm from wall (forward)
+2026-04-04 21:48:55,678 INFO     navigator | move_until_distance done | traveled=29.3 cm
+2026-04-04 21:48:57,181 INFO     navigator | move_until_distance threshold=51.8 direction=-1 | heading=270.0
+2026-04-04 21:48:59,243 INFO     navigator | move_until_distance: stopped at 51.8 cm from wall (backward)
+2026-04-04 21:48:59,246 INFO     navigator | move_until_distance done | traveled=30.1 cm
+2026-04-04 21:48:59,251 INFO     navigator | turn 90.0 deg | heading=270.0
+2026-04-04 21:48:59,253 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:49:01,589 INFO     navigator | turn done | heading=360.0
+2026-04-04 21:49:02,610 INFO     navigator | move_until_distance threshold=28.8 direction=1 | heading=360.0
+2026-04-04 21:49:05,400 INFO     navigator | move_until_distance: stopped at 28.8 cm from wall (forward)
+2026-04-04 21:49:05,403 INFO     navigator | move_until_distance done | traveled=41.0 cm
+2026-04-04 21:49:05,404 INFO     navigator | turn -90.0 deg | heading=360.0
+2026-04-04 21:49:05,406 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 21:49:07,754 INFO     navigator | turn done | heading=270.0
+2026-04-04 21:49:10,851 INFO     navigator | move 15.0 cm direction=1 | heading=270.0
+2026-04-04 21:49:11,931 INFO     navigator | move done | traveled=15.6 cm heading=270.0 room=-
+2026-04-04 21:49:11,932 INFO     navigator | move 6.0 cm direction=1 | heading=270.0
+2026-04-04 21:49:12,399 INFO     navigator | move done | traveled=6.5 cm heading=270.0 room=-
+2026-04-04 21:49:12,591 INFO     controller | yelllow
+2026-04-04 21:49:12,592 INFO     navigator | scan_turn 33.0 deg | heading=270.0
+2026-04-04 21:49:12,594 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 21:49:13,470 INFO     navigator | scan_turn done | heading=303.0 bed_found=False
+2026-04-04 21:49:13,663 INFO     controller | yelllow
+2026-04-04 21:49:13,663 INFO     navigator | scan_turn -49.5 deg | heading=303.0
+2026-04-04 21:49:13,665 INFO     navigator | TURNED -49.5 DEGREES
+2026-04-04 21:49:14,966 INFO     navigator | scan_turn done | heading=253.5 bed_found=False
+2026-04-04 21:49:15,110 INFO     controller | yelllow
+2026-04-04 21:49:15,111 INFO     navigator | scan_turn -16.5 deg | heading=253.5
+2026-04-04 21:49:15,113 INFO     navigator | TURNED -16.5 DEGREES
+2026-04-04 21:49:15,690 INFO     navigator | scan_turn done | heading=237.0 bed_found=False
+2026-04-04 21:49:15,843 INFO     controller | yelllow
+2026-04-04 21:49:15,844 INFO     navigator | scan_turn 33.0 deg | heading=237.0
+2026-04-04 21:49:16,270 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 21:49:17,142 INFO     navigator | scan_turn done | heading=270.0 bed_found=False
+2026-04-04 21:49:17,143 INFO     navigator | move 6.0 cm direction=1 | heading=270.0
+2026-04-04 21:49:17,610 INFO     navigator | move done | traveled=6.5 cm heading=270.0 room=-
+2026-04-04 21:49:17,800 INFO     controller | red
+2026-04-04 21:49:17,801 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=270.0
+2026-04-04 21:49:19,706 INFO     navigator | move_until_distance: stopped at 52.7 cm from wall (backward)
+2026-04-04 21:49:19,709 INFO     navigator | move_until_distance done | traveled=27.9 cm
+2026-04-04 21:49:19,710 INFO     navigator | turn -90.0 deg | heading=270.0
+2026-04-04 21:49:19,712 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 21:49:22,132 INFO     navigator | turn done | heading=180.0
+2026-04-04 21:49:22,873 INFO     navigator | move_until_distance threshold=97.5 direction=-1 | heading=180.0
+2026-04-04 21:49:24,290 INFO     navigator | move_until_distance: stopped at 97.8 cm from wall (backward)
+2026-04-04 21:49:24,293 INFO     navigator | move_until_distance done | traveled=20.6 cm
+2026-04-04 21:49:24,294 INFO     navigator | turn 90.0 deg | heading=180.0
+2026-04-04 21:49:24,296 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:49:26,773 INFO     navigator | turn done | heading=270.0
+2026-04-04 21:49:27,297 INFO     navigator | move 15.0 cm direction=1 | heading=270.0
+2026-04-04 21:49:28,380 INFO     navigator | move done | traveled=15.6 cm heading=270.0 room=-
+2026-04-04 21:49:28,381 INFO     navigator | move 6.0 cm direction=1 | heading=270.0
+2026-04-04 21:49:28,848 INFO     navigator | move done | traveled=6.5 cm heading=270.0 room=-
+2026-04-04 21:49:29,049 INFO     controller | yelllow
+2026-04-04 21:49:29,051 INFO     navigator | scan_turn 15.0 deg | heading=270.0
+2026-04-04 21:49:29,053 INFO     navigator | TURNED 15.0 DEGREES
+2026-04-04 21:49:29,468 INFO     navigator | scan_turn done | heading=285.0 bed_found=False
+2026-04-04 21:49:29,614 INFO     controller | yelllow
+2026-04-04 21:49:29,615 INFO     navigator | scan_turn -31.5 deg | heading=285.0
+2026-04-04 21:49:29,617 INFO     navigator | TURNED -31.5 DEGREES
+2026-04-04 21:49:30,448 INFO     navigator | scan_turn done | heading=253.5 bed_found=False
+2026-04-04 21:49:30,650 INFO     controller | yelllow
+2026-04-04 21:49:30,651 INFO     navigator | scan_turn -16.5 deg | heading=253.5
+2026-04-04 21:49:30,653 INFO     navigator | TURNED -16.5 DEGREES
+2026-04-04 21:49:31,249 INFO     navigator | scan_turn done | heading=237.0 bed_found=False
+2026-04-04 21:49:31,431 INFO     controller | yelllow
+2026-04-04 21:49:31,432 INFO     navigator | scan_turn 33.0 deg | heading=237.0
+2026-04-04 21:49:31,434 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 21:49:32,452 INFO     navigator | scan_turn done | heading=270.0 bed_found=False
+2026-04-04 21:49:32,453 INFO     navigator | move 6.0 cm direction=1 | heading=270.0
+2026-04-04 21:49:32,919 INFO     navigator | move done | traveled=6.4 cm heading=270.0 room=-
+2026-04-04 21:49:33,101 INFO     controller | green
+2026-04-04 21:49:33,101 INFO     navigator | move 6.9 cm direction=-1 | heading=270.0
+2026-04-04 21:49:33,615 INFO     navigator | move done | traveled=7.2 cm heading=270.0 room=-
+2026-04-04 21:49:37,623 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=270.0
+2026-04-04 21:49:39,049 INFO     navigator | move_until_distance: stopped at 52.7 cm from wall (backward)
+2026-04-04 21:49:39,052 INFO     navigator | move_until_distance done | traveled=20.7 cm
+2026-04-04 21:49:39,053 INFO     navigator | turn -90.0 deg | heading=270.0
+2026-04-04 21:49:39,055 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 21:49:41,472 INFO     navigator | turn done | heading=180.0
+2026-04-04 21:49:41,474 INFO     navigator | move 81.0 cm direction=1 | heading=180.0
+2026-04-04 21:49:47,046 INFO     navigator | move done | traveled=82.7 cm heading=180.0 room=hallway
+2026-04-04 21:49:47,047 INFO     navigator | turn 90.0 deg | heading=180.0
+2026-04-04 21:49:47,049 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:49:49,474 INFO     navigator | turn done | heading=270.0
+2026-04-04 21:49:49,476 INFO     navigator | move_until_distance threshold=15.0 direction=1 | heading=270.0
+2026-04-04 21:49:51,822 INFO     navigator | move_until_distance: stopped at 14.9 cm from wall (forward)
+2026-04-04 21:49:51,825 INFO     navigator | move_until_distance done | traveled=34.4 cm
+2026-04-04 21:52:02,893 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 21:52:05,400 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 21:52:06,907 INFO     navigator | move_until_distance threshold=100.0 direction=-1 | heading=0.0
+2026-04-04 21:52:07,791 INFO     navigator | move_until_distance: stopped at 100.2 cm from wall (backward)
+2026-04-04 21:52:07,793 INFO     navigator | move_until_distance done | traveled=12.5 cm
+2026-04-04 21:52:07,794 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 21:52:07,797 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:52:10,252 INFO     navigator | turn done | heading=90.0
+2026-04-04 21:52:10,254 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 21:52:13,752 INFO     navigator | move_until_distance: stopped at 54.6 cm from wall (forward)
+2026-04-04 21:52:13,755 INFO     navigator | move_until_distance done | traveled=51.6 cm
+2026-04-04 21:52:42,767 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 21:52:45,858 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 21:52:47,370 INFO     navigator | move_until_distance threshold=100.0 direction=-1 | heading=0.0
+2026-04-04 21:52:48,324 INFO     navigator | move_until_distance: stopped at 100.2 cm from wall (backward)
+2026-04-04 21:52:48,326 INFO     navigator | move_until_distance done | traveled=13.6 cm
+2026-04-04 21:52:48,327 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 21:52:48,329 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:52:50,805 INFO     navigator | turn done | heading=90.0
+2026-04-04 21:52:50,806 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 21:52:54,222 INFO     navigator | move_until_distance: stopped at 54.6 cm from wall (forward)
+2026-04-04 21:52:54,225 INFO     navigator | move_until_distance done | traveled=50.4 cm
+2026-04-04 21:52:55,138 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 21:52:56,225 INFO     navigator | move done | traveled=15.6 cm heading=90.0 room=-
+2026-04-04 21:52:56,226 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 21:52:56,693 INFO     navigator | move done | traveled=6.4 cm heading=90.0 room=-
+2026-04-04 21:52:56,890 INFO     controller | yelllow
+2026-04-04 21:52:56,890 INFO     navigator | scan_turn 15.0 deg | heading=90.0
+2026-04-04 21:52:56,892 INFO     navigator | TURNED 15.0 DEGREES
+2026-04-04 21:52:57,381 INFO     navigator | scan_turn done | heading=105.0 bed_found=False
+2026-04-04 21:52:57,555 INFO     controller | yelllow
+2026-04-04 21:52:57,556 INFO     navigator | scan_turn -31.5 deg | heading=105.0
+2026-04-04 21:52:57,559 INFO     navigator | TURNED -31.5 DEGREES
+2026-04-04 21:52:58,521 INFO     navigator | scan_turn done | heading=73.5 bed_found=False
+2026-04-04 21:52:58,716 INFO     controller | yelllow
+2026-04-04 21:52:58,718 INFO     navigator | scan_turn -16.5 deg | heading=73.5
+2026-04-04 21:52:58,719 INFO     navigator | TURNED -16.5 DEGREES
+2026-04-04 21:52:59,167 INFO     navigator | scan_turn done | heading=57.0 bed_found=False
+2026-04-04 21:52:59,342 INFO     controller | yelllow
+2026-04-04 21:52:59,347 INFO     navigator | scan_turn 33.0 deg | heading=57.0
+2026-04-04 21:52:59,350 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 21:53:00,238 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 21:53:00,240 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 21:53:00,707 INFO     navigator | move done | traveled=6.5 cm heading=90.0 room=-
+2026-04-04 21:53:00,913 INFO     controller | green
+2026-04-04 21:53:00,914 INFO     navigator | move 6.9 cm direction=-1 | heading=90.0
+2026-04-04 21:53:01,429 INFO     navigator | move done | traveled=7.1 cm heading=90.0 room=-
+2026-04-04 21:53:05,435 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 21:53:06,901 INFO     navigator | move_until_distance: stopped at 52.7 cm from wall (backward)
+2026-04-04 21:53:06,903 INFO     navigator | move_until_distance done | traveled=21.3 cm
+2026-04-04 21:53:07,879 INFO     navigator | turn -90.0 deg | heading=90.0
+2026-04-04 21:53:07,882 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 21:53:10,201 INFO     navigator | turn done | heading=0.0
+2026-04-04 21:53:10,203 INFO     navigator | move_until_distance threshold=54.5 direction=1 | heading=0.0
+2026-04-04 21:53:13,426 INFO     navigator | move_until_distance: stopped at 54.2 cm from wall (forward)
+2026-04-04 21:53:13,429 INFO     navigator | move_until_distance done | traveled=47.5 cm
+2026-04-04 21:53:13,430 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 21:53:13,432 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:53:15,898 INFO     navigator | turn done | heading=90.0
+2026-04-04 21:53:16,874 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 21:53:17,959 INFO     navigator | move done | traveled=15.7 cm heading=90.0 room=-
+2026-04-04 21:53:17,961 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 21:53:18,427 INFO     navigator | move done | traveled=6.5 cm heading=90.0 room=-
+2026-04-04 21:53:18,590 INFO     controller | green
+2026-04-04 21:53:18,591 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 21:53:20,280 INFO     navigator | move_until_distance: stopped at 53.2 cm from wall (backward)
+2026-04-04 21:53:20,283 INFO     navigator | move_until_distance done | traveled=24.6 cm
+2026-04-04 21:53:20,284 INFO     navigator | turn 90.0 deg | heading=90.0
+2026-04-04 21:53:20,286 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:53:22,624 INFO     navigator | turn done | heading=180.0
+2026-04-04 21:53:22,625 INFO     navigator | move_until_distance threshold=38.9 direction=1 | heading=180.0
+2026-04-04 21:53:23,695 INFO     navigator | move_until_distance: stopped at 38.9 cm from wall (forward)
+2026-04-04 21:53:23,697 INFO     navigator | move_until_distance done | traveled=15.3 cm
+2026-04-04 21:53:23,698 INFO     navigator | turn 90.0 deg | heading=180.0
+2026-04-04 21:53:23,701 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:53:26,026 INFO     navigator | turn done | heading=270.0
+2026-04-04 21:53:28,030 INFO     navigator | move_until_distance threshold=23.7 direction=1 | heading=270.0
+2026-04-04 21:53:30,105 INFO     navigator | move_until_distance: stopped at 23.7 cm from wall (forward)
+2026-04-04 21:53:30,108 INFO     navigator | move_until_distance done | traveled=30.4 cm
+2026-04-04 21:53:31,611 INFO     navigator | move_until_distance threshold=51.8 direction=-1 | heading=270.0
+2026-04-04 21:53:33,691 INFO     navigator | move_until_distance: stopped at 51.9 cm from wall (backward)
+2026-04-04 21:53:33,694 INFO     navigator | move_until_distance done | traveled=30.4 cm
+2026-04-04 21:53:33,695 INFO     navigator | turn 90.0 deg | heading=270.0
+2026-04-04 21:53:33,698 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:53:36,036 INFO     navigator | turn done | heading=360.0
+2026-04-04 21:53:36,037 INFO     navigator | move_until_distance threshold=54.5 direction=1 | heading=360.0
+2026-04-04 21:53:37,096 INFO     navigator | move_until_distance: stopped at 53.8 cm from wall (forward)
+2026-04-04 21:53:37,099 INFO     navigator | move_until_distance done | traveled=15.1 cm
+2026-04-04 21:53:37,100 INFO     navigator | turn 90.0 deg | heading=360.0
+2026-04-04 21:53:37,102 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:53:39,553 INFO     navigator | turn done | heading=450.0
+2026-04-04 21:53:39,554 INFO     navigator | move 15.0 cm direction=1 | heading=450.0
+2026-04-04 21:53:40,640 INFO     navigator | move done | traveled=15.7 cm heading=450.0 room=-
+2026-04-04 21:53:40,641 INFO     navigator | move 6.0 cm direction=1 | heading=450.0
+2026-04-04 21:53:41,109 INFO     navigator | move done | traveled=6.5 cm heading=450.0 room=-
+2026-04-04 21:53:41,260 INFO     controller | yelllow
+2026-04-04 21:53:41,260 INFO     navigator | scan_turn 33.0 deg | heading=450.0
+2026-04-04 21:53:41,262 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 21:53:42,267 INFO     navigator | scan_turn done | heading=483.0 bed_found=False
+2026-04-04 21:53:42,472 INFO     controller | green
+2026-04-04 21:53:42,472 INFO     navigator | scan_turn -33.0 deg | heading=483.0
+2026-04-04 21:53:42,474 INFO     navigator | TURNED -33.0 DEGREES
+2026-04-04 21:53:43,370 INFO     navigator | scan_turn done | heading=450.0 bed_found=False
+2026-04-04 21:53:43,371 INFO     navigator | move 7.6 cm direction=-1 | heading=450.0
+2026-04-04 21:53:43,940 INFO     navigator | move done | traveled=7.9 cm heading=450.0 room=-
+2026-04-04 21:53:43,941 INFO     navigator | scan_turn 19.3 deg | heading=450.0
+2026-04-04 21:53:43,944 INFO     navigator | TURNED 19.336512600729492 DEGREES
+2026-04-04 21:53:44,632 INFO     navigator | scan_turn done | heading=469.3 bed_found=False
+2026-04-04 21:53:48,640 INFO     navigator | scan_turn -19.3 deg | heading=469.3
+2026-04-04 21:53:48,641 INFO     navigator | TURNED -19.336512600729492 DEGREES
+2026-04-04 21:53:49,271 INFO     navigator | scan_turn done | heading=450.0 bed_found=False
+2026-04-04 21:53:49,272 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=450.0
+2026-04-04 21:53:50,248 INFO     navigator | move_until_distance: stopped at 52.5 cm from wall (backward)
+2026-04-04 21:53:50,251 INFO     navigator | move_until_distance done | traveled=14.0 cm
+2026-04-04 21:53:50,252 INFO     navigator | turn 90.0 deg | heading=450.0
+2026-04-04 21:53:50,254 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:53:52,594 INFO     navigator | turn done | heading=540.0
+2026-04-04 21:53:52,596 INFO     navigator | move 37.0 cm direction=1 | heading=540.0
+2026-04-04 21:53:55,119 INFO     navigator | move done | traveled=37.1 cm heading=540.0 room=-
+2026-04-04 21:53:55,120 INFO     navigator | turn 90.0 deg | heading=540.0
+2026-04-04 21:53:55,122 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:53:57,543 INFO     navigator | turn done | heading=630.0
+2026-04-04 21:53:57,544 INFO     navigator | move_until_distance threshold=15.0 direction=1 | heading=630.0
+2026-04-04 21:54:00,851 INFO     navigator | move_until_distance: stopped at 14.9 cm from wall (forward)
+2026-04-04 21:54:00,854 INFO     navigator | move_until_distance done | traveled=48.7 cm
+2026-04-04 21:55:44,750 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 21:55:47,727 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 21:55:49,234 INFO     navigator | move_until_distance threshold=100.0 direction=-1 | heading=0.0
+2026-04-04 21:55:50,154 INFO     navigator | move_until_distance: stopped at 101.4 cm from wall (backward)
+2026-04-04 21:55:50,157 INFO     navigator | move_until_distance done | traveled=13.1 cm
+2026-04-04 21:55:50,158 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 21:55:50,160 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:55:52,628 INFO     navigator | turn done | heading=90.0
+2026-04-04 21:55:52,629 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 21:55:56,087 INFO     navigator | move_until_distance: stopped at 54.6 cm from wall (forward)
+2026-04-04 21:55:56,090 INFO     navigator | move_until_distance done | traveled=51.0 cm
+2026-04-04 21:55:56,543 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 21:55:57,627 INFO     navigator | move done | traveled=15.6 cm heading=90.0 room=-
+2026-04-04 21:55:57,628 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 21:55:58,095 INFO     navigator | move done | traveled=6.4 cm heading=90.0 room=-
+2026-04-04 21:55:58,287 INFO     controller | yelllow
+2026-04-04 21:55:58,288 INFO     navigator | scan_turn 15.0 deg | heading=90.0
+2026-04-04 21:55:58,289 INFO     navigator | TURNED 15.0 DEGREES
+2026-04-04 21:55:58,854 INFO     navigator | scan_turn done | heading=105.0 bed_found=False
+2026-04-04 21:55:59,043 INFO     controller | yelllow
+2026-04-04 21:55:59,043 INFO     navigator | scan_turn -31.5 deg | heading=105.0
+2026-04-04 21:55:59,045 INFO     navigator | TURNED -31.5 DEGREES
+2026-04-04 21:55:59,933 INFO     navigator | scan_turn done | heading=73.5 bed_found=False
+2026-04-04 21:56:00,124 INFO     controller | green
+2026-04-04 21:56:00,124 INFO     navigator | scan_turn 16.5 deg | heading=73.5
+2026-04-04 21:56:00,126 INFO     navigator | TURNED 16.5 DEGREES
+2026-04-04 21:56:00,585 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 21:56:00,586 INFO     navigator | move 7.1 cm direction=-1 | heading=90.0
+2026-04-04 21:56:01,103 INFO     navigator | move done | traveled=7.1 cm heading=90.0 room=-
+2026-04-04 21:56:01,104 INFO     navigator | scan_turn -9.9 deg | heading=90.0
+2026-04-04 21:56:01,107 INFO     navigator | TURNED -9.943003010096678 DEGREES
+2026-04-04 21:56:01,515 INFO     navigator | scan_turn done | heading=80.1 bed_found=False
+2026-04-04 21:56:05,520 INFO     navigator | scan_turn 9.9 deg | heading=80.1
+2026-04-04 21:56:05,523 INFO     navigator | TURNED 9.943003010096678 DEGREES
+2026-04-04 21:56:05,942 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 21:56:05,943 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 21:56:07,084 INFO     navigator | move_until_distance: stopped at 52.5 cm from wall (backward)
+2026-04-04 21:56:07,086 INFO     navigator | move_until_distance done | traveled=16.4 cm
+2026-04-04 21:56:07,871 INFO     navigator | turn -90.0 deg | heading=90.0
+2026-04-04 21:56:07,874 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 21:56:10,327 INFO     navigator | turn done | heading=0.0
+2026-04-04 21:56:10,328 INFO     navigator | move_until_distance threshold=54.5 direction=1 | heading=0.0
+2026-04-04 21:56:13,784 INFO     navigator | move_until_distance: stopped at 54.4 cm from wall (forward)
+2026-04-04 21:56:13,787 INFO     navigator | move_until_distance done | traveled=51.0 cm
+2026-04-04 21:56:13,788 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 21:56:13,790 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:56:16,139 INFO     navigator | turn done | heading=90.0
+2026-04-04 21:56:17,188 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 21:56:18,272 INFO     navigator | move done | traveled=15.7 cm heading=90.0 room=-
+2026-04-04 21:56:18,274 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 21:56:18,740 INFO     navigator | move done | traveled=6.5 cm heading=90.0 room=-
+2026-04-04 21:56:18,951 INFO     controller | yelllow
+2026-04-04 21:56:18,952 INFO     navigator | scan_turn 33.0 deg | heading=90.0
+2026-04-04 21:56:18,957 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 21:56:19,943 INFO     navigator | scan_turn done | heading=123.0 bed_found=False
+2026-04-04 21:56:20,116 INFO     controller | yelllow
+2026-04-04 21:56:20,118 INFO     navigator | scan_turn -49.5 deg | heading=123.0
+2026-04-04 21:56:20,120 INFO     navigator | TURNED -49.5 DEGREES
+2026-04-04 21:56:21,556 INFO     navigator | scan_turn done | heading=73.5 bed_found=False
+2026-04-04 21:56:21,766 INFO     controller | yelllow
+2026-04-04 21:56:21,767 INFO     navigator | scan_turn -16.5 deg | heading=73.5
+2026-04-04 21:56:21,769 INFO     navigator | TURNED -16.5 DEGREES
+2026-04-04 21:56:22,226 INFO     navigator | scan_turn done | heading=57.0 bed_found=False
+2026-04-04 21:56:22,382 INFO     controller | yelllow
+2026-04-04 21:56:22,383 INFO     navigator | scan_turn 33.0 deg | heading=57.0
+2026-04-04 21:56:22,384 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 21:56:23,397 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 21:56:23,399 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 21:56:23,865 INFO     navigator | move done | traveled=6.4 cm heading=90.0 room=-
+2026-04-04 21:56:24,046 INFO     controller | yelllow
+2026-04-04 21:56:24,047 INFO     navigator | scan_turn 33.0 deg | heading=90.0
+2026-04-04 21:56:24,054 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 21:56:25,057 INFO     navigator | scan_turn done | heading=123.0 bed_found=False
+2026-04-04 21:56:25,227 INFO     controller | green
+2026-04-04 21:56:25,228 INFO     navigator | scan_turn -33.0 deg | heading=123.0
+2026-04-04 21:56:25,230 INFO     navigator | TURNED -33.0 DEGREES
+2026-04-04 21:56:26,270 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 21:56:26,271 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 21:56:28,250 INFO     navigator | move_until_distance: stopped at 52.5 cm from wall (backward)
+2026-04-04 21:56:28,253 INFO     navigator | move_until_distance done | traveled=29.0 cm
+2026-04-04 21:56:28,254 INFO     navigator | turn 90.0 deg | heading=90.0
+2026-04-04 21:56:28,257 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:56:30,596 INFO     navigator | turn done | heading=180.0
+2026-04-04 21:56:30,597 INFO     navigator | move_until_distance threshold=38.9 direction=1 | heading=180.0
+2026-04-04 21:56:31,568 INFO     navigator | move_until_distance: stopped at 38.5 cm from wall (forward)
+2026-04-04 21:56:31,572 INFO     navigator | move_until_distance done | traveled=13.8 cm
+2026-04-04 21:56:31,574 INFO     navigator | turn 90.0 deg | heading=180.0
+2026-04-04 21:56:31,577 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:56:34,025 INFO     navigator | turn done | heading=270.0
+2026-04-04 21:56:36,031 INFO     navigator | move_until_distance threshold=23.7 direction=1 | heading=270.0
+2026-04-04 21:57:42,224 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 21:57:45,998 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 21:57:47,504 INFO     navigator | move_until_distance threshold=100.0 direction=-1 | heading=0.0
+2026-04-04 21:57:55,413 INFO     navigator | move_until_distance: stopped at 109.7 cm from wall (backward)
+2026-04-04 21:57:55,416 INFO     navigator | move_until_distance done | traveled=117.5 cm
+2026-04-04 21:57:55,417 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 21:57:55,420 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:58:08,199 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 21:58:11,245 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 21:58:12,752 INFO     navigator | move_until_distance threshold=100.0 direction=-1 | heading=0.0
+2026-04-04 21:58:21,606 INFO     navigator | move_until_distance: stopped at 110.5 cm from wall (backward)
+2026-04-04 21:58:21,609 INFO     navigator | move_until_distance done | traveled=131.6 cm
+2026-04-04 21:58:21,614 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 21:58:21,617 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 21:58:23,937 INFO     navigator | turn done | heading=90.0
+2026-04-04 21:58:23,938 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 21:58:45,511 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 21:58:48,285 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 21:58:49,792 INFO     navigator | move_until_distance threshold=100.0 direction=-1 | heading=0.0
+2026-04-04 21:58:52,281 INFO     navigator | move_until_distance: stopped at 109.9 cm from wall (backward)
+2026-04-04 21:58:52,284 INFO     navigator | move_until_distance done | traveled=36.5 cm
+2026-04-04 21:58:52,285 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 21:58:52,287 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:00:31,915 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 22:00:35,199 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 22:00:36,706 INFO     navigator | move_until_distance threshold=100.0 direction=-1 | heading=0.0
+2026-04-04 22:00:38,439 INFO     navigator | move_until_distance: stopped at 109.3 cm from wall (backward)
+2026-04-04 22:00:38,442 INFO     navigator | move_until_distance done | traveled=25.2 cm
+2026-04-04 22:00:38,443 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 22:00:38,445 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:03:01,435 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 22:03:03,530 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 22:03:05,037 INFO     navigator | move 12.0 cm direction=-1 | heading=0.0
+2026-04-04 22:03:05,912 INFO     navigator | move done | traveled=12.6 cm heading=0.0 room=-
+2026-04-04 22:03:05,913 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 22:03:05,916 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:03:08,398 INFO     navigator | turn done | heading=90.0
+2026-04-04 22:03:08,399 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 22:03:11,857 INFO     navigator | move_until_distance: stopped at 54.6 cm from wall (forward)
+2026-04-04 22:03:11,859 INFO     navigator | move_until_distance done | traveled=51.0 cm
+2026-04-04 22:04:06,647 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 22:04:08,599 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 22:04:10,105 INFO     navigator | move 13.0 cm direction=-1 | heading=0.0
+2026-04-04 22:04:11,035 INFO     navigator | move done | traveled=13.4 cm heading=0.0 room=-
+2026-04-04 22:04:11,036 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 22:04:11,038 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:04:13,387 INFO     navigator | turn done | heading=90.0
+2026-04-04 22:04:13,388 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 22:04:16,862 INFO     navigator | move_until_distance: stopped at 54.4 cm from wall (forward)
+2026-04-04 22:04:16,865 INFO     navigator | move_until_distance done | traveled=51.3 cm
+2026-04-04 22:04:19,011 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 22:04:20,096 INFO     navigator | move done | traveled=15.6 cm heading=90.0 room=-
+2026-04-04 22:04:20,097 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 22:04:20,564 INFO     navigator | move done | traveled=6.4 cm heading=90.0 room=-
+2026-04-04 22:04:20,794 INFO     controller | yelllow
+2026-04-04 22:04:20,795 INFO     navigator | scan_turn 15.0 deg | heading=90.0
+2026-04-04 22:04:20,797 INFO     navigator | TURNED 15.0 DEGREES
+2026-04-04 22:04:21,212 INFO     navigator | scan_turn done | heading=105.0 bed_found=False
+2026-04-04 22:04:21,365 INFO     controller | yelllow
+2026-04-04 22:04:21,366 INFO     navigator | scan_turn -31.5 deg | heading=105.0
+2026-04-04 22:04:21,367 INFO     navigator | TURNED -31.5 DEGREES
+2026-04-04 22:04:22,220 INFO     navigator | scan_turn done | heading=73.5 bed_found=False
+2026-04-04 22:04:22,423 INFO     controller | green
+2026-04-04 22:04:22,424 INFO     navigator | scan_turn 16.5 deg | heading=73.5
+2026-04-04 22:04:22,426 INFO     navigator | TURNED 16.5 DEGREES
+2026-04-04 22:04:23,015 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 22:04:23,016 INFO     navigator | move 7.1 cm direction=-1 | heading=90.0
+2026-04-04 22:04:23,532 INFO     navigator | move done | traveled=7.2 cm heading=90.0 room=-
+2026-04-04 22:04:23,533 INFO     navigator | scan_turn -9.9 deg | heading=90.0
+2026-04-04 22:04:23,535 INFO     navigator | TURNED -9.943003010096678 DEGREES
+2026-04-04 22:04:23,997 INFO     navigator | scan_turn done | heading=80.1 bed_found=False
+2026-04-04 22:04:28,004 INFO     navigator | scan_turn 9.9 deg | heading=80.1
+2026-04-04 22:04:28,007 INFO     navigator | TURNED 9.943003010096678 DEGREES
+2026-04-04 22:04:28,425 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 22:04:28,426 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 22:04:29,542 INFO     navigator | move_until_distance: stopped at 52.5 cm from wall (backward)
+2026-04-04 22:04:29,545 INFO     navigator | move_until_distance done | traveled=16.1 cm
+2026-04-04 22:04:30,994 INFO     navigator | turn -90.0 deg | heading=90.0
+2026-04-04 22:04:30,997 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 22:04:33,329 INFO     navigator | turn done | heading=0.0
+2026-04-04 22:04:33,331 INFO     navigator | move_until_distance threshold=54.5 direction=1 | heading=0.0
+2026-04-04 22:04:36,616 INFO     navigator | move_until_distance: stopped at 53.8 cm from wall (forward)
+2026-04-04 22:04:36,618 INFO     navigator | move_until_distance done | traveled=48.5 cm
+2026-04-04 22:04:36,619 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 22:04:36,622 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:04:39,055 INFO     navigator | turn done | heading=90.0
+2026-04-04 22:04:40,023 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 22:04:41,110 INFO     navigator | move done | traveled=15.6 cm heading=90.0 room=-
+2026-04-04 22:04:41,111 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 22:04:41,580 INFO     navigator | move done | traveled=6.5 cm heading=90.0 room=-
+2026-04-04 22:04:41,800 INFO     controller | green
+2026-04-04 22:04:41,801 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 22:04:43,531 INFO     navigator | move_until_distance: stopped at 52.7 cm from wall (backward)
+2026-04-04 22:04:43,534 INFO     navigator | move_until_distance done | traveled=25.3 cm
+2026-04-04 22:04:43,534 INFO     navigator | turn 92.0 deg | heading=90.0
+2026-04-04 22:04:43,536 INFO     navigator | TURNED 92.0 DEGREES
+2026-04-04 22:04:46,061 INFO     navigator | turn done | heading=182.0
+2026-04-04 22:04:46,062 INFO     navigator | move_until_distance threshold=38.9 direction=1 | heading=182.0
+2026-04-04 22:04:47,152 INFO     navigator | move_until_distance: stopped at 38.5 cm from wall (forward)
+2026-04-04 22:04:47,155 INFO     navigator | move_until_distance done | traveled=15.6 cm
+2026-04-04 22:04:47,156 INFO     navigator | turn 90.0 deg | heading=182.0
+2026-04-04 22:04:47,158 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:04:49,606 INFO     navigator | turn done | heading=272.0
+2026-04-04 22:04:51,611 INFO     navigator | move_until_distance threshold=23.7 direction=1 | heading=272.0
+2026-04-04 22:04:53,640 INFO     navigator | move_until_distance: stopped at 23.5 cm from wall (forward)
+2026-04-04 22:04:53,642 INFO     navigator | move_until_distance done | traveled=29.6 cm
+2026-04-04 22:04:55,146 INFO     navigator | move_until_distance threshold=51.8 direction=-1 | heading=272.0
+2026-04-04 22:04:57,240 INFO     navigator | move_until_distance: stopped at 52.3 cm from wall (backward)
+2026-04-04 22:04:57,242 INFO     navigator | move_until_distance done | traveled=30.5 cm
+2026-04-04 22:04:57,242 INFO     navigator | turn 90.0 deg | heading=272.0
+2026-04-04 22:04:57,244 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:04:59,570 INFO     navigator | turn done | heading=362.0
+2026-04-04 22:04:59,571 INFO     navigator | move_until_distance threshold=54.5 direction=1 | heading=362.0
+2026-04-04 22:05:00,601 INFO     navigator | move_until_distance: stopped at 54.2 cm from wall (forward)
+2026-04-04 22:05:00,604 INFO     navigator | move_until_distance done | traveled=14.7 cm
+2026-04-04 22:05:00,605 INFO     navigator | turn 90.0 deg | heading=362.0
+2026-04-04 22:05:00,608 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:05:03,076 INFO     navigator | turn done | heading=452.0
+2026-04-04 22:05:03,078 INFO     navigator | move 15.0 cm direction=1 | heading=452.0
+2026-04-04 22:05:04,163 INFO     navigator | move done | traveled=15.6 cm heading=452.0 room=-
+2026-04-04 22:05:04,165 INFO     navigator | move 6.0 cm direction=1 | heading=452.0
+2026-04-04 22:05:04,632 INFO     navigator | move done | traveled=6.5 cm heading=452.0 room=-
+2026-04-04 22:05:04,829 INFO     controller | yelllow
+2026-04-04 22:05:04,830 INFO     navigator | scan_turn 33.0 deg | heading=452.0
+2026-04-04 22:05:04,832 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:05:05,837 INFO     navigator | scan_turn done | heading=485.0 bed_found=False
+2026-04-04 22:05:06,036 INFO     controller | yelllow
+2026-04-04 22:05:06,037 INFO     navigator | scan_turn -49.5 deg | heading=485.0
+2026-04-04 22:05:06,039 INFO     navigator | TURNED -49.5 DEGREES
+2026-04-04 22:05:07,476 INFO     navigator | scan_turn done | heading=435.5 bed_found=False
+2026-04-04 22:05:07,668 INFO     controller | yelllow
+2026-04-04 22:05:07,669 INFO     navigator | scan_turn -16.5 deg | heading=435.5
+2026-04-04 22:05:07,671 INFO     navigator | TURNED -16.5 DEGREES
+2026-04-04 22:05:08,257 INFO     navigator | scan_turn done | heading=419.0 bed_found=False
+2026-04-04 22:05:08,448 INFO     controller | yelllow
+2026-04-04 22:05:08,449 INFO     navigator | scan_turn 33.0 deg | heading=419.0
+2026-04-04 22:05:08,451 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:05:09,459 INFO     navigator | scan_turn done | heading=452.0 bed_found=False
+2026-04-04 22:05:09,460 INFO     navigator | move 6.0 cm direction=1 | heading=452.0
+2026-04-04 22:05:09,924 INFO     navigator | move done | traveled=6.4 cm heading=452.0 room=-
+2026-04-04 22:05:10,085 INFO     controller | yelllow
+2026-04-04 22:05:10,086 INFO     navigator | scan_turn 33.0 deg | heading=452.0
+2026-04-04 22:05:10,089 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:05:11,091 INFO     navigator | scan_turn done | heading=485.0 bed_found=False
+2026-04-04 22:05:11,289 INFO     controller | green
+2026-04-04 22:05:11,290 INFO     navigator | scan_turn -33.0 deg | heading=485.0
+2026-04-04 22:05:11,292 INFO     navigator | TURNED -33.0 DEGREES
+2026-04-04 22:05:12,191 INFO     navigator | scan_turn done | heading=452.0 bed_found=False
+2026-04-04 22:05:12,192 INFO     navigator | move 7.6 cm direction=-1 | heading=452.0
+2026-04-04 22:05:12,762 INFO     navigator | move done | traveled=8.0 cm heading=452.0 room=-
+2026-04-04 22:05:12,763 INFO     navigator | scan_turn 19.3 deg | heading=452.0
+2026-04-04 22:05:12,766 INFO     navigator | TURNED 19.336512600729492 DEGREES
+2026-04-04 22:05:13,412 INFO     navigator | scan_turn done | heading=471.3 bed_found=False
+2026-04-04 22:05:17,418 INFO     navigator | scan_turn -19.3 deg | heading=471.3
+2026-04-04 22:05:17,421 INFO     navigator | TURNED -19.336512600729492 DEGREES
+2026-04-04 22:05:17,958 INFO     navigator | scan_turn done | heading=452.0 bed_found=False
+2026-04-04 22:05:17,959 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=452.0
+2026-04-04 22:05:19,491 INFO     navigator | move_until_distance: stopped at 52.5 cm from wall (backward)
+2026-04-04 22:05:19,494 INFO     navigator | move_until_distance done | traveled=22.2 cm
+2026-04-04 22:05:19,495 INFO     navigator | turn 90.0 deg | heading=452.0
+2026-04-04 22:05:19,497 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:05:21,947 INFO     navigator | turn done | heading=542.0
+2026-04-04 22:05:21,948 INFO     navigator | move 37.0 cm direction=1 | heading=542.0
+2026-04-04 22:05:24,468 INFO     navigator | move done | traveled=37.1 cm heading=542.0 room=-
+2026-04-04 22:05:24,469 INFO     navigator | turn 90.0 deg | heading=542.0
+2026-04-04 22:05:24,471 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:05:26,906 INFO     navigator | turn done | heading=632.0
+2026-04-04 22:05:26,908 INFO     navigator | move_until_distance threshold=15.0 direction=1 | heading=632.0
+2026-04-04 22:05:30,182 INFO     navigator | move_until_distance: stopped at 14.7 cm from wall (forward)
+2026-04-04 22:05:30,185 INFO     navigator | move_until_distance done | traveled=48.2 cm
+2026-04-04 22:07:05,138 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 22:07:08,060 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 22:07:09,567 INFO     navigator | move 13.0 cm direction=-1 | heading=0.0
+2026-04-04 22:07:10,496 INFO     navigator | move done | traveled=13.3 cm heading=0.0 room=-
+2026-04-04 22:07:10,497 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 22:07:10,499 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:07:12,843 INFO     navigator | turn done | heading=90.0
+2026-04-04 22:07:12,845 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 22:07:16,322 INFO     navigator | move_until_distance: stopped at 54.4 cm from wall (forward)
+2026-04-04 22:07:16,323 INFO     navigator | move_until_distance done | traveled=51.3 cm
+2026-04-04 22:07:16,908 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 22:07:17,993 INFO     navigator | move done | traveled=15.6 cm heading=90.0 room=-
+2026-04-04 22:07:17,994 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 22:07:18,461 INFO     navigator | move done | traveled=6.4 cm heading=90.0 room=-
+2026-04-04 22:07:18,649 INFO     controller | green
+2026-04-04 22:07:18,650 INFO     navigator | move 6.9 cm direction=-1 | heading=90.0
+2026-04-04 22:07:19,164 INFO     navigator | move done | traveled=7.1 cm heading=90.0 room=-
+2026-04-04 22:07:23,170 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 22:07:24,308 INFO     navigator | move_until_distance: stopped at 52.5 cm from wall (backward)
+2026-04-04 22:07:24,310 INFO     navigator | move_until_distance done | traveled=16.3 cm
+2026-04-04 22:07:24,724 INFO     navigator | turn -90.0 deg | heading=90.0
+2026-04-04 22:07:24,727 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 22:07:27,178 INFO     navigator | turn done | heading=0.0
+2026-04-04 22:07:27,179 INFO     navigator | move_until_distance threshold=54.5 direction=1 | heading=0.0
+2026-04-04 22:07:30,391 INFO     navigator | move_until_distance: stopped at 54.0 cm from wall (forward)
+2026-04-04 22:07:30,393 INFO     navigator | move_until_distance done | traveled=47.4 cm
+2026-04-04 22:07:30,394 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 22:07:30,397 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:07:32,837 INFO     navigator | turn done | heading=90.0
+2026-04-04 22:07:33,122 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 22:07:34,207 INFO     navigator | move done | traveled=15.6 cm heading=90.0 room=-
+2026-04-04 22:07:34,208 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 22:07:34,676 INFO     navigator | move done | traveled=6.4 cm heading=90.0 room=-
+2026-04-04 22:07:34,889 INFO     controller | green
+2026-04-04 22:07:34,889 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 22:07:36,606 INFO     navigator | move_until_distance: stopped at 52.4 cm from wall (backward)
+2026-04-04 22:07:36,609 INFO     navigator | move_until_distance done | traveled=24.9 cm
+2026-04-04 22:07:36,610 INFO     navigator | turn 92.0 deg | heading=90.0
+2026-04-04 22:07:36,612 INFO     navigator | TURNED 92.0 DEGREES
+2026-04-04 22:07:39,028 INFO     navigator | turn done | heading=182.0
+2026-04-04 22:07:39,029 INFO     navigator | move_until_distance threshold=38.9 direction=1 | heading=182.0
+2026-04-04 22:07:40,069 INFO     navigator | move_until_distance: stopped at 38.4 cm from wall (forward)
+2026-04-04 22:07:40,071 INFO     navigator | move_until_distance done | traveled=14.8 cm
+2026-04-04 22:07:40,072 INFO     navigator | turn 90.0 deg | heading=182.0
+2026-04-04 22:07:40,075 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:07:42,549 INFO     navigator | turn done | heading=272.0
+2026-04-04 22:07:44,552 INFO     navigator | move_until_distance threshold=23.7 direction=1 | heading=272.0
+2026-04-04 22:07:46,586 INFO     navigator | move_until_distance: stopped at 23.7 cm from wall (forward)
+2026-04-04 22:07:46,589 INFO     navigator | move_until_distance done | traveled=29.7 cm
+2026-04-04 22:07:48,092 INFO     navigator | move_until_distance threshold=51.8 direction=-1 | heading=272.0
+2026-04-04 22:07:50,157 INFO     navigator | move_until_distance: stopped at 51.9 cm from wall (backward)
+2026-04-04 22:07:50,160 INFO     navigator | move_until_distance done | traveled=30.2 cm
+2026-04-04 22:07:50,160 INFO     navigator | turn 88.0 deg | heading=272.0
+2026-04-04 22:07:50,163 INFO     navigator | TURNED 88.0 DEGREES
+2026-04-04 22:07:52,556 INFO     navigator | turn done | heading=360.0
+2026-04-04 22:07:52,558 INFO     navigator | move_until_distance threshold=54.5 direction=1 | heading=360.0
+2026-04-04 22:07:53,576 INFO     navigator | move_until_distance: stopped at 53.8 cm from wall (forward)
+2026-04-04 22:07:53,580 INFO     navigator | move_until_distance done | traveled=14.6 cm
+2026-04-04 22:07:53,583 INFO     navigator | turn 90.0 deg | heading=360.0
+2026-04-04 22:07:53,586 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:07:55,956 INFO     navigator | turn done | heading=450.0
+2026-04-04 22:07:55,957 INFO     navigator | move 15.0 cm direction=1 | heading=450.0
+2026-04-04 22:07:57,036 INFO     navigator | move done | traveled=15.5 cm heading=450.0 room=-
+2026-04-04 22:07:57,037 INFO     navigator | move 6.0 cm direction=1 | heading=450.0
+2026-04-04 22:07:57,504 INFO     navigator | move done | traveled=6.5 cm heading=450.0 room=-
+2026-04-04 22:07:57,720 INFO     controller | yelllow
+2026-04-04 22:07:57,720 INFO     navigator | scan_turn 33.0 deg | heading=450.0
+2026-04-04 22:07:57,722 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:07:58,705 INFO     navigator | scan_turn done | heading=483.0 bed_found=False
+2026-04-04 22:07:58,915 INFO     controller | yelllow
+2026-04-04 22:07:58,916 INFO     navigator | scan_turn -49.5 deg | heading=483.0
+2026-04-04 22:07:58,917 INFO     navigator | TURNED -49.5 DEGREES
+2026-04-04 22:08:00,229 INFO     navigator | scan_turn done | heading=433.5 bed_found=False
+2026-04-04 22:08:00,441 INFO     controller | yelllow
+2026-04-04 22:08:00,442 INFO     navigator | scan_turn -16.5 deg | heading=433.5
+2026-04-04 22:08:00,444 INFO     navigator | TURNED -16.5 DEGREES
+2026-04-04 22:08:00,913 INFO     navigator | scan_turn done | heading=417.0 bed_found=False
+2026-04-04 22:08:01,077 INFO     controller | yelllow
+2026-04-04 22:08:01,078 INFO     navigator | scan_turn 33.0 deg | heading=417.0
+2026-04-04 22:08:01,080 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:08:01,965 INFO     navigator | scan_turn done | heading=450.0 bed_found=False
+2026-04-04 22:08:01,966 INFO     navigator | move 6.0 cm direction=1 | heading=450.0
+2026-04-04 22:08:02,433 INFO     navigator | move done | traveled=6.5 cm heading=450.0 room=-
+2026-04-04 22:08:02,605 INFO     controller | yelllow
+2026-04-04 22:08:02,606 INFO     navigator | scan_turn 33.0 deg | heading=450.0
+2026-04-04 22:08:02,607 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:08:03,493 INFO     navigator | scan_turn done | heading=483.0 bed_found=False
+2026-04-04 22:08:03,679 INFO     controller | green
+2026-04-04 22:08:03,680 INFO     navigator | scan_turn -33.0 deg | heading=483.0
+2026-04-04 22:08:03,682 INFO     navigator | TURNED -33.0 DEGREES
+2026-04-04 22:08:04,710 INFO     navigator | scan_turn done | heading=450.0 bed_found=False
+2026-04-04 22:08:04,711 INFO     navigator | move 7.6 cm direction=-1 | heading=450.0
+2026-04-04 22:08:05,282 INFO     navigator | move done | traveled=7.9 cm heading=450.0 room=-
+2026-04-04 22:08:05,283 INFO     navigator | scan_turn 19.3 deg | heading=450.0
+2026-04-04 22:08:05,285 INFO     navigator | TURNED 19.336512600729492 DEGREES
+2026-04-04 22:08:05,834 INFO     navigator | scan_turn done | heading=469.3 bed_found=False
+2026-04-04 22:08:09,840 INFO     navigator | scan_turn -19.3 deg | heading=469.3
+2026-04-04 22:08:09,843 INFO     navigator | TURNED -19.336512600729492 DEGREES
+2026-04-04 22:08:10,394 INFO     navigator | scan_turn done | heading=450.0 bed_found=False
+2026-04-04 22:08:10,395 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=450.0
+2026-04-04 22:13:50,540 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 22:13:53,665 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 22:13:55,172 INFO     navigator | move 13.0 cm direction=-1 | heading=0.0
+2026-04-04 22:13:56,104 INFO     navigator | move done | traveled=13.4 cm heading=0.0 room=-
+2026-04-04 22:13:56,105 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 22:13:56,107 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:13:58,443 INFO     navigator | turn done | heading=90.0
+2026-04-04 22:13:58,445 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 22:14:01,888 INFO     navigator | move_until_distance: stopped at 53.5 cm from wall (forward)
+2026-04-04 22:14:01,891 INFO     navigator | move_until_distance done | traveled=50.8 cm
+2026-04-04 22:14:04,229 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 22:14:05,315 INFO     navigator | move done | traveled=15.7 cm heading=90.0 room=-
+2026-04-04 22:14:05,316 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 22:14:05,784 INFO     navigator | move done | traveled=6.5 cm heading=90.0 room=-
+2026-04-04 22:14:05,991 INFO     controller | yelllow
+2026-04-04 22:14:05,991 INFO     navigator | scan_turn 15.0 deg | heading=90.0
+2026-04-04 22:14:05,993 INFO     navigator | TURNED 15.0 DEGREES
+2026-04-04 22:14:06,409 INFO     navigator | scan_turn done | heading=105.0 bed_found=False
+2026-04-04 22:14:06,558 INFO     controller | yelllow
+2026-04-04 22:14:06,558 INFO     navigator | scan_turn -31.5 deg | heading=105.0
+2026-04-04 22:14:06,560 INFO     navigator | TURNED -31.5 DEGREES
+2026-04-04 22:14:07,521 INFO     navigator | scan_turn done | heading=73.5 bed_found=False
+2026-04-04 22:14:07,720 INFO     controller | green
+2026-04-04 22:14:07,721 INFO     navigator | scan_turn 16.5 deg | heading=73.5
+2026-04-04 22:14:07,723 INFO     navigator | TURNED 16.5 DEGREES
+2026-04-04 22:14:08,310 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 22:14:08,312 INFO     navigator | move 7.1 cm direction=-1 | heading=90.0
+2026-04-04 22:14:08,830 INFO     navigator | move done | traveled=7.1 cm heading=90.0 room=-
+2026-04-04 22:14:08,831 INFO     navigator | scan_turn -9.9 deg | heading=90.0
+2026-04-04 22:14:08,834 INFO     navigator | TURNED -9.943003010096678 DEGREES
+2026-04-04 22:14:09,264 INFO     navigator | scan_turn done | heading=80.1 bed_found=False
+2026-04-04 22:14:13,272 INFO     navigator | scan_turn 9.9 deg | heading=80.1
+2026-04-04 22:14:13,275 INFO     navigator | TURNED 9.943003010096678 DEGREES
+2026-04-04 22:14:13,565 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 22:14:13,566 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 22:14:14,693 INFO     navigator | move_until_distance: stopped at 52.5 cm from wall (backward)
+2026-04-04 22:14:14,696 INFO     navigator | move_until_distance done | traveled=16.3 cm
+2026-04-04 22:14:16,167 INFO     navigator | turn -90.0 deg | heading=90.0
+2026-04-04 22:14:16,170 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 22:14:18,627 INFO     navigator | turn done | heading=0.0
+2026-04-04 22:14:18,629 INFO     navigator | move_until_distance threshold=54.5 direction=1 | heading=0.0
+2026-04-04 22:14:21,946 INFO     navigator | move_until_distance: stopped at 54.2 cm from wall (forward)
+2026-04-04 22:14:21,950 INFO     navigator | move_until_distance done | traveled=48.8 cm
+2026-04-04 22:14:21,951 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 22:14:21,955 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:14:24,375 INFO     navigator | turn done | heading=90.0
+2026-04-04 22:14:25,749 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 22:14:26,834 INFO     navigator | move done | traveled=15.6 cm heading=90.0 room=-
+2026-04-04 22:14:26,834 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 22:14:27,297 INFO     navigator | move done | traveled=6.4 cm heading=90.0 room=-
+2026-04-04 22:14:27,452 INFO     controller | green
+2026-04-04 22:14:27,453 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 22:14:29,259 INFO     navigator | move_until_distance: stopped at 52.7 cm from wall (backward)
+2026-04-04 22:14:29,261 INFO     navigator | move_until_distance done | traveled=26.3 cm
+2026-04-04 22:14:29,262 INFO     navigator | turn 92.0 deg | heading=90.0
+2026-04-04 22:14:29,265 INFO     navigator | TURNED 92.0 DEGREES
+2026-04-04 22:14:31,675 INFO     navigator | turn done | heading=182.0
+2026-04-04 22:14:31,676 INFO     navigator | move_until_distance threshold=38.9 direction=1 | heading=182.0
+2026-04-04 22:14:32,757 INFO     navigator | move_until_distance: stopped at 38.5 cm from wall (forward)
+2026-04-04 22:14:32,760 INFO     navigator | move_until_distance done | traveled=15.5 cm
+2026-04-04 22:14:32,761 INFO     navigator | turn 90.0 deg | heading=182.0
+2026-04-04 22:14:32,764 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:14:35,199 INFO     navigator | turn done | heading=272.0
+2026-04-04 22:14:37,202 INFO     navigator | move_until_distance threshold=23.7 direction=1 | heading=272.0
+2026-04-04 22:14:39,196 INFO     navigator | move_until_distance: stopped at 23.7 cm from wall (forward)
+2026-04-04 22:14:39,199 INFO     navigator | move_until_distance done | traveled=29.2 cm
+2026-04-04 22:14:40,702 INFO     navigator | move_until_distance threshold=51.8 direction=-1 | heading=272.0
+2026-04-04 22:14:42,757 INFO     navigator | move_until_distance: stopped at 51.9 cm from wall (backward)
+2026-04-04 22:14:42,759 INFO     navigator | move_until_distance done | traveled=30.1 cm
+2026-04-04 22:14:42,760 INFO     navigator | turn 87.0 deg | heading=272.0
+2026-04-04 22:14:42,761 INFO     navigator | TURNED 87.0 DEGREES
+2026-04-04 22:14:44,999 INFO     navigator | turn done | heading=359.0
+2026-04-04 22:14:45,000 INFO     navigator | move_until_distance threshold=54.5 direction=1 | heading=359.0
+2026-04-04 22:14:46,045 INFO     navigator | move_until_distance: stopped at 54.4 cm from wall (forward)
+2026-04-04 22:14:46,047 INFO     navigator | move_until_distance done | traveled=14.9 cm
+2026-04-04 22:14:46,048 INFO     navigator | turn 90.0 deg | heading=359.0
+2026-04-04 22:14:46,051 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:14:48,514 INFO     navigator | turn done | heading=449.0
+2026-04-04 22:14:48,515 INFO     navigator | move 15.0 cm direction=1 | heading=449.0
+2026-04-04 22:14:49,599 INFO     navigator | move done | traveled=15.6 cm heading=449.0 room=-
+2026-04-04 22:14:49,600 INFO     navigator | move 6.0 cm direction=1 | heading=449.0
+2026-04-04 22:14:50,067 INFO     navigator | move done | traveled=6.5 cm heading=449.0 room=-
+2026-04-04 22:14:50,244 INFO     controller | yelllow
+2026-04-04 22:14:50,245 INFO     navigator | scan_turn 33.0 deg | heading=449.0
+2026-04-04 22:14:50,247 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:14:51,264 INFO     navigator | scan_turn done | heading=482.0 bed_found=False
+2026-04-04 22:14:51,446 INFO     controller | yelllow
+2026-04-04 22:14:51,447 INFO     navigator | scan_turn -49.5 deg | heading=482.0
+2026-04-04 22:14:51,449 INFO     navigator | TURNED -49.5 DEGREES
+2026-04-04 22:14:52,880 INFO     navigator | scan_turn done | heading=432.5 bed_found=False
+2026-04-04 22:14:53,079 INFO     controller | yelllow
+2026-04-04 22:14:53,080 INFO     navigator | scan_turn -16.5 deg | heading=432.5
+2026-04-04 22:14:53,082 INFO     navigator | TURNED -16.5 DEGREES
+2026-04-04 22:14:53,541 INFO     navigator | scan_turn done | heading=416.0 bed_found=False
+2026-04-04 22:14:53,701 INFO     controller | yelllow
+2026-04-04 22:14:53,703 INFO     navigator | scan_turn 33.0 deg | heading=416.0
+2026-04-04 22:14:53,706 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:14:54,592 INFO     navigator | scan_turn done | heading=449.0 bed_found=False
+2026-04-04 22:14:54,594 INFO     navigator | move 6.0 cm direction=1 | heading=449.0
+2026-04-04 22:14:55,061 INFO     navigator | move done | traveled=6.4 cm heading=449.0 room=-
+2026-04-04 22:14:55,258 INFO     controller | yelllow
+2026-04-04 22:14:55,258 INFO     navigator | scan_turn 33.0 deg | heading=449.0
+2026-04-04 22:14:55,265 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:14:56,134 INFO     navigator | scan_turn done | heading=482.0 bed_found=False
+2026-04-04 22:14:56,353 INFO     controller | green
+2026-04-04 22:14:56,354 INFO     navigator | scan_turn -33.0 deg | heading=482.0
+2026-04-04 22:14:56,356 INFO     navigator | TURNED -33.0 DEGREES
+2026-04-04 22:14:57,367 INFO     navigator | scan_turn done | heading=449.0 bed_found=False
+2026-04-04 22:14:57,368 INFO     navigator | move 7.6 cm direction=-1 | heading=449.0
+2026-04-04 22:14:57,938 INFO     navigator | move done | traveled=7.9 cm heading=449.0 room=-
+2026-04-04 22:14:57,939 INFO     navigator | scan_turn 19.3 deg | heading=449.0
+2026-04-04 22:14:57,941 INFO     navigator | TURNED 19.336512600729492 DEGREES
+2026-04-04 22:14:58,500 INFO     navigator | scan_turn done | heading=468.3 bed_found=False
+2026-04-04 22:15:02,507 INFO     navigator | scan_turn -19.3 deg | heading=468.3
+2026-04-04 22:15:02,510 INFO     navigator | TURNED -19.336512600729492 DEGREES
+2026-04-04 22:15:03,037 INFO     navigator | scan_turn done | heading=449.0 bed_found=False
+2026-04-04 22:15:03,038 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=449.0
+2026-04-04 22:15:04,571 INFO     navigator | move_until_distance: stopped at 52.5 cm from wall (backward)
+2026-04-04 22:15:04,574 INFO     navigator | move_until_distance done | traveled=22.3 cm
+2026-04-04 22:15:04,575 INFO     navigator | turn 90.0 deg | heading=449.0
+2026-04-04 22:15:04,577 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:15:06,909 INFO     navigator | turn done | heading=539.0
+2026-04-04 22:15:06,910 INFO     navigator | move 37.0 cm direction=1 | heading=539.0
+2026-04-04 22:15:09,432 INFO     navigator | move done | traveled=37.1 cm heading=539.0 room=-
+2026-04-04 22:15:09,433 INFO     navigator | turn 90.0 deg | heading=539.0
+2026-04-04 22:15:09,436 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:15:11,892 INFO     navigator | turn done | heading=629.0
+2026-04-04 22:15:11,893 INFO     navigator | move_until_distance threshold=15.0 direction=1 | heading=629.0
+2026-04-04 22:15:15,111 INFO     navigator | move_until_distance: stopped at 14.9 cm from wall (forward)
+2026-04-04 22:15:15,114 INFO     navigator | move_until_distance done | traveled=47.5 cm
+2026-04-04 22:16:23,920 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 22:16:27,565 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 22:16:29,070 INFO     navigator | move 13.0 cm direction=-1 | heading=0.0
+2026-04-04 22:16:30,001 INFO     navigator | move done | traveled=13.2 cm heading=0.0 room=-
+2026-04-04 22:16:30,002 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 22:16:30,004 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:16:32,323 INFO     navigator | turn done | heading=90.0
+2026-04-04 22:16:32,324 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 22:16:35,737 INFO     navigator | move_until_distance: stopped at 54.6 cm from wall (forward)
+2026-04-04 22:16:35,739 INFO     navigator | move_until_distance done | traveled=50.4 cm
+2026-04-04 22:17:27,738 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 22:17:30,564 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 22:17:32,071 INFO     navigator | move 13.0 cm direction=-1 | heading=0.0
+2026-04-04 22:17:33,000 INFO     navigator | move done | traveled=13.4 cm heading=0.0 room=-
+2026-04-04 22:17:33,001 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 22:17:33,003 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:17:35,337 INFO     navigator | turn done | heading=90.0
+2026-04-04 22:17:35,339 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 22:17:38,767 INFO     navigator | move_until_distance: stopped at 54.6 cm from wall (forward)
+2026-04-04 22:17:38,770 INFO     navigator | move_until_distance done | traveled=50.6 cm
+2026-04-04 22:17:40,223 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 22:17:41,308 INFO     navigator | move done | traveled=15.6 cm heading=90.0 room=-
+2026-04-04 22:17:41,309 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 22:17:41,775 INFO     navigator | move done | traveled=6.5 cm heading=90.0 room=-
+2026-04-04 22:17:41,970 INFO     controller | yelllow
+2026-04-04 22:17:41,971 INFO     navigator | scan_turn 15.0 deg | heading=90.0
+2026-04-04 22:17:41,972 INFO     navigator | TURNED 15.0 DEGREES
+2026-04-04 22:17:42,398 INFO     navigator | scan_turn done | heading=105.0 bed_found=False
+2026-04-04 22:17:42,586 INFO     controller | yelllow
+2026-04-04 22:17:42,588 INFO     navigator | scan_turn -31.5 deg | heading=105.0
+2026-04-04 22:17:42,597 INFO     navigator | TURNED -31.5 DEGREES
+2026-04-04 22:17:43,460 INFO     navigator | scan_turn done | heading=73.5 bed_found=False
+2026-04-04 22:17:43,667 INFO     controller | yelllow
+2026-04-04 22:17:43,668 INFO     navigator | scan_turn -16.5 deg | heading=73.5
+2026-04-04 22:17:43,669 INFO     navigator | TURNED -16.5 DEGREES
+2026-04-04 22:17:44,117 INFO     navigator | scan_turn done | heading=57.0 bed_found=False
+2026-04-04 22:17:44,290 INFO     controller | yelllow
+2026-04-04 22:17:44,291 INFO     navigator | scan_turn 33.0 deg | heading=57.0
+2026-04-04 22:17:44,292 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:17:45,178 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 22:17:45,179 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 22:17:45,646 INFO     navigator | move done | traveled=6.4 cm heading=90.0 room=-
+2026-04-04 22:17:45,855 INFO     controller | yelllow
+2026-04-04 22:17:45,856 INFO     navigator | scan_turn 15.0 deg | heading=90.0
+2026-04-04 22:17:45,858 INFO     navigator | TURNED 15.0 DEGREES
+2026-04-04 22:17:46,412 INFO     navigator | scan_turn done | heading=105.0 bed_found=False
+2026-04-04 22:17:46,649 INFO     controller | yelllow
+2026-04-04 22:17:46,650 INFO     navigator | scan_turn -31.5 deg | heading=105.0
+2026-04-04 22:17:46,652 INFO     navigator | TURNED -31.5 DEGREES
+2026-04-04 22:17:47,615 INFO     navigator | scan_turn done | heading=73.5 bed_found=False
+2026-04-04 22:17:47,806 INFO     controller | yelllow
+2026-04-04 22:17:47,807 INFO     navigator | scan_turn -16.5 deg | heading=73.5
+2026-04-04 22:17:47,808 INFO     navigator | TURNED -16.5 DEGREES
+2026-04-04 22:17:48,288 INFO     navigator | scan_turn done | heading=57.0 bed_found=False
+2026-04-04 22:17:48,453 INFO     controller | yelllow
+2026-04-04 22:17:48,454 INFO     navigator | scan_turn 33.0 deg | heading=57.0
+2026-04-04 22:17:48,456 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:17:49,341 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 22:17:49,342 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 22:17:49,812 INFO     navigator | move done | traveled=6.4 cm heading=90.0 room=-
+2026-04-04 22:17:50,009 INFO     controller | yelllow
+2026-04-04 22:17:50,009 INFO     navigator | scan_turn 15.0 deg | heading=90.0
+2026-04-04 22:17:50,011 INFO     navigator | TURNED 15.0 DEGREES
+2026-04-04 22:17:50,437 INFO     navigator | scan_turn done | heading=105.0 bed_found=False
+2026-04-04 22:17:50,594 INFO     controller | yelllow
+2026-04-04 22:17:50,595 INFO     navigator | scan_turn -31.5 deg | heading=105.0
+2026-04-04 22:17:50,596 INFO     navigator | TURNED -31.5 DEGREES
+2026-04-04 22:17:51,578 INFO     navigator | scan_turn done | heading=73.5 bed_found=False
+2026-04-04 22:17:51,790 INFO     controller | yelllow
+2026-04-04 22:17:51,790 INFO     navigator | scan_turn -16.5 deg | heading=73.5
+2026-04-04 22:17:51,792 INFO     navigator | TURNED -16.5 DEGREES
+2026-04-04 22:17:52,239 INFO     navigator | scan_turn done | heading=57.0 bed_found=False
+2026-04-04 22:17:52,396 INFO     controller | yelllow
+2026-04-04 22:17:52,397 INFO     navigator | scan_turn 33.0 deg | heading=57.0
+2026-04-04 22:17:52,399 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:17:53,422 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 22:17:53,423 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 22:17:55,913 INFO     navigator | move_until_distance: stopped at 52.5 cm from wall (backward)
+2026-04-04 22:17:55,916 INFO     navigator | move_until_distance done | traveled=36.7 cm
+2026-04-04 22:17:57,120 INFO     navigator | turn -90.0 deg | heading=90.0
+2026-04-04 22:17:57,122 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 22:17:59,452 INFO     navigator | turn done | heading=0.0
+2026-04-04 22:17:59,453 INFO     navigator | move_until_distance threshold=54.5 direction=1 | heading=0.0
+2026-04-04 22:18:02,832 INFO     navigator | move_until_distance: stopped at 54.2 cm from wall (forward)
+2026-04-04 22:18:02,835 INFO     navigator | move_until_distance done | traveled=49.8 cm
+2026-04-04 22:18:02,836 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 22:18:02,838 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:18:05,317 INFO     navigator | turn done | heading=90.0
+2026-04-04 22:18:06,903 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 22:18:07,991 INFO     navigator | move done | traveled=15.7 cm heading=90.0 room=-
+2026-04-04 22:18:07,992 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 22:18:08,460 INFO     navigator | move done | traveled=6.5 cm heading=90.0 room=-
+2026-04-04 22:18:08,650 INFO     controller | red
+2026-04-04 22:18:08,650 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 22:18:10,247 INFO     navigator | move_until_distance: stopped at 52.5 cm from wall (backward)
+2026-04-04 22:18:10,249 INFO     navigator | move_until_distance done | traveled=23.3 cm
+2026-04-04 22:18:10,250 INFO     navigator | turn -92.0 deg | heading=90.0
+2026-04-04 22:18:10,251 INFO     navigator | TURNED -92.0 DEGREES
+2026-04-04 22:18:12,728 INFO     navigator | turn done | heading=-2.0
+2026-04-04 22:18:14,123 INFO     navigator | move_until_distance threshold=28.8 direction=1 | heading=-2.0
+2026-04-04 22:18:15,865 INFO     navigator | move_until_distance: stopped at 28.8 cm from wall (forward)
+2026-04-04 22:18:15,868 INFO     navigator | move_until_distance done | traveled=25.4 cm
+2026-04-04 22:18:15,869 INFO     navigator | turn -90.0 deg | heading=-2.0
+2026-04-04 22:18:15,872 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 22:18:18,207 INFO     navigator | turn done | heading=-92.0
+2026-04-04 22:18:19,608 INFO     navigator | move 15.0 cm direction=1 | heading=-92.0
+2026-04-04 22:18:20,692 INFO     navigator | move done | traveled=15.7 cm heading=-92.0 room=-
+2026-04-04 22:18:20,693 INFO     navigator | move 6.0 cm direction=1 | heading=-92.0
+2026-04-04 22:18:21,160 INFO     navigator | move done | traveled=6.5 cm heading=-92.0 room=-
+2026-04-04 22:18:21,357 INFO     controller | yelllow
+2026-04-04 22:18:21,358 INFO     navigator | scan_turn 33.0 deg | heading=-92.0
+2026-04-04 22:18:21,359 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:18:22,245 INFO     navigator | scan_turn done | heading=-59.0 bed_found=False
+2026-04-04 22:18:22,454 INFO     controller | yelllow
+2026-04-04 22:18:22,455 INFO     navigator | scan_turn -49.5 deg | heading=-59.0
+2026-04-04 22:18:22,456 INFO     navigator | TURNED -49.5 DEGREES
+2026-04-04 22:18:23,752 INFO     navigator | scan_turn done | heading=-108.5 bed_found=False
+2026-04-04 22:18:23,961 INFO     controller | yelllow
+2026-04-04 22:18:23,962 INFO     navigator | scan_turn -16.5 deg | heading=-108.5
+2026-04-04 22:18:23,963 INFO     navigator | TURNED -16.5 DEGREES
+2026-04-04 22:18:24,571 INFO     navigator | scan_turn done | heading=-125.0 bed_found=False
+2026-04-04 22:18:24,761 INFO     controller | yelllow
+2026-04-04 22:18:24,762 INFO     navigator | scan_turn 33.0 deg | heading=-125.0
+2026-04-04 22:18:24,763 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:18:25,790 INFO     navigator | scan_turn done | heading=-92.0 bed_found=False
+2026-04-04 22:18:25,795 INFO     navigator | move 6.0 cm direction=1 | heading=-92.0
+2026-04-04 22:18:26,263 INFO     navigator | move done | traveled=6.4 cm heading=-92.0 room=-
+2026-04-04 22:18:26,473 INFO     controller | green
+2026-04-04 22:18:26,474 INFO     navigator | move 6.9 cm direction=-1 | heading=-92.0
+2026-04-04 22:18:26,987 INFO     navigator | move done | traveled=7.2 cm heading=-92.0 room=-
+2026-04-04 22:18:30,994 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=-92.0
+2026-04-04 22:18:32,463 INFO     navigator | move_until_distance: stopped at 52.5 cm from wall (backward)
+2026-04-04 22:18:32,466 INFO     navigator | move_until_distance done | traveled=21.3 cm
+2026-04-04 22:18:32,467 INFO     navigator | turn -90.0 deg | heading=-92.0
+2026-04-04 22:18:32,469 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 22:18:34,933 INFO     navigator | turn done | heading=-182.0
+2026-04-04 22:18:34,934 INFO     navigator | move_until_distance threshold=38.9 direction=1 | heading=-182.0
+2026-04-04 22:18:37,706 INFO     navigator | move_until_distance: stopped at 38.9 cm from wall (forward)
+2026-04-04 22:18:37,713 INFO     navigator | move_until_distance done | traveled=40.8 cm
+2026-04-04 22:18:37,714 INFO     navigator | turn 90.0 deg | heading=-182.0
+2026-04-04 22:18:37,716 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:18:40,042 INFO     navigator | turn done | heading=-92.0
+2026-04-04 22:18:42,047 INFO     navigator | move_until_distance threshold=23.7 direction=1 | heading=-92.0
+2026-04-04 22:18:44,030 INFO     navigator | move_until_distance: stopped at 23.7 cm from wall (forward)
+2026-04-04 22:18:44,033 INFO     navigator | move_until_distance done | traveled=29.0 cm
+2026-04-04 22:18:45,537 INFO     navigator | move_until_distance threshold=51.8 direction=-1 | heading=-92.0
+2026-04-04 22:18:47,591 INFO     navigator | move_until_distance: stopped at 51.9 cm from wall (backward)
+2026-04-04 22:18:47,594 INFO     navigator | move_until_distance done | traveled=30.1 cm
+2026-04-04 22:18:47,595 INFO     navigator | turn -90.0 deg | heading=-92.0
+2026-04-04 22:18:47,597 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 22:18:50,070 INFO     navigator | turn done | heading=-182.0
+2026-04-04 22:18:51,594 INFO     navigator | move_until_distance threshold=97.5 direction=-1 | heading=-182.0
+2026-04-04 22:18:55,815 INFO     navigator | move_until_distance: stopped at 97.6 cm from wall (backward)
+2026-04-04 22:18:55,818 INFO     navigator | move_until_distance done | traveled=62.5 cm
+2026-04-04 22:18:55,819 INFO     navigator | turn 90.0 deg | heading=-182.0
+2026-04-04 22:18:55,822 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:18:58,276 INFO     navigator | turn done | heading=-92.0
+2026-04-04 22:19:00,142 INFO     navigator | move 15.0 cm direction=1 | heading=-92.0
+2026-04-04 22:19:01,230 INFO     navigator | move done | traveled=15.7 cm heading=-92.0 room=-
+2026-04-04 22:19:01,231 INFO     navigator | move 6.0 cm direction=1 | heading=-92.0
+2026-04-04 22:19:01,700 INFO     navigator | move done | traveled=6.5 cm heading=-92.0 room=-
+2026-04-04 22:19:01,853 INFO     controller | yelllow
+2026-04-04 22:19:01,853 INFO     navigator | scan_turn 15.0 deg | heading=-92.0
+2026-04-04 22:19:01,855 INFO     navigator | TURNED 15.0 DEGREES
+2026-04-04 22:19:02,294 INFO     navigator | scan_turn done | heading=-77.0 bed_found=False
+2026-04-04 22:19:02,460 INFO     controller | yelllow
+2026-04-04 22:19:02,461 INFO     navigator | scan_turn -31.5 deg | heading=-77.0
+2026-04-04 22:19:02,463 INFO     navigator | TURNED -31.5 DEGREES
+2026-04-04 22:19:03,453 INFO     navigator | scan_turn done | heading=-108.5 bed_found=False
+2026-04-04 22:19:03,674 INFO     controller | yelllow
+2026-04-04 22:19:03,675 INFO     navigator | scan_turn -16.5 deg | heading=-108.5
+2026-04-04 22:19:03,677 INFO     navigator | TURNED -16.5 DEGREES
+2026-04-04 22:19:04,274 INFO     navigator | scan_turn done | heading=-125.0 bed_found=False
+2026-04-04 22:19:04,469 INFO     controller | yelllow
+2026-04-04 22:19:04,469 INFO     navigator | scan_turn 33.0 deg | heading=-125.0
+2026-04-04 22:19:04,471 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:19:05,478 INFO     navigator | scan_turn done | heading=-92.0 bed_found=False
+2026-04-04 22:19:05,479 INFO     navigator | move 6.0 cm direction=1 | heading=-92.0
+2026-04-04 22:19:05,947 INFO     navigator | move done | traveled=6.4 cm heading=-92.0 room=-
+2026-04-04 22:19:06,133 INFO     controller | yellow
+2026-04-04 22:19:06,134 INFO     navigator | scan_turn 15.0 deg | heading=-92.0
+2026-04-04 22:19:06,136 INFO     navigator | TURNED 15.0 DEGREES
+2026-04-04 22:19:06,551 INFO     navigator | scan_turn done | heading=-77.0 bed_found=False
+2026-04-04 22:19:06,713 INFO     controller | green
+2026-04-04 22:19:06,714 INFO     navigator | scan_turn -15.0 deg | heading=-77.0
+2026-04-04 22:19:06,715 INFO     navigator | TURNED -15.0 DEGREES
+2026-04-04 22:19:07,142 INFO     navigator | scan_turn done | heading=-92.0 bed_found=False
+2026-04-04 22:19:07,143 INFO     navigator | move 7.0 cm direction=-1 | heading=-92.0
+2026-04-04 22:19:07,710 INFO     navigator | move done | traveled=7.8 cm heading=-92.0 room=-
+2026-04-04 22:19:07,711 INFO     navigator | scan_turn 9.1 deg | heading=-92.0
+2026-04-04 22:19:07,713 INFO     navigator | TURNED 9.05312653963082 DEGREES
+2026-04-04 22:19:08,013 INFO     navigator | scan_turn done | heading=-82.9 bed_found=False
+2026-04-04 22:19:12,021 INFO     navigator | scan_turn -9.1 deg | heading=-82.9
+2026-04-04 22:19:12,024 INFO     navigator | TURNED -9.05312653963082 DEGREES
+2026-04-04 22:19:12,433 INFO     navigator | scan_turn done | heading=-92.0 bed_found=False
+2026-04-04 22:19:12,434 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=-92.0
+2026-04-04 22:19:13,822 INFO     navigator | move_until_distance: stopped at 52.5 cm from wall (backward)
+2026-04-04 22:19:13,825 INFO     navigator | move_until_distance done | traveled=20.1 cm
+2026-04-04 22:19:13,826 INFO     navigator | turn -90.0 deg | heading=-92.0
+2026-04-04 22:19:13,828 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 22:19:16,173 INFO     navigator | turn done | heading=-182.0
+2026-04-04 22:19:16,175 INFO     navigator | move 81.0 cm direction=1 | heading=-182.0
+2026-04-04 22:19:21,760 INFO     navigator | move done | traveled=83.0 cm heading=-182.0 room=hallway
+2026-04-04 22:19:21,761 INFO     navigator | turn 90.0 deg | heading=-182.0
+2026-04-04 22:19:21,763 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:19:24,222 INFO     navigator | turn done | heading=-92.0
+2026-04-04 22:19:24,223 INFO     navigator | move_until_distance threshold=15.0 direction=1 | heading=-92.0
+2026-04-04 22:19:26,750 INFO     navigator | move_until_distance: stopped at 14.9 cm from wall (forward)
+2026-04-04 22:19:26,753 INFO     navigator | move_until_distance done | traveled=37.1 cm
+2026-04-04 22:20:40,635 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 22:20:43,311 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 22:20:44,819 INFO     navigator | move 13.0 cm direction=-1 | heading=0.0
+2026-04-04 22:20:45,752 INFO     navigator | move done | traveled=13.5 cm heading=0.0 room=-
+2026-04-04 22:20:45,753 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 22:20:45,756 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:20:48,196 INFO     navigator | turn done | heading=90.0
+2026-04-04 22:20:48,198 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 22:20:51,661 INFO     navigator | move_until_distance: stopped at 54.6 cm from wall (forward)
+2026-04-04 22:20:51,663 INFO     navigator | move_until_distance done | traveled=51.1 cm
+2026-04-04 22:20:54,321 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 22:20:55,404 INFO     navigator | move done | traveled=15.6 cm heading=90.0 room=-
+2026-04-04 22:20:55,405 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 22:20:55,872 INFO     navigator | move done | traveled=6.5 cm heading=90.0 room=-
+2026-04-04 22:20:56,065 INFO     controller | green
+2026-04-04 22:20:56,072 INFO     navigator | move 6.9 cm direction=-1 | heading=90.0
+2026-04-04 22:20:56,590 INFO     navigator | move done | traveled=7.3 cm heading=90.0 room=-
+2026-04-04 22:21:00,596 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 22:21:01,696 INFO     navigator | move_until_distance: stopped at 52.7 cm from wall (backward)
+2026-04-04 22:21:01,698 INFO     navigator | move_until_distance done | traveled=15.8 cm
+2026-04-04 22:21:02,741 INFO     navigator | turn -90.0 deg | heading=90.0
+2026-04-04 22:21:02,744 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 22:21:05,183 INFO     navigator | turn done | heading=0.0
+2026-04-04 22:21:05,184 INFO     navigator | move_until_distance threshold=54.5 direction=1 | heading=0.0
+2026-04-04 22:21:08,552 INFO     navigator | move_until_distance: stopped at 54.2 cm from wall (forward)
+2026-04-04 22:21:08,556 INFO     navigator | move_until_distance done | traveled=49.7 cm
+2026-04-04 22:21:08,558 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 22:21:08,561 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:21:11,011 INFO     navigator | turn done | heading=90.0
+2026-04-04 22:21:12,687 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 22:21:13,770 INFO     navigator | move done | traveled=15.6 cm heading=90.0 room=-
+2026-04-04 22:21:13,771 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 22:21:14,243 INFO     navigator | move done | traveled=6.5 cm heading=90.0 room=-
+2026-04-04 22:21:14,449 INFO     controller | green
+2026-04-04 22:21:14,450 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 22:21:16,318 INFO     navigator | move_until_distance: stopped at 52.5 cm from wall (backward)
+2026-04-04 22:21:16,320 INFO     navigator | move_until_distance done | traveled=27.4 cm
+2026-04-04 22:21:16,321 INFO     navigator | turn 92.0 deg | heading=90.0
+2026-04-04 22:21:16,322 INFO     navigator | TURNED 92.0 DEGREES
+2026-04-04 22:21:18,723 INFO     navigator | turn done | heading=182.0
+2026-04-04 22:21:18,724 INFO     navigator | move_until_distance threshold=38.9 direction=1 | heading=182.0
+2026-04-04 22:21:19,752 INFO     navigator | move_until_distance: stopped at 38.4 cm from wall (forward)
+2026-04-04 22:21:19,755 INFO     navigator | move_until_distance done | traveled=14.7 cm
+2026-04-04 22:21:19,755 INFO     navigator | turn 90.0 deg | heading=182.0
+2026-04-04 22:21:19,758 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:21:22,221 INFO     navigator | turn done | heading=272.0
+2026-04-04 22:21:24,225 INFO     navigator | move_until_distance threshold=23.7 direction=1 | heading=272.0
+2026-04-04 22:21:26,218 INFO     navigator | move_until_distance: stopped at 23.5 cm from wall (forward)
+2026-04-04 22:21:26,221 INFO     navigator | move_until_distance done | traveled=29.1 cm
+2026-04-04 22:21:27,723 INFO     navigator | move_until_distance threshold=51.8 direction=-1 | heading=272.0
+2026-04-04 22:21:29,781 INFO     navigator | move_until_distance: stopped at 51.9 cm from wall (backward)
+2026-04-04 22:21:29,783 INFO     navigator | move_until_distance done | traveled=30.1 cm
+2026-04-04 22:21:29,783 INFO     navigator | turn 87.0 deg | heading=272.0
+2026-04-04 22:21:29,785 INFO     navigator | TURNED 87.0 DEGREES
+2026-04-04 22:21:32,036 INFO     navigator | turn done | heading=359.0
+2026-04-04 22:21:32,038 INFO     navigator | move_until_distance threshold=54.5 direction=1 | heading=359.0
+2026-04-04 22:21:33,084 INFO     navigator | move_until_distance: stopped at 54.2 cm from wall (forward)
+2026-04-04 22:21:33,087 INFO     navigator | move_until_distance done | traveled=15.0 cm
+2026-04-04 22:21:33,088 INFO     navigator | turn 90.0 deg | heading=359.0
+2026-04-04 22:21:33,091 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:21:35,458 INFO     navigator | turn done | heading=449.0
+2026-04-04 22:21:35,458 INFO     navigator | move 15.0 cm direction=1 | heading=449.0
+2026-04-04 22:21:36,542 INFO     navigator | move done | traveled=15.7 cm heading=449.0 room=-
+2026-04-04 22:21:36,543 INFO     navigator | move 6.0 cm direction=1 | heading=449.0
+2026-04-04 22:21:37,010 INFO     navigator | move done | traveled=6.5 cm heading=449.0 room=-
+2026-04-04 22:21:37,193 INFO     controller | yelllow
+2026-04-04 22:21:37,193 INFO     navigator | scan_turn 33.0 deg | heading=449.0
+2026-04-04 22:21:37,195 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:21:38,192 INFO     navigator | scan_turn done | heading=482.0 bed_found=False
+2026-04-04 22:21:38,387 INFO     controller | yelllow
+2026-04-04 22:21:38,388 INFO     navigator | scan_turn -49.5 deg | heading=482.0
+2026-04-04 22:21:38,390 INFO     navigator | TURNED -49.5 DEGREES
+2026-04-04 22:21:39,786 INFO     navigator | scan_turn done | heading=432.5 bed_found=False
+2026-04-04 22:21:39,985 INFO     controller | yelllow
+2026-04-04 22:21:39,986 INFO     navigator | scan_turn -16.5 deg | heading=432.5
+2026-04-04 22:21:39,987 INFO     navigator | TURNED -16.5 DEGREES
+2026-04-04 22:21:40,638 INFO     navigator | scan_turn done | heading=416.0 bed_found=False
+2026-04-04 22:21:40,823 INFO     controller | yelllow
+2026-04-04 22:21:40,824 INFO     navigator | scan_turn 33.0 deg | heading=416.0
+2026-04-04 22:21:40,826 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:21:41,833 INFO     navigator | scan_turn done | heading=449.0 bed_found=False
+2026-04-04 22:21:41,834 INFO     navigator | move 6.0 cm direction=1 | heading=449.0
+2026-04-04 22:21:42,302 INFO     navigator | move done | traveled=6.4 cm heading=449.0 room=-
+2026-04-04 22:21:42,490 INFO     controller | yelllow
+2026-04-04 22:21:42,491 INFO     navigator | scan_turn 33.0 deg | heading=449.0
+2026-04-04 22:21:42,492 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:21:43,365 INFO     navigator | scan_turn done | heading=482.0 bed_found=False
+2026-04-04 22:21:43,521 INFO     controller | green
+2026-04-04 22:21:43,521 INFO     navigator | scan_turn -33.0 deg | heading=482.0
+2026-04-04 22:21:43,523 INFO     navigator | TURNED -33.0 DEGREES
+2026-04-04 22:21:44,408 INFO     navigator | scan_turn done | heading=449.0 bed_found=False
+2026-04-04 22:21:44,409 INFO     navigator | move 7.6 cm direction=-1 | heading=449.0
+2026-04-04 22:21:44,978 INFO     navigator | move done | traveled=8.0 cm heading=449.0 room=-
+2026-04-04 22:21:44,979 INFO     navigator | scan_turn 19.3 deg | heading=449.0
+2026-04-04 22:21:44,981 INFO     navigator | TURNED 19.336512600729492 DEGREES
+2026-04-04 22:21:45,650 INFO     navigator | scan_turn done | heading=468.3 bed_found=False
+2026-04-04 22:21:49,656 INFO     navigator | scan_turn -19.3 deg | heading=468.3
+2026-04-04 22:21:49,659 INFO     navigator | TURNED -19.336512600729492 DEGREES
+2026-04-04 22:21:50,315 INFO     navigator | scan_turn done | heading=449.0 bed_found=False
+2026-04-04 22:21:50,317 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=449.0
+2026-04-04 22:21:52,323 INFO     navigator | move_until_distance: stopped at 59.0 cm from wall (backward)
+2026-04-04 22:21:52,327 INFO     navigator | move_until_distance done | traveled=29.4 cm
+2026-04-04 22:21:52,329 INFO     navigator | turn 90.0 deg | heading=449.0
+2026-04-04 22:21:52,332 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:21:54,671 INFO     navigator | turn done | heading=539.0
+2026-04-04 22:21:54,672 INFO     navigator | move 37.0 cm direction=1 | heading=539.0
+2026-04-04 22:21:57,201 INFO     navigator | move done | traveled=37.3 cm heading=539.0 room=-
+2026-04-04 22:21:57,203 INFO     navigator | turn 90.0 deg | heading=539.0
+2026-04-04 22:21:57,206 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:21:59,628 INFO     navigator | turn done | heading=629.0
+2026-04-04 22:21:59,629 INFO     navigator | move_until_distance threshold=15.0 direction=1 | heading=629.0
+2026-04-04 22:22:02,413 INFO     navigator | move_until_distance: stopped at 14.5 cm from wall (forward)
+2026-04-04 22:22:02,415 INFO     navigator | move_until_distance done | traveled=40.9 cm
+2026-04-04 22:23:01,008 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 22:23:04,131 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 22:23:05,638 INFO     navigator | move 13.0 cm direction=-1 | heading=0.0
+2026-04-04 22:23:06,569 INFO     navigator | move done | traveled=13.3 cm heading=0.0 room=-
+2026-04-04 22:23:06,570 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 22:23:06,572 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:23:08,904 INFO     navigator | turn done | heading=90.0
+2026-04-04 22:23:08,905 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 22:23:12,303 INFO     navigator | move_until_distance: stopped at 54.6 cm from wall (forward)
+2026-04-04 22:23:12,306 INFO     navigator | move_until_distance done | traveled=50.2 cm
+2026-04-04 22:23:55,783 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 22:23:58,140 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 22:23:59,648 INFO     navigator | move 13.0 cm direction=-1 | heading=0.0
+2026-04-04 22:24:00,580 INFO     navigator | move done | traveled=13.3 cm heading=0.0 room=-
+2026-04-04 22:24:00,581 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 22:24:00,583 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:24:02,903 INFO     navigator | turn done | heading=90.0
+2026-04-04 22:24:02,904 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 22:24:06,341 INFO     navigator | move_until_distance: stopped at 54.6 cm from wall (forward)
+2026-04-04 22:24:06,342 INFO     navigator | move_until_distance done | traveled=50.8 cm
+2026-04-04 22:24:09,123 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 22:24:10,210 INFO     navigator | move done | traveled=15.7 cm heading=90.0 room=-
+2026-04-04 22:24:10,211 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 22:24:10,679 INFO     navigator | move done | traveled=6.5 cm heading=90.0 room=-
+2026-04-04 22:24:10,869 INFO     controller | yelllow
+2026-04-04 22:24:10,876 INFO     navigator | scan_turn 15.0 deg | heading=90.0
+2026-04-04 22:24:10,878 INFO     navigator | TURNED 15.0 DEGREES
+2026-04-04 22:24:11,304 INFO     navigator | scan_turn done | heading=105.0 bed_found=False
+2026-04-04 22:24:11,463 INFO     controller | green
+2026-04-04 22:24:11,463 INFO     navigator | scan_turn -15.0 deg | heading=105.0
+2026-04-04 22:24:11,465 INFO     navigator | TURNED -15.0 DEGREES
+2026-04-04 22:24:11,892 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 22:24:11,892 INFO     navigator | move 7.0 cm direction=-1 | heading=90.0
+2026-04-04 22:24:12,409 INFO     navigator | move done | traveled=7.2 cm heading=90.0 room=-
+2026-04-04 22:24:12,410 INFO     navigator | scan_turn 9.1 deg | heading=90.0
+2026-04-04 22:24:12,412 INFO     navigator | TURNED 9.05312653963082 DEGREES
+2026-04-04 22:24:12,681 INFO     navigator | scan_turn done | heading=99.1 bed_found=False
+2026-04-04 22:24:16,686 INFO     navigator | scan_turn -9.1 deg | heading=99.1
+2026-04-04 22:24:16,688 INFO     navigator | TURNED -9.05312653963082 DEGREES
+2026-04-04 22:24:16,977 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 22:24:16,979 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 22:24:18,119 INFO     navigator | move_until_distance: stopped at 52.5 cm from wall (backward)
+2026-04-04 22:24:18,121 INFO     navigator | move_until_distance done | traveled=16.3 cm
+2026-04-04 22:24:19,674 INFO     navigator | turn -90.0 deg | heading=90.0
+2026-04-04 22:24:19,677 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 22:24:21,986 INFO     navigator | turn done | heading=0.0
+2026-04-04 22:24:21,987 INFO     navigator | move_until_distance threshold=54.5 direction=1 | heading=0.0
+2026-04-04 22:24:25,131 INFO     navigator | move_until_distance: stopped at 54.4 cm from wall (forward)
+2026-04-04 22:24:25,133 INFO     navigator | move_until_distance done | traveled=46.3 cm
+2026-04-04 22:24:25,134 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 22:24:25,137 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:24:27,566 INFO     navigator | turn done | heading=90.0
+2026-04-04 22:24:28,991 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 22:24:30,077 INFO     navigator | move done | traveled=15.7 cm heading=90.0 room=-
+2026-04-04 22:24:30,078 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 22:24:30,546 INFO     navigator | move done | traveled=6.5 cm heading=90.0 room=-
+2026-04-04 22:24:30,779 INFO     controller | green
+2026-04-04 22:24:30,780 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 22:24:32,440 INFO     navigator | move_until_distance: stopped at 52.5 cm from wall (backward)
+2026-04-04 22:24:32,443 INFO     navigator | move_until_distance done | traveled=24.2 cm
+2026-04-04 22:24:32,444 INFO     navigator | turn 92.0 deg | heading=90.0
+2026-04-04 22:24:32,446 INFO     navigator | TURNED 92.0 DEGREES
+2026-04-04 22:24:34,853 INFO     navigator | turn done | heading=182.0
+2026-04-04 22:24:34,855 INFO     navigator | move_until_distance threshold=38.9 direction=1 | heading=182.0
+2026-04-04 22:24:35,878 INFO     navigator | move_until_distance: stopped at 38.9 cm from wall (forward)
+2026-04-04 22:24:35,881 INFO     navigator | move_until_distance done | traveled=14.6 cm
+2026-04-04 22:24:35,882 INFO     navigator | turn 90.0 deg | heading=182.0
+2026-04-04 22:24:35,885 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:24:38,328 INFO     navigator | turn done | heading=272.0
+2026-04-04 22:24:40,333 INFO     navigator | move_until_distance threshold=23.7 direction=1 | heading=272.0
+2026-04-04 22:24:42,415 INFO     navigator | move_until_distance: stopped at 23.7 cm from wall (forward)
+2026-04-04 22:24:42,418 INFO     navigator | move_until_distance done | traveled=30.5 cm
+2026-04-04 22:24:43,921 INFO     navigator | move_until_distance threshold=51.8 direction=-1 | heading=272.0
+2026-04-04 22:24:46,013 INFO     navigator | move_until_distance: stopped at 52.5 cm from wall (backward)
+2026-04-04 22:24:46,016 INFO     navigator | move_until_distance done | traveled=30.6 cm
+2026-04-04 22:24:46,019 INFO     navigator | turn 88.0 deg | heading=272.0
+2026-04-04 22:24:46,022 INFO     navigator | TURNED 88.0 DEGREES
+2026-04-04 22:24:48,302 INFO     navigator | turn done | heading=360.0
+2026-04-04 22:24:48,303 INFO     navigator | move_until_distance threshold=54.5 direction=1 | heading=360.0
+2026-04-04 22:24:49,364 INFO     navigator | move_until_distance: stopped at 54.2 cm from wall (forward)
+2026-04-04 22:24:49,367 INFO     navigator | move_until_distance done | traveled=15.2 cm
+2026-04-04 22:24:49,368 INFO     navigator | turn 90.0 deg | heading=360.0
+2026-04-04 22:24:49,370 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:24:51,832 INFO     navigator | turn done | heading=450.0
+2026-04-04 22:24:51,833 INFO     navigator | move 15.0 cm direction=1 | heading=450.0
+2026-04-04 22:24:52,920 INFO     navigator | move done | traveled=15.7 cm heading=450.0 room=-
+2026-04-04 22:24:52,922 INFO     navigator | move 6.0 cm direction=1 | heading=450.0
+2026-04-04 22:24:53,388 INFO     navigator | move done | traveled=6.5 cm heading=450.0 room=-
+2026-04-04 22:24:53,596 INFO     controller | yelllow
+2026-04-04 22:24:53,597 INFO     navigator | scan_turn 33.0 deg | heading=450.0
+2026-04-04 22:24:53,599 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:24:54,605 INFO     navigator | scan_turn done | heading=483.0 bed_found=False
+2026-04-04 22:24:54,814 INFO     controller | yelllow
+2026-04-04 22:24:54,815 INFO     navigator | scan_turn -49.5 deg | heading=483.0
+2026-04-04 22:24:54,817 INFO     navigator | TURNED -49.5 DEGREES
+2026-04-04 22:24:56,116 INFO     navigator | scan_turn done | heading=433.5 bed_found=False
+2026-04-04 22:24:56,322 INFO     controller | yelllow
+2026-04-04 22:24:56,323 INFO     navigator | scan_turn -16.5 deg | heading=433.5
+2026-04-04 22:24:56,325 INFO     navigator | TURNED -16.5 DEGREES
+2026-04-04 22:24:56,783 INFO     navigator | scan_turn done | heading=417.0 bed_found=False
+2026-04-04 22:24:56,943 INFO     controller | yelllow
+2026-04-04 22:24:56,944 INFO     navigator | scan_turn 33.0 deg | heading=417.0
+2026-04-04 22:24:56,949 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:24:57,822 INFO     navigator | scan_turn done | heading=450.0 bed_found=False
+2026-04-04 22:24:57,823 INFO     navigator | move 6.0 cm direction=1 | heading=450.0
+2026-04-04 22:24:58,290 INFO     navigator | move done | traveled=6.5 cm heading=450.0 room=-
+2026-04-04 22:24:58,474 INFO     controller | yelllow
+2026-04-04 22:24:58,474 INFO     navigator | scan_turn 33.0 deg | heading=450.0
+2026-04-04 22:24:58,476 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:24:59,449 INFO     navigator | scan_turn done | heading=483.0 bed_found=False
+2026-04-04 22:24:59,648 INFO     controller | green
+2026-04-04 22:24:59,648 INFO     navigator | scan_turn -33.0 deg | heading=483.0
+2026-04-04 22:24:59,650 INFO     navigator | TURNED -33.0 DEGREES
+2026-04-04 22:25:00,538 INFO     navigator | scan_turn done | heading=450.0 bed_found=False
+2026-04-04 22:25:00,539 INFO     navigator | move 7.6 cm direction=-1 | heading=450.0
+2026-04-04 22:25:01,108 INFO     navigator | move done | traveled=8.0 cm heading=450.0 room=-
+2026-04-04 22:25:01,109 INFO     navigator | scan_turn 19.3 deg | heading=450.0
+2026-04-04 22:25:01,111 INFO     navigator | TURNED 19.336512600729492 DEGREES
+2026-04-04 22:25:01,786 INFO     navigator | scan_turn done | heading=469.3 bed_found=False
+2026-04-04 22:25:05,794 INFO     navigator | scan_turn -19.3 deg | heading=469.3
+2026-04-04 22:25:05,797 INFO     navigator | TURNED -19.336512600729492 DEGREES
+2026-04-04 22:25:06,453 INFO     navigator | scan_turn done | heading=450.0 bed_found=False
+2026-04-04 22:25:06,455 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=450.0
+2026-04-04 22:25:07,923 INFO     navigator | move_until_distance: stopped at 52.7 cm from wall (backward)
+2026-04-04 22:25:07,925 INFO     navigator | move_until_distance done | traveled=21.3 cm
+2026-04-04 22:25:07,925 INFO     navigator | turn 90.0 deg | heading=450.0
+2026-04-04 22:25:07,927 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:25:10,288 INFO     navigator | turn done | heading=540.0
+2026-04-04 22:25:10,290 INFO     navigator | move 37.0 cm direction=1 | heading=540.0
+2026-04-04 22:25:12,822 INFO     navigator | move done | traveled=37.3 cm heading=540.0 room=-
+2026-04-04 22:25:12,823 INFO     navigator | turn 90.0 deg | heading=540.0
+2026-04-04 22:25:12,826 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:26:49,366 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 22:26:52,673 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 22:26:54,181 INFO     navigator | move 13.0 cm direction=-1 | heading=0.0
+2026-04-04 22:26:55,112 INFO     navigator | move done | traveled=13.4 cm heading=0.0 room=-
+2026-04-04 22:26:55,113 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 22:26:55,116 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:26:57,476 INFO     navigator | turn done | heading=90.0
+2026-04-04 22:26:57,478 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 22:27:00,928 INFO     navigator | move_until_distance: stopped at 54.4 cm from wall (forward)
+2026-04-04 22:27:00,931 INFO     navigator | move_until_distance done | traveled=50.9 cm
+2026-04-04 22:27:02,171 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 22:27:03,251 INFO     navigator | move done | traveled=15.6 cm heading=90.0 room=-
+2026-04-04 22:27:03,253 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 22:27:03,719 INFO     navigator | move done | traveled=6.5 cm heading=90.0 room=-
+2026-04-04 22:27:03,903 INFO     controller | yelllow
+2026-04-04 22:27:03,904 INFO     navigator | scan_turn 15.0 deg | heading=90.0
+2026-04-04 22:27:03,905 INFO     navigator | TURNED 15.0 DEGREES
+2026-04-04 22:27:04,331 INFO     navigator | scan_turn done | heading=105.0 bed_found=False
+2026-04-04 22:27:04,488 INFO     controller | green
+2026-04-04 22:27:04,489 INFO     navigator | scan_turn -15.0 deg | heading=105.0
+2026-04-04 22:27:04,490 INFO     navigator | TURNED -15.0 DEGREES
+2026-04-04 22:27:04,948 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 22:27:04,949 INFO     navigator | move 7.0 cm direction=-1 | heading=90.0
+2026-04-04 22:27:05,465 INFO     navigator | move done | traveled=7.1 cm heading=90.0 room=-
+2026-04-04 22:27:05,466 INFO     navigator | scan_turn 9.1 deg | heading=90.0
+2026-04-04 22:27:05,468 INFO     navigator | TURNED 9.05312653963082 DEGREES
+2026-04-04 22:27:05,769 INFO     navigator | scan_turn done | heading=99.1 bed_found=False
+2026-04-04 22:27:09,775 INFO     navigator | scan_turn -9.1 deg | heading=99.1
+2026-04-04 22:27:09,778 INFO     navigator | TURNED -9.05312653963082 DEGREES
+2026-04-04 22:27:10,057 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 22:27:10,058 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 22:27:11,204 INFO     navigator | move_until_distance: stopped at 52.7 cm from wall (backward)
+2026-04-04 22:27:11,207 INFO     navigator | move_until_distance done | traveled=16.5 cm
+2026-04-04 22:27:11,669 INFO     navigator | turn -90.0 deg | heading=90.0
+2026-04-04 22:27:11,671 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 22:27:13,991 INFO     navigator | turn done | heading=0.0
+2026-04-04 22:27:13,992 INFO     navigator | move_until_distance threshold=54.5 direction=1 | heading=0.0
+2026-04-04 22:27:17,163 INFO     navigator | move_until_distance: stopped at 54.0 cm from wall (forward)
+2026-04-04 22:27:17,166 INFO     navigator | move_until_distance done | traveled=46.8 cm
+2026-04-04 22:27:17,167 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 22:27:17,169 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:27:19,513 INFO     navigator | turn done | heading=90.0
+2026-04-04 22:27:20,425 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 22:27:21,507 INFO     navigator | move done | traveled=15.7 cm heading=90.0 room=-
+2026-04-04 22:27:21,508 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 22:27:21,981 INFO     navigator | move done | traveled=6.4 cm heading=90.0 room=-
+2026-04-04 22:27:22,180 INFO     controller | yelllow
+2026-04-04 22:27:22,180 INFO     navigator | scan_turn 33.0 deg | heading=90.0
+2026-04-04 22:27:22,182 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:27:23,190 INFO     navigator | scan_turn done | heading=123.0 bed_found=False
+2026-04-04 22:27:23,396 INFO     controller | yelllow
+2026-04-04 22:27:23,397 INFO     navigator | scan_turn -49.5 deg | heading=123.0
+2026-04-04 22:27:23,399 INFO     navigator | TURNED -49.5 DEGREES
+2026-04-04 22:27:24,717 INFO     navigator | scan_turn done | heading=73.5 bed_found=False
+2026-04-04 22:27:24,915 INFO     controller | yelllow
+2026-04-04 22:27:24,915 INFO     navigator | scan_turn -16.5 deg | heading=73.5
+2026-04-04 22:27:24,917 INFO     navigator | TURNED -16.5 DEGREES
+2026-04-04 22:27:25,376 INFO     navigator | scan_turn done | heading=57.0 bed_found=False
+2026-04-04 22:27:25,546 INFO     controller | yelllow
+2026-04-04 22:27:25,548 INFO     navigator | scan_turn 33.0 deg | heading=57.0
+2026-04-04 22:27:25,550 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:27:26,435 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 22:27:26,436 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 22:27:26,904 INFO     navigator | move done | traveled=6.4 cm heading=90.0 room=-
+2026-04-04 22:27:27,104 INFO     controller | yelllow
+2026-04-04 22:27:27,105 INFO     navigator | scan_turn 33.0 deg | heading=90.0
+2026-04-04 22:27:27,107 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:27:27,994 INFO     navigator | scan_turn done | heading=123.0 bed_found=False
+2026-04-04 22:27:28,200 INFO     controller | yelllow
+2026-04-04 22:27:28,201 INFO     navigator | scan_turn -49.5 deg | heading=123.0
+2026-04-04 22:27:28,202 INFO     navigator | TURNED -49.5 DEGREES
+2026-04-04 22:27:29,524 INFO     navigator | scan_turn done | heading=73.5 bed_found=False
+2026-04-04 22:27:29,725 INFO     controller | yelllow
+2026-04-04 22:27:29,726 INFO     navigator | scan_turn -16.5 deg | heading=73.5
+2026-04-04 22:27:29,728 INFO     navigator | TURNED -16.5 DEGREES
+2026-04-04 22:27:30,325 INFO     navigator | scan_turn done | heading=57.0 bed_found=False
+2026-04-04 22:27:30,520 INFO     controller | yelllow
+2026-04-04 22:27:30,521 INFO     navigator | scan_turn 33.0 deg | heading=57.0
+2026-04-04 22:27:30,522 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:27:31,519 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 22:27:31,521 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 22:27:31,987 INFO     navigator | move done | traveled=6.4 cm heading=90.0 room=-
+2026-04-04 22:27:32,171 INFO     controller | yelllow
+2026-04-04 22:27:32,172 INFO     navigator | scan_turn 33.0 deg | heading=90.0
+2026-04-04 22:27:32,178 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:27:33,163 INFO     navigator | scan_turn done | heading=123.0 bed_found=False
+2026-04-04 22:27:33,355 INFO     controller | yelllow
+2026-04-04 22:27:33,355 INFO     navigator | scan_turn -49.5 deg | heading=123.0
+2026-04-04 22:27:33,357 INFO     navigator | TURNED -49.5 DEGREES
+2026-04-04 22:27:34,676 INFO     navigator | scan_turn done | heading=73.5 bed_found=False
+2026-04-04 22:27:34,877 INFO     controller | yelllow
+2026-04-04 22:27:34,878 INFO     navigator | scan_turn -16.5 deg | heading=73.5
+2026-04-04 22:27:34,880 INFO     navigator | TURNED -16.5 DEGREES
+2026-04-04 22:27:35,445 INFO     navigator | scan_turn done | heading=57.0 bed_found=False
+2026-04-04 22:27:35,631 INFO     controller | yelllow
+2026-04-04 22:27:35,632 INFO     navigator | scan_turn 33.0 deg | heading=57.0
+2026-04-04 22:27:35,634 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:27:36,672 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 22:27:36,673 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 22:27:39,221 INFO     navigator | move_until_distance: stopped at 52.7 cm from wall (backward)
+2026-04-04 22:27:39,223 INFO     navigator | move_until_distance done | traveled=37.4 cm
+2026-04-04 22:27:39,224 INFO     navigator | turn 91.0 deg | heading=90.0
+2026-04-04 22:27:39,227 INFO     navigator | TURNED 91.0 DEGREES
+2026-04-04 22:27:41,712 INFO     navigator | turn done | heading=181.0
+2026-04-04 22:27:41,713 INFO     navigator | move_until_distance threshold=38.9 direction=1 | heading=181.0
+2026-04-04 22:27:42,683 INFO     navigator | move_until_distance: stopped at 38.9 cm from wall (forward)
+2026-04-04 22:27:42,686 INFO     navigator | move_until_distance done | traveled=13.8 cm
+2026-04-04 22:27:42,687 INFO     navigator | turn 90.0 deg | heading=181.0
+2026-04-04 22:27:42,690 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:27:45,114 INFO     navigator | turn done | heading=271.0
+2026-04-04 22:27:47,118 INFO     navigator | move_until_distance threshold=23.7 direction=1 | heading=271.0
+2026-04-04 22:27:48,738 INFO     navigator | move_until_distance: stopped at 20.4 cm from wall (forward)
+2026-04-04 22:27:48,741 INFO     navigator | move_until_distance done | traveled=23.5 cm
+2026-04-04 22:27:50,244 INFO     navigator | move_until_distance threshold=51.8 direction=-1 | heading=271.0
+2026-04-04 22:28:33,495 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 22:28:35,946 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 22:28:37,453 INFO     navigator | move 13.0 cm direction=-1 | heading=0.0
+2026-04-04 22:28:38,385 INFO     navigator | move done | traveled=13.4 cm heading=0.0 room=-
+2026-04-04 22:28:38,386 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 22:28:38,389 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:28:40,847 INFO     navigator | turn done | heading=90.0
+2026-04-04 22:28:40,848 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 22:28:44,245 INFO     navigator | move_until_distance: stopped at 54.6 cm from wall (forward)
+2026-04-04 22:28:44,248 INFO     navigator | move_until_distance done | traveled=50.2 cm
+2026-04-04 22:28:45,169 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 22:28:46,252 INFO     navigator | move done | traveled=15.6 cm heading=90.0 room=-
+2026-04-04 22:28:46,253 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 22:28:46,720 INFO     navigator | move done | traveled=6.5 cm heading=90.0 room=-
+2026-04-04 22:28:46,902 INFO     controller | green
+2026-04-04 22:28:46,903 INFO     navigator | move 6.9 cm direction=-1 | heading=90.0
+2026-04-04 22:28:47,417 INFO     navigator | move done | traveled=7.2 cm heading=90.0 room=-
+2026-04-04 22:28:51,424 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 22:28:52,567 INFO     navigator | move_until_distance: stopped at 52.5 cm from wall (backward)
+2026-04-04 22:28:52,570 INFO     navigator | move_until_distance done | traveled=16.3 cm
+2026-04-04 22:28:53,055 INFO     navigator | turn -90.0 deg | heading=90.0
+2026-04-04 22:28:53,057 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 22:28:55,383 INFO     navigator | turn done | heading=0.0
+2026-04-04 22:28:55,385 INFO     navigator | move_until_distance threshold=54.5 direction=1 | heading=0.0
+2026-04-04 22:28:58,633 INFO     navigator | move_until_distance: stopped at 54.2 cm from wall (forward)
+2026-04-04 22:28:58,636 INFO     navigator | move_until_distance done | traveled=47.9 cm
+2026-04-04 22:28:58,637 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 22:28:58,639 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:29:01,069 INFO     navigator | turn done | heading=90.0
+2026-04-04 22:29:01,701 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 22:29:02,786 INFO     navigator | move done | traveled=15.7 cm heading=90.0 room=-
+2026-04-04 22:29:02,787 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 22:29:03,252 INFO     navigator | move done | traveled=6.5 cm heading=90.0 room=-
+2026-04-04 22:29:03,445 INFO     controller | green
+2026-04-04 22:29:03,446 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 22:29:05,259 INFO     navigator | move_until_distance: stopped at 53.2 cm from wall (backward)
+2026-04-04 22:29:05,262 INFO     navigator | move_until_distance done | traveled=26.4 cm
+2026-04-04 22:29:05,263 INFO     navigator | turn 91.0 deg | heading=90.0
+2026-04-04 22:29:05,265 INFO     navigator | TURNED 91.0 DEGREES
+2026-04-04 22:29:07,747 INFO     navigator | turn done | heading=181.0
+2026-04-04 22:29:07,748 INFO     navigator | move_until_distance threshold=38.9 direction=1 | heading=181.0
+2026-04-04 22:29:08,762 INFO     navigator | move_until_distance: stopped at 38.4 cm from wall (forward)
+2026-04-04 22:29:08,764 INFO     navigator | move_until_distance done | traveled=14.5 cm
+2026-04-04 22:29:08,765 INFO     navigator | turn 90.0 deg | heading=181.0
+2026-04-04 22:29:08,767 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:29:11,091 INFO     navigator | turn done | heading=271.0
+2026-04-04 22:29:13,095 INFO     navigator | move_until_distance threshold=23.7 direction=1 | heading=271.0
+2026-04-04 22:29:15,115 INFO     navigator | move_until_distance: stopped at 23.6 cm from wall (forward)
+2026-04-04 22:29:15,118 INFO     navigator | move_until_distance done | traveled=29.5 cm
+2026-04-04 22:29:16,621 INFO     navigator | move_until_distance threshold=51.8 direction=-1 | heading=271.0
+2026-04-04 22:29:18,675 INFO     navigator | move_until_distance: stopped at 51.9 cm from wall (backward)
+2026-04-04 22:29:18,678 INFO     navigator | move_until_distance done | traveled=30.1 cm
+2026-04-04 22:29:18,679 INFO     navigator | turn 90.0 deg | heading=271.0
+2026-04-04 22:29:18,682 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:29:21,020 INFO     navigator | turn done | heading=361.0
+2026-04-04 22:29:21,022 INFO     navigator | move_until_distance threshold=54.5 direction=1 | heading=361.0
+2026-04-04 22:29:22,038 INFO     navigator | move_until_distance: stopped at 54.2 cm from wall (forward)
+2026-04-04 22:29:22,042 INFO     navigator | move_until_distance done | traveled=14.5 cm
+2026-04-04 22:29:22,044 INFO     navigator | turn 90.0 deg | heading=361.0
+2026-04-04 22:29:22,047 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:29:24,505 INFO     navigator | turn done | heading=451.0
+2026-04-04 22:29:24,506 INFO     navigator | move 15.0 cm direction=1 | heading=451.0
+2026-04-04 22:29:25,594 INFO     navigator | move done | traveled=15.7 cm heading=451.0 room=-
+2026-04-04 22:29:25,595 INFO     navigator | move 6.0 cm direction=1 | heading=451.0
+2026-04-04 22:29:26,062 INFO     navigator | move done | traveled=6.5 cm heading=451.0 room=-
+2026-04-04 22:29:26,260 INFO     controller | yelllow
+2026-04-04 22:29:26,261 INFO     navigator | scan_turn 33.0 deg | heading=451.0
+2026-04-04 22:29:26,262 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:29:27,257 INFO     navigator | scan_turn done | heading=484.0 bed_found=False
+2026-04-04 22:29:27,459 INFO     controller | yelllow
+2026-04-04 22:29:27,460 INFO     navigator | scan_turn -49.5 deg | heading=484.0
+2026-04-04 22:29:27,462 INFO     navigator | TURNED -49.5 DEGREES
+2026-04-04 22:29:28,879 INFO     navigator | scan_turn done | heading=434.5 bed_found=False
+2026-04-04 22:29:29,059 INFO     controller | yelllow
+2026-04-04 22:29:29,060 INFO     navigator | scan_turn -16.5 deg | heading=434.5
+2026-04-04 22:29:29,062 INFO     navigator | TURNED -16.5 DEGREES
+2026-04-04 22:29:29,519 INFO     navigator | scan_turn done | heading=418.0 bed_found=False
+2026-04-04 22:29:29,708 INFO     controller | yelllow
+2026-04-04 22:29:29,709 INFO     navigator | scan_turn 33.0 deg | heading=418.0
+2026-04-04 22:29:29,711 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:29:30,705 INFO     navigator | scan_turn done | heading=451.0 bed_found=False
+2026-04-04 22:29:30,707 INFO     navigator | move 6.0 cm direction=1 | heading=451.0
+2026-04-04 22:29:31,173 INFO     navigator | move done | traveled=6.4 cm heading=451.0 room=-
+2026-04-04 22:29:31,372 INFO     controller | yelllow
+2026-04-04 22:29:31,373 INFO     navigator | scan_turn 33.0 deg | heading=451.0
+2026-04-04 22:29:31,374 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:29:32,369 INFO     navigator | scan_turn done | heading=484.0 bed_found=False
+2026-04-04 22:29:32,572 INFO     controller | green
+2026-04-04 22:29:32,573 INFO     navigator | scan_turn -33.0 deg | heading=484.0
+2026-04-04 22:29:32,575 INFO     navigator | TURNED -33.0 DEGREES
+2026-04-04 22:29:33,616 INFO     navigator | scan_turn done | heading=451.0 bed_found=False
+2026-04-04 22:29:33,617 INFO     navigator | move 7.6 cm direction=-1 | heading=451.0
+2026-04-04 22:29:34,190 INFO     navigator | move done | traveled=8.0 cm heading=451.0 room=-
+2026-04-04 22:29:34,191 INFO     navigator | scan_turn 19.3 deg | heading=451.0
+2026-04-04 22:29:34,193 INFO     navigator | TURNED 19.336512600729492 DEGREES
+2026-04-04 22:29:34,878 INFO     navigator | scan_turn done | heading=470.3 bed_found=False
+2026-04-04 22:29:38,885 INFO     navigator | scan_turn -19.3 deg | heading=470.3
+2026-04-04 22:29:38,888 INFO     navigator | TURNED -19.336512600729492 DEGREES
+2026-04-04 22:29:39,414 INFO     navigator | scan_turn done | heading=451.0 bed_found=False
+2026-04-04 22:29:39,415 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=451.0
+2026-04-04 22:29:40,910 INFO     navigator | move_until_distance: stopped at 52.7 cm from wall (backward)
+2026-04-04 22:29:40,913 INFO     navigator | move_until_distance done | traveled=21.7 cm
+2026-04-04 22:29:40,914 INFO     navigator | turn 90.0 deg | heading=451.0
+2026-04-04 22:29:40,916 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:29:43,268 INFO     navigator | turn done | heading=541.0
+2026-04-04 22:29:43,269 INFO     navigator | move 37.0 cm direction=1 | heading=541.0
+2026-04-04 22:29:45,797 INFO     navigator | move done | traveled=37.2 cm heading=541.0 room=-
+2026-04-04 22:29:45,798 INFO     navigator | turn 90.0 deg | heading=541.0
+2026-04-04 22:29:45,800 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:29:48,262 INFO     navigator | turn done | heading=631.0
+2026-04-04 22:29:48,264 INFO     navigator | move_until_distance threshold=15.0 direction=1 | heading=631.0
+2026-04-04 22:29:51,574 INFO     navigator | move_until_distance: stopped at 14.9 cm from wall (forward)
+2026-04-04 22:29:51,576 INFO     navigator | move_until_distance done | traveled=48.8 cm
+2026-04-04 22:31:21,767 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 22:31:23,798 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 22:31:25,304 INFO     navigator | move 13.0 cm direction=-1 | heading=0.0
+2026-04-04 22:31:26,233 INFO     navigator | move done | traveled=13.4 cm heading=0.0 room=-
+2026-04-04 22:31:26,234 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 22:31:26,237 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:31:28,580 INFO     navigator | turn done | heading=90.0
+2026-04-04 22:31:28,582 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 22:31:30,266 INFO     navigator | move_until_distance: stopped at 52.7 cm from wall (forward)
+2026-04-04 22:31:30,269 INFO     navigator | move_until_distance done | traveled=24.5 cm
+2026-04-04 22:32:18,961 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 22:32:21,881 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 22:32:23,388 INFO     navigator | move 13.0 cm direction=-1 | heading=0.0
+2026-04-04 22:32:24,320 INFO     navigator | move done | traveled=13.3 cm heading=0.0 room=-
+2026-04-04 22:32:24,321 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 22:32:24,323 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:32:26,643 INFO     navigator | turn done | heading=90.0
+2026-04-04 22:32:26,644 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 22:32:28,367 INFO     navigator | move_until_distance: stopped at 51.1 cm from wall (forward)
+2026-04-04 22:32:28,369 INFO     navigator | move_until_distance done | traveled=25.1 cm
+2026-04-04 22:32:41,221 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 22:32:42,301 INFO     navigator | move done | traveled=15.6 cm heading=90.0 room=-
+2026-04-04 22:32:42,303 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 22:32:42,770 INFO     navigator | move done | traveled=6.4 cm heading=90.0 room=-
+2026-04-04 22:32:42,977 INFO     controller | green
+2026-04-04 22:32:42,977 INFO     navigator | move 6.9 cm direction=-1 | heading=90.0
+2026-04-04 22:32:43,492 INFO     navigator | move done | traveled=7.1 cm heading=90.0 room=-
+2026-04-04 22:32:47,499 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 22:32:48,500 INFO     navigator | move_until_distance: stopped at 52.5 cm from wall (backward)
+2026-04-04 22:32:48,502 INFO     navigator | move_until_distance done | traveled=14.3 cm
+2026-04-04 22:32:49,438 INFO     navigator | turn -90.0 deg | heading=90.0
+2026-04-04 22:32:49,441 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 22:32:51,751 INFO     navigator | turn done | heading=0.0
+2026-04-04 22:32:51,752 INFO     navigator | move_until_distance threshold=54.5 direction=1 | heading=0.0
+2026-04-04 22:32:55,002 INFO     navigator | move_until_distance: stopped at 53.5 cm from wall (forward)
+2026-04-04 22:32:55,005 INFO     navigator | move_until_distance done | traveled=48.0 cm
+2026-04-04 22:32:55,006 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 22:32:55,008 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:32:57,447 INFO     navigator | turn done | heading=90.0
+2026-04-04 22:32:58,904 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 22:32:59,985 INFO     navigator | move done | traveled=15.6 cm heading=90.0 room=-
+2026-04-04 22:32:59,987 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 22:33:00,453 INFO     navigator | move done | traveled=6.4 cm heading=90.0 room=-
+2026-04-04 22:33:00,658 INFO     controller | green
+2026-04-04 22:33:00,658 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 22:33:02,413 INFO     navigator | move_until_distance: stopped at 53.2 cm from wall (backward)
+2026-04-04 22:33:02,416 INFO     navigator | move_until_distance done | traveled=25.5 cm
+2026-04-04 22:33:02,417 INFO     navigator | turn 91.0 deg | heading=90.0
+2026-04-04 22:33:02,419 INFO     navigator | TURNED 91.0 DEGREES
+2026-04-04 22:33:04,788 INFO     navigator | turn done | heading=181.0
+2026-04-04 22:33:04,789 INFO     navigator | move_until_distance threshold=38.9 direction=1 | heading=181.0
+2026-04-04 22:33:05,831 INFO     navigator | move_until_distance: stopped at 38.4 cm from wall (forward)
+2026-04-04 22:33:05,834 INFO     navigator | move_until_distance done | traveled=15.0 cm
+2026-04-04 22:33:05,835 INFO     navigator | turn 90.0 deg | heading=181.0
+2026-04-04 22:33:05,837 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:33:08,306 INFO     navigator | turn done | heading=271.0
+2026-04-04 22:33:10,310 INFO     navigator | move_until_distance threshold=23.7 direction=1 | heading=271.0
+2026-04-04 22:33:12,267 INFO     navigator | move_until_distance: stopped at 23.6 cm from wall (forward)
+2026-04-04 22:33:12,269 INFO     navigator | move_until_distance done | traveled=28.6 cm
+2026-04-04 22:33:13,772 INFO     navigator | move_until_distance threshold=51.8 direction=-1 | heading=271.0
+2026-04-04 22:33:15,815 INFO     navigator | move_until_distance: stopped at 51.9 cm from wall (backward)
+2026-04-04 22:33:15,818 INFO     navigator | move_until_distance done | traveled=29.8 cm
+2026-04-04 22:33:15,820 INFO     navigator | turn 89.0 deg | heading=271.0
+2026-04-04 22:33:15,823 INFO     navigator | TURNED 89.0 DEGREES
+2026-04-04 22:33:18,247 INFO     navigator | turn done | heading=360.0
+2026-04-04 22:33:18,248 INFO     navigator | move_until_distance threshold=54.5 direction=1 | heading=360.0
+2026-04-04 22:33:19,258 INFO     navigator | move_until_distance: stopped at 54.2 cm from wall (forward)
+2026-04-04 22:33:19,260 INFO     navigator | move_until_distance done | traveled=14.4 cm
+2026-04-04 22:33:19,261 INFO     navigator | turn 90.0 deg | heading=360.0
+2026-04-04 22:33:19,262 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:33:21,677 INFO     navigator | turn done | heading=450.0
+2026-04-04 22:33:21,678 INFO     navigator | move 15.0 cm direction=1 | heading=450.0
+2026-04-04 22:33:22,764 INFO     navigator | move done | traveled=15.7 cm heading=450.0 room=-
+2026-04-04 22:33:22,765 INFO     navigator | move 6.0 cm direction=1 | heading=450.0
+2026-04-04 22:33:23,233 INFO     navigator | move done | traveled=6.5 cm heading=450.0 room=-
+2026-04-04 22:33:23,443 INFO     controller | yelllow
+2026-04-04 22:33:23,444 INFO     navigator | scan_turn 33.0 deg | heading=450.0
+2026-04-04 22:33:23,445 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:33:24,442 INFO     navigator | scan_turn done | heading=483.0 bed_found=False
+2026-04-04 22:33:24,655 INFO     controller | yelllow
+2026-04-04 22:33:24,655 INFO     navigator | scan_turn -49.5 deg | heading=483.0
+2026-04-04 22:33:24,657 INFO     navigator | TURNED -49.5 DEGREES
+2026-04-04 22:33:25,956 INFO     navigator | scan_turn done | heading=433.5 bed_found=False
+2026-04-04 22:33:26,165 INFO     controller | yelllow
+2026-04-04 22:33:26,166 INFO     navigator | scan_turn -16.5 deg | heading=433.5
+2026-04-04 22:33:26,168 INFO     navigator | TURNED -16.5 DEGREES
+2026-04-04 22:33:26,636 INFO     navigator | scan_turn done | heading=417.0 bed_found=False
+2026-04-04 22:33:26,794 INFO     controller | yelllow
+2026-04-04 22:33:26,794 INFO     navigator | scan_turn 33.0 deg | heading=417.0
+2026-04-04 22:33:26,796 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:33:27,682 INFO     navigator | scan_turn done | heading=450.0 bed_found=False
+2026-04-04 22:33:27,684 INFO     navigator | move 6.0 cm direction=1 | heading=450.0
+2026-04-04 22:33:28,150 INFO     navigator | move done | traveled=6.4 cm heading=450.0 room=-
+2026-04-04 22:33:28,361 INFO     controller | yelllow
+2026-04-04 22:33:28,362 INFO     navigator | scan_turn 33.0 deg | heading=450.0
+2026-04-04 22:33:28,364 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:33:29,355 INFO     navigator | scan_turn done | heading=483.0 bed_found=False
+2026-04-04 22:33:29,510 INFO     controller | green
+2026-04-04 22:33:29,511 INFO     navigator | scan_turn -33.0 deg | heading=483.0
+2026-04-04 22:33:29,513 INFO     navigator | TURNED -33.0 DEGREES
+2026-04-04 22:33:30,519 INFO     navigator | scan_turn done | heading=450.0 bed_found=False
+2026-04-04 22:33:30,521 INFO     navigator | move 7.6 cm direction=-1 | heading=450.0
+2026-04-04 22:33:31,091 INFO     navigator | move done | traveled=8.0 cm heading=450.0 room=-
+2026-04-04 22:33:31,092 INFO     navigator | scan_turn 19.3 deg | heading=450.0
+2026-04-04 22:33:31,095 INFO     navigator | TURNED 19.336512600729492 DEGREES
+2026-04-04 22:33:31,629 INFO     navigator | scan_turn done | heading=469.3 bed_found=False
+2026-04-04 22:33:35,636 INFO     navigator | scan_turn -19.3 deg | heading=469.3
+2026-04-04 22:33:35,638 INFO     navigator | TURNED -19.336512600729492 DEGREES
+2026-04-04 22:33:36,155 INFO     navigator | scan_turn done | heading=450.0 bed_found=False
+2026-04-04 22:33:36,156 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=450.0
+2026-04-04 22:33:38,686 INFO     navigator | move_until_distance: stopped at 52.7 cm from wall (backward)
+2026-04-04 22:33:38,689 INFO     navigator | move_until_distance done | traveled=37.1 cm
+2026-04-04 22:33:38,690 INFO     navigator | turn 90.0 deg | heading=450.0
+2026-04-04 22:33:38,692 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:33:41,043 INFO     navigator | turn done | heading=540.0
+2026-04-04 22:33:41,044 INFO     navigator | move 37.0 cm direction=1 | heading=540.0
+2026-04-04 22:33:43,568 INFO     navigator | move done | traveled=37.1 cm heading=540.0 room=-
+2026-04-04 22:33:43,569 INFO     navigator | turn 90.0 deg | heading=540.0
+2026-04-04 22:33:43,572 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:33:46,023 INFO     navigator | turn done | heading=630.0
+2026-04-04 22:33:46,024 INFO     navigator | move_until_distance threshold=15.0 direction=1 | heading=630.0
+2026-04-04 22:33:48,151 INFO     navigator | move_until_distance: stopped at 14.9 cm from wall (forward)
+2026-04-04 22:33:48,154 INFO     navigator | move_until_distance done | traveled=31.2 cm
+2026-04-04 22:35:30,535 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 22:35:33,624 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 22:35:35,132 INFO     navigator | move 13.0 cm direction=-1 | heading=0.0
+2026-04-04 22:35:36,059 INFO     navigator | move done | traveled=13.3 cm heading=0.0 room=-
+2026-04-04 22:35:36,060 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 22:35:36,063 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:35:38,416 INFO     navigator | turn done | heading=90.0
+2026-04-04 22:35:38,418 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 22:35:41,856 INFO     navigator | move_until_distance: stopped at 53.7 cm from wall (forward)
+2026-04-04 22:35:41,859 INFO     navigator | move_until_distance done | traveled=50.7 cm
+2026-04-04 22:35:42,663 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 22:35:43,742 INFO     navigator | move done | traveled=15.6 cm heading=90.0 room=-
+2026-04-04 22:35:43,743 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 22:35:44,209 INFO     navigator | move done | traveled=6.5 cm heading=90.0 room=-
+2026-04-04 22:35:44,419 INFO     controller | red
+2026-04-04 22:35:44,420 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 22:35:46,014 INFO     navigator | move_until_distance: stopped at 52.7 cm from wall (backward)
+2026-04-04 22:35:46,017 INFO     navigator | move_until_distance done | traveled=23.2 cm
+2026-04-04 22:35:47,983 INFO     navigator | turn -90.0 deg | heading=90.0
+2026-04-04 22:35:47,986 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 22:35:50,467 INFO     navigator | turn done | heading=0.0
+2026-04-04 22:35:50,468 INFO     navigator | move_until_distance threshold=54.5 direction=1 | heading=0.0
+2026-04-04 22:35:53,801 INFO     navigator | move_until_distance: stopped at 53.5 cm from wall (forward)
+2026-04-04 22:35:53,803 INFO     navigator | move_until_distance done | traveled=49.2 cm
+2026-04-04 22:35:53,806 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 22:35:53,809 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:35:56,238 INFO     navigator | turn done | heading=90.0
+2026-04-04 22:35:57,598 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 22:35:58,683 INFO     navigator | move done | traveled=15.6 cm heading=90.0 room=-
+2026-04-04 22:35:58,684 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 22:35:59,151 INFO     navigator | move done | traveled=6.5 cm heading=90.0 room=-
+2026-04-04 22:35:59,401 INFO     controller | green
+2026-04-04 22:35:59,402 INFO     navigator | move 6.9 cm direction=-1 | heading=90.0
+2026-04-04 22:35:59,917 INFO     navigator | move done | traveled=7.2 cm heading=90.0 room=-
+2026-04-04 22:36:03,923 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 22:36:05,151 INFO     navigator | move_until_distance: stopped at 52.7 cm from wall (backward)
+2026-04-04 22:36:05,159 INFO     navigator | move_until_distance done | traveled=17.7 cm
+2026-04-04 22:36:05,160 INFO     navigator | turn 91.0 deg | heading=90.0
+2026-04-04 22:36:05,164 INFO     navigator | TURNED 91.0 DEGREES
+2026-04-04 22:36:07,629 INFO     navigator | turn done | heading=181.0
+2026-04-04 22:36:07,630 INFO     navigator | move_until_distance threshold=38.9 direction=1 | heading=181.0
+2026-04-04 22:36:08,675 INFO     navigator | move_until_distance: stopped at 38.5 cm from wall (forward)
+2026-04-04 22:36:08,678 INFO     navigator | move_until_distance done | traveled=14.8 cm
+2026-04-04 22:36:08,679 INFO     navigator | turn 90.0 deg | heading=181.0
+2026-04-04 22:36:08,681 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:36:11,136 INFO     navigator | turn done | heading=271.0
+2026-04-04 22:36:13,140 INFO     navigator | move_until_distance threshold=23.7 direction=1 | heading=271.0
+2026-04-04 22:36:15,186 INFO     navigator | move_until_distance: stopped at 22.9 cm from wall (forward)
+2026-04-04 22:36:15,189 INFO     navigator | move_until_distance done | traveled=29.9 cm
+2026-04-04 22:36:16,692 INFO     navigator | move_until_distance threshold=51.8 direction=-1 | heading=271.0
+2026-04-04 22:36:18,801 INFO     navigator | move_until_distance: stopped at 51.8 cm from wall (backward)
+2026-04-04 22:36:18,803 INFO     navigator | move_until_distance done | traveled=30.8 cm
+2026-04-04 22:36:18,804 INFO     navigator | turn 89.0 deg | heading=271.0
+2026-04-04 22:36:18,807 INFO     navigator | TURNED 89.0 DEGREES
+2026-04-04 22:36:21,112 INFO     navigator | turn done | heading=360.0
+2026-04-04 22:36:23,049 INFO     navigator | move_until_distance threshold=28.8 direction=1 | heading=360.0
+2026-04-04 22:36:25,838 INFO     navigator | move_until_distance: stopped at 28.6 cm from wall (forward)
+2026-04-04 22:36:25,842 INFO     navigator | move_until_distance done | traveled=41.0 cm
+2026-04-04 22:36:25,843 INFO     navigator | turn -90.0 deg | heading=360.0
+2026-04-04 22:36:25,847 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 22:36:28,199 INFO     navigator | turn done | heading=270.0
+2026-04-04 22:36:29,824 INFO     navigator | move 15.0 cm direction=1 | heading=270.0
+2026-04-04 22:36:30,907 INFO     navigator | move done | traveled=15.6 cm heading=270.0 room=-
+2026-04-04 22:36:30,908 INFO     navigator | move 6.0 cm direction=1 | heading=270.0
+2026-04-04 22:36:31,375 INFO     navigator | move done | traveled=6.5 cm heading=270.0 room=-
+2026-04-04 22:36:31,571 INFO     controller | red
+2026-04-04 22:36:31,571 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=270.0
+2026-04-04 22:36:33,208 INFO     navigator | move_until_distance: stopped at 52.6 cm from wall (backward)
+2026-04-04 22:36:33,210 INFO     navigator | move_until_distance done | traveled=23.8 cm
+2026-04-04 22:36:33,211 INFO     navigator | turn -90.0 deg | heading=270.0
+2026-04-04 22:36:33,213 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 22:36:35,655 INFO     navigator | turn done | heading=180.0
+2026-04-04 22:36:37,168 INFO     navigator | move_until_distance threshold=97.5 direction=-1 | heading=180.0
+2026-04-04 22:36:38,648 INFO     navigator | move_until_distance: stopped at 97.6 cm from wall (backward)
+2026-04-04 22:36:38,651 INFO     navigator | move_until_distance done | traveled=21.3 cm
+2026-04-04 22:36:38,652 INFO     navigator | turn 90.0 deg | heading=180.0
+2026-04-04 22:36:38,654 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:36:40,973 INFO     navigator | turn done | heading=270.0
+2026-04-04 22:36:42,756 INFO     navigator | move 15.0 cm direction=1 | heading=270.0
+2026-04-04 22:36:43,843 INFO     navigator | move done | traveled=15.7 cm heading=270.0 room=-
+2026-04-04 22:36:43,844 INFO     navigator | move 6.0 cm direction=1 | heading=270.0
+2026-04-04 22:36:44,316 INFO     navigator | move done | traveled=6.5 cm heading=270.0 room=-
+2026-04-04 22:36:44,474 INFO     controller | yelllow
+2026-04-04 22:36:44,474 INFO     navigator | scan_turn 15.0 deg | heading=270.0
+2026-04-04 22:36:44,476 INFO     navigator | TURNED 15.0 DEGREES
+2026-04-04 22:36:44,891 INFO     navigator | scan_turn done | heading=285.0 bed_found=False
+2026-04-04 22:36:45,049 INFO     controller | yelllow
+2026-04-04 22:36:45,050 INFO     navigator | scan_turn -31.5 deg | heading=285.0
+2026-04-04 22:36:45,051 INFO     navigator | TURNED -31.5 DEGREES
+2026-04-04 22:36:45,911 INFO     navigator | scan_turn done | heading=253.5 bed_found=False
+2026-04-04 22:36:46,120 INFO     controller | yelllow
+2026-04-04 22:36:46,121 INFO     navigator | scan_turn -16.5 deg | heading=253.5
+2026-04-04 22:36:46,123 INFO     navigator | TURNED -16.5 DEGREES
+2026-04-04 22:36:46,591 INFO     navigator | scan_turn done | heading=237.0 bed_found=False
+2026-04-04 22:36:46,753 INFO     controller | yelllow
+2026-04-04 22:36:46,754 INFO     navigator | scan_turn 33.0 deg | heading=237.0
+2026-04-04 22:36:46,756 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:36:47,651 INFO     navigator | scan_turn done | heading=270.0 bed_found=False
+2026-04-04 22:36:47,652 INFO     navigator | move 6.0 cm direction=1 | heading=270.0
+2026-04-04 22:36:48,120 INFO     navigator | move done | traveled=6.3 cm heading=270.0 room=-
+2026-04-04 22:36:48,336 INFO     controller | green
+2026-04-04 22:36:48,336 INFO     navigator | move 6.9 cm direction=-1 | heading=270.0
+2026-04-04 22:36:48,851 INFO     navigator | move done | traveled=7.1 cm heading=270.0 room=-
+2026-04-04 22:36:52,858 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=270.0
+2026-04-04 22:36:55,852 INFO     navigator | move_until_distance: stopped at 52.5 cm from wall (backward)
+2026-04-04 22:36:55,855 INFO     navigator | move_until_distance done | traveled=44.2 cm
+2026-04-04 22:36:55,856 INFO     navigator | turn -90.0 deg | heading=270.0
+2026-04-04 22:36:55,859 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 22:36:58,309 INFO     navigator | turn done | heading=180.0
+2026-04-04 22:36:58,310 INFO     navigator | move 81.0 cm direction=1 | heading=180.0
+2026-04-04 22:37:03,920 INFO     navigator | move done | traveled=83.4 cm heading=180.0 room=hallway
+2026-04-04 22:37:03,920 INFO     navigator | turn 90.0 deg | heading=180.0
+2026-04-04 22:37:03,922 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:37:06,354 INFO     navigator | turn done | heading=270.0
+2026-04-04 22:37:06,355 INFO     navigator | move_until_distance threshold=15.0 direction=1 | heading=270.0
+2026-04-04 22:37:10,463 INFO     navigator | move_until_distance: stopped at 14.9 cm from wall (forward)
+2026-04-04 22:37:10,465 INFO     navigator | move_until_distance done | traveled=60.8 cm
+2026-04-04 22:40:44,210 INFO     navigator | Navigator init | gyro=False gyro_offset=0.0
+2026-04-04 22:40:47,839 INFO     patient_assessor | PatientAssessor loaded 8 color profiles from test1.pkl
+2026-04-04 22:40:49,346 INFO     navigator | move 13.0 cm direction=-1 | heading=0.0
+2026-04-04 22:40:50,276 INFO     navigator | move done | traveled=13.3 cm heading=0.0 room=-
+2026-04-04 22:40:50,278 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 22:40:50,281 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:40:52,765 INFO     navigator | turn done | heading=90.0
+2026-04-04 22:40:52,767 INFO     navigator | move_until_distance threshold=54.6 direction=1 | heading=90.0
+2026-04-04 22:40:56,298 INFO     navigator | move_until_distance: stopped at 54.6 cm from wall (forward)
+2026-04-04 22:40:56,300 INFO     navigator | move_until_distance done | traveled=51.1 cm
+2026-04-04 22:41:00,015 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 22:41:01,112 INFO     navigator | move done | traveled=15.6 cm heading=90.0 room=-
+2026-04-04 22:41:01,113 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 22:41:01,579 INFO     navigator | move done | traveled=6.5 cm heading=90.0 room=-
+2026-04-04 22:41:01,771 INFO     controller | yelllow
+2026-04-04 22:41:01,772 INFO     navigator | scan_turn 15.0 deg | heading=90.0
+2026-04-04 22:41:01,774 INFO     navigator | TURNED 15.0 DEGREES
+2026-04-04 22:41:02,306 INFO     navigator | scan_turn done | heading=105.0 bed_found=False
+2026-04-04 22:41:02,509 INFO     controller | yelllow
+2026-04-04 22:41:02,510 INFO     navigator | scan_turn -31.5 deg | heading=105.0
+2026-04-04 22:41:02,512 INFO     navigator | TURNED -31.5 DEGREES
+2026-04-04 22:41:03,399 INFO     navigator | scan_turn done | heading=73.5 bed_found=False
+2026-04-04 22:41:03,587 INFO     controller | yelllow
+2026-04-04 22:41:03,588 INFO     navigator | scan_turn -16.5 deg | heading=73.5
+2026-04-04 22:41:03,590 INFO     navigator | TURNED -16.5 DEGREES
+2026-04-04 22:41:04,219 INFO     navigator | scan_turn done | heading=57.0 bed_found=False
+2026-04-04 22:41:04,435 INFO     controller | green
+2026-04-04 22:41:04,436 INFO     navigator | scan_turn 33.0 deg | heading=57.0
+2026-04-04 22:41:04,438 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:41:05,314 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 22:41:05,315 INFO     navigator | move 7.6 cm direction=-1 | heading=90.0
+2026-04-04 22:41:05,940 INFO     navigator | move done | traveled=8.0 cm heading=90.0 room=-
+2026-04-04 22:41:05,941 INFO     navigator | scan_turn -19.3 deg | heading=90.0
+2026-04-04 22:41:05,943 INFO     navigator | TURNED -19.336512600729492 DEGREES
+2026-04-04 22:41:06,590 INFO     navigator | scan_turn done | heading=70.7 bed_found=False
+2026-04-04 22:41:10,597 INFO     navigator | scan_turn 19.3 deg | heading=70.7
+2026-04-04 22:41:10,600 INFO     navigator | TURNED 19.336512600729492 DEGREES
+2026-04-04 22:41:11,256 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 22:41:11,257 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 22:41:12,332 INFO     navigator | move_until_distance: stopped at 52.7 cm from wall (backward)
+2026-04-04 22:41:12,335 INFO     navigator | move_until_distance done | traveled=15.5 cm
+2026-04-04 22:41:13,064 INFO     navigator | turn -90.0 deg | heading=90.0
+2026-04-04 22:41:13,066 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 22:41:15,516 INFO     navigator | turn done | heading=0.0
+2026-04-04 22:41:15,517 INFO     navigator | move_until_distance threshold=54.5 direction=1 | heading=0.0
+2026-04-04 22:41:18,970 INFO     navigator | move_until_distance: stopped at 53.8 cm from wall (forward)
+2026-04-04 22:41:18,973 INFO     navigator | move_until_distance done | traveled=50.9 cm
+2026-04-04 22:41:18,974 INFO     navigator | turn 90.0 deg | heading=0.0
+2026-04-04 22:41:18,977 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:41:21,338 INFO     navigator | turn done | heading=90.0
+2026-04-04 22:41:22,875 INFO     navigator | move 15.0 cm direction=1 | heading=90.0
+2026-04-04 22:41:23,959 INFO     navigator | move done | traveled=15.6 cm heading=90.0 room=-
+2026-04-04 22:41:23,961 INFO     navigator | move 6.0 cm direction=1 | heading=90.0
+2026-04-04 22:41:24,429 INFO     navigator | move done | traveled=6.5 cm heading=90.0 room=-
+2026-04-04 22:41:24,637 INFO     controller | yelllow
+2026-04-04 22:41:24,638 INFO     navigator | scan_turn 33.0 deg | heading=90.0
+2026-04-04 22:41:24,639 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:41:25,634 INFO     navigator | scan_turn done | heading=123.0 bed_found=False
+2026-04-04 22:41:25,842 INFO     controller | red
+2026-04-04 22:41:25,843 INFO     navigator | scan_turn -33.0 deg | heading=123.0
+2026-04-04 22:41:25,844 INFO     navigator | TURNED -33.0 DEGREES
+2026-04-04 22:41:26,744 INFO     navigator | scan_turn done | heading=90.0 bed_found=False
+2026-04-04 22:41:26,745 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=90.0
+2026-04-04 22:41:29,038 INFO     navigator | move_until_distance: stopped at 52.5 cm from wall (backward)
+2026-04-04 22:41:29,040 INFO     navigator | move_until_distance done | traveled=23.2 cm
+2026-04-04 22:41:29,042 INFO     navigator | turn 91.0 deg | heading=90.0
+2026-04-04 22:41:29,044 INFO     navigator | TURNED 91.0 DEGREES
+2026-04-04 22:41:31,404 INFO     navigator | turn done | heading=181.0
+2026-04-04 22:41:31,405 INFO     navigator | move_until_distance threshold=38.9 direction=1 | heading=181.0
+2026-04-04 22:41:32,448 INFO     navigator | move_until_distance: stopped at 38.5 cm from wall (forward)
+2026-04-04 22:41:33,079 INFO     navigator | move_until_distance done | traveled=24.2 cm
+2026-04-04 22:41:33,080 INFO     navigator | turn 90.0 deg | heading=181.0
+2026-04-04 22:41:33,082 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:41:35,389 INFO     navigator | turn done | heading=271.0
+2026-04-04 22:41:37,394 INFO     navigator | move_until_distance threshold=23.7 direction=1 | heading=271.0
+2026-04-04 22:41:39,530 INFO     navigator | move_until_distance: stopped at 23.6 cm from wall (forward)
+2026-04-04 22:41:39,532 INFO     navigator | move_until_distance done | traveled=31.2 cm
+2026-04-04 22:41:41,036 INFO     navigator | move_until_distance threshold=51.8 direction=-1 | heading=271.0
+2026-04-04 22:41:43,104 INFO     navigator | move_until_distance: stopped at 51.8 cm from wall (backward)
+2026-04-04 22:41:43,106 INFO     navigator | move_until_distance done | traveled=30.2 cm
+2026-04-04 22:41:44,707 INFO     navigator | turn 89.0 deg | heading=271.0
+2026-04-04 22:41:44,709 INFO     navigator | TURNED 89.0 DEGREES
+2026-04-04 22:41:47,001 INFO     navigator | turn done | heading=360.0
+2026-04-04 22:41:47,002 INFO     navigator | move_until_distance threshold=28.8 direction=1 | heading=360.0
+2026-04-04 22:41:50,369 INFO     navigator | move_until_distance: stopped at 28.6 cm from wall (forward)
+2026-04-04 22:41:50,371 INFO     navigator | move_until_distance done | traveled=49.7 cm
+2026-04-04 22:41:50,372 INFO     navigator | turn -90.0 deg | heading=360.0
+2026-04-04 22:41:50,374 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 22:41:52,862 INFO     navigator | turn done | heading=270.0
+2026-04-04 22:41:54,052 INFO     navigator | move 15.0 cm direction=1 | heading=270.0
+2026-04-04 22:41:55,140 INFO     navigator | move done | traveled=15.7 cm heading=270.0 room=-
+2026-04-04 22:41:55,141 INFO     navigator | move 6.0 cm direction=1 | heading=270.0
+2026-04-04 22:41:55,608 INFO     navigator | move done | traveled=6.5 cm heading=270.0 room=-
+2026-04-04 22:41:55,809 INFO     controller | yelllow
+2026-04-04 22:41:55,810 INFO     navigator | scan_turn 33.0 deg | heading=270.0
+2026-04-04 22:41:55,812 INFO     navigator | TURNED 33.0 DEGREES
+2026-04-04 22:41:56,689 INFO     navigator | scan_turn done | heading=303.0 bed_found=False
+2026-04-04 22:41:56,897 INFO     controller | green
+2026-04-04 22:41:56,898 INFO     navigator | scan_turn -33.0 deg | heading=303.0
+2026-04-04 22:41:56,900 INFO     navigator | TURNED -33.0 DEGREES
+2026-04-04 22:41:57,798 INFO     navigator | scan_turn done | heading=270.0 bed_found=False
+2026-04-04 22:41:57,799 INFO     navigator | move 7.6 cm direction=-1 | heading=270.0
+2026-04-04 22:41:58,368 INFO     navigator | move done | traveled=8.0 cm heading=270.0 room=-
+2026-04-04 22:41:58,369 INFO     navigator | scan_turn 19.3 deg | heading=270.0
+2026-04-04 22:41:58,371 INFO     navigator | TURNED 19.336512600729492 DEGREES
+2026-04-04 22:41:59,015 INFO     navigator | scan_turn done | heading=289.3 bed_found=False
+2026-04-04 22:42:03,022 INFO     navigator | scan_turn -19.3 deg | heading=289.3
+2026-04-04 22:42:03,025 INFO     navigator | TURNED -19.336512600729492 DEGREES
+2026-04-04 22:42:03,573 INFO     navigator | scan_turn done | heading=270.0 bed_found=False
+2026-04-04 22:42:03,574 INFO     navigator | move_until_distance threshold=52.4 direction=-1 | heading=270.0
+2026-04-04 22:42:05,048 INFO     navigator | move_until_distance: stopped at 52.7 cm from wall (backward)
+2026-04-04 22:42:05,051 INFO     navigator | move_until_distance done | traveled=21.4 cm
+2026-04-04 22:42:05,052 INFO     navigator | turn -90.0 deg | heading=270.0
+2026-04-04 22:42:05,054 INFO     navigator | TURNED -90.0 DEGREES
+2026-04-04 22:42:07,471 INFO     navigator | turn done | heading=180.0
+2026-04-04 22:42:07,472 INFO     navigator | move 54.0 cm direction=1 | heading=180.0
+2026-04-04 22:42:11,320 INFO     navigator | move done | traveled=56.9 cm heading=180.0 room=hallway
+2026-04-04 22:42:11,321 INFO     navigator | turn 90.0 deg | heading=180.0
+2026-04-04 22:42:11,323 INFO     navigator | TURNED 90.0 DEGREES
+2026-04-04 22:42:13,771 INFO     navigator | turn done | heading=270.0
+2026-04-04 22:42:13,772 INFO     navigator | move_until_distance threshold=15.0 direction=1 | heading=270.0
+2026-04-04 22:42:16,667 INFO     navigator | move_until_distance: stopped at 14.9 cm from wall (forward)
+2026-04-04 22:42:16,669 INFO     navigator | move_until_distance done | traveled=42.6 cm
