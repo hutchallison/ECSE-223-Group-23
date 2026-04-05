@@ -26,19 +26,12 @@ logging.basicConfig(
 log = logging.getLogger("controller")
 
 class Controller:
-    def __init__(self, use_gyro=True, left_wheel_compensation=0, right_wheel_compensation=0):
-
-        if use_gyro:
-            touch = EV3GyroSensor(Config.Ports.GYRO)
-            wait_ready_sensors()
-        else:
-            gyro = None
+    def __init__(self, left_wheel_compensation=0, right_wheel_compensation=0):
 
         self.touch_sensor = TouchSensor(4)
         wait_ready_sensors()
 
-        self.gyro = gyro
-        self.nav = Navigator(gyro=gyro, left_wheel_compensation=left_wheel_compensation, right_wheel_compensation=right_wheel_compensation)
+        self.nav = Navigator(left_wheel_compensation=left_wheel_compensation, right_wheel_compensation=right_wheel_compensation)
         self.assessor = PatientAssessor()
         self.payload = PayloadController(self.nav)
         self.audio = AudioController()
@@ -52,6 +45,7 @@ class Controller:
         self.nav.move_until_distance(54.6)
 
     def go_to_room1(self):
+        self.room = 1
         self.nav.turn_left(bias=0)
         self.nav.move_backward(Config.Controller.ENTER_PHARMA, assessor=self.assessor)
         self.nav.turn_left(bias=2)
@@ -68,6 +62,7 @@ class Controller:
         self.nav.turn_right()
 
     def go_to_room4(self):
+        self.room = 4
         self.nav.move_backward_until_distance(Config.Controller.DISTANCE_ROOM4_WALL - 0.5)
         self.nav.turn_left()
 
@@ -127,7 +122,7 @@ class Controller:
     def sweep_room1(self):
         self.sweep_with_red(Config.Controller.OBSTACLE_SWEEP_ANGLE, Config.Controller.SWEEP_ANGLE)
     
-    def sweep_room_standard(self):
+    def sweep_room_standard(self): # for rooms 2 and 3
         self.sweep_with_red(Config.Controller.SWEEP_ANGLE, Config.Controller.SWEEP_ANGLE)
     
     def sweep_room4(self):
@@ -197,11 +192,11 @@ class Controller:
 
 
 if __name__ == "__main__":
-    use_gyro = False #input("Use gyro? (y/n): ").strip().lower() == "y"
     left_wheel_compensation = 0 #int(input("Left wheel compensation DPS (0 = none): ").strip() or "0")
     right_wheel_compensation = 0 #int(input("Right wheel compensation DPS (0 = none): ").strip() or "0")
-    controller = Controller(use_gyro=use_gyro, left_wheel_compensation=left_wheel_compensation, right_wheel_compensation=right_wheel_compensation)
+    controller = Controller(left_wheel_compensation=left_wheel_compensation, right_wheel_compensation=right_wheel_compensation)
     controller.start_emergency_thread()
+    
     controller.collect_medicine()
     input("Press Enter to start room 1 sweep...")
     controller.sweep_room1()
